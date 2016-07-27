@@ -1,0 +1,14 @@
+<!-- <ui-view></ui-view> 에 들어갈 인크루드 된 내용 -->
+
+<div class="wrapper" ng-controller="layoutController">
+
+  <!-- Main Header -->
+  <header id="header" ng-include="mainHeader"></header>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div id="section" ng-include="contentWrapper"></div>
+
+  <!-- Main Footer -->
+  <footer id="footer" ng-include="mainFooter"></footer>
+
+</div>

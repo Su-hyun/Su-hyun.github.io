@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+.form-horizontal, .form-group{
+  margin:0;
+}
+.form-horizontal .form-group{
+  margin:0;
+}
+.col-sm-6{
+  padding-bottom: 30px;
+}
+.form-horizontal .control-label{
+  text-align:left;
+  font-weight:bold;
+}
+
+.input{
+  padding:45px 26px 30px 47px;
+}
+.nav::after{
+  content:"";
+  display:block;
+  width:calc(100% - 2px);
+  height:5px;
+  margin:0 auto;
+  background:url(./img/nav-tabs-before.png) repeat-x 0 0;
+}
+.nav-tabs{
+  margin-top:45px;
+  border-bottom:0 none;
+}
+.nav-tabs li{
+  padding:0;
+  text-align:center;
+  border:1px solid #e5e5e5;
+}
+.btn-tab01{
+  background:url(./img/tabs-1-off.png) no-repeat right 0;
+  border-right:0 none;
+}
+.btn-tab02{
+  background:url(./img/tabs-2-off.png) no-repeat left 0;
+}
+.nav-tabs li a{
+  margin-right:0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border:0 none;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+}
+.nav-tabs li:hover a{
+  background:none;
+  border:0 none;
+}
+.nav-tabs li.on{
+  background:none;
+}
+.nav-tabs li.on a{
+  padding-top:6px;
+  background:none;
+  border:0 none;
+  border-top:4px solid #373c44;
+}
+.nav-tabs i{
+  display:inline-block;
+  width:34px;
+  height:34px;
+  margin-right:9px;
+  vertical-align: middle;
+  background:url(./img/sprite.png) no-repeat;
+}
+.btn-tab01 i{
+  background-position:0 0;
+}
+.btn-tab02 i{
+  background-position:-35px 0;
+}
+.btn-tab01.on i{
+  background-position:0 -35px;
+}
+.btn-tab02.on i{
+  background-position:-35px -35px;
+}
+
+.form-area{
+  margin-top:32px;
+}
+.form-area .form-group{
+  margin-bottom:14px;
+}
+.col-sm-2{
+  width:24.666667%;
+}
+.col-sm-10{
+  width:75.333333%;
+  padding-right:0;
+  text-align:center;
+}
+.form-group p.control-label{
+  padding-top:18px;
+}
+.col-sm-10 .radio-inline{
+  padding:0;
+  position:relative;
+  text-align:center;
+}
+.col-sm-10 > p{
+  text-align:left;
+}
+.radio{
+  width:179px;
+  height:53px;
+  vertical-align: middle
+}
+.sex .radio{
+  border:1px dashed #c4c9cc;
+}
+.sex .radio.on{
+  border:1px solid #000;
+}
+.form-horizontal .radio{
+  padding-top:8px;
+}
+.radio::before{
+  content:"";
+  display:inline-block;
+  width:32px;
+  height:35px;
+  margin-right:17px;
+  vertical-align: middle;
+  background:url(./img/sprite.png) no-repeat
+}
+.male::before{
+  background-position:-75px 0;
+}
+.female::before{
+  background-position:-75px -35px;
+}
+.radio.type2::before,
+.radio.type3::before{
+  content:"";
+  display:inline-block;
+  width:32px;
+  height:32px;
+  vertical-align: middle;
+  background:none;
+  border:1px solid #c4c9cc;
+}
+.radio.type3::before{
+  margin-left:-12px;
+}
+.radio.type2.on::before{
+  background:url(./img/sprite.png) no-repeat -110px 0;
+  border:0 none;
+}
+.radio.type3.on::before{
+  background:url(./img/sprite.png) no-repeat -110px -35px;
+  border:0 none;
+}
+.radio + input[type=radio]{
+  margin-left:0;
+  top:0;
+  z-index:-1;
+  visibility:hidden;
+}
+.sub-radio{
+  display:none;
+}
+
+.btn-block{
+  text-align:right;
+}
+.btn{
+  width:255px;
+  height:53px;
+  line-height:2.6;
+  color:#FFF;
+  background-color:#373c44;
+}
+.btn:hover{
+  color: #337ab7;
+}

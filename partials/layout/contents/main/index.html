@@ -1,0 +1,97 @@
+<section class="wrapper" ng-controller="mainController">
+  <article class="article1">
+    <section class="visual" ng-controller="eventCtrl">
+      <ul class="visual-event">
+        <li class="event-list" ng-repeat="event in eventList">
+          <a href="#">{{$index+1}}</a>
+          <div class="event-area" style="background-color:{{event.bgColor}}">
+            <div class="event-con" style="background-image:{{event.imageUrl}}">
+              <div class="event-txt-area" style="background-image:{{event.txtImgUrl}}">
+                <h2 class="event-tit-ir">{{event.titIr}}</h2>
+                <p class="event-tit"><img src="{{event.titBg}}" alt="{{event.titAlt}}"></p>
+                <p class="event-txt type2">
+                  {{event.txt1}}
+                </p>
+                <p class="event-txt">
+                  {{event.txt2}}<br>
+                  {{event.txt3}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <div class="exactly-area">
+      <div class="container">
+        <ul class="move-menu">
+          <li>
+            <h3>
+              <span class="num-list">01</span>
+              내게 맞는 보험 찾기
+            </h3>
+            <p class="move-txt01">
+              어떤 상품을, 얼마만큼의 보장금액으로, 얼마의 보험료에, 어떤 방법으로 가입해야 하는가?
+              <span class="is-block">고객을 위한 맞춤 제안</span>
+            </p>
+            <a href="#" ng-click="searchInsurance()">바로가기</a>
+          </li>
+          <li>
+            <h3>
+              <span class="num-list">02</span>
+              보험 바로 알기
+              <span class="small">(올바른 보험 활용법)</span>
+            </h3>
+            <p class="move-txt02">
+              보험에 대해 최대한 쉽게 설명하고, 보험을 최대한 활용할 수 있도록 합리적인 기준과 방법을 제시
+            </p>
+            <a href="#" ng-click="knowExactly()">바로가기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="article2">
+    <div class="container">
+      <div class="title">
+        <h2>슈가의 보험 추천이 <strong>일리있는</strong> 이유</h2>
+        <span class="align-middle"></span>
+      </div>
+      <ul class="recommend" ng-controller="resonCtrl">
+        <li ng-repeat="reson in resonList" >
+          <div class="recommend-img"><img src="{{reson.imageUrl}}" alt=""></div>
+          <div class="recommend-txt">
+            <h3>{{reson.tit}}</h3>
+            <p>{{reson.txt}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </article>
+  <article class="article3">
+    <div class="container">
+      <div class="title type2">
+        <h2>보험의 진실편<small>We're the best professionals in the field</small></h2>
+        <span class="align-middle"></span>
+      </div>
+      <div class="truth-list-area">
+        <ul class="truth-list" ng-controller="truthCtrl">
+          <li ng-repeat="truth in truthList">
+            <div class="truth-img" style="background-image:{{truth.imageUrl}}">
+              <view-detail></view-detail>
+            </div>
+            <div class="truth-txt-area">
+              <h3>{{truth.tit}}</h3>
+              <p class="truth-date">{{truth.date}}</p>
+              <p class="truth-txt">{{truth.txt}}</p>
+            </div>
+          </li>
+        </ul>
+        <div class="truth-btn-area">
+          <button class="truth-more">more</button> <!-- 기능 적용 안됨 -->
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
