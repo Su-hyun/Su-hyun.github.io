@@ -32,9 +32,6 @@
 .event-list.on a{
   background-position: 0 -90px;
 }
-.event-list:first-child a{
-  background-position: 0px -90px;
-}
 .event-list:first-child .event-area{
   display:block;
 }
