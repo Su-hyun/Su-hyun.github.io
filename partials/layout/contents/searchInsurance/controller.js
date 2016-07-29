@@ -7,12 +7,14 @@ define(['projectSugar'], function () {
   searchInsuranceModule.controller('searchInsuranceController', ['$scope', '$ocLazyLoad', 'searchInsuranceService', 'layoutService',
     function($scope, $ocLazyLoad, searchInsuranceService, layoutService) {
 
-      $ocLazyLoad.load([
-
-      ]).then(function() {
-        searchInsuranceService.fire();
-        layoutService.fire();
-      });
+      $ocLazyLoad
+        .load([
+          './partials/common/js/jquery.cookie.js'
+        ])
+        .then(function() {
+          searchInsuranceService.fire();
+          layoutService.fire();
+        });
 
     }]);//productGuideController.controller
 

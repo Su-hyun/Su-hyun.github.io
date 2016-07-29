@@ -1,11 +1,11 @@
 <article class="container" ng-controller="recommendController">
-  <section class="wrapper row" ng-controller="formCtrl">
-    <div class="col-sm-6 input">
+  <section class="wrapper row">
+    <div class="col-sm-6 forms">
       <ul class="nav nav-tabs">
         <li class="btn-tab01 col-sm-6 on"><a href="#"><i></i>STEP</a></li>
         <li class="btn-tab02 col-sm-6"><a href="#"><i></i>STEP</a></li>
       </ul>
-      <div class="form-area step-1">
+      <div class="form-area on">
         <form class="form-horizontal" role="form">
           <div class="form-group">
             <label class="control-label col-sm-2" for="user">이름</label>
@@ -30,9 +30,11 @@
             <label class="control-label col-sm-2" for="birth-d">생년월일</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="birth-d" ng-model="inAge" maxlength="8" placeholder="예) 1990212">
-              <p>
-                주민등록상의 생년월일을 입력하세요<br>
-                정확한 보험료를 보여드리기 위해서 필요합니다.
+              <p class="notice is-pl">
+                <small>
+                  주민등록상의 생년월일을 입력하세요<br>
+                  정확한 보험료를 보여드리기 위해서 필요합니다.
+                </small>
               </p>
             </div>
           </div>
@@ -50,107 +52,121 @@
             </ul>
           </div>
           <div class="form-group sub-radio married">
-            <p class="control-label col-sm-2">자녀유무</p>
-            <ul class="col-sm-10">
-              <li class="radio-inline">
-                <label for="child-has" class="radio type3">유</label>
-                <input type="radio" id="child-has" ng-model="inChild" value="유">
-              </li>
-              <li class="radio-inline">
-                <label for="child-none" class="radio type3">무</label>
-                <input type="radio" id="child-none" ng-model="inChild" value="무">
-              </li>
-            </ul>
-          </div>
-          <div class="switch-area" ng-switch="inChild">
-            <div ng-switch-when="유">
-              <ul>
-                <li ng-repeat="child in childList">
-                  <p>{{child.sex}}</p>
-                  <p>{{child.childAge}}</p>
+            <div class="in-sub">
+              <p class="control-label col-sm-2">자녀유무</p>
+              <ul class="col-sm-10">
+                <li class="radio-inline">
+                  <label for="child-has" class="radio type3">유</label>
+                  <input type="radio" id="child-has" ng-model="inChild" value="유">
+                </li>
+                <li class="radio-inline">
+                  <label for="child-none" class="radio type3">무</label>
+                  <input type="radio" id="child-none" ng-model="inChild" value="무">
                 </li>
               </ul>
-              <select ng-model="selectSex">
-                <option value="">성별</option>
-                <option value="남아">남아</option>
-                <option value="여아">여아</option>
-              </select>
-              <input type="text" placeholder="예) 1990212" ng-model="newAge">
-              <button ng-click="addChild(selectSex, newAge)">자녀추가</button>
             </div>
-            <div ng-switch-when="무"></div>
-          </div>
-          <div class="form-group sub-radio single">
-            <p class="control-label col-sm-2">부양가족<small>(부모,형제,조부모 등)</small></p>
-            <ul class="col-sm-10">
-              <li class="radio-inline">
-                <label for="fam-has" class="radio type3">유</label>
-                <input type="radio" id="fam-has" ng-model="inFamily" value="유">
-              </li>
-              <li class="radio-inline">
-                <label for="fam-none" class="radio type3">무</label>
-                <input type="radio" id="fam-none" ng-model="inFamily" value="무">
-              </li>
-            </ul>
-            <div class="switch-area" ng-switch="inFamily">
-              <div ng-switch-when="유">
-                <label class="control-label col-sm-2" for="fam-use">부양가족을 위한 생활비로 얼마를 지출하십니까?</label>
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" id="fam-use" ng-model="inName" placeholder="예 120" >
+            <div ng-switch="inChild">
+              <div class="switch-area" ng-switch-when="유">
+                <ul>
+                  <li ng-repeat="child in childList">
+                    <p class="childSex">{{child.sex}}</p>
+                    <p>{{child.childAge}}</p>
+                  </li>
+                </ul>
+                <div class="addBox">
+                  <select class="selectbox" ng-model="selectSex">
+                    <option value="">성별</option>
+                    <option value="남아">남아</option>
+                    <option value="여아">여아</option>
+                  </select>
+                  <input type="text" placeholder="예) 1990212" maxlength="8" ng-model="newAge">
+                  <button ng-click="addChild(selectSex, newAge)">자녀추가</button>
                 </div>
               </div>
               <div ng-switch-when="무"></div>
             </div>
           </div>
+          <div class="form-group sub-radio single">
+            <div class="in-sub">
+              <p class="control-label col-sm-2 notice">부양가족<small>(부모,형제,조부모 등)</small></p>
+              <ul class="col-sm-10">
+                <li class="radio-inline">
+                  <label for="fam-has" class="radio type3" ng-click="disableAttr()">유</label>
+                  <input type="radio" id="fam-has" ng-model="inFamily" value="유">
+                </li>
+                <li class="radio-inline">
+                  <label for="fam-none" class="radio type3" ng-click="disableRemove()">무</label>
+                  <input type="radio" id="fam-none" ng-model="inFamily" value="무">
+                </li>
+              </ul>
+            </div>
+            <div ng-switch="inFamily">
+              <div ng-switch-when="유">
+                <div class="switch-area infamily">
+                  <label class="control-label col-sm-5" for="fam-use">부양가족을 위한 생활비로 얼마를 지출하십니까?</label>
+                  <div class="col-sm-7 input-area">
+                    <input type="text" class="form-control" id="fam-use" ng-model="inExpense" ng-change="disableRemove()" placeholder="예) 120" maxlength="4" >
+                    <span>만원</span>
+                  </div>
+                </div>
+                <p class="notice type2"><small>매월 생활비로 드리는 금액을 만단위로 입력해 주세요.</small></p>
+              </div>
+              <div ng-switch-when="무"></div>
+            </div>
+          </div>
         </form>
-        <div class="btn-block">
-          <button class="btn btn-next">다음 단계</button>
+        <div class="btn-block input">
+          <button class="btn btn-next" disabled>다음 단계</button>
         </div>
       </div>
       <div class="form-area step-2">
         <form class="form-horizontal" role="form">
           <div class="form-group">
-            <label class="control-label col-sm-2" for="salary">월소득</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="salary" ng-model="inName" placeholder="예) 220" >
+            <label class="control-label col-sm-4" for="salary">월소득</label>
+            <div class="col-sm-8 input-area">
+              <input type="text" class="form-control" id="salary" ng-model="inSalary" maxlength="5" placeholder="예) 220">
+              <span>만원</span>
+              <p class="notice"><small>세금을 제외한 통장에 들어오는 금액을 만원 단위로 입력해 주세요.</small></p>
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-sm-2" for="employment">최초입사년도/<br>국민연급 가입시</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="employment" ng-model="inName" maxlength="8" placeholder="예) 220" value="만원">
+            <label class="control-label col-sm-4" for="employment">최초입사년도/<br>국민연급 가입시기</label>
+            <div class="col-sm-8 input-area">
+              <input type="text" class="form-control" id="employment" ng-model="inEmployment" maxlength="4" placeholder="예) 1990">
+              <span>년도</span>
+              <p class="notice"><small>최소 근로소득 또는 사업소득이 발생한 년도를 기입하세요.</small></p>
             </div>
           </div>
           <div class="form-group">
-            <p class="control-label col-sm-2">직업군</p>
-            <ul class="col-sm-10">
-              <li>
+            <p class="control-label is-pl">직업군<sup>★</sup></p>
+            <ul class="jobs">
+              <li class="col-sm-6">
+                <label for="salarymen" class="radio type4 salarymen">근로소득자</label>
                 <input type="radio" id="salarymen" ng-model="inJobs" value="근로소득자">
-                <label for="salarymen">근로소득자</label>
               </li>
-              <li>
+              <li class="col-sm-6">
+                <label for="business" class="radio type4 business notice">개인사업자<br><small>(국민연금 지역가입자)</small></label>
                 <input type="radio" id="business" ng-model="inJobs" value="개인사업자">
-                <label for="business">개인사업자<small>(국민연급 지역가입자)</small><</label>
               </li>
-              <li>
+              <li class="col-sm-6">
+                <label for="housewife" class="radio type4 housewife">전업주부</label>
                 <input type="radio" id="housewife" ng-model="inJobs" value="전업주부">
-                <label for="housewife">전업주부</label>
               </li>
-              <li>
+              <li class="col-sm-6">
+                <label for="otherjobs" class="radio type4 otherjobs notice">공무원,교사,군인<small>(특수직업연금 가입자)</small></label>
                 <input type="radio" id="otherjobs" ng-model="inJobs" value="특수직업">
-                <label for="otherjobs">공무원,교사,군인<small>(특수직업연금 가입자)</small></label>
               </li>
             </ul>
-            <p class="notice">보험상품, 보장금액, 기간산정을 위하여 필요한 정보입니다.</p>
+            <p class="notice"><small>보험상품, 보장금액, 기간산정을 위하여 필요한 정보입니다.</small></p>
           </div>
         </form>
-        <div class="btn-block">
+        <div class="btn-block input">
           <button class="btn btn-prev">이전 단계</button>
-          <a href="#" class="btn btn-search">내게 맞는 보험 찾기</a>
+          <a href="#" class="btn btn-search" ng-disabled="!inJobs">내게 맞는 보험 찾기</a>
         </div>
       </div>
     </div>
-    <div class="col-sm-6 output">
+    <div class="col-sm-6 forms output">
       <form role="form">
         <p><a href="">내 보관함</a></p>
         <div class="form-txt-board">

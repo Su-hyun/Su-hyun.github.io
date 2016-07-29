@@ -7,12 +7,14 @@ define(['projectSugar'], function () {
   signInModule.controller('signInController', ['$scope', '$ocLazyLoad', 'signInService', 'layoutService',
     function($scope, $ocLazyLoad, signInService, layoutService) {
 
-      $ocLazyLoad.load([
-
-      ]).then(function() {
-        signInService.fire();
-        layoutService.fire();
-      });
+      $ocLazyLoad
+        .load([
+          './partials/common/js/jquery.cookie.js'
+        ])
+        .then(function() {
+          signInService.fire();
+          layoutService.fire();
+        });
 
 
     }]);//productGuideController.controller

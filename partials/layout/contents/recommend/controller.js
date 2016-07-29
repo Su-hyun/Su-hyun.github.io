@@ -6,17 +6,6 @@ define(['projectSugar'], function () {
 
   recommendModule.controller('recommendController', ['$scope', '$ocLazyLoad', 'recommendService', 'layoutService',
     function($scope, $ocLazyLoad, recommendService, layoutService) {
-      $ocLazyLoad.load([
-
-      ]).then(function() {
-        recommendService.fire();
-        layoutService.fire();
-        labelOn();
-      });
-
-    }]);//recommendController.controller
-
-  recommendModule.controller('formCtrl', function ($scope) {
 
     $scope.inName = null;
     $scope.outName = function () {
@@ -57,13 +46,9 @@ define(['projectSugar'], function () {
       return $scope.inMarry
     };
 
-    $scope.childList = [
-      {sex : "남아", childAge : "보험나이 : 14세"}
-    ];
+    $scope.childList = [];
 
-    console.log($scope.newAge);
-    
-    $scope.addChild = function (selecSex, newAge) {
+    $scope.addChild = function (selectSex, newAge) {
       if(newAge == undefined) return;
       if(newAge === '') return;
 
@@ -82,17 +67,62 @@ define(['projectSugar'], function () {
       if(nowAge == year) nowAge = "0";
 
       var newChild = {
-        sex : $scope.selectSex,
+        sex : selectSex,
         childAge : "보험나이 : "+nowAge+"세"
       };
       $scope.childList.push(newChild);
-      newAge = '';
+      selectSex = '';
+    };
+
+    $scope.disableAttr = function () {
+      $('.btn-next').attr('disabled','');
+    };
+
+    $scope.disableRemove = function () {
+      $('.btn-next').removeAttr('disabled');
     };
 
 
-  });
+    $ocLazyLoad
+      .load([
+        './partials/common/js/jquery.cookie.js'
+      ])
+      .then(function() {
+        recommendService.fire();
+        layoutService.fire();
+
+        $(document).ready(function () {
+          var idx = 0;
+
+
+          $('.btn').on('click', function (e) {
+            var $this = $(this),
+                $navLi = $('.nav li'),
+                $formArea = $('.form-area'),
+                navLeng = $navLi.length,
+                formAleng = $formArea.length;
+
+            if($this.is('.btn-next')){
+              idx ++;
+              $navLi.eq(idx).addClass('on').siblings().removeClass('on');
+              $formArea.eq(idx).addClass('on').siblings().removeClass('on');
+              if(idx == navLeng) e.preventDefault();
+              if(idx == formAleng) e.preventDefault();
+            }
+            if($this.is('.btn-prev')){
+              idx --;
+              $navLi.eq(idx).addClass('on').siblings().removeClass('on');
+              $formArea.eq(idx).addClass('on').siblings().removeClass('on');
+              if(idx == navLeng) e.preventDefault();
+              if(idx == formAleng) e.preventDefault();
+            }
+          });
+
+          $('.test').click(function () {
+            console.log("test")
+            $('.btn-next').removeAttr('disabled')
+          })
+        })
+      });
+  }]);//recommendController.controller
 });
-
-function labelOn () {
-
-}

@@ -7,12 +7,14 @@ define(['projectSugar'], function () {
   indemnityAnalysisModule.controller('indemnityAnalysisController', ['$scope', '$ocLazyLoad', 'indemnityAnalysisService', 'layoutService',
     function($scope, $ocLazyLoad, indemnityAnalysisService, layoutService) {
 
-      $ocLazyLoad.load([
-
-      ]).then(function() {
-        indemnityAnalysisService.fire();
-        layoutService.fire();
-      });
+      $ocLazyLoad
+        .load([
+          './partials/common/js/jquery.cookie.js'
+        ])
+        .then(function() {
+          indemnityAnalysisService.fire();
+          layoutService.fire();
+        });
 
 
     }]);//productGuideController.controller

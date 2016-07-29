@@ -7,12 +7,14 @@ define(['projectSugar'], function () {
   knowExactlyModule.controller('knowExactlyController', ['$scope', '$ocLazyLoad', 'knowExactlyService', 'layoutService',
     function($scope, $ocLazyLoad, knowExactlyService, layoutService) {
 
-      $ocLazyLoad.load([
-
-      ]).then(function() {
-        knowExactlyService.fire();
-        layoutService.fire();
-      });
+      $ocLazyLoad
+        .load([
+          './partials/common/js/jquery.cookie.js'
+        ])
+        .then(function() {
+          knowExactlyService.fire();
+          layoutService.fire();
+        });
 
     }]);//knowExactlyeController.controller
 

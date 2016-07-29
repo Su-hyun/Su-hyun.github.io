@@ -7,12 +7,14 @@ define(['projectSugar'], function () {
   userAgreementModule.controller('userAgreementController', ['$scope', '$ocLazyLoad', 'userAgreementService', 'layoutService',
     function($scope, $ocLazyLoad, userAgreementService, layoutService) {
 
-      $ocLazyLoad.load([
-
-      ]).then(function() {
-        userAgreementService.fire();
-        layoutService.fire();
-      });
+      $ocLazyLoad
+        .load([
+          './partials/common/js/jquery.cookie.js'
+        ])
+        .then(function() {
+          userAgreementService.fire();
+          layoutService.fire();
+        });
 
 
     }]);//productGuideController.controller

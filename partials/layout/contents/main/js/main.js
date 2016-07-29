@@ -5,10 +5,6 @@ $(document).ready(function () {
       idx= 0,
       flag = true;
 
-  console.log("메인");
-
-  console.log($eventArea);
-
   $(window).resize(function () {
     var eventWID = $('.event-con').width(),
         eventHEI = eventWID * 0.43,
@@ -37,7 +33,6 @@ $(document).ready(function () {
   var slideRel = setInterval(function () {
     idx++;
     fadeFn ($eventList, idx, 2000);
-    console.log(idx)
   },4000);
 
   //var slideRel = setInterval(function () {
