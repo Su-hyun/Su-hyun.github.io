@@ -517,11 +517,11 @@ define(
 
             $eventList.eq(idx).addClass('on');
             var slideRel = setInterval(function () {
-              slideFn ($eventList, idx, 0, "-100%", 1000);
+              slideFn ($eventList, idx, 0, "-100%", 500);
               idx ++;
               //fadeFn ($eventList, idx, 1000);
-              slideFn ($eventList, idx, "100%", 0, 1000);
-            },4000);
+              slideFn ($eventList, idx, "100%", 0, 500);
+            },3000);
 
             //$eventArea.on({
             //  mouseenter : function () {
