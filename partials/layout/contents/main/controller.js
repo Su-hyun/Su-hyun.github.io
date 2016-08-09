@@ -99,30 +99,49 @@ define(['projectSugar'], function () {
         .then(function() {
           mainService.fire();
           layoutService.fire();
+
+          var $eventArea = $('.event-area'),
+              $eventList = $('.event-list'),
+              idx = 0;
+
+          $(window).resize(function () {
+            var eventWID = $('.event-con').width(),
+                movetxt01HEI = $('.move-txt01').height();
+            $('.move-txt02').css('height',movetxt01HEI);
+            $eventList.eq(0).css('margin-left' , -eventWID * 0.23);
+          });
+          $(window).trigger("resize");
+
+          $eventList.eq(idx).addClass('on');
+          var slideRel = setInterval(function () {
+            idx ++;
+            fadeFn ($eventList, idx, 2000);
+          },4000);
+
+          //$eventArea.on({
+          //  mouseenter : function () {
+          //    clearInterval(slideRel)
+          //  },
+          //  mouseleave : function () {
+          //    slideRel = setInterval(function () {
+          //      idx++;
+          //      fadeFn ($eventList, idx, 2000);
+          //    },4000);
+          //  }
+          //});
+          function fadeFn (select, index, sec) {
+            var leng = select.length;
+            select.eq(index).find('.event-area').fadeIn(sec)
+                .parent('li').addClass('on')
+                .siblings().removeClass('on').find('.event-area')
+                .fadeOut(sec);
+            if(index == leng){
+              idx = 0;
+              fadeFn (select, idx, 2000);
+            }
+          }
         });
-
-
     }]);//mainController.controller
-
-
-  //// 메인 페이지 콘트롤러 추가
-  //// 슬라이드
-  //mainModule.controller('eventCtrl', function ($scope) {
-  //
-  //});
-  //
-  //
-  ////슈가의 보험 추천이 일리있는 이유
-  //mainModule.controller('resonCtrl', function ($scope) {
-  //
-  //
-  //
-  //});
-  //
-  //// 보험의 진실편
-  //mainModule.controller('truthCtrl', function ($scope) {
-  //
-  //});
 
   // directive
   mainModule.directive('viewDetail', function () {

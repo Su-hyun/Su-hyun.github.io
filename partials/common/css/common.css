@@ -270,6 +270,13 @@ main contents
 
 @media all and (max-width:930px){
 
+  body{
+    background-color:lightgreen;
+  }
+  #header{
+    background-color:skyblue;
+  }
+
   /* -- header -- */
 
   .lnb li{

@@ -17,6 +17,7 @@
   display:block;
   width:320px;
   height:48px;
+  margin-bottom:10px;
   color:#fff;
   line-height:2.5;
   background-color:#548ed0;
@@ -236,7 +237,7 @@
   border:0 none;
 }
 
-footer.btn-block{
+.searchInsurance footer.btn-block{
   margin-bottom:54px;
   padding:25px 0;
   text-align:center;
@@ -244,16 +245,16 @@ footer.btn-block{
   border-bottom:1px solid #dddddd;
   background-color:#f4f4f6;
 }
-footer p,
-footer .btn{
+.searchInsurance footer p,
+.searchInsurance footer .btn{
   display:inline-block;
   vertical-align: middle;
   font-size:0.8rem;
 }
-footer p{
+.searchInsurance footer p{
   text-align:left;
 }
-footer .btn{
+.searchInsurance footer .btn{
   width:320px;
   height:48px;
   margin-left:200px;

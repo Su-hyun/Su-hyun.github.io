@@ -67,7 +67,7 @@ require.config({
 require([
     'projectSugar'
   ],
-  function (projectSugar, css) {
+  function (projectSugar) {
     $ (document).ready (function () {
       angular.bootstrap (document, ['projectSugar']);
     });
