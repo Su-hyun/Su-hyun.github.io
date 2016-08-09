@@ -7,7 +7,6 @@ define([ 'projectSugar' ], function() {
 			function($rootScope) {
 				return {
 					fire : function() {
-					  console.log("start???");
 					  var idx = 0;
 
             $('.lnb > li').on('click', function() {
