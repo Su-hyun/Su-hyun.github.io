@@ -2,7 +2,8 @@
 
 define(['projectSugar'], function () {
 
-  var routeModule = angular.module('projectSugar', ['ngRoute', 'ui.router', 'oc.lazyLoad']);
+  var routeModule = angular.module('projectSugar', ['ui.router', 'oc.lazyLoad', 'ngAnimate', 'ngCookies', 'ngResource',
+      'ngRoute', 'ngSanitize', 'ngTouch' ]);
 
   routeModule.config(['$routeProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
     function($routeProvider, $stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
@@ -57,5 +58,6 @@ define(['projectSugar'], function () {
         });
         */
     }]); //indexModule.config
+
 });
 

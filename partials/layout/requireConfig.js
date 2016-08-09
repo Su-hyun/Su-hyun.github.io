@@ -54,14 +54,8 @@ require.config({
     'ngTouch': ['ngSanitize'],
 
     'ui.router': ['ngTouch'],
-    'pascalprecht.translate': ['ui.router'],
-    'pascalprecht.translateLoaderStaticFiles': ['pascalprecht.translate'],
-    'pascalprecht.translateStorageLocal': ['pascalprecht.translateLoaderStaticFiles'],
-    'pascalprecht.translateHandlerLog': ['pascalprecht.translateStorageLocal'],
-    'pascalprecht.translateStorageCookie': ['pascalprecht.translateHandlerLog'],
-    'tmh.dynamicLocale': ['pascalprecht.translateStorageCookie'],
 
-    'oc.lazyLoad': ['tmh.dynamicLocale'],
+    'oc.lazyLoad': ['ui.router'],
 
     'text': ['oc.lazyLoad'],
     'css': ['text'],

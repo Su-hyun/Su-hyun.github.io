@@ -1,6 +1,6 @@
 <section class="wrapper" ng-controller="mainController">
   <article class="article1">
-    <section class="visual" ng-controller="eventCtrl">
+    <section class="visual">
       <ul class="visual-event">
         <li class="event-list" ng-repeat="event in eventList">
           <a href="#">{{$index+1}}</a>
@@ -58,7 +58,7 @@
         <h2>슈가의 보험 추천이 <strong>일리있는</strong> 이유</h2>
         <span class="align-middle"></span>
       </div>
-      <ul class="recommend" ng-controller="resonCtrl">
+      <ul class="recommend">
         <li ng-repeat="reson in resonList" >
           <div class="recommend-img"><img src="{{reson.imageUrl}}" alt=""></div>
           <div class="recommend-txt">
@@ -76,7 +76,7 @@
         <span class="align-middle"></span>
       </div>
       <div class="truth-list-area">
-        <ul class="truth-list" ng-controller="truthCtrl">
+        <ul class="truth-list">
           <li ng-repeat="truth in truthList">
             <div class="truth-img" style="background-image:{{truth.imageUrl}}">
               <view-detail></view-detail>

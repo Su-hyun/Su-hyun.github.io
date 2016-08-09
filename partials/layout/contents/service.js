@@ -2,9 +2,9 @@
 
 define(['projectSugar'], function () {
 
-  var mainServiceModule = angular.module('mainServiceModule', []);
+  var contentsServiceModule = angular.module('contentsServiceModule', []);
 
-  mainServiceModule.factory('mainService', ['$rootScope',
+  contentsServiceModule.factory('contentsService', ['$rootScope',
     function($rootScope) {
       return {
         fire: function() {

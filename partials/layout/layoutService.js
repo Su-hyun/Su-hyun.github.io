@@ -30,11 +30,11 @@ define([ 'projectSugar' ], function() {
               }
             });
 
+            $eventList.eq(idx).addClass('on');
             var slideRel = setInterval(function () {
               idx ++;
               fadeFn ($eventList, idx, 2000);
             },4000);
-
             $eventArea.on({
               mouseenter : function () {
                 clearInterval(slideRel)
@@ -46,7 +46,6 @@ define([ 'projectSugar' ], function() {
                 },4000);
               }
             });
-
             function fadeFn (select, index, sec) {
               var leng = select.length;
               select.eq(index).find('.event-area').fadeIn(sec)

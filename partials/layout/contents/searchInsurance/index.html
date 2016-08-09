@@ -1,5 +1,85 @@
-<section class="wrapper" ng-controller="searchInsuranceController">
-<h2>searchInsurance</h2>
-
-<a href="#" ng-click="recommend()">100% 무료 추천받기</a>
+<section class="wrapper searchInsurance" ng-controller="searchInsuranceController">
+  <header>
+    <div class="visual">
+      <div class="container">
+        <h2>
+          어떤 보험이<br>
+          <strong>정말로 필요</strong>한지 모르죠?
+        </h2>
+        <p>
+          딱 맞는 보험을 찾는데 필요한 시간, <span>30</span>초
+        </p>
+        <div class="img-web"><img src="" alt="sugar 홈페이지 내게 맞는 보험 찾기"></div>
+        <div class="img-mobile"><img src="" alt="sugar 모바일 홈페이지"></div>
+      </div>
+    </div>
+    <div class="visual-btn-area btn-block">
+      <button class="btn">슈가 추천 시작하기 <i class="ir">오른쪽 화살표</i></button>
+      개인정보를 요구하거나 전화로 귀찮게 하지 않습니다.
+    </div>
+  </header>
+  <article class="article1">
+    <div class="container">
+      <div class="title">
+        <h2><strong>왜</strong> 사람들이 슈가추천을 선택할까요?</h2>
+        <span class="align-middle"></span>
+      </div>
+      <ul class="choice-list">
+        <li ng-repeat="choice in choiceList" >
+          <div class="choice-img"><img ng-src="./partials/layout/contents/searchInsurance/img/{{choice.imageUrl}}" alt=""></div>
+          <div class="choice-txt">
+            <h3>{{choice.tit}}</h3>
+            <p>{{choice.txt}}</p>
+            <p>{{choice.txt2}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </article>
+  <article class="article2">
+    <div class="container">
+      <div class="title">
+        <h2>슈가 추천을 받아야 하는 <strong>3</strong> 가지 이유</h2>
+        <span class="align-middle"></span>
+      </div>
+      <ul class="reason">
+        <li class="col-sm-9" ng-repeat="reason in reasonList" >
+          <div class="reason-txt">
+            <h3>{{reason.tit}}</h3>
+            <p>{{reason.txt1}}</p>
+            <p>{{reason.txt2}}</p>
+            <p>{{reason.txt3}}</p>
+          </div>
+          <span class="align-middle"></span>
+          <div class="reason-img"><img ng-src="./partials/layout/contents/searchInsurance/img/{{reason.imageUrl}}" alt=""></div>
+        </li>
+      </ul>
+    </div>
+  </article>
+  <article class="article3">
+    <div class="container">
+      <div class="review-list-area">
+        <ul class="review-list">
+          <li ng-repeat="review in reviewList">
+            <a href="#" ng-mousedown="count = count + 1">
+              <div class="review-txt-area">
+                <h3>{{review.name}} / {{review.userAge}}세 / {{review.date}} <span class="counter">{{count}}</span></h3>
+                <p class="review-txt">{{review.txt}}</p>
+              </div>
+              <div class="review-img">
+                <img ng-src="./partials/layout/contents/searchInsurance/img/{{review.imageUrl}}" alt="리뷰어">
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+  <footer class="btn-block">
+    <p>
+      나에게 딱 맞는 보험~ 30초면 충분합니다.<br>
+      개인정보를 요구하거나 전화로 귀찮게 하지 않습니다.
+    </p>
+    <a href="#" class="btn" ng-click="recommend()">100% 무료 추천받기</a>
+  </footer>
 </section>
