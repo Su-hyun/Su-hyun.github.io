@@ -9,6 +9,7 @@ define([ 'projectSugar' ], function() {
 					fire : function() {
 					  var idx = 0;
             $('.lnb > li').on('click', function() {
+              console.log('click')
               idx = $ (this).find ('.sub-lnb > li').length;
               var $this = $ (this),
                   liHEI = $ (this).find ('.sub-lnb > li').innerHeight ();

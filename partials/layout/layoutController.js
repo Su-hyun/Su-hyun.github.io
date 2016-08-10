@@ -54,24 +54,25 @@ define(
       //};
 
       //보험바로 알기
-      $scope.knowExactly = function() {
-        $ocLazyLoad
-          .load([{
-              name : 'knowExactlyService',
-              files : [ 'partials/layout/contents/knowExactly/service.js' ]
-            },{
-              name : 'knowExactlyController',
-              files : [ 'partials/layout/contents/knowExactly/controller.js' ]
-            }, 'partials/layout/contents/knowExactly/index.css'
-          ])
-          .then(function() {
-              $scope.contentWrapper = "partials/layout/contents/knowExactly/";
-            }, function(e) {
-              console.log(e);
-            }
-          );
+      $scope.knowExactly = function(id) {
+        var $this = $($(id.target));
+        if($this.parent().is('.active')) {
+          $ocLazyLoad
+            .load ([{
+                name: 'knowExactlyService',
+                files: ['partials/layout/contents/knowExactly/service.js']
+              }, {
+                name: 'knowExactlyController',
+                files: ['partials/layout/contents/knowExactly/controller.js']
+              }, 'partials/layout/contents/knowExactly/index.css'])
+            .then (function () {
+                $scope.contentWrapper = "partials/layout/contents/knowExactly/";
+              }, function (e) {
+                console.log (e);
+              }
+            );
+        }
       };
-
 
       // 내게 맞는 보험 찾기
       $scope.searchInsurance = function() {
@@ -114,59 +115,62 @@ define(
       //보험상품 추천
       $scope.suggest = function() {
         $ocLazyLoad
-          .load([{
-              name : 'suggestService',
-              files : [ 'partials/layout/contents/suggest/service.js' ]
-            },{
-              name : 'suggestController',
-              files : [ 'partials/layout/contents/suggest/controller.js' ]
-            }, 'partials/layout/contents/suggest/index.css'
+          .load ([{
+            name: 'suggestService',
+            files: ['partials/layout/contents/suggest/service.js']
+          }, {
+            name: 'suggestController',
+            files: ['partials/layout/contents/suggest/controller.js']
+          }, 'partials/layout/contents/suggest/index.css'
           ])
-          .then(function() {
-              $scope.contentWrapper = "partials/layout/contents/suggest/";
-            }, function(e) {
-              console.log(e);
-            }
+          .then (function () {
+                $scope.contentWrapper = "partials/layout/contents/suggest/";
+              }, function (e) {
+                console.log (e);
+              }
           );
       };
 
       // 상품 가이드
-      $scope.productGuide = function() {
-        $ocLazyLoad
-          .load([{
-              name : 'productGuideService',
-              files : [ 'partials/layout/contents/productGuide/service.js' ]
-            },{
-              name : 'productGuideController',
-              files : [ 'partials/layout/contents/productGuide/controller.js' ]
-            }, 'partials/layout/contents/productGuide/index.css'
-          ])
-          .then(function() {
-              $scope.contentWrapper = "partials/layout/contents/productGuide/";
-            }, function(e) {
-              console.log(e);
-            }
-          );
+      $scope.productGuide = function(id) {
+        var $this = $($(id.target));
+        if($this.parent().is('.active')){
+          $ocLazyLoad
+            .load([{
+                name : 'productGuideService',
+                files : [ 'partials/layout/contents/productGuide/service.js' ]
+              },{
+                name : 'productGuideController',
+                files : [ 'partials/layout/contents/productGuide/controller.js' ]
+              }, 'partials/layout/contents/productGuide/index.css'])
+            .then(function() {
+                $scope.contentWrapper = "partials/layout/contents/productGuide/";
+              }, function(e) {
+                console.log(e);
+              }
+            );
+        }
       };
 
-
       // 보장분석
-      $scope.indemnityAnalysis = function() {
-        $ocLazyLoad
-          .load([{
-              name : 'indemnityAnalysisService',
-              files : [ 'partials/layout/contents/indemnityAnalysis/service.js' ]
-            },{
-              name : 'indemnityAnalysisController',
-              files : [ 'partials/layout/contents/indemnityAnalysis/controller.js' ]
-            }, 'partials/layout/contents/indemnityAnalysis/index.css'
-          ])
-          .then(function() {
-              $scope.contentWrapper = "partials/layout/contents/indemnityAnalysis/";
-            }, function(e) {
-              console.log(e);
-            }
-          );
+      $scope.indemnityAnalysis = function(id) {
+        var $this = $($(id.target));
+        if($this.parent().is('.active')) {
+          $ocLazyLoad
+            .load ([{
+                name: 'indemnityAnalysisService',
+                files: ['partials/layout/contents/indemnityAnalysis/service.js']
+              }, {
+                name: 'indemnityAnalysisController',
+                files: ['partials/layout/contents/indemnityAnalysis/controller.js']
+              }, 'partials/layout/contents/indemnityAnalysis/index.css'])
+            .then (function () {
+                $scope.contentWrapper = "partials/layout/contents/indemnityAnalysis/";
+              }, function (e) {
+                console.log (e);
+              }
+            );
+        }
       };
 
       // FAQ
@@ -517,11 +521,11 @@ define(
 
             $eventList.eq(idx).addClass('on');
             var slideRel = setInterval(function () {
-              slideFn ($eventList, idx, 0, "-100%", 500);
+              //  slideFn ($eventList, idx, 0, "-100%", 1000);
               idx ++;
-              //fadeFn ($eventList, idx, 1000);
-              slideFn ($eventList, idx, "100%", 0, 500);
-            },3000);
+              fadeFn ($eventList, idx, 1000);
+              //  slideFn ($eventList, idx, "100%", 0, 1000);
+            },4000);
 
             //$eventArea.on({
             //  mouseenter : function () {

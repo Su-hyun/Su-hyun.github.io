@@ -1,0 +1,367 @@
+<section class="container suggest" ng-controller="suggestController">
+  <header>
+    <div class="util">
+      <ul>
+        <li><a href="#">E-mail</a></li>
+        <li><a href="#">Print</a></li>
+      </ul>
+    </div>
+    <div class="suggest-txt-area">
+      <h2>
+        <strong>슈가 <span class="highlight">추천</span> 보험</strong>은?
+        <a href="#">올바른 보험 활용방법 자세히 보기</a>
+      </h2>
+      <p>
+        꼭 가입해야 하는 보험과<br>
+        고려해볼만한 보험으로 나누어 추천합니다.
+      </p>
+    </div>
+    <ul class="premium">
+      <li>위험보장 Total<span>79,000</span>원</li>
+      <li>노후대비 Total<span>179,000</span>원</li>
+    </ul>
+  </header>
+  <article>
+    <div class="title">
+      <h3><span class="needs">꼭</span> 필요한 보험(Must Have)</h3>
+    </div>
+    <section class="contents">
+      <div class="top-area">
+        <div class="form">
+          <label for="checked-01">01</label>
+          <input type="checkbox" id="checked-01" ng-model="risk" >
+        </div>
+        <div class="noti-txt">
+          <h4>
+            실손의료비보험 <span>월 {{9900}}</span>
+          </h4>
+          <p>
+            각종 질병 및 사고 시 발생하는 의료비를 가장 포괄적으로 보장해주는 보험으로 총 의료비 지출 중 국민건강보험에서 지원하지 않는 금액을 보장하기 때문에 "Must have" 보험으로 추천합니다.
+          </p>
+        </div>
+        <div class="info-img">
+          <img src="" alt="기본부터 갖추기~">
+        </div>
+      </div>
+      <div class="bottom-area">
+        <div class="left-area">
+          <article class="expain">
+            <div class="suggest-why">
+              <h4>이렇게 가입해라!</h4>
+              <ul class="why-list">
+                <li>단독 실비 의료비 보험</li>
+                <li>선택형 가입</li>
+                <li>보험기간 1년 / 1년납</li>
+              </ul>
+            </div>
+            <div class="suggest-why">
+              <h4>왜?</h4>
+              <ul class="why-list">
+                <li>
+                  현재 필요한<br>사망보장금액 3억원 왜?!
+                  <ul class="why-sub">
+                    <li>사망보장금액은 미래 소득을 대체 할 수 있는 금액으로 산정되어야 합니다.</li>
+                    <li>당신의 현 소득을 기초로 은퇴 전까지 벌어 들일 미래 소득을 예측하여 산출 되었습니다.</li>
+                  </ul>
+                </li>
+                <li>
+                  선택형 가입
+                  <ul class="why-sub">
+                    <li>현재시점에서 필요한 총 사망보험금은 3억이지만 살면서 벌게 되는 소득을 차감하면 사망보험금은 점차적으로 낮아져야 합니다.</li>
+                  </ul>
+                </li>
+                <li>
+                  보험기간 1년 / 1년납
+                  <ul class="why-sub">
+                    <li>사망보험금이 지속적으로 낮아지는 소비자 중심의 상품은 현재 판매되고 있지 않습니다. 슈가는 사망보험금을 조금씩 낮추는 최적의 조합을 제시합니다.</li>
+                  </ul>
+                </li>
+              </ul>
+              <button class="more-info">자세히 알아보기</button>
+            </div>
+          </article>
+        </div>
+        <div class="right-area">
+          <div class="product-area">
+            <p>OOO님</p>
+            <ul class="product-list">
+              <li class="view-type1">
+                <div class="form">
+                  <label for="list1-check1"><img src="" alt="로고"></label>
+                  <input type="checkbox" id="list1-check1">
+                </div>
+                <div class="list-premium">
+                  <p>월 <span>{{9900}}</span> 원 (최저가)</p>
+                  <span class="align-middle"></span>
+                </div>
+                <ul class="product-why">
+                  <li>(무) 롯데 실손의료비 보험</li>
+                  <li>자기부담금 : 선택형 II<br>(본인부담금 10% + 비급여 20%)</li>
+                </ul>
+                <button class="btn-join">온라인 바로가입</button>
+              </li>
+              <li class="view-type1">
+                <div class="form">
+                  <label for="list1-check2"><img src="" alt="로고"></label>
+                  <input type="checkbox" id="list1-check2">
+                </div>
+                <div class="list-premium">
+                  <p>월 <span>{{12900}}</span> 원</p>
+                  <span class="align-middle"></span>
+                </div>
+                <ul class="product-why">
+                  <li>(무) 롯데 실손의료비 보험</li>
+                  <li>자기부담금 : 선택형 II<br>(본인부담금 10% + 비급여 20%)</li>
+                </ul>
+                <button class="btn-join">온라인 바로가입</button>
+              </li>
+              <li class="view-type2">
+                <div class="table">
+                  <table>
+                    <colgroup>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                      <td rowspan="2">
+                        <label for="list1-check3"></label>
+                        <input type="checkbox" id="list1-check3">
+                      </td>
+                      <td rowspan="2"><img src="" alt="로고"></td>
+                      <td>상품명</td>
+                      <td>가입연령</td>
+                      <td>월보험료</td>
+                      <td rowspan="2">
+                        <button class="btn-join type2">온라인 바로가입</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ellipsis">(무)교보 실손 의료비 보험</td>
+                      <td>0 ~ 65세</td>
+                      <td><span>{{17000}}</span>원</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </li>
+              <li class="view-type2">
+                <div class="table">
+                  <table>
+                    <colgroup>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                      <td rowspan="2">
+                        <label for="list1-check4"></label>
+                        <input type="checkbox" id="list1-check4">
+                      </td>
+                      <td rowspan="2"><img src="" alt="로고"></td>
+                      <td>상품명</td>
+                      <td>가입연령</td>
+                      <td>월보험료</td>
+                      <td rowspan="2">
+                        <button class="btn-join type2">온라인 바로가입</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ellipsis">(무)교보 실손 의료비 보험</td>
+                      <td>0 ~ 65세</td>
+                      <td><span>{{17000}}</span>원</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </li>
+              <li class="view-type2">
+                <div class="table">
+                  <table>
+                    <colgroup>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                      <td rowspan="2">
+                        <label for="list1-check5"></label>
+                        <input type="checkbox" id="list1-check5">
+                      </td>
+                      <td rowspan="2"><img src="" alt="로고"></td>
+                      <td>상품명</td>
+                      <td>가입연령</td>
+                      <td>월보험료</td>
+                      <td rowspan="2">
+                        <button class="btn-join type2">온라인 바로가입</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ellipsis">(무)교보 실손 의료비 보험</td>
+                      <td>0 ~ 65세</td>
+                      <td><span>{{17000}}</span>원</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="product-area">
+            <p>OOO님의 자녀</p>
+            <ul class="product-list">
+              <li class="view-type1">
+                <div class="form">
+                  <label for="list2-check1"><img src="" alt="로고"></label>
+                  <input type="checkbox" id="list2-check1">
+                </div>
+                <div class="premium">
+                  <p>월 <span>{{9900}}</span> 원 (최저가)</p>
+                  <span class="align-middle"></span>
+                </div>
+                <ul class="product-why">
+                  <li>(무) 롯데 실손의료비 보험</li>
+                  <li>자기부담금 : 선택형 II<br>(본인부담금 10% + 비급여 20%)</li>
+                </ul>
+                <button class="btn-join">온라인 바로가입</button>
+              </li>
+              <li class="view-type1">
+                <div class="form">
+                  <label for="list2-check2"><img src="" alt="로고"></label>
+                  <input type="checkbox" id="list2-check2">
+                </div>
+                <div class="premium">
+                  <p>월 <span>{{12900}}</span> 원</p>
+                  <span class="align-middle"></span>
+                </div>
+                <ul class="product-why">
+                  <li>(무) 롯데 실손의료비 보험</li>
+                  <li>자기부담금 : 선택형 II<br>(본인부담금 10% + 비급여 20%)</li>
+                </ul>
+                <button class="btn-join">온라인 바로가입</button>
+              </li>
+              <li class="view-type2">
+                <div class="table">
+                  <table>
+                    <colgroup>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                      <td rowspan="2">
+                        <label for="list2-check3"></label>
+                        <input type="checkbox" id="list2-check3">
+                      </td>
+                      <td rowspan="2"><img src="" alt="로고"></td>
+                      <td>상품명</td>
+                      <td>가입연령</td>
+                      <td>월보험료</td>
+                      <td rowspan="2">
+                        <button class="btn-join type2">온라인 바로가입</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ellipsis">(무)교보 실손 의료비 보험</td>
+                      <td>0 ~ 65세</td>
+                      <td><span>{{17000}}</span>원</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </li>
+              <li class="view-type2">
+                <div class="table">
+                  <table>
+                    <colgroup>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                      <td rowspan="2">
+                        <label for="list2-check4"></label>
+                        <input type="checkbox" id="list2-check4">
+                      </td>
+                      <td rowspan="2"><img src="" alt="로고"></td>
+                      <td>상품명</td>
+                      <td>가입연령</td>
+                      <td>월보험료</td>
+                      <td rowspan="2">
+                        <button class="btn-join type2">온라인 바로가입</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ellipsis">(무)교보 실손 의료비 보험</td>
+                      <td>0 ~ 65세</td>
+                      <td><span>{{17000}}</span>원</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </li>
+              <li class="view-type2">
+                <div class="table">
+                  <table>
+                    <colgroup>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                      <td rowspan="2">
+                        <label for="list2-check5"></label>
+                        <input type="checkbox" id="list2-check5">
+                      </td>
+                      <td rowspan="2"><img src="" alt="로고"></td>
+                      <td>상품명</td>
+                      <td>가입연령</td>
+                      <td>월보험료</td>
+                      <td rowspan="2">
+                        <button class="btn-join type2">온라인 바로가입</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ellipsis">(무)교보 실손 의료비 보험</td>
+                      <td>0 ~ 65세</td>
+                      <td><span>{{17000}}</span>원</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+  <footer class="suggest-btn-group">
+    <a class="btn">슈가추천결과 E-mail로 받아보기</a>
+    <a href="#" class="btn btn-type2" ng-click="signIn()">슈가 회원가입으로 보험 고수되기</a>
+  </footer>
+</section>
