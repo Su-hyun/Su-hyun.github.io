@@ -29,5 +29,8 @@ Browser Support
 
 Change log
 ----------
+**v1.0.1:**
+Architecture build end
+
 **v1.0.0:**
 Struct build
