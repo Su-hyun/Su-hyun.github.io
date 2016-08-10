@@ -13,7 +13,7 @@ define(
 
       $scope.$on('$includeContentLoaded',function(event, file) {
         if (file === 'partials/layout/header/') {
-          layoutService.fire();
+          //layoutService.header();
         } else if (file === 'partials/layout/contents/') {
           $ocLazyLoad
               .load('partials/layout/contents/main/index.css');
@@ -59,17 +59,17 @@ define(
         if($this.parent().is('.active')) {
           $ocLazyLoad
             .load ([{
-                name: 'knowExactlyService',
-                files: ['partials/layout/contents/knowExactly/service.js']
-              }, {
-                name: 'knowExactlyController',
-                files: ['partials/layout/contents/knowExactly/controller.js']
-              }, 'partials/layout/contents/knowExactly/index.css'])
+              name: 'knowExactlyService',
+              files: ['partials/layout/contents/knowExactly/service.js']
+            }, {
+              name: 'knowExactlyController',
+              files: ['partials/layout/contents/knowExactly/controller.js']
+            }, 'partials/layout/contents/knowExactly/index.css'])
             .then (function () {
-                $scope.contentWrapper = "partials/layout/contents/knowExactly/";
-              }, function (e) {
-                console.log (e);
-              }
+                  $scope.contentWrapper = "partials/layout/contents/knowExactly/";
+                }, function (e) {
+                  console.log (e);
+                }
             );
         }
       };
@@ -137,17 +137,17 @@ define(
         if($this.parent().is('.active')){
           $ocLazyLoad
             .load([{
-                name : 'productGuideService',
-                files : [ 'partials/layout/contents/productGuide/service.js' ]
-              },{
-                name : 'productGuideController',
-                files : [ 'partials/layout/contents/productGuide/controller.js' ]
-              }, 'partials/layout/contents/productGuide/index.css'])
+              name : 'productGuideService',
+              files : [ 'partials/layout/contents/productGuide/service.js' ]
+            },{
+              name : 'productGuideController',
+              files : [ 'partials/layout/contents/productGuide/controller.js' ]
+            }, 'partials/layout/contents/productGuide/index.css'])
             .then(function() {
-                $scope.contentWrapper = "partials/layout/contents/productGuide/";
-              }, function(e) {
-                console.log(e);
-              }
+                  $scope.contentWrapper = "partials/layout/contents/productGuide/";
+                }, function(e) {
+                  console.log(e);
+                }
             );
         }
       };
@@ -158,17 +158,17 @@ define(
         if($this.parent().is('.active')) {
           $ocLazyLoad
             .load ([{
-                name: 'indemnityAnalysisService',
-                files: ['partials/layout/contents/indemnityAnalysis/service.js']
-              }, {
-                name: 'indemnityAnalysisController',
-                files: ['partials/layout/contents/indemnityAnalysis/controller.js']
-              }, 'partials/layout/contents/indemnityAnalysis/index.css'])
+              name: 'indemnityAnalysisService',
+              files: ['partials/layout/contents/indemnityAnalysis/service.js']
+            }, {
+              name: 'indemnityAnalysisController',
+              files: ['partials/layout/contents/indemnityAnalysis/controller.js']
+            }, 'partials/layout/contents/indemnityAnalysis/index.css'])
             .then (function () {
-                $scope.contentWrapper = "partials/layout/contents/indemnityAnalysis/";
-              }, function (e) {
-                console.log (e);
-              }
+                  $scope.contentWrapper = "partials/layout/contents/indemnityAnalysis/";
+                }, function (e) {
+                  console.log (e);
+                }
             );
         }
       };
@@ -316,7 +316,30 @@ define(
         });
     }]); // layoutIndexModule.controller
 
-
+    layoutIndexModule.controller('headerController', ['$scope', '$ocLazyLoad', 'layoutService',
+      function($scope, $ocLazyLoad, layoutService) {
+        $ocLazyLoad
+          .load([
+            './partials/common/js/jquery.cookie.js'
+          ])
+          .then(function() {
+            var idx = 0;
+            $('.lnb > li').on('click', function() {
+              console.log('click')
+              idx = $ (this).find ('.sub-lnb > li').length;
+              var $this = $ (this),
+                  liHEI = $ (this).find ('.sub-lnb > li').innerHeight ();
+              if (!$this.is ('.active')) {
+                $this.addClass ('active');
+                $this.children ('.sub-lnb').css ("height", liHEI * idx);
+                $this.siblings ().removeClass ('active').children ('.sub-lnb').css ('height', 0);
+              } else if ($this.is ('.active')) {
+                $this.removeClass ('active');
+                $this.children ('.sub-lnb').css ('height', 0)
+              }
+            });
+          })
+      }]);
 
     // * main page *
     layoutIndexModule.controller('contentsController', ['$scope', '$ocLazyLoad', 'layoutService',
