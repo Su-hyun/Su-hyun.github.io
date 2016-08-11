@@ -30,7 +30,7 @@ Browser Support
 Change log
 ----------
 **v1.0.1:**
-Architecture build end
+Architecture build complete
 
 **v1.0.0:**
 Struct build
