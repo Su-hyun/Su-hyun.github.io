@@ -146,6 +146,7 @@
 }
 .move-menu p{
   width:60%;
+  min-height:56px;
   margin-top:20px;
   font-size:0.65rem;
   word-break:keep-all;
