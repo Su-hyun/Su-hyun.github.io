@@ -24,7 +24,8 @@ define(['projectSugar'], function () {
           resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
             layoutIndexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
               // you can lazy load files for an existing module
-              return $ocLazyLoad.load([{
+              return $ocLazyLoad.load(['partials/layout/contents/index.css',
+              {
                 name: 'layoutService',
                 files: ['partials/layout/layoutService.js']
               },{
