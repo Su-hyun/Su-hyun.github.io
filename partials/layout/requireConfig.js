@@ -10,7 +10,7 @@ require.config({
       var line = document.createElement("div");
       line.className = "requireLoadingText";
       line.innerHTML = ">> " + moduleName
-          + " has been loaded complete";
+          + " has been loaded (200 OK)";
       document.body.appendChild(line);
     });
 
