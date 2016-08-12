@@ -409,17 +409,17 @@ define(
             tit : "치과보험 손해 안 보려면 치과 절대 가지 마라",
             date : "2016-06-06",
             txt : "Phasellus vehicula justo eget diam posuere sollicitudin eu tincidunt nulla",
-            imageUrl:"url(./partials/layout/contents/main/img/reason-01.jpg)"
+            imageUrl:"reason-01.jpg"
           },{
             tit : "치과보험 손해 안 보려면 치과 절대 가지 마라",
             date : "2016-06-06",
             txt : "Phasellus vehicula justo eget diam posuere sollicitudin eu tincidunt nulla",
-            imageUrl:"url(./partials/layout/contents/main/img/reason-01.jpg)"
+            imageUrl:"reason-01.jpg"
           },{
             tit : "치과보험 손해 안 보려면 치과 절대 가지 마라",
             date : "2016-06-06",
             txt : "Phasellus vehicula justo eget diam posuere sollicitudin eu tincidunt nulla",
-            imageUrl:"url(./partials/layout/contents/main/img/reason-01.jpg)"
+            imageUrl:"reason-01.jpg"
           }
         ];
 

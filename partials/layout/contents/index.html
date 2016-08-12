@@ -78,7 +78,10 @@
       <div class="truth-list-area">
         <ul class="truth-list">
           <li ng-repeat="truth in truthList">
-            <div class="truth-img" style="background-image:{{truth.imageUrl}}">
+            <div class="truth-img-area">
+              <div class="truth-img">
+                <img ng-src="./partials/layout/contents/main/img/{{truth.imageUrl}}" alt="">
+              </div>
               <view-detail></view-detail>
             </div>
             <div class="truth-txt-area">
