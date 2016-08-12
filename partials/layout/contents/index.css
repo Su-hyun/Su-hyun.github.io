@@ -1,14 +1,6 @@
 @charset "utf-8";
 
 /* -- 비쥬얼 이벤트 -- */
-@keyframes fade {
-  0%   { opacity: 0; }
-  11.11%   { opacity: 1; }
-  33.33%  { opacity: 1; }
-  44.44%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
 .visual{
   height:515px;
   position:relative;
@@ -39,9 +31,15 @@
 .event-list.on a{
   background-position: 0 -90px;
 }
-/*.event-list:first-child .event-area{*/
-  /*display:block;*/
-/*}*/
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  11.11%   { opacity: 1; }
+  33.33%  { opacity: 1; }
+  44.44%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
 .event-area{
   /*display:none;*/
   width:100%;
@@ -50,9 +48,17 @@
   top:0; left:0;
   opacity:0; animation-name: fade; animation-duration: 12s; animation-iteration-count: infinite;
 }
-.visual-event li:nth-child(1) .event-area { animation-delay: 0s;  }
-.visual-event li:nth-child(2) .event-area { animation-delay: 4s;  }
-.visual-event li:nth-child(3) .event-area { animation-delay: 8s;  }
+.visual-event li:nth-child(1) .event-area { background-color:#548ed0; animation-delay: 0s;  }
+.visual-event li:nth-child(2) .event-area { background-color:#848484; animation-delay: 4s;  }
+.visual-event li:nth-child(3) .event-area { background-color:#18b3af; animation-delay: 8s;  }
+
+.visual-event li:nth-child(1) .event-con { background-image:url(./main/img/slide-01.jpg); }
+.visual-event li:nth-child(2) .event-con { background-image:url(./main/img/slide-02.jpg); }
+.visual-event li:nth-child(3) .event-con { background-image:url(./main/img/slide-03.jpg); }
+
+.visual-event li:nth-child(1) .event-txt-area { background-image:url(./main/img/slide-txt-bg01.png);  }
+.visual-event li:nth-child(2) .event-txt-area { background-image:url(./main/img/slide-txt-bg01.png);  }
+.visual-event li:nth-child(3) .event-txt-area { background-image:url(./main/img/slide-txt-bg01.png);  }
 
 .event-con{
   width:100%;
