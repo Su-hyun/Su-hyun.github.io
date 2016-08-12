@@ -15,8 +15,6 @@ define(
         if (file === 'partials/layout/header/') {
           layoutService.fire();
         } else if (file === 'partials/layout/contents/') {
-          $ocLazyLoad
-              .load('partials/layout/contents/index.css');
           layoutService.fire();
         } else if (file === 'partials/layout/footer/') {
           layoutService.fire();
