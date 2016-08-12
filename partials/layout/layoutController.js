@@ -346,7 +346,7 @@ define(
       function($scope, $ocLazyLoad, layoutService) {
         $scope.eventList = [
           {
-            txtImgUrl:"url(./partials/layout/contents/main/img/slide-txt-bg01.png)",
+            txtImgUrl:"background-image:url(./partials/layout/contents/main/img/slide-txt-bg01.png)",
             titIr : "알면보험 모르면 모험",
             titBg : "slide-txt-tit01.png",
             titAlt : "슈가 is...",
@@ -357,9 +357,9 @@ define(
             txt3 : "슈가는 고객들이 보험에 제대로 가입하도록, 그리고 이미 가입한 보험을 " +
             "십분 활용할 수 있도록 도움을 주고자 만들어졌습니다.",
             imageUrl:"url(./partials/layout/contents/main/img/slide-01.jpg)",
-            bgColor:"#548ed0"
+            bgColor:"background-color:#548ed0"
           },{
-            txtImgUrl:"url(./partials/layout/contents/main/img/slide-txt-bg02.png)",
+            txtImgUrl:"background-image:url(./partials/layout/contents/main/img/slide-txt-bg02.png)",
             titIr : "알면보험 모르면 모험",
             titBg : "slide-txt-tit01.png",
             titAlt : "슈가 is...",
@@ -369,10 +369,10 @@ define(
             "합리적인 보험료를 납입하는지 쉽게 파악할 수 없는게 현실이다.",
             txt3 : "슈가는 고객들이 보험에 제대로 가입하도록, 그리고 이미 가입한 보험을 " +
             "십분 활용할 수 있도록 도움을 주고자 만들어졌습니다.",
-            imageUrl:"url(./partials/layout/contents/main/img/slide-02.jpg)",
-            bgColor:"#848484"
+            imageUrl:"background-image:url(./partials/layout/contents/main/img/slide-02.jpg)",
+            bgColor:"background-color:#848484"
           },{
-            txtImgUrl:"url(./partials/layout/contents/main/img/slide-txt-bg03.png)",
+            txtImgUrl:"background-image:url(./partials/layout/contents/main/img/slide-txt-bg03.png)",
             titIr : "알면보험 모르면 모험",
             titBg : "slide-txt-tit01.png",
             titAlt : "슈가 is...",
@@ -382,8 +382,8 @@ define(
             "합리적인 보험료를 납입하는지 쉽게 파악할 수 없는게 현실이다.",
             txt3 : "슈가는 고객들이 보험에 제대로 가입하도록, 그리고 이미 가입한 보험을 " +
             "십분 활용할 수 있도록 도움을 주고자 만들어졌습니다.",
-            imageUrl:"url(./partials/layout/contents/main/img/slide-03.jpg)",
-            bgColor:"#18b3af"
+            imageUrl:"background-image:url(./partials/layout/contents/main/img/slide-03.jpg)",
+            bgColor:"background-color:#18b3af"
           }
         ];
 
