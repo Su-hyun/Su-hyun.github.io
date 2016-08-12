@@ -1,12 +1,12 @@
-<section id="loadContents">
+<section ng-controller="contentsController">
   <article class="article1">
     <section class="visual">
       <ul class="visual-event">
         <li class="event-list" ng-repeat="event in eventList">
           <a href="#">{{$index+1}}</a>
-          <div class="event-area" style="{{event.bgColor}}">
-            <div class="event-con" style="{{event.imageUrl}}">
-              <div class="event-txt-area" style="{{event.txtImgUrl}}">
+          <div class="event-area" style="background-color:{{event.bgColor}}">
+            <div class="event-con" style="background-image:{{event.imageUrl}}">
+              <div class="event-txt-area" style="background-image:{{event.txtImgUrl}}">
                 <h2 class="event-tit-ir">{{event.titIr}}</h2>
                 <p class="event-tit"><img ng-src="./partials/layout/contents/main/img/{{event.titBg}}" alt="{{event.titAlt}}"></p>
                 <p class="event-txt type2">
