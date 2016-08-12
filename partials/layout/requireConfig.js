@@ -2,6 +2,25 @@
 
 require.config({
 	baseUrl: '',
+  waitSeconds: 30,
+
+  onNodeCreated: function(node, config, moduleName, url) {
+
+    node.addEventListener('load', function() {
+      var line = document.createElement("div");
+      line.className = "requireLoadingText";
+      line.innerHTML = ">> " + moduleName
+          + " has been loaded complete";
+      document.body.appendChild(line);
+    });
+
+    node.addEventListener('error', function() {
+      var line = document.createElement("div");
+      line.className = "requireLoadingText";
+      line.innerHTML = ">>" + 'module ' + moduleName
+          + ' could not be loaded';
+    });
+  },
 
 	paths: {
 		//jquery
