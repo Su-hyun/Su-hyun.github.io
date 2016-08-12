@@ -2,9 +2,9 @@
 
 define(['projectSugar'], function () {
   var recommendModule = angular.module('projectSugar', ['ui.router', 'oc.lazyLoad', 'recommendService', 'layoutService']);
-
   recommendModule.controller('recommendController', ['$scope', '$ocLazyLoad', 'recommendService', 'layoutService',
     function($scope, $ocLazyLoad, recommendService, layoutService) {
+
       $scope.inName = null;
       $scope.outName = function () {
         var userName = $scope.inName;
@@ -45,7 +45,6 @@ define(['projectSugar'], function () {
       };
 
       $scope.childList = [];
-
       $scope.addChild = function (selectSex, newAge) {
         if(newAge == undefined) return;
         if(newAge === '') return;
@@ -69,7 +68,6 @@ define(['projectSugar'], function () {
           childAge : "보험나이 : "+nowAge+"세"
         };
         $scope.childList.push(newChild);
-
         $scope.disableRemove()
       };
 
@@ -136,6 +134,5 @@ define(['projectSugar'], function () {
             })
           })
         });
-    }]);//productGuideController.controller
-
+    }]);//recommendController.controller
 });

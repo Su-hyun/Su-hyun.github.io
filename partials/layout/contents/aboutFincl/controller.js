@@ -3,7 +3,6 @@
 define(['projectSugar'], function () {
   console.log("About Fincl");
   var aboutFinclModule = angular.module('projectSugar', ['ui.router', 'oc.lazyLoad', 'aboutFinclService', 'layoutService']);
-
   aboutFinclModule.controller('aboutFinclController', ['$scope', '$ocLazyLoad', 'aboutFinclService', 'layoutService',
     function($scope, $ocLazyLoad, aboutFinclService, layoutService) {
 
@@ -15,8 +14,5 @@ define(['projectSugar'], function () {
             aboutFinclService.fire();
             layoutService.fire();
           });
-
-
-    }]);//productGuideController.controller
-
+    }]);//aboutFinclController.controller
 });

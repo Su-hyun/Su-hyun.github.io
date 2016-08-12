@@ -1,9 +1,7 @@
 'use strict';
 
 define(['projectSugar'], function () {
-
   var myPageServiceModule = angular.module('myPageServiceModule', []);
-
   myPageServiceModule.factory('myPageService', ['$rootScope',
     function($rootScope) {
       return {

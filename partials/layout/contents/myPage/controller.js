@@ -3,7 +3,6 @@
 define(['projectSugar'], function () {
   console.log("마이페이지");
   var myPageModule = angular.module('projectSugar', ['ui.router', 'oc.lazyLoad', 'myPageService', 'layoutService']);
-
   myPageModule.controller('myPageController', ['$scope', '$ocLazyLoad', 'myPageService', 'layoutService',
     function($scope, $ocLazyLoad, myPageService, layoutService) {
 
@@ -15,8 +14,5 @@ define(['projectSugar'], function () {
           mainService.fire();
           layoutService.fire();
         });
-
-
-    }]);//productGuideController.controller
-
+    }]);//myPageController.controller
 });

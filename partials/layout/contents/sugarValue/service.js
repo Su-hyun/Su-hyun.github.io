@@ -1,9 +1,7 @@
 'use strict';
 
 define(['projectSugar'], function () {
-
   var sugarValueServiceModule = angular.module('sugarValueServiceModule', []);
-
   sugarValueServiceModule.factory('sugarValueService', ['$rootScope',
     function($rootScope) {
       return {

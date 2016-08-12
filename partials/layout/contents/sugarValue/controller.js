@@ -3,7 +3,6 @@
 define(['projectSugar'], function () {
   console.log("약관동의");
   var sugarValueModule = angular.module('projectSugar', ['ui.router', 'oc.lazyLoad', 'sugarValueService', 'layoutService']);
-
   sugarValueModule.controller('sugarValueController', ['$scope', '$ocLazyLoad', 'sugarValueService', 'layoutService',
     function($scope, $ocLazyLoad, valueService, layoutService) {
 
@@ -15,8 +14,5 @@ define(['projectSugar'], function () {
           sugarValueService.fire();
           layoutService.fire();
         });
-
-
-    }]);//productGuideController.controller
-
+    }]);//sugarValueController.controller
 });

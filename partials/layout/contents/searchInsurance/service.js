@@ -1,9 +1,7 @@
 'use strict';
 
 define(['projectSugar'], function () {
-
   var searchInsuranceServiceModule = angular.module('searchInsuranceServiceModule', []);
-
   searchInsuranceServiceModule.factory('searchInsuranceService', ['$rootScope',
     function($rootScope) {
       return {

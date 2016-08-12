@@ -3,7 +3,6 @@
 define(['projectSugar'], function () {
   console.log("보장분석");
   var indemnityAnalysisModule = angular.module('projectSugar', ['ui.router', 'oc.lazyLoad', 'indemnityAnalysisService', 'layoutService']);
-
   indemnityAnalysisModule.controller('indemnityAnalysisController', ['$scope', '$ocLazyLoad', 'indemnityAnalysisService', 'layoutService',
     function($scope, $ocLazyLoad, indemnityAnalysisService, layoutService) {
       $scope.inName = null;
@@ -146,9 +145,7 @@ define(['projectSugar'], function () {
                 if(idx == formAleng) e.preventDefault();
               }
             });
-
-
           })
         });
-    }]);//productGuideController.controller
+    }]);//indemnityAnalysisController.controller
 });

@@ -1,9 +1,7 @@
 'use strict';
 
 define(['projectSugar'], function () {
-
   var faQuestionsServiceModule = angular.module('faQuestionsServiceModule', []);
-
   faQuestionsServiceModule.factory('faQuestionsService', ['$rootScope',
     function($rootScope) {
       return {
