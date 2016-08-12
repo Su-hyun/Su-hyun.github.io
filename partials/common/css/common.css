@@ -27,7 +27,8 @@ a{display:block; text-decoration:none; color:#595959}
 a:hover,
 a:link{text-decoration:none;}
 legend{*width:0}
-table{width:100%;border-collapse:collapse;border-spacing:0; table-layout: fixed}
+table{width:100%;border-collapse:collapse;border-spacing:0; table-layout: fixed; text-align:center;}
+th{text-align:center;}
 input::-ms-clear{display:none}
 input,
 button{
