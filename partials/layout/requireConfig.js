@@ -1,7 +1,7 @@
 'use strict';
 
 require.config({
-	baseUrl: ' ',
+	baseUrl: '',
   waitSeconds: 30,
   onNodeCreated: function(node, config, moduleName, url) {
     node.addEventListener('load', function() {
@@ -20,31 +20,31 @@ require.config({
   },
 	paths: {
 		//jquery
-		'jquery': '../../lib/jquery/dist/jquery.min',
-    'jquery-ui': '../../lib/jquery-ui/jquery-ui.min',
-    'jquery-migrate': '../../lib/jquery-migrate/jquery-migrate.min',
+		'jquery': './lib/jquery/dist/jquery.min',
+    'jquery-ui': './lib/jquery-ui/jquery-ui.min',
+    'jquery-migrate': './lib/jquery-migrate/jquery-migrate.min',
 
     //twitterBootstrap
-    'twitterBootstrap': '../../lib/bootstrap/dist/js/bootstrap.min',
+    'twitterBootstrap': './lib/bootstrap/dist/js/bootstrap.min',
 
     // angular
-    'angular': '../../lib/angular/angular.min',
-    'ngRoute': '../../lib/angular-route/angular-route.min',
-    'ngAnimate': '../../lib/angular-animate/angular-animate.min',
-    'ngCookies': '../../lib/angular-cookies/angular-cookies.min',
-    'ngResource': '../../lib/angular-resource/angular-resource.min',
-    'ngSanitize': '../../lib/angular-sanitize/angular-sanitize.min',
-    'ngTouch': '../../lib/angular-touch/angular-touch.min',
+    'angular': './lib/angular/angular.min',
+    'ngRoute': './lib/angular-route/angular-route.min',
+    'ngAnimate': './lib/angular-animate/angular-animate.min',
+    'ngCookies': './lib/angular-cookies/angular-cookies.min',
+    'ngResource': './lib/angular-resource/angular-resource.min',
+    'ngSanitize': './lib/angular-sanitize/angular-sanitize.min',
+    'ngTouch': './lib/angular-touch/angular-touch.min',
 
-    'ui.router': '../../lib/angular-ui-router/release/angular-ui-router',
+    'ui.router': './lib/angular-ui-router/release/angular-ui-router',
 
-    'oc.lazyLoad': '../../lib/oclazyload/dist/ocLazyLoad.require',
+    'oc.lazyLoad': './lib/oclazyload/dist/ocLazyLoad.require',
 
-    'text': '../../lib/requirejs-text/text',
-    'css': '../../lib/require-css/css.min',
+    'text': './lib/requirejs-text/text',
+    'css': './lib/require-css/css.min',
 
     //module
-    'projectSugar': '../../partials/layout/routeConfig'
+    'projectSugar': './partials/layout/routeConfig'
 	},
 	shim: {
 		'jquery-migrate': ['jquery'],
