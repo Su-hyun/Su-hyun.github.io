@@ -13,6 +13,15 @@ define(['projectSugar'], function () {
           .then(function() {
             suggestService.fire();
             layoutService.fire();
+
+            $('span.arIdx').on('load', function () {
+              var arNum = $(this).parents('article.on').index();
+              if(arNum < 10) arNum = '0' + arNum;
+                  console.log(arNum)
+              $(this).text(arNum)
+            });
+            $('span.arIdx').trigger("load")
+
           });
     }]);//suggestController.controller
 });
