@@ -21,7 +21,7 @@
       <li>노후대비 Total<span>179,000</span>원</li>
     </ul>
   </header>
-  <article>
+  <article class="on">
     <div class="suggest-title">
       <h3><span class="suggest-needs ir">꼭</span> 필요한 보험(Must Have)</h3>
       <span class="align-middle"></span>
@@ -382,7 +382,7 @@
       </div>
     </section>
   </article>
-  <article>
+  <article class="on">
     <section class="suggest-contents">
       <div class="suggest-con-top">
         <div class="suggest-form suggest-top-form">
@@ -509,13 +509,13 @@
           </article>
         </div>
         <div class="suggest-bottom-right type2">
-          <div class="suggest-product">
+          <div class="suggest-product lower-price">
             <div class="lowest">
               <input type="checkbox" id="article2-list1-check1" checked>
               <label for="article2-list1-check1">최저가</label>
             </div>
-            <ul class="product-list-type2">
-              <li class="view-type2">
+            <ul class="product-list-type2 graph-type">
+              <li class="view-type2" ng-repeat="lowerPrice in lowerPriceList">
                 <div class="suggest-table type2">
                   <table>
                     <colgroup>
@@ -527,76 +527,18 @@
                     </colgroup>
                     <tbody>
                     <tr class="tr-1st">
-                      <td rowspan="2"><img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고"></td>
-                      <td>상품명</td>
-                      <td>가입연령</td>
+                      <td rowspan="2"><img ng-src="./partials/layout/contents/suggest/img/{{lowerPrice.logoImg}}" alt="로고"></td>
                       <td>월보험료</td>
+                      <td>가입금액</td>
+                      <td>보장기간</td>
                       <td rowspan="2">
                         <button class="btn-join">온라인 바로가입</button>
                       </td>
                     </tr>
                     <tr class="tr-2nd">
-                      <td class="ellipsis">(무)교보 실손 의료비 보험</td>
-                      <td>0 ~ 65세</td>
-                      <td><span>{{17000}}</span>원</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </li>
-              <li class="view-type2">
-                <div class="suggest-table type2">
-                  <table>
-                    <colgroup>
-                      <col width="28.253425%">
-                      <col width="16.09589%">
-                      <col>
-                      <col>
-                      <col width="23.630137%">
-                    </colgroup>
-                    <tbody>
-                    <tr class="tr-1st">
-                      <td rowspan="2"><img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고"></td>
-                      <td>상품명</td>
-                      <td>가입연령</td>
-                      <td>월보험료</td>
-                      <td rowspan="2">
-                        <button class="btn-join">온라인 바로가입</button>
-                      </td>
-                    </tr>
-                    <tr class="tr-2nd">
-                      <td class="ellipsis">(무)교보 실손 의료비 보험</td>
-                      <td>0 ~ 65세</td>
-                      <td><span>{{17000}}</span>원</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </li>
-              <li class="view-type2">
-                <div class="suggest-table type2">
-                  <table>
-                    <colgroup>
-                      <col width="28.253425%">
-                      <col width="16.09589%">
-                      <col>
-                      <col>
-                      <col width="23.630137%">
-                    </colgroup>
-                    <tbody>
-                    <tr class="tr-1st">
-                      <td rowspan="2"><img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고"></td>
-                      <td>상품명</td>
-                      <td>가입연령</td>
-                      <td>월보험료</td>
-                      <td rowspan="2">
-                        <button class="btn-join">온라인 바로가입</button>
-                      </td>
-                    </tr>
-                    <tr class="tr-2nd">
-                      <td class="ellipsis">(무)교보 실손 의료비 보험</td>
-                      <td>0 ~ 65세</td>
-                      <td><span>{{17000}}</span>원</td>
+                      <td class="ellipsis">월 {{lowerPrice.monthPay}}원</td>
+                      <td>{{lowerPrice.insurable}}</td>
+                      <td>{{lowerPrice.term}}</td>
                     </tr>
                     </tbody>
                   </table>
@@ -604,10 +546,39 @@
               </li>
             </ul>
           </div>
-          <div class="suggest-graph">
-            <p>(월 70,000원)</p>
-            <p>(월 55,000원)</p>
-            <p>(월 15,000원)</p>
+          <div class="suggest-graph-area">
+            <ul class="graph-list-box">
+              <li class="suggest-graph graph-list1">
+                <p class="suggest-graph-premium">
+                  <span>(월 {{lowerPriceList[0].monthPay}}원)</span>
+                </p>
+                <p class="suggest-coverage">
+                  <span>{{lowerPriceList[0].insurable}}</span>
+                </p>
+              </li>
+              <li class="suggest-graph graph-list2">
+                <p class="suggest-graph-premium">
+                  <span>(월 {{lowerPriceList[0].monthPay}}원)</span>
+                  <span>(월 {{lowerPriceList[1].monthPay}}원)</span>
+                </p>
+                <p class="suggest-coverage">
+                  <span>{{lowerPriceList[0].insurable}}</span>
+                  <span>{{lowerPriceList[1].insurable}}</span>
+                </p>
+              </li>
+              <li class="suggest-graph graph-list3">
+                <p class="suggest-graph-premium">
+                  <span>(월 {{lowerPriceList[0].monthPay}}원)</span>
+                  <span>(월 {{lowerPriceList[1].monthPay}}원)</span>
+                  <span>(월 {{lowerPriceList[2].monthPay}}원)</span>
+                </p>
+                <p class="suggest-coverage">
+                  <span>{{lowerPriceList[0].insurable}}</span>
+                  <span>{{lowerPriceList[1].insurable}}</span>
+                  <span>{{lowerPriceList[2].insurable}}</span>
+                </p>
+              </li>
+            </ul>
           </div>
           <div class="suggest-product">
             <div class="lowest">
@@ -710,25 +681,26 @@
   </article>
   <article class="on">
     <div class="suggest-title">
-      <h3><span class="suggest-think">고려</span> 해야할 보험(Might be useful)</h3>
+      <h3><span class="suggest-think ir">고려</span>해야할 보험(Might be useful)</h3>
       <span class="align-middle"></span>
     </div>
-    <section class="suggest-contents">
+    <section class="suggest-contents might">
       <div class="suggest-con-top might">
         <div class="suggest-form suggest-top-form might">
           <input type="checkbox" id="article3-checked-01" checked>
           <label for="article3-checked-01"></label>
         </div>
-        <div class="suggest-notice">
+        <div class="suggest-notice might">
           <h4>
             중대질병보험 <small>월 <span>{{10900}}</span>원</small>
           </h4>
         </div>
-        <button>펼치기 / 닫기</button>
+        <span class="align-middle"></span>
+        <button class="btn-toggle ir">펼치기 닫기<span></span></button>
       </div>
-      <div class="suggest-con-bottom">
+      <div class="suggest-con-bottom might">
         <div class="suggest-bottom-left">
-          <article class="suggest-expain">
+          <article class="suggest-explain">
             <p>
               중대질병보험은 암, 뇌졸중, 심근경색증 진단 시 보험금(일시금)을 지급하는 보험으로
               <strong>치료기간 중 실직이나 휴직에 따른 소득 상실에 대한 준비가 필요하기 때문에 "고려해야할 보험"으로 추천합니다.</strong>
@@ -764,7 +736,7 @@
                   </ul>
                 </li>
               </ul>
-              <button class="more-info">정기보험 자세히 알아보기</button>
+              <button class="more-info might">정기보험 자세히 알아보기</button>
             </div>
           </article>
         </div>
@@ -912,26 +884,26 @@
         </div>
       </div>
     </section>
-    <section class="suggest-contents">
+    <section class="suggest-contents might">
       <div class="suggest-con-top might">
         <div class="suggest-form suggest-top-form might">
           <input type="checkbox" id="article3-checked-02" checked>
-          <label for="article3-checked-02"></label>
+          <label for="article3-checked-01"></label>
         </div>
-        <div class="suggest-notice">
+        <div class="suggest-notice might">
           <h4>
-            연금보험 <small>월 <span>{{300000}}</span>원</small>
+            중대질병보험 <small>월 <span>{{10900}}</span>원</small>
           </h4>
         </div>
         <span class="align-middle"></span>
-        <button>펼치기 / 닫기</button>
+        <button class="btn-toggle ir">펼치기 닫기<span></span></button>
       </div>
-      <div class="suggest-con-bottom">
-        <p>
-          <strong>연금보험은 다양한 노후준비 방법 중 죽을때까지 일정금액이 지급</strong>되는 장점이 있어 고려해볼만한 상품으로 추천합니다.
-        </p>
+      <div class="suggest-con-bottom might">
         <div class="suggest-bottom-left">
-          <article class="suggest-expain">
+          <article class="suggest-explain">
+            <p>
+              <strong>연금보험은 다양한 노후준비 방법 중 죽을때까지 일정금액이 지급</strong> 되는 장점이 있어 고려해볼만한 상품으로 추천합니다.
+            </p>
             <div class="suggest-why">
               <h4>이렇게 가입해라!</h4>
               <ul class="why-list why-list-type1">
@@ -940,11 +912,21 @@
                 <li>월 보험료 300000원</li>
               </ul>
             </div>
-            <div>
-              <ul>
-                <li>120만원</li>
-                <li>36만원</li>
-                <li>25만원</li>
+            <div class="suggest-why">
+              <h4>슈가 목표 연금액 <small>(은퇴 후 매월 소득의 50%)</small></h4>
+              <ul class="pension-graph">
+                <li class="pension-list1">
+                  <span>33%</span>
+                  <span>120만원</span>
+                </li>
+                <li class="pension-list2">
+                  <span>10%</span>
+                  <span>36만원</span>
+                </li>
+                <li class="pension-list3">
+                  <span>7%</span>
+                  <span>25만원</span>
+                </li>
               </ul>
             </div>
             <div class="suggest-why suggest-why-type2">
