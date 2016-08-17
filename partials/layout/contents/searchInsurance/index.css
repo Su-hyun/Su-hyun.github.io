@@ -1,13 +1,80 @@
 @charset "utf-8";
 
 /* -- 비쥬얼 -- */
-.visual{
-  height:515px;
+.searchInsurance-visual{
+  height:610px;
+  position:relative;
+  background-color:#fad381;
+  border-bottom:1px solid #e5e5e7
+}
+.searchInsurance-visual-con{
+  width:833px;
+  height:calc(100% - 45px);
+  margin:45px auto 0;
+  background:url(./img/visual-con-bg.png) no-repeat right 0;
+}
+.searchInsurance-visual-con h2,
+.searchInsurance-visual-con p{
+  margin-left:40px;
+}
+.searchInsurance-visual-con h2{
+  font-size:1.1rem;
+  line-height: 1.4;
+}
+.searchInsurance-visual-con h2 > strong{
+  font-size:2.1rem;
+}
+.searchInsurance-visual-con p{
+  margin-top:15px;
+  font-size:0.85rem;
+  line-height: normal;
+  color:#585858;
+}
+.searchInsurance-visual-con .sec30{
+  display:inline-block;
+  width:72px;
+  height:36px;
+  vertical-align: text-bottom;
+  background:url(./img/30sec.png) no-repeat 0 0;
+}
+.searchInsurance-visual-img{
+  margin-top:38px;
   position:relative;
 }
+.searchInsurance-visual-img .img-web,
+.searchInsurance-visual-img .img-mobile{
+  position:absolute;
+}
+.searchInsurance-visual-img .img-mobile{
+  top:95px;
+  right:5px;
+}
+.searchInsurance-visual-img .img-web::before,
+.searchInsurance-visual-img .img-mobile::before{
+  content:"";
+  display:block;
+  position:absolute;
+}
+.searchInsurance-visual-img .img-web::before{
+  width:76px;
+  height:77px;
+  top:-38px;
+  left:-46px;
+  background:url(./img/spot-w.png) no-repeat 0 0;
+
+}
+.searchInsurance-visual-img .img-mobile::before{
+  width:41px;
+  height:86px;
+  top:30px;
+  right: -43px;
+  background:url(./img/spot-m.png) no-repeat 0 0;
+}
+
+
 .visual-btn-area{
   width:1200px;
-  margin:0 auto;
+  margin:45px auto 0;
 }
 .visual-btn-area.btn-block{
   padding:27px 0 40px 185px;
@@ -18,10 +85,49 @@
   width:320px;
   height:48px;
   margin-bottom:10px;
+  font-size:0.85rem;
   color:#fff;
   line-height:2.5;
   background-color:#548ed0;
 }
+.visual-btn-area .arrow{
+  display:inline-block;
+  width:24px;
+  height:2px;
+  margin-left:10px;
+  position:relative;
+  vertical-align: middle;
+  background-color:#fff;
+  overflow:visible;
+}
+.visual-btn-area .arrow::before,
+.visual-btn-area .arrow::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 2px;
+  position: absolute;
+  background-color:#fff;
+}
+.visual-btn-area .arrow::before{
+  top:-3px;
+  left:17px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.visual-btn-area .arrow::after{
+  top:3px;
+  left:17px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
 
 /* -- 왜 사람들이 슈가추천을 선택할까요? -- */
 .searchInsurance .title{

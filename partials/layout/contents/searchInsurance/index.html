@@ -1,20 +1,24 @@
 <section class="wrapper searchInsurance" ng-controller="searchInsuranceController">
   <header>
-    <div class="visual">
+    <div class="searchInsurance-visual">
       <div class="container">
-        <h2>
-          어떤 보험이<br>
-          <strong>정말로 필요</strong>한지 모르죠?
-        </h2>
-        <p>
-          딱 맞는 보험을 찾는데 필요한 시간, <span>30</span>초
-        </p>
-        <div class="img-web"><img src="" alt="sugar 홈페이지 내게 맞는 보험 찾기"></div>
-        <div class="img-mobile"><img src="" alt="sugar 모바일 홈페이지"></div>
+        <div class="searchInsurance-visual-con">
+          <h2>
+            어떤 보험이<br>
+            <strong>정말로 필요한지 모르죠?</strong>
+          </h2>
+          <p>
+            딱 맞는 보험을 찾는데 필요한 시간, <span class="sec30 ir">30초</span>
+          </p>
+          <div class="searchInsurance-visual-img">
+            <div class="img-web"><img src="./partials/layout/contents/searchInsurance/img/sugar-web.png" alt="sugar 홈페이지 내게 맞는 보험 찾기"></div>
+            <div class="img-mobile"><img src="./partials/layout/contents/searchInsurance/img/sugar-mobile.png" alt="sugar 모바일 홈페이지"></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="visual-btn-area btn-block">
-      <button class="btn">슈가 추천 시작하기 <i class="ir">오른쪽 화살표</i></button>
+      <button class="btn" ng-click="recommend()">슈가 추천 시작하기<i class="arrow ir">오른쪽 화살표</i></button>
       개인정보를 요구하거나 전화로 귀찮게 하지 않습니다.
     </div>
   </header>
