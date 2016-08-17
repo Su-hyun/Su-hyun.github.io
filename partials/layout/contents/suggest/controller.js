@@ -10,7 +10,7 @@ define(['projectSugar'], function () {
         { logoImg:"lifeplanet.png", monthPay:"33000", insurable:"3억", term:"10년 만기"},
         { logoImg:"lifeplanet.png", monthPay:"22000", insurable:"1억", term:"20년 만기"},
         { logoImg:"lifeplanet.png", monthPay:"15000", insurable:"5천만원", term:"65세 만기"}
-     ];
+      ];
 
       $ocLazyLoad
           .load([
@@ -39,36 +39,19 @@ define(['projectSugar'], function () {
                   $graphList = $('.graph-list-box').children('li');
               $graphList.eq(graphTypeIdx).addClass('on').siblings().removeClass('on');
 
-
-
             });
             $(window).trigger("load");
 
-            $(document).ready(function () {
-              // 고려해야 할 보험 토글버튼
-              var $btnToggle = $('.btn-toggle');
-
-              $btnToggle.on('click', function () {
-                console.log('click')
-                var $this = $(this);
-                if(!$this.is('.on')){
-                  $this.addClass('on').parents('section.might').addClass('on');
-                }else if($this.is('.on')){
-                  $this.removeClass('on').parents('section.might').removeClass('on');
-                }
-              });
-              function toggleCon (target) {
-                //var aa = target.text()
-                console.log("aaa")
-                //if(!target.is('.on')){
-                //  target.addClass('on').parents('section.might').addClass('on');
-                //}else if(target.is('on')){
-                //  target.removeClass('on').parents('section.might').removeClass('on');
-                //}
+            // 고려해야 할 보험 토글버튼
+            var $btnToggle = $('.btn-toggle');
+            $btnToggle.on('click', function () {
+              var $this = $(this);
+              if(!$this.is('.on')){
+                $this.addClass('on').parents('section.might').addClass('on');
+              }else if($this.is('.on')){
+                $this.removeClass('on').parents('section.might').removeClass('on');
               }
-            })
-
-
+            });
 
           });
     }]);//suggestController.controller
