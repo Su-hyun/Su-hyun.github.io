@@ -154,7 +154,7 @@
         </form>
         <div class="btn-block btn-input">
           <button class="btn btn-prev">이전 단계</button>
-          <a href="#" class="btn btn-search" ng-disabled="!inJobs">내게 맞는 보험 찾기</a>
+          <a href="#" class="btn btn-search" ng-disabled="!inJobs" ng-click="suggest()">내게 맞는 보험 찾기</a>
         </div>
       </div>
     </div>
@@ -169,7 +169,7 @@
           </p>
           <div class="btn-block btn-output">
             <input type="submit" class="btn save" value="저장하기">
-            <a href="#" class="btn btn-search">내게 맞는 보험 찾기</a>
+            <a href="#" class="btn btn-search" ng-disabled="!inJobs" ng-click="suggest()">내게 맞는 보험 찾기</a>
           </div>
         </div>
         <div class="notice-info">
