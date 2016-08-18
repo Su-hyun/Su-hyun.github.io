@@ -11,8 +11,39 @@ define(['projectSugar'], function () {
           './partials/common/js/jquery.cookie.js'
         ])
         .then(function() {
-          mainService.fire();
+          myPageService.fire();
           layoutService.fire();
+
+          var $myPage = $('#myPage'),
+              $viewNav = $('.viewNav'),
+              $selectList = $('.select-list'),
+              $btnSelect = $('.btn-select'),
+              $viewForm = $('.myPage-form').children('div'),
+              idx;
+
+          // #myPage height
+          $(document).on('load', function () {
+            var myHEI = $(window).height() - 65 - 81;
+            $myPage.css('min-height', myHEI);
+
+            var $selectListWID = $selectList.outerWidth();
+            $btnSelect.css('width',$selectListWID - 0.5)
+          });
+          $(document).trigger('load');
+
+
+          $selectList.on('click', function () {
+            $(this).toggleClass("on")
+          });
+          $btnSelect.on('click', 'li', function () {
+            var $this = $(this),
+                thisText = $this.text();
+                idx = $this.index();
+            //if(!$this.is('.on')) $this.addClass('on').siblings().removeClass('on');
+            $viewNav.text(thisText);
+            $viewForm.eq(idx).addClass('on').siblings().removeClass('on')
+          })
+
         });
     }]);//myPageController.controller
 });

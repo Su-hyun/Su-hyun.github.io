@@ -261,9 +261,9 @@
   height: 0;
   margin:0 auto;
   background: transparent;
-  border-left: 17px solid transparent;
+  border: 17px solid transparent;
   border-top: 17px solid #9b9da1;
-  border-right: 17px solid transparent;
+  border-bottom: 0 solid transparent;
   transition: all 0ms, border-width 250ms, height 150ms;
 }
 .btn-toggle.on span {
@@ -271,7 +271,6 @@
   border-top: 0 solid transparent;
   border-bottom: 17px solid #9b9da1;
 }
-
 
 .suggest-con-bottom{
   border:1px solid #f4f4f4;
@@ -711,8 +710,6 @@
 .graph-list3 .suggest-coverage span:nth-child(1){ top:109px; left:190px; }
 .graph-list3 .suggest-coverage span:nth-child(2){ top:153px; left:343px; }
 .graph-list3 .suggest-coverage span:nth-child(3){ top:198px; left:497px; }
-
-
 
 
 .suggest-btn-group{

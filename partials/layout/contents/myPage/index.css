@@ -1,1 +1,238 @@
 @charset "UTF-8";
+
+#myPage{
+  position:relative;
+}
+.myHeader{
+  width:100%;
+  height:298px;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index: -1;
+  background-color:#edeff2;
+  overflow:hidden
+}
+.myHeader-img{
+  height:100%;
+  background:url(./img/myHeader-img.png) no-repeat 630px 0;
+}
+.myPage-con{
+  padding:30px 135px;
+}
+.my-select{
+  width:339px;
+  height:46px;
+}
+.my-select li{
+  padding-left:30px;
+  line-height: 44px;
+  background-color:#373c44;
+  border:1px solid #1f242d
+}
+.my-select li,
+.my-select li a{
+  font-size:0.8rem;
+  font-weight:normal;
+  color:#fff;
+}
+.my-select > ul > li{
+  float:left;
+  width:50%;
+  position:relative;
+}
+.my-select .select-list{
+  border-left:0 none;
+}
+.select-list::after{
+  content:"";
+  display: block;
+  width: 0;
+  height: 0;
+  position:absolute;
+  top:18px;
+  right:15px;
+  background: transparent;
+  border: 7px solid transparent;
+  border-top: 7px solid #ededed;
+  transition: all 0ms, border-width 250ms, height 150ms;
+}
+.select-list.on::after{
+  top:20px;
+  background:#ededed;
+  border: 7px solid transparent;
+  border-top: 0 solid transparent;
+  border-bottom: 3px solid #ededed;
+}
+.btn-select{
+  display:none;
+  position:absolute;
+  left:0;
+}
+.btn-select li{
+  position:relative;
+}
+.btn-select li:first-child{
+  border-bottom:0 none;
+}
+.btn-select li::before,
+.btn-select li::after{
+  content:"";
+  display: block;
+  width: 9px;
+  height: 3px;
+  position:absolute;
+  top:20px;
+  right:18px;
+  background-color:#ededed;
+}
+.btn-select li::after{
+  -webkit-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  -o-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+.select-list.on .btn-select{
+  display:block;
+}
+.myPage-form{
+  width:100%;
+  padding-top:45px;
+}
+.myPage-form > div{ display:none; }
+.myPage-form > div.on{ display:block; width:100%; }
+.myPage-form > div > p:nth-child(2){ color:#666; }
+#myPass > p:nth-child(2){ width:300px; letter-spacing: 0 }
+.myPage-form form{
+  margin-top:73px;
+  text-align:right;
+}
+.myPage-form caption{
+  width:0;
+  height:0;
+  padding:0;
+  font-size:0;
+  opacity: 0;
+}
+.myPage-form table{
+  margin-bottom:28px;
+  border-top:1px solid #465159;
+  border-bottom:1px solid #465159;
+}
+.myPage-form tbody{
+  background-color:#fff;
+}
+.myPage-form tr{
+  height:54px;
+  border-top:1px solid #f4f4f4;
+}
+.myPage-form tr:first-child{
+  border-top:0 none;
+}
+.myPage-form th{
+  width:22%;
+  padding-left:20px;
+  text-align:left;
+}
+.myPage-form td{
+  padding-left:20px;
+  text-align:left;
+  border-left:1px solid #f4f4f4;
+}
+
+.myPage-form input,
+.myPage-form select{
+  display:inline-block;
+  width:295px;
+  height:36px;
+  margin:0 3px;
+  padding: 0.5em 0.5em;
+}
+.myPage-form input:first-child,
+.myPage-form select:first-child{
+  margin-left:0;
+}
+
+.gender label{
+  margin-bottom:0;
+  position:relative;
+}
+.gender label::before{
+  content:"";
+  display:inline-block;
+  width:32px;
+  height:32px;
+  margin-right:10px;
+  vertical-align: middle;
+  border:1px solid #c4c9cc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;;
+}
+.gender input[type="radio"]{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:-1;
+  opacity:0;
+}
+.gender input:checked + label::before{
+  border:0 none;
+  background:url(./img/checked.png) no-repeat center/contain;
+}
+.gender span:nth-child(2){
+  margin-left:100px;
+}
+.selectStyle{
+  position:relative;
+}
+.selectStyle select{
+  width:120px;
+  font-size:0.8rem;
+  color:#b8b8b8;
+  border: 1px solid #c4c9cd;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color:#fff;
+  outline: 0;
+}
+.selectStyle::before {
+  content: "";
+  display:block;
+  position: absolute;
+  top: 47%;
+  left: 285px;
+  width: 0;
+  height: 0;
+  margin-top: -1px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+}
+.selectStyle.email input[type="text"]{ width:165px; }
+.selectStyle.email input[type="button"]{
+  width:140px;
+  color:#fff;
+  background-color: #548ed0;
+  border:0 none;
+}
+.selectStyle.mobile select,
+.selectStyle.mobile input{
+  width:93px;
+}
+.selectStyle.mobile::before{
+  left: 85px;
+}
+.passConfirm span{
+  display:block;
+}
+.myPage-form form > input{
+  width:100px;
+  height:34px;
+  color:#fff;
+  background-color: #373c44;
+  border:0 none;
+}

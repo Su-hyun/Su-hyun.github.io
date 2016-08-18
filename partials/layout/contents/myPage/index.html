@@ -1,3 +1,125 @@
-<section ng-controller="myPageController">
-  <h2>myPage</h2>
+<section id="myPage" ng-controller="myPageController">
+  <div class="myHeader">
+    <div class="container myHeader-img"><span class="ir">자물쇠 그림</span></div>
+  </div>
+  <div class="container">
+    <div class="myPage-con">
+      <div class="my-select">
+        <ul class="clearfix">
+          <li>마이페이지</li>
+          <li class="select-list">
+            <p class="viewNav">내정보 수정</p>
+            <ul class="btn-select">
+              <li>
+                <a href="#myInfo">내정보 수정</a>
+              </li>
+              <li>
+                <a href="#myPage">비밀번호 변경</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="myPage-form">
+        <div id="myInfo" class="on">
+          <p class="fontS20">내정보 수정</p>
+          <p class="fontS15">내 정보 페이지에서 회원정보 수정 및 내 정보를 관리하실 수 있습니다.</p>
+          <form method="post">
+            <table class="fontS15">
+              <caption>내정보 수정</caption>
+              <colgroup>
+                <col width="22%">
+                <col>
+              </colgroup>
+              <tbody>
+              <tr>
+                <th>이메일</th>
+                <td class="selectStyle email">
+                  <input type="text" placeholder="Email@yifa.co.kr">
+                  <select>
+                    <option></option>
+                    <option>naver.com</option>
+                  </select>
+                  <input type="button" value="이메일 중복확인">
+                </td>
+              </tr>
+              <tr>
+                <th>비밀번호</th>
+                <td><input type="password"></td>
+              </tr>
+              <tr>
+                <th>비밀번호 확인</th>
+                <td><input type="password"></td>
+              </tr>
+              <tr>
+                <th>이름</th>
+                <td><input type="text"></td>
+              </tr>
+              <tr>
+                <th>성별</th>
+                <td class="gender">
+                  <span>
+                    <input type="radio" id="male" name="gender" value="남자">
+                    <label for="male">남자</label>
+                  </span>
+                  <span>
+                    <input type="radio" id="female" name="gender" value="여자">
+                    <label for="female">여자</label>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>생년월일</th>
+                <td><input type="text" placeholder="yy/mm/dd" ng-maxlength="6"></td>
+              </tr>
+              <tr>
+                <th>휴대폰</th>
+                <td class="selectStyle mobile">
+                  <select>
+                    <option>010</option>
+                  </select>
+                  - <input type="text"> - <input type="text">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <input type="submit" value="수정">
+            <input type="reset" value="취소">
+          </form>
+        </div>
+        <div id="myPass">
+          <p class="fontS20">안전한 비밀번호로 내정보를 보호하세요.</p>
+          <p class="fontS15">다른 아이디 사이트에서 사용한 적 없는 비밀번호, 이전에 사용한 적 없는 비밀번호가 안전합니다.</p>
+          <form method="post">
+            <table>
+              <caption>비밀번호 변경</caption>
+              <colgroup>
+                <col width="22%">
+                <col>
+              </colgroup>
+              <tbody>
+              <tr>
+                <th>비밀번호</th>
+                <td><input type="password"></td>
+              </tr>
+              <tr>
+                <th>새 비밀번호</th>
+                <td><input type="password"></td>
+              </tr>
+              <tr>
+                <th>새 비밀번호 확인</th>
+                <td class="passConfirm">
+                  <input type="password">
+                  <span>비밀번호를 재확인해주세요.</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <input type="submit" value="수정">
+            <input type="reset" value="취소">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

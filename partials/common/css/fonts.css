@@ -118,3 +118,21 @@
        url(../fonts/NotoSans-BoldItalic.woff) format('woff'),
        url(../fonts/NotoSans-BoldItalic.ttf) format('truetype');
 }
+
+/* -- font-size -- */
+.fontS13{ font-size:0.65rem }
+.fontS14{ font-size:0.7rem }
+.fontS15{ font-size:0.75rem }
+.fontS16{ font-size:0.8rem }
+.fontS17{ font-size:0.85rem }
+.fontS18{ font-size:0.9rem }
+.fontS19{ font-size:0.95rem }
+.fontS20{ font-size:1rem }
+.fontS21{ font-size:1.05rem }
+.fontS22{ font-size:1.1rem }
+
+
+/* -- font-weight -- */
+.fontWL{ font-weight:300 }
+.fontWN{ font-weight:normal }
+.fontWB{ font-weight:bold }
