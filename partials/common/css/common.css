@@ -105,7 +105,8 @@ button{
 }
 
 .container{
-  width:1200px;
+  width:100%;
+  max-width:1200px;
   height:100%;
   margin:0 auto;
   padding:0;
@@ -113,9 +114,6 @@ button{
 }
 
 /* header */
-#header .container{
-  padding:0 50px;
-}
 .logo-header{
   float:left;
   width:97px;
@@ -130,6 +128,7 @@ button{
 nav{
   float:right;
   margin-top:20px;
+  margin-right:25px;
 }
 
 nav > ul,
@@ -146,19 +145,19 @@ nav > ul > li:hover::after{
   border-bottom:2px solid #31aae2;
 }
 
-.lnb li{
-  padding:4px 20px;
+.lnb > li{
+  margin:0 25px;
+  padding:4px;
+}
+.lnb > li:first-child{
+  margin-left:0;
 }
 .lnb li a{
   margin:0 3px;
   position:relative;
-  font-size:0.8rem;
-  color:#000
 }
-
-.gnb li {
-  margin-left: 18px;
-}
+.gnb.help { margin-left:95px; }
+.gnb.signin { margin-left: 18px; }
 .gnb a{
   margin:0 3px;
   padding-top:4px;
@@ -167,7 +166,6 @@ nav > ul > li:hover::after{
   background:url(../../common/img/sprite.png) no-repeat;
 }
 .help a{
-
   background-position: 3px -185px;
 }
 .signin a{
@@ -178,7 +176,7 @@ nav > ul > li:hover::after{
   height:0;
   margin-top:19px;
   position:absolute;
-  background-color:#fff;
+  z-index: 10;
   -webkit-transition: height 1s;
   -moz-transition: height 1s;
   -ms-transition: height 1s;
@@ -186,11 +184,33 @@ nav > ul > li:hover::after{
   transition: height 1s;
   overflow:hidden;
 }
-
 .sub-lnb li{
   float:none;
-  padding:4px 10px;
+  padding:4px 0px;
   text-align:left;
+}
+.sub-lnb li:first-child{
+  margin-top:24px;
+}
+.sub-lnb li:last-child{
+  margin-bottom:24px;
+}
+.sub-lnb li a::before{
+  content:"-";
+  display:inline-block;
+  margin-right:4px;
+  vertical-align: middle;
+}
+.sub-bg{
+  height:0;
+  background-color:#373c44;
+  opacity: 0.9;
+  -webkit-transition: height 1s;
+  -moz-transition: height 1s;
+  -ms-transition: height 1s;
+  -o-transition: height 1s;
+  transition: height 1s;
+  overflow:hidden;
 }
 
 /* --

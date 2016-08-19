@@ -320,19 +320,28 @@ define(
           ])
           .then(function() {
             layoutService.fire();
-            var idx = 0;
+            var $subUl = $('.sub-lnb'),
+                $subUlBg = $('.sub-bg');
+            $('.logo-header').on('click', function () {
+              $subUl.css('height',0);
+              $subUlBg.css('height',0);
+            });
             $('.lnb > li').on('click', function() {
-              console.log('click')
-              idx = $ (this).find ('.sub-lnb > li').length;
-              var $this = $ (this),
-                  liHEI = $ (this).find ('.sub-lnb > li').innerHeight ();
+              var $this = $ (this);
               if (!$this.is ('.active')) {
                 $this.addClass ('active');
-                $this.children ('.sub-lnb').css ("height", liHEI * idx);
-                $this.siblings ().removeClass ('active').children ('.sub-lnb').css ('height', 0);
+                $this.siblings ().removeClass ('active');
+                if($this.children().is('.sub-lnb')){
+                  $subUlBg.css('height',160);
+                  $subUl.css('height',160)
+                }else if(!$this.children().is('.sub-lnb')){
+                  $subUlBg.css('height',0);
+                  $subUl.css('height',0)
+                }
               } else if ($this.is ('.active')) {
                 $this.removeClass ('active');
-                $this.children ('.sub-lnb').css ('height', 0)
+                $subUl.css('height',0);
+                $subUlBg.css('height',0);
               }
             });
           })

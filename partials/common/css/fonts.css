@@ -120,19 +120,50 @@
 }
 
 /* -- font-size -- */
+.list-info p{ font-size:0.6rem }
+
 .fontS13{ font-size:0.65rem }
+
+.sub-lnb > li > a,
 .fontS14{ font-size:0.7rem }
+
 .fontS15{ font-size:0.75rem }
+
+.lnb > li > a,
 .fontS16{ font-size:0.8rem }
-.fontS17{ font-size:0.85rem }
+
+.list-info span{ font-size:0.85rem }
+
 .fontS18{ font-size:0.9rem }
+
 .fontS19{ font-size:0.95rem }
+
 .fontS20{ font-size:1rem }
+
 .fontS21{ font-size:1.05rem }
+
 .fontS22{ font-size:1.1rem }
 
 
 /* -- font-weight -- */
 .fontWL{ font-weight:300 }
-.fontWN{ font-weight:normal }
+
+
+.sub-lnb > li > a,
+.list-info span{ font-weight:normal }
+
 .fontWB{ font-weight:bold }
+
+
+/* -- color -- */
+.lnb > li > a,
+.gnb a,
+.color{ color:#000 }
+
+
+.sub-lnb > li > a,
+.color{ color:#fff }
+
+.color{ color:#f4f4f4 }
+
+.color{ color:#dadada }

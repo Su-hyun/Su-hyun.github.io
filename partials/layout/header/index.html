@@ -17,7 +17,17 @@
         </ul>
       </li>
       <li>
-        <a href="#" ng-click="searchInsurance()">내게 맞는 보험 찾기</a>
+        <!--<a href="#" ng-click="searchInsurance()">내게 맞는 보험 찾기</a>-->
+        <a href="#" ng-click="suggest()">내게 맞는 보험 찾기</a>
+      </li>
+      <li>
+        <a href="#" ng-click="productGuide($event)">상품 가이드</a>
+        <ul  id="subSizeBasic" class="sub-lnb">
+          <li><a href="#">실손의료비</a></li>
+          <li><a href="#">정기보험</a></li>
+          <li><a href="#">진단비</a></li>
+          <li><a href="#">연금</a></li>
+        </ul>
       </li>
       <li>
         <a href="#" ng-click="indemnityAnalysis($event)">보장분석</a>
@@ -27,21 +37,18 @@
           <li><a href="#">보장분석게시판</a></li>
         </ul>
       </li>
-      <li>
-        <a href="#" ng-click="productGuide($event)">상품 가이드</a>
+      <li class="gnb help">
+        <a href="#">Help</a>
         <ul class="sub-lnb">
-          <li><a href="#">실손의료비</a></li>
-          <li><a href="#">정기보험</a></li>
-          <li><a href="#">진단비</a></li>
-          <li><a href="#">연금</a></li>
+          <li><a href="#" ng-click="myPage()">마이페이지</a></li>
+          <li><a href="#">1:1 게시판</a></li>
+          <li><a href="#" ng-click="faQuestions()">FAQ</a></li>
         </ul>
       </li>
-    </ul>
-    <ul class="gnb clearfix">
-      <li class="help"><a href="#">Help</a></li>
-      <!--<li class="signin"><a href="#" ng-click="signIn()">Sing in</a></li>-->
-      <li class="signin"><a href="#" ng-click="myPage()">마이페이지</a></li>
+      <li class="gnb signin"><a href="#" ng-click="signIn()">Sing in</a>
+      </li>
     </ul>
   </nav>
 </div>
+<div class="sub-bg"></div>
 
