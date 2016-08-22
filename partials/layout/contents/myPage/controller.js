@@ -39,7 +39,6 @@ define(['projectSugar'], function () {
             var $this = $(this),
                 thisText = $this.text();
                 idx = $this.index();
-            //if(!$this.is('.on')) $this.addClass('on').siblings().removeClass('on');
             $viewNav.text(thisText);
             $viewForm.eq(idx).addClass('on').siblings().removeClass('on')
           })

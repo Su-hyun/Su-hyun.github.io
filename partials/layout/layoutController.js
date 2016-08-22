@@ -72,6 +72,25 @@ define(
         }
       };
 
+      //보험의 진실
+      $scope.tellTruth = function() {
+
+        $ocLazyLoad
+          .load ([{
+            name: 'tellTruthService',
+            files: ['partials/layout/contents/tellTruth/service.js']
+          }, {
+            name: 'tellTruthController',
+            files: ['partials/layout/contents/tellTruth/controller.js']
+          }, 'partials/layout/contents/tellTruth/index.css'])
+          .then (function () {
+              $scope.contentWrapper = "partials/layout/contents/tellTruth/";
+            }, function (e) {
+              console.log (e);
+            }
+          );
+      };
+
       // 내게 맞는 보험 찾기
       $scope.searchInsurance = function() {
         $ocLazyLoad
@@ -150,25 +169,81 @@ define(
         }
       };
 
-      // 보장분석
-      $scope.indemnityAnalysis = function(id) {
+      // 보장분석 소개
+      $scope.indemnityIntroduce = function(id) {
         var $this = $($(id.target));
         if($this.parent().is('.active')) {
           $ocLazyLoad
             .load ([{
-              name: 'indemnityAnalysisService',
-              files: ['partials/layout/contents/indemnityAnalysis/service.js']
+              name: 'indemnityIntroduceService',
+              files: ['partials/layout/contents/indemnityIntroduce/service.js']
             }, {
-              name: 'indemnityAnalysisController',
-              files: ['partials/layout/contents/indemnityAnalysis/controller.js']
-            }, 'partials/layout/contents/indemnityAnalysis/index.css'])
+              name: 'indemnityIntroduceController',
+              files: ['partials/layout/contents/indemnityIntroduce/controller.js']
+            }, 'partials/layout/contents/indemnityIntroduce/index.css'])
             .then (function () {
-                $scope.contentWrapper = "partials/layout/contents/indemnityAnalysis/";
+                $scope.contentWrapper = "partials/layout/contents/indemnityIntroduce/";
               }, function (e) {
                 console.log (e);
               }
             );
         }
+      };
+
+      // 내 보장분석
+      $scope.indemnityAnalysis = function() {
+        $ocLazyLoad
+          .load ([{
+            name: 'indemnityAnalysisService',
+            files: ['partials/layout/contents/indemnityAnalysis/service.js']
+          }, {
+            name: 'indemnityAnalysisController',
+            files: ['partials/layout/contents/indemnityAnalysis/controller.js']
+          }, 'partials/layout/contents/indemnityAnalysis/index.css'])
+          .then (function () {
+              $scope.contentWrapper = "partials/layout/contents/indemnityAnalysis/";
+            }, function (e) {
+              console.log (e);
+            }
+          );
+      };
+
+      // 1:1게시판
+      $scope.oneAndOne = function() {
+        $ocLazyLoad
+            .load([{
+              name : 'oneAndOneService',
+              files : [ 'partials/layout/contents/oneAndOne/service.js' ]
+            },{
+              name : 'oneAndOneController',
+              files : [ 'partials/layout/contents/oneAndOne/controller.js' ]
+            }, 'partials/layout/contents/oneAndOne/index.css'
+            ])
+            .then(function() {
+                  $scope.contentWrapper = "partials/layout/contents/oneAndOne/";
+                }, function(e) {
+                  console.log(e);
+                }
+            );
+      };
+
+      // 마이페이지
+      $scope.myPage = function() {
+        $ocLazyLoad
+            .load([{
+              name : 'myPageService',
+              files : [ 'partials/layout/contents/myPage/service.js' ]
+            },{
+              name : 'myPageController',
+              files : [ 'partials/layout/contents/myPage/controller.js' ]
+            }, 'partials/layout/contents/myPage/index.css'
+            ])
+            .then(function() {
+                  $scope.contentWrapper = "partials/layout/contents/myPage/";
+                }, function(e) {
+                  console.log(e);
+                }
+            );
       };
 
       // FAQ
@@ -209,24 +284,7 @@ define(
           );
       };
 
-      // 마이페이지
-      $scope.myPage = function() {
-        $ocLazyLoad
-          .load([{
-            name : 'myPageService',
-            files : [ 'partials/layout/contents/myPage/service.js' ]
-          },{
-            name : 'myPageController',
-            files : [ 'partials/layout/contents/myPage/controller.js' ]
-          }, 'partials/layout/contents/myPage/index.css'
-          ])
-          .then(function() {
-              $scope.contentWrapper = "partials/layout/contents/myPage/";
-            }, function(e) {
-              console.log(e);
-            }
-          );
-      };
+
 
       // 회사소개
       $scope.aboutFincl = function() {

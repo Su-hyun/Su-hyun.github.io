@@ -1,0 +1,71 @@
+<section class="wrapper searchInsurance" ng-controller="indemnityIntroduceController">
+  <header>
+    <div class="searchInsurance-visual">
+      <div class="container">
+        <div class="searchInsurance-visual-con">
+          <h2>
+            당신은 <strong>꼭</strong><br>
+            <strong>필요한 보험</strong>을<br>
+            가지고 있나요?
+          </h2>
+          <p>
+            슈가는 핵심보장인
+            <span>실손의료비, 사망, 3대질병 진단비를 체크해드립니다.</span>
+          </p>
+          <div class="searchInsurance-visual-img">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="visual-btn-area btn-block">
+      <button class="btn" ng-click="indemnityAnalysis()">보장분석 시작하기<i class="arrow ir">오른쪽 화살표</i></button>
+      개인정보를 요구하거나 전화로 귀찮게 하지 않습니다.
+    </div>
+  </header>
+  <article class="article1">
+    <div class="container">
+      <div class="title">
+        <h2>
+          <strong>왜</strong> 핵심보장 체크를 해봐야 하나요?
+           <small>진짜 필요한 보장은 따로 있습니다.</small>
+        </h2>
+        <span class="align-middle"></span>
+      </div>
+      <ul class="choice-list">
+        <li ng-repeat="choice in choiceList" >
+          <div class="choice-img"><img ng-src="./partials/layout/contents/searchInsurance/img/{{choice.imageUrl}}" alt=""></div>
+          <div class="choice-txt">
+            <p>{{choice.txt}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </article>
+  <article class="article2">
+    <div class="container">
+      <div class="review-list-area">
+        <ul class="review-list">
+          <li ng-repeat="review in reviewList">
+            <a href="#" ng-mousedown="count = count + 1">
+              <div class="review-txt-area">
+                <h3>{{review.name}} / {{review.userAge}}세 / {{review.date}} <span class="counter">{{count}}</span></h3>
+                <p class="review-txt">{{review.txt}}</p>
+              </div>
+              <div class="review-img">
+                <img ng-src="./partials/layout/contents/searchInsurance/img/{{review.imageUrl}}" alt="리뷰어">
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+  <footer class="btn-block">
+    <p>
+      진짜 필요한 보험은 따로 있습니다.<br>
+      전문가들의 알찬 조언~ 슈가가 추천하는 무료보장분석
+    </p>
+    <a href="#" class="btn" ng-click="indemnityAnalysis()">100% 무료 보장분석받기</a>
+  </footer>
+</section>

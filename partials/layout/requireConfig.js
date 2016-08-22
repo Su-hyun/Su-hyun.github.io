@@ -3,21 +3,21 @@
 require.config({
 	baseUrl: '',
   waitSeconds: 30,
-  onNodeCreated: function(node, config, moduleName, url) {
-    node.addEventListener('load', function() {
-      var line = document.createElement("div");
-      line.className = "requireLoadingText";
-      line.innerHTML = ">> " + moduleName
-          + " has been loaded (200 OK)";
-      document.body.appendChild(line);
-    });
-    node.addEventListener('error', function() {
-      var line = document.createElement("div");
-      line.className = "requireLoadingText";
-      line.innerHTML = ">>" + 'module ' + moduleName
-          + ' could not be loaded';
-    });
-  },
+  //onNodeCreated: function(node, config, moduleName, url) {
+  //  node.addEventListener('load', function() {
+  //    var line = document.createElement("div");
+  //    line.className = "requireLoadingText";
+  //    line.innerHTML = ">> " + moduleName
+  //        + " has been loaded (200 OK)";
+  //    document.body.appendChild(line);
+  //  });
+  //  node.addEventListener('error', function() {
+  //    var line = document.createElement("div");
+  //    line.className = "requireLoadingText";
+  //    line.innerHTML = ">>" + 'module ' + moduleName
+  //        + ' could not be loaded';
+  //  });
+  //},
 	paths: {
 		//jquery
 		'jquery': './lib/jquery/dist/jquery.min',
