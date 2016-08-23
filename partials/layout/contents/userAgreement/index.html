@@ -1,3 +1,81 @@
-<section ng-controller="userAgreementController">
-  <h2>userAgreement</h2>
+<section class="wrapper container" ng-controller="userAgreementController">
+  <ul class="location">
+    <li>약관동의</li>
+    <li>회원정보입력</li>
+    <li>회원가입완료</li>
+  </ul>
+  <section>
+    <article>
+      <div>
+        <h3>슈가이용약관 동의 <span>(필수)</span></h3>
+        <div>
+          <pre>
+            제 1 조 (목적)
+            이 약관은 YIFA 주식회사 ("회사" 또는  "YIFA")가 제공하는 슈가 및 슈가 관련 제반 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타
+            필요한 사항을 규정함을 목적으로 합니다.
+
+            제 2 조 (정의)
+            YIFA가 제공하는 슈가 및 슈가 관련 제반 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을
+            목적으로 합니다.
+          </pre>
+        </div>
+        <label for="accessTerm"><input type="checkbox" id="accessTerm" ng-checked="allAgree"> 동의합니다.</label>
+      </div>
+      <div>
+        <h3>개인정보 수집 및 이용에 대한 안내 <span>(필수)</span></h3>
+        <div>
+          <pre>
+            제 1 조 (목적)
+            이 약관은 YIFA 주식회사 ("회사" 또는  "YIFA")가 제공하는 슈가 및 슈가 관련 제반 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타
+            필요한 사항을 규정함을 목적으로 합니다.
+
+            제 2 조 (정의)
+            YIFA가 제공하는 슈가 및 슈가 관련 제반 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을
+            목적으로 합니다.
+          </pre>
+        </div>
+        <label for="personalInfo"><input type="checkbox" id="personalInfo" ng-checked="allAgree"> 동의합니다.</label>
+      </div>
+      <div>
+        <h3>이벤트등 프로모션 알림 메일 수신 <span>(선택)</span></h3>
+        <div>
+          <pre>
+            제 1 조 (목적)
+            이 약관은 YIFA 주식회사 ("회사" 또는  "YIFA")가 제공하는 슈가 및 슈가 관련 제반 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타
+            필요한 사항을 규정함을 목적으로 합니다.
+
+            제 2 조 (정의)
+            YIFA가 제공하는 슈가 및 슈가 관련 제반 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을
+            목적으로 합니다.
+          </pre>
+        </div>
+        <label for="receiveMail"><input type="checkbox" id="receiveMail" ng-checked="allAgree"> 동의합니다.</label>
+      </div>
+      <div>
+        <label for="userAgree"><input type="checkbox" id="userAgree" ng-model="allAgree"> 이용약관, 개인정보 수집 및 이용, 프로모션 안내 메일 수신(선택)에 모두 동의합니다.</label>
+      </div>
+      <input type="submit" value="동의">
+      <input type="button" value="비동의">
+    </article>
+  </section>
+  <section>
+    <form method="post">
+      <input-table></input-table>
+      <input type="submit" value="가입하기">
+      <input type="reset" value="취소">
+    </form>
+  </section>
+  <section>
+    <div>
+      <img src="" alt="">
+    </div>
+    <div>
+      <h2>회원가입이 완료되었습니다.</h2>
+      <p>슈가에서 제공되는 모든 서비스를 정상적으로 이용하실 수 있습니다.</p>
+      <div>
+        <a href="#" ng-click="broadcastGoToHome()">메인으로</a>
+        <a href="#" ng-click="signIn()">로그인</a>
+      </div>
+    </div>
+  </section>
 </section>

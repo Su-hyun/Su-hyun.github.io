@@ -15,4 +15,14 @@ define(['projectSugar'], function () {
           layoutService.fire();
         });
     }]);//userAgreementController.controller
+
+  // directive
+  userAgreementModule.directive('inputTable', function () {
+    return {
+      restrict : "E",
+      replace:true,
+      transclude:true,
+      templateUrl:'./partials/layout/contents/template/inputInfo.html'
+    }
+  });
 });

@@ -76,6 +76,7 @@ button{
 
 /* --- Layout --- */
 
+#wrapper,
 .wrapper{
   width:100%; height:100%;
 }
@@ -291,6 +292,131 @@ main contents
 .twitter{
   background-position:-68px -90px;
 }
+
+
+
+/* --
+입력폼 디렉티브
+-- */
+#inputInfo{
+  margin-bottom:28px;
+  border-top:1px solid #465159;
+  border-bottom:1px solid #465159;
+}
+#inputInfo caption{
+  width:0;
+  height:0;
+  padding:0;
+  font-size:0;
+  opacity: 0;
+}
+#inputInfo tbody{
+  background-color:#fff;
+}
+#inputInfo tr{
+  height:54px;
+  border-top:1px solid #f4f4f4;
+}
+#inputInfo tr:first-child{
+  border-top:0 none;
+}
+#inputInfo th{
+  width:22%;
+  padding-left:20px;
+  text-align:left;
+}
+#inputInfo td{
+  padding-left:20px;
+  text-align:left;
+  border-left:1px solid #f4f4f4;
+}
+#inputInfo input,
+#inputInfo select{
+  display:inline-block;
+  width:295px;
+  height:36px;
+  margin:0 3px;
+  padding: 0.5em 0.5em;
+}
+#inputInfo input:first-child,
+#inputInfo select:first-child{
+  margin-left:0;
+}
+#inputInfo .gender label{
+  margin-bottom:0;
+  position:relative;
+}
+#inputInfo .gender label::before{
+  content:"";
+  display:inline-block;
+  width:32px;
+  height:32px;
+  margin-right:10px;
+  vertical-align: middle;
+  border:1px solid #c4c9cc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;;
+}
+#inputInfo .gender input[type="radio"]{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:-1;
+  opacity:0;
+}
+#inputInfo .gender input:checked + label::before{
+  border:0 none;
+  background:url(../../common/img/checked.png) no-repeat center/contain;
+}
+#inputInfo .gender span:nth-child(2){
+  margin-left:100px;
+}
+#inputInfo .selectStyle{
+  position:relative;
+}
+#inputInfo .selectStyle select{
+  width:120px;
+  font-size:0.8rem;
+  color:#b8b8b8;
+  border: 1px solid #c4c9cd;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color:#fff;
+  outline: 0;
+}
+#inputInfo .selectStyle::before {
+  content: "";
+  display:block;
+  position: absolute;
+  top: 47%;
+  left: 285px;
+  width: 0;
+  height: 0;
+  margin-top: -1px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+}
+#inputInfo .selectStyle.email input[type="text"]{ width:165px; }
+#inputInfo .selectStyle.email input[type="button"]{
+  width:140px;
+  color:#fff;
+  background-color: #548ed0;
+  border:0 none;
+}
+#inputInfo .selectStyle.mobile select,
+#inputInfo .selectStyle.mobile input{
+  width:93px;
+}
+#inputInfo .selectStyle.mobile::before{
+  left: 85px;
+}
+
+
+/* -- 입력폼 디렉티브 끝 -- */
 
 @media all and (max-width:1199px){
   .foot-con{

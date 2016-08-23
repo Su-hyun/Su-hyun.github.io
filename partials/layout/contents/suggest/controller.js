@@ -7,9 +7,9 @@ define(['projectSugar'], function () {
     function($scope, $ocLazyLoad, suggestService, layoutService) {
 
       $scope.lowerPriceList = [
-        { logoImg:"lifeplanet.png", monthPay:"33000", insurable:"3억", term:"10년 만기"},
-        { logoImg:"lifeplanet.png", monthPay:"22000", insurable:"1억", term:"20년 만기"},
-        { logoImg:"lifeplanet.png", monthPay:"15000", insurable:"5천만원", term:"65세 만기"}
+        //{ logoImg:"lifeplanet.png", monthPay:"33000", insurable:"3억", term:"10년 만기"},
+        //{ logoImg:"lifeplanet.png", monthPay:"22000", insurable:"1억", term:"20년 만기"},
+        //{ logoImg:"lifeplanet.png", monthPay:"15000", insurable:"5천만원", term:"65세 만기"}
       ];
 
       $ocLazyLoad

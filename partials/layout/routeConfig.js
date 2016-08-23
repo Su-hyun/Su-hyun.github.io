@@ -34,6 +34,28 @@ define(['projectSugar'], function () {
             }]
           }
         });
+        //.state('properIns', {
+        //  url: "/ins", // root route
+        //  views: {
+        //    '': {
+        //      controller: 'properInsController', // This view will use AppCtrl loaded below in the resolve
+        //      templateUrl: 'partials/layout/contents/properInsurance/index.html'
+        //    }
+        //  },
+        //  resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+        //    layoutIndexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+        //      // you can lazy load files for an existing module
+        //      return $ocLazyLoad.load([{
+        //        name: 'properInsService',
+        //        files: ['partials/layout/contents/properInsurance/service.js']
+        //      },{
+        //        name: 'properInsController',
+        //        files: ['partials/layout/contents/properInsurance/controller.js']
+        //      }]);
+        //    }]
+        //  }
+        //});
+
         /* test 추가시 사용
         .state('test', {
           url: "/test", // root route

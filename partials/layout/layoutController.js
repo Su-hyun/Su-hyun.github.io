@@ -12,19 +12,19 @@ define(
       $scope.mainFooter = 'partials/layout/footer/';
 
       $scope.$on('$includeContentLoaded',function(event, file) {
-        if (file === 'partials/layout/header/') {
-          layoutService.fire();
-        } else if (file === 'partials/layout/contents/') {
-          layoutService.fire();
-        } else if (file === 'partials/layout/footer/') {
-          layoutService.fire();
+        if (file === 'partials/layout/header/'){
+          console.log(file)
+        }else if (file === 'partials/layout/contents/'){
+          $ocLazyLoad.load('partials/layout/contents/index.css');
+          console.log(file)
+        }else if (file === 'partials/layout/footer/'){
+          console.log(file)
         }
       });
 
       $scope.$on('goToHome', function() {
         $scope.contentWrapper = 'partials/layout/contents/';
         $ocLazyLoad.load('partials/layout/contents/index.css');
-        layoutService.fire();
         console.log("goToHome");
       });
 
@@ -72,9 +72,26 @@ define(
         }
       };
 
+      //올바른 보험
+      $scope.properInsurance = function() {
+        $ocLazyLoad
+          .load ([{
+              name: 'properInsService',
+              files: ['partials/layout/contents/properInsurance/service.js']
+            }, {
+              name: 'properInsController',
+              files: ['partials/layout/contents/properInsurance/controller.js']
+            }, 'partials/layout/contents/properInsurance/index.css'])
+          .then (function () {
+              $scope.contentWrapper = "partials/layout/contents/properInsurance/";
+            }, function (e) {
+              console.log (e);
+            }
+          );
+      };
+
       //보험의 진실
       $scope.tellTruth = function() {
-
         $ocLazyLoad
           .load ([{
             name: 'tellTruthService',
@@ -211,39 +228,39 @@ define(
       // 1:1게시판
       $scope.oneAndOne = function() {
         $ocLazyLoad
-            .load([{
-              name : 'oneAndOneService',
-              files : [ 'partials/layout/contents/oneAndOne/service.js' ]
-            },{
-              name : 'oneAndOneController',
-              files : [ 'partials/layout/contents/oneAndOne/controller.js' ]
-            }, 'partials/layout/contents/oneAndOne/index.css'
-            ])
-            .then(function() {
-                  $scope.contentWrapper = "partials/layout/contents/oneAndOne/";
-                }, function(e) {
-                  console.log(e);
-                }
-            );
+          .load([{
+            name : 'oneAndOneService',
+            files : [ 'partials/layout/contents/oneAndOne/service.js' ]
+          },{
+            name : 'oneAndOneController',
+            files : [ 'partials/layout/contents/oneAndOne/controller.js' ]
+          }, 'partials/layout/contents/oneAndOne/index.css'
+          ])
+          .then(function() {
+             $scope.contentWrapper = "partials/layout/contents/oneAndOne/";
+             }, function(e) {
+                console.log(e);
+              }
+          );
       };
 
       // 마이페이지
       $scope.myPage = function() {
         $ocLazyLoad
-            .load([{
-              name : 'myPageService',
-              files : [ 'partials/layout/contents/myPage/service.js' ]
-            },{
-              name : 'myPageController',
-              files : [ 'partials/layout/contents/myPage/controller.js' ]
-            }, 'partials/layout/contents/myPage/index.css'
-            ])
-            .then(function() {
-                  $scope.contentWrapper = "partials/layout/contents/myPage/";
-                }, function(e) {
-                  console.log(e);
-                }
-            );
+          .load([{
+            name : 'myPageService',
+            files : [ 'partials/layout/contents/myPage/service.js' ]
+          },{
+            name : 'myPageController',
+            files : [ 'partials/layout/contents/myPage/controller.js' ]
+          }, 'partials/layout/contents/myPage/index.css'
+          ])
+          .then(function() {
+                $scope.contentWrapper = "partials/layout/contents/myPage/";
+              }, function(e) {
+                console.log(e);
+              }
+          );
       };
 
       // FAQ
@@ -366,7 +383,7 @@ define(
       $ocLazyLoad
         .load('./partials/common/js/jquery.cookie.js')
         .then(function () {
-          layoutService.fire();
+          //layoutService.fire();
         });
     }]); // layoutIndexModule.controller
 
@@ -377,12 +394,14 @@ define(
             './partials/common/js/jquery.cookie.js'
           ])
           .then(function() {
-            layoutService.fire();
-            var $subUl = $('.sub-lnb'),
+            var $lnbUl = $('.lnb'),
+                $subUl = $('.sub-lnb'),
                 $subUlBg = $('.sub-bg');
             $('.logo-header').on('click', function () {
+              $lnbUl.children('li').removeClass('active');
               $subUl.css('height',0);
               $subUlBg.css('height',0);
+              console.log("ccccc")
             });
             $('.lnb > li').on('click', function() {
               var $this = $ (this);
@@ -493,7 +512,6 @@ define(
           ])
           .then(function() {
             layoutService.fire();
-
             var $eventArea = $('.event-area'),
                 $eventList = $('.event-list'),
                 idx = 0;

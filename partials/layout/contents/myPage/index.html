@@ -1,4 +1,4 @@
-<section id="myPage" ng-controller="myPageController">
+<section id="myPage" class="wrapper" ng-controller="myPageController">
   <div class="myHeader">
     <div class="container myHeader-img"><span class="ir">자물쇠 그림</span></div>
   </div>
@@ -25,64 +25,7 @@
           <p class="fontS20">내정보 수정</p>
           <p class="fontS15">내 정보 페이지에서 회원정보 수정 및 내 정보를 관리하실 수 있습니다.</p>
           <form method="post">
-            <table class="fontS15">
-              <caption>내정보 수정</caption>
-              <colgroup>
-                <col width="22%">
-                <col>
-              </colgroup>
-              <tbody>
-              <tr>
-                <th>이메일</th>
-                <td class="selectStyle email">
-                  <input type="text" placeholder="Email@yifa.co.kr">
-                  <select>
-                    <option></option>
-                    <option>naver.com</option>
-                  </select>
-                  <input type="button" value="이메일 중복확인">
-                </td>
-              </tr>
-              <tr>
-                <th>비밀번호</th>
-                <td><input type="password"></td>
-              </tr>
-              <tr>
-                <th>비밀번호 확인</th>
-                <td><input type="password"></td>
-              </tr>
-              <tr>
-                <th>이름</th>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <th>성별</th>
-                <td class="gender">
-                  <span>
-                    <input type="radio" id="male" name="gender" value="남자">
-                    <label for="male">남자</label>
-                  </span>
-                  <span>
-                    <input type="radio" id="female" name="gender" value="여자">
-                    <label for="female">여자</label>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th>생년월일</th>
-                <td><input type="text" placeholder="yy/mm/dd" ng-maxlength="6"></td>
-              </tr>
-              <tr>
-                <th>휴대폰</th>
-                <td class="selectStyle mobile">
-                  <select>
-                    <option>010</option>
-                  </select>
-                  - <input type="text"> - <input type="text">
-                </td>
-              </tr>
-              </tbody>
-            </table>
+            <input-table></input-table>
             <input type="submit" value="수정">
             <input type="reset" value="취소">
           </form>
