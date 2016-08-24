@@ -57,6 +57,22 @@ define(['projectSugar'], function () {
       templateUrl:'./partials/layout/contents/properInsurance/template/insCon02-01.html'
     }
   })
+  .directive('insTit02Con02', function () {
+    return {
+      restrict : "E",
+      replace:true,
+      transclude:true,
+      templateUrl:'./partials/layout/contents/properInsurance/template/insCon02-02.html'
+    }
+  })
+  .directive('insTit02Con03', function () {
+    return {
+      restrict : "E",
+      replace:true,
+      transclude:true,
+      templateUrl:'./partials/layout/contents/properInsurance/template/insCon02-03.html'
+    }
+  })
   .directive('insTit03Con01', function () {
     return {
       restrict : "E",

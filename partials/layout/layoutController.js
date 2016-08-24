@@ -283,24 +283,11 @@ define(
       };
 
       // 로그인
+      $scope.showSingIn = false;
       $scope.signIn = function() {
-        $ocLazyLoad
-          .load([{
-            name : 'signInService',
-            files : [ 'partials/layout/contents/signIn/service.js' ]
-          },{
-            name : 'signInController',
-            files : [ 'partials/layout/contents/signIn/controller.js' ]
-          }, 'partials/layout/contents/signIn/index.css'
-          ])
-          .then(function() {
-              $scope.contentWrapper = "partials/layout/contents/signIn/";
-            }, function(e) {
-              console.log(e);
-            }
-          );
+        console.log("로그인");
+        $scope.showSingIn = !$scope.showSingIn;
       };
-
 
 
       // 회사소개
@@ -389,6 +376,13 @@ define(
 
     layoutIndexModule.controller('headerController', ['$scope', '$ocLazyLoad', 'layoutService',
       function($scope, $ocLazyLoad, layoutService) {
+        //// 로그인
+        //$scope.showSingIn = false;
+        //$scope.signIn = function() {
+        //  console.log("로그인");
+        //  $scope.showSingIn = !$scope.showSingIn;
+        //};
+
         $ocLazyLoad
           .load([
             './partials/common/js/jquery.cookie.js'
@@ -578,6 +572,34 @@ define(
         replace:true,
         transclude:true,
         templateUrl:'./partials/layout/contents/main/template/viewDetail.html'
+      }
+    });
+
+    layoutIndexModule.directive('signInModal', function () {
+      return {
+        restrict : "E",
+        replace:true,
+        transclude:true,
+        templateUrl:'./partials/layout/contents/template/signIn.html',
+        scope:true,
+        link: function postLink(scope, element, attrs) {
+          scope.$watch(attrs.visible, function(value){
+            if(value == true)
+              $(element).modal('show');
+            else
+              $(element).modal('hide');
+          });
+          $(element).on('shown.bs.modal', function(){
+            scope.$apply(function(){
+              scope.$parent[attrs.visible] = true;
+            });
+          });
+          $(element).on('hidden.bs.modal', function(){
+            scope.$apply(function(){
+              scope.$parent[attrs.visible] = false;
+            });
+          });
+        }
       }
     });
 

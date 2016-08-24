@@ -1,7 +1,6 @@
 <!-- <ui-view></ui-view> 에 들어갈 인크루드 된 내용 -->
 
 <div id="wrapper" ng-controller="layoutController">
-
   <!-- Main Header -->
   <header id="header" ng-include="mainHeader"></header>
 
@@ -11,4 +10,6 @@
   <!-- Main Footer -->
   <footer id="footer" ng-include="mainFooter"></footer>
 
+  <!-- 로그인 -->
+  <sign-in-modal visible="showSingIn"></sign-in-modal>
 </div>

@@ -120,39 +120,74 @@
 }
 
 /* -- font-size -- */
-.list-info p{ font-size:0.6rem }
+.list-info p
+{ font-size:0.6rem }
+
 
 .fontS13{ font-size:0.65rem }
 
-.sub-lnb > li > a,
-.fontS14{ font-size:0.7rem }
 
-.fontS15{ font-size:0.75rem }
+body,h1,h2,h3,h4,input,button,
+.sub-lnb > li > a,
+.fontS14
+{ font-size:0.7rem }
+
+
+.my-form-table,
+.fontS15
+{ font-size:0.75rem }
+
 
 .lnb > li > a,
-.fontS16{ font-size:0.8rem }
+.fontS16
+{ font-size:0.8rem }
 
-.list-info span{ font-size:0.85rem }
 
-.fontS18{ font-size:0.9rem }
+.list-info span
+{ font-size:0.85rem }
 
-.fontS19{ font-size:0.95rem }
 
-.fontS20{ font-size:1rem }
+.fontS18
+{ font-size:0.9rem }
 
-.fontS21{ font-size:1.05rem }
 
-.fontS22{ font-size:1.1rem }
+.fontS19
+{ font-size:0.95rem }
+
+
+.fontS20
+{ font-size:1rem }
+
+
+.fontS21
+{ font-size:1.05rem }
+
+
+#signIn .btn,
+.fontS22
+{ font-size:1.1rem }
+
+
+.modal-header > p
+{ font-size:1.2rem }
 
 
 /* -- font-weight -- */
-.fontWL{ font-weight:300 }
+.fontWL
+{ font-weight:300 }
 
 
+body,h1,h2,h3,h4,input,button,
 .sub-lnb > li > a,
-.list-info span{ font-weight:normal }
+.list-info span
+{ font-weight:normal }
 
-.fontWB{ font-weight:bold }
+
+
+h1,h2,h3,h4,h5,h6,
+.fontWB
+{ font-weight:bold }
+
 
 
 /* -- color -- */
@@ -162,8 +197,37 @@
 
 
 .sub-lnb > li > a,
-.color{ color:#fff }
+.modal-body .btn,
+.sns-sign .sign-face
+{ color:#fff }
+
 
 .color{ color:#f4f4f4 }
 
+
 .color{ color:#dadada }
+
+
+.modal-header p
+{ color : #8c8c8c }
+
+
+.sign-btn-group .forgot
+{ color : #04a9f4 }
+
+.modal-body,
+.modal-footer p,
+.modal-footer p a
+{ color:#727272 }
+
+
+.sns-sign .sign-or
+{ color:#d4d9dd}
+
+
+.sns-sign .sign-kakao
+{ color:#340706 }
+
+
+.sign-checkbox
+{ color:#8b8b8b}
