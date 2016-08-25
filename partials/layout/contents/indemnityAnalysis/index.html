@@ -10,8 +10,8 @@
         <form class="form-horizontal" role="form">
           <div class="form-group">
             <label class="control-label col-sm-2" for="user">이름</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="user" ng-model="inName" placeholder="이름을 입력하세요" >
+            <div class="col-sm-10 input-area">
+              <input type="text" class="form-control" id="user" ng-model="inName" maxlength="12" ng-maxlength="12" placeholder="이름을 입력하세요" >
             </div>
           </div>
           <div class="form-group">
@@ -19,18 +19,18 @@
             <ul class="col-sm-10 sex">
               <li class="radio-inline">
                 <label for="male" class="radio male">남자</label>
-                <input type="radio" id="male" ng-model="inSex" value="남자">
+                <input type="radio" id="male" name="gender" ng-model="inSex" value="남자">
               </li>
               <li class="radio-inline">
                 <label for="female" class="radio female">여자</label>
-                <input type="radio" id="female" ng-model="inSex" value="여자">
+                <input type="radio" id="female" name="gender" ng-model="inSex" value="여자">
               </li>
             </ul>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="birth-d">생년월일</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="birth-d" ng-model="inAge" maxlength="8" placeholder="예) 1990212">
+            <div class="col-sm-10 input-area">
+              <input type="text" class="form-control" id="birth-d" ng-model="inAge" maxlength="8" placeholder="예) 1990212" ng-blur="ageCheck()">
               <p class="notice is-pl">
                 <small>
                   주민등록상의 생년월일을 입력하세요<br>
@@ -44,11 +44,11 @@
             <ul class="col-sm-10">
               <li class="radio-inline">
                 <label for="married" class="radio type2 married on" ng-click="disableAttr()">기혼</label>
-                <input type="radio" id="married" ng-model="inMarry" value="기혼">
+                <input type="radio" id="married" name="marry" ng-model="inMarry" value="기혼">
               </li>
               <li class="radio-inline">
                 <label for="single" class="radio type2 single" ng-click="disableAttr()">미혼</label>
-                <input type="radio" id="single" ng-model="inMarry" value="미혼">
+                <input type="radio" id="single" name="marry" ng-model="inMarry" value="미혼">
               </li>
             </ul>
           </div>
@@ -58,11 +58,11 @@
               <ul class="col-sm-10">
                 <li class="radio-inline">
                   <label for="child-has" class="radio type3 addOn on" ng-click="disableAttr()">유</label>
-                  <input type="radio" id="child-has" ng-model="inChild" value="유">
+                  <input type="radio" id="child-has" name="child" ng-model="inChild" value="유">
                 </li>
                 <li class="radio-inline">
                   <label for="child-none" class="radio type3 addNot" ng-click="disableRemove()">무</label>
-                  <input type="radio" id="child-none" ng-model="inChild" value="무">
+                  <input type="radio" id="child-none" name="child" ng-model="inChild" value="무">
                 </li>
               </ul>
             </div>
@@ -90,11 +90,11 @@
               <ul class="col-sm-10">
                 <li class="radio-inline">
                   <label for="fam-has" class="radio type3 addOn on" ng-click="disableAttr()">유</label>
-                  <input type="radio" id="fam-has" ng-model="inFamily" value="유">
+                  <input type="radio" id="fam-has" name="family" ng-model="inFamily" value="유">
                 </li>
                 <li class="radio-inline">
                   <label for="fam-none" class="radio type3 addNot" ng-click="disableRemove()">무</label>
-                  <input type="radio" id="fam-none" ng-model="inFamily" value="무">
+                  <input type="radio" id="fam-none" name="family" ng-model="inFamily" value="무">
                 </li>
               </ul>
             </div>
@@ -117,15 +117,15 @@
           <div class="form-group">
             <label class="control-label col-sm-4" for="salary">월소득</label>
             <div class="col-sm-8 input-area">
-              <input type="text" class="form-control" id="salary" ng-model="inSalary" maxlength="5" placeholder="예) 220">
+              <input type="text" class="form-control" id="salary" ng-model="inSalary" maxlength="4" placeholder="예) 220">
               <span>만원</span>
               <p class="notice"><small>세금을 제외한 통장에 들어오는 금액을 만원 단위로 입력해 주세요.</small></p>
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-sm-4" for="employment">최초입사년도/<br>국민연급 가입시기</label>
+            <label class="control-label col-sm-4 type2" for="employment">최초입사년도/<br>국민연급 가입시기</label>
             <div class="col-sm-8 input-area">
-              <input type="text" class="form-control" id="employment" ng-model="inEmployment" maxlength="4" placeholder="예) 1990">
+              <input type="text" class="form-control" id="employment" ng-model="inEmployment" maxlength="4" placeholder="예) 1990" ng-blur="jobStartCheck()">
               <span>년도</span>
               <p class="notice"><small>최소 근로소득 또는 사업소득이 발생한 년도를 기입하세요.</small></p>
             </div>
@@ -133,21 +133,21 @@
           <div class="form-group">
             <p class="control-label is-pl">직업군<sup>★</sup></p>
             <ul class="jobs">
-              <li class="col-sm-6">
+              <li class="col-sm-6" ng-click="searchDisableRemove()">
                 <label for="salarymen" class="radio type4 salarymen">근로소득자</label>
-                <input type="radio" id="salarymen" ng-model="inJobs" value="근로소득자">
+                <input type="radio" id="salarymen" name="joblist" ng-model="inJobs" value="근로소득자">
               </li>
-              <li class="col-sm-6">
+              <li class="col-sm-6" ng-click="searchDisableRemove()">
                 <label for="business" class="radio type4 business notice">개인사업자<br><small>(국민연금 지역가입자)</small></label>
-                <input type="radio" id="business" ng-model="inJobs" value="개인사업자">
+                <input type="radio" id="business" name="joblist" ng-model="inJobs" value="개인사업자">
               </li>
-              <li class="col-sm-6">
+              <li class="col-sm-6" ng-click="searchDisableRemove()">
                 <label for="housewife" class="radio type4 housewife">전업주부</label>
-                <input type="radio" id="housewife" ng-model="inJobs" value="전업주부">
+                <input type="radio" id="housewife" name="joblist" ng-model="inJobs" value="전업주부">
               </li>
-              <li class="col-sm-6">
+              <li class="col-sm-6" ng-click="searchDisableRemove()">
                 <label for="otherjobs" class="radio type4 otherjobs notice">공무원,교사,군인<small>(특수직업연금 가입자)</small></label>
-                <input type="radio" id="otherjobs" ng-model="inJobs" value="특수직업">
+                <input type="radio" id="otherjobs" name="joblist" ng-model="inJobs" value="특수직업">
               </li>
             </ul>
             <p class="notice"><small>보험상품, 보장금액, 기간산정을 위하여 필요한 정보입니다.</small></p>
@@ -155,7 +155,7 @@
         </form>
         <div class="btn-block btn-input">
           <button class="btn btn-prev">이전 단계</button>
-          <button class="btn btn-next" ng-disabled="!inJobs">다음 단계</button>
+          <button class="btn btn-next next2" disabled>다음 단계</button>
         </div>
       </div>
       <div class="form-area step-3">
@@ -187,7 +187,7 @@
         </div>
         <div class="btn-block btn-input">
           <button class="btn btn-prev">이전 단계</button>
-          <a href="#" class="btn btn-search" ng-disabled="!inJobs">내게 맞는 보험 찾기</a>
+          <button class="btn btn-search" ng-click="suggest()">내게 맞는 보험 찾기</button>
         </div>
       </div>
     </div>
@@ -202,7 +202,7 @@
           </p>
           <div class="btn-block btn-output">
             <input type="submit" class="btn save" value="저장하기">
-            <a href="#" class="btn btn-search">내게 맞는 보험 찾기</a>
+            <button class="btn btn-search" ng-click="suggest()" disabled>내게 맞는 보험 찾기</button>
           </div>
         </div>
         <div class="notice-info">

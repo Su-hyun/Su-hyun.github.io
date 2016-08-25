@@ -134,14 +134,6 @@ nav li{
   text-align:center;
   font-weight:bold;
 }
-
-nav > ul > li:hover::after{
-  content:"";
-  display:block;
-  margin-top:3px;
-  border-bottom:2px solid #31aae2;
-}
-
 .lnb > li{
   margin:0 25px;
   padding:4px;
@@ -152,6 +144,27 @@ nav > ul > li:hover::after{
 .lnb li a{
   margin:0 3px;
   position:relative;
+}
+.lnb > li.on::after{
+  content:"";
+  display:block;
+  margin-top:3px;
+  border-bottom:2px solid #31aae2;
+}
+.lnb > li:hover > a{
+  position:relative;
+}
+.lnb > li:hover > a::after{
+  content:"";
+  display:block;
+  width:0;
+  height:0;
+  position:absolute;
+  top:calc(100% + 5px);
+  left:calc(50% - 14px);
+  border-left:14px solid transparent;;
+  border-right:14px solid transparent;
+  border-bottom:14px solid #373c44;
 }
 .gnb.help { margin-left:95px; }
 .gnb.signin { margin-left: 18px; }

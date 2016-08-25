@@ -417,6 +417,7 @@ define(
             });
             $('.lnb > li').on('click', function() {
               var $this = $ (this);
+              $this.addClass('on').siblings().removeClass('on');
               if (!$this.is ('.active')) {
                 $this.addClass ('active');
                 $this.siblings ().removeClass ('active');
