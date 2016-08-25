@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="visual-btn-area btn-block">
+    <div class="container visual-btn-area btn-block">
       <button class="btn" ng-click="recommend()">슈가 추천 시작하기<i class="arrow ir">오른쪽 화살표</i></button>
       개인정보를 요구하거나 전화로 귀찮게 하지 않습니다.
     </div>
@@ -47,7 +47,7 @@
         <span class="align-middle"></span>
       </div>
       <ul class="reason">
-        <li class="col-sm-9" ng-repeat="reason in reasonList" >
+        <li ng-repeat="reason in reasonList" >
           <div class="reason-txt">
             <h3>{{reason.tit}}</h3>
             <p>{{reason.txt1}}</p>
@@ -55,7 +55,7 @@
             <p>{{reason.txt3}}</p>
           </div>
           <span class="align-middle"></span>
-          <div class="reason-img"><img ng-src="./partials/layout/contents/searchInsurance/img/{{reason.imageUrl}}" alt=""></div>
+          <figure class="reason-img"><img ng-src="./partials/layout/contents/searchInsurance/img/{{reason.imageUrl}}" alt=""></figure>
         </li>
       </ul>
     </div>

@@ -225,6 +225,24 @@ define(
           );
       };
 
+      // 내 보장분석
+      $scope.indemnityBoard = function() {
+        $ocLazyLoad
+          .load ([{
+            name: 'indemnityBoardService',
+            files: ['partials/layout/contents/indemnityBoard/service.js']
+          }, {
+            name: 'indemnityBoardController',
+            files: ['partials/layout/contents/indemnityBoard/controller.js']
+          }, 'partials/layout/contents/indemnityBoard/index.css'])
+          .then (function () {
+                $scope.contentWrapper = "partials/layout/contents/indemnityBoard/";
+              }, function (e) {
+                console.log (e);
+              }
+          );
+      };
+
       // 1:1게시판
       $scope.oneAndOne = function() {
         $ocLazyLoad

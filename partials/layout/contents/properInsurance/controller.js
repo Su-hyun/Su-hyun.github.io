@@ -6,7 +6,6 @@ define(['projectSugar'], function () {
     function($scope, $ocLazyLoad, properInsService, layoutService) {
 
 
-
       $ocLazyLoad
           .load([
             './partials/common/js/jquery.cookie.js'

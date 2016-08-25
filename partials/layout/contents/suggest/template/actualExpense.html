@@ -1,0 +1,193 @@
+<section class="suggest-contents">
+  <div class="suggest-con-top">
+    <div class="suggest-form suggest-top-form">
+      <input type="checkbox" id="article1-checked-01" checked>
+      <label for="article1-checked-01"><span class="arIdx"></span></label>
+    </div>
+    <div class="suggest-notice">
+      <h4>
+        실손의료비보험<small>월 <span>{{medical_money | number}}</span>원</small>
+      </h4>
+      <p>
+        각종 질병 및 사고 시 발생하는 의료비를 가장 포괄적으로 보장해주는 보험으로 총 의료비 지출 중 국민건강보험에서 지원하지 않는 금액을 보장하기 때문에 "Must have" 보험으로 추천합니다.
+      </p>
+    </div>
+    <span class="align-middle"></span>
+    <div class="suggest-info-img">
+      <img src="./partials/layout/contents/suggest/img/title-img.png" alt="기본부터 갖추기~">
+    </div>
+  </div>
+  <div class="suggest-con-bottom">
+    <div class="suggest-bottom-left">
+      <article class="suggest-expain">
+        <div class="suggest-why">
+          <h4>이렇게 가입해라!</h4>
+          <ul class="why-list why-list-type1">
+            <li>단독 실비 의료비 보험</li>
+            <li>선택형 가입</li>
+            <li>보험기간 1년 / 1년납</li>
+          </ul>
+        </div>
+        <div class="suggest-why suggest-why-type2">
+          <h4>왜?</h4>
+          <ul class="why-list why-list-type2">
+            <li>
+              <p class="why-list-tit">단독실손의료보험 왜?!</p>
+              <ul class="why-sub">
+                <li>실손의료보험은 실손만 단독으로 가입하는 방법과 다른보험의 특양형태로 가입하는 방법이 있습니다. 단독실손의료보험은 불필요한 보장없이 저렴하게 가입할 수 있습니다.</li>
+              </ul>
+            </li>
+            <li>
+              <p class="why-list-tit">선택형 왜?!</p>
+              <ul class="why-sub">
+                <li>보험료의 차이가 거의 없지만 자기 부담금이 적은 선택형을 추천합니다.</li>
+              </ul>
+            </li>
+            <li>
+              <p class="why-list-tit">보험기간 1년 왜?!</p>
+              <ul class="why-sub">
+                <li>실손의료비보험은 1년 만기 갱신형 상품으로 모든 회사가 동일하게 판매 중입니다. 15년마다 재가입을 통하여 100세까지 보장받을 수 있습니다.</li>
+              </ul>
+            </li>
+          </ul>
+          <button class="more-info">자세히 알아보기</button>
+        </div>
+      </article>
+    </div>
+    <div class="suggest-bottom-right">
+      <div class="suggest-product">
+        <p class="suggest-customer">{{userName}}님</p>
+        <ul class="product-list">
+          <li class="view-type1" ng-repeat="medicalProduct in medicalProductList" ng-show="$index < 2">
+            <div class="suggest-form product-form">
+              <input type="radio" name="medical" id="medical1-list1-check{{$index}}" ng-checked="$index == 0">
+              <label for="medical1-list1-check{{$index}}">
+                <figure>
+                  <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+                </figure>
+                <span class="align-middle"></span>
+              </label>
+            </div>
+            <div class="list-premium">
+              <p>월 <span>{{medicalProduct.price | number}}</span>원 (최저가)</p>
+              <span class="align-middle"></span>
+            </div>
+            <div class="product-why">
+              <ul>
+                <li>{{medicalProduct.name}}</li>
+                <li>자기부담금 : 선택형 II<br>(본인부담금 10% + 비급여 20%)</li>
+              </ul>
+              <a href="{{medicalProduct.url}}" target="_blank"><button class="btn-join">온라인 바로가입</button></a>
+            </div>
+          </li>
+        </ul>
+        <ul class="product-list">
+          <li class="view-type2" ng-repeat="medicalProduct in medicalProductList" ng-show="$index > 1 && $index < 5">
+            <div class="suggest-table">
+              <table>
+                <colgroup>
+                  <col width="5.7692308%">
+                  <col width="16%">
+                  <col>
+                  <col width="12.019231%">
+                  <col width="13.942308%">
+                  <col width="22.955128%">
+                </colgroup>
+                <tbody>
+                <tr class="tr-1st">
+                  <td rowspan="2">
+                    <input type="radio" name="medical" id="medical1-list2-check{{$index}}">
+                    <label for="medical1-list2-check{{$index}}"></label>
+                  </td>
+                  <td class="td-inslogo" rowspan="2">
+                    <figure>
+                      <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+                    </figure>
+                  </td>
+                  <td>상품명</td>
+                  <td>가입연령</td>
+                  <td>월보험료</td>
+                  <td rowspan="2">
+                    <button class="btn-join">온라인 바로가입</button>
+                  </td>
+                </tr>
+                <tr class="tr-2nd">
+                  <td class="ellipsis">{{medicalProduct.name}}</td>
+                  <td>{{medicalProduct.age}}</td>
+                  <td><span>{{medicalProduct.price}}</span>원</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="suggest-product type2" ng-show="userChild=='유'">
+        <p class="suggest-customer">{{userName}}님의 자녀</p>
+        <ul class="product-list">
+
+          <li class="view-type1" ng-repeat="medicalProduct in medicalProductList" ng-show="$index < 2">
+            <div class="suggest-form product-form">
+              <input type="checkbox" id="article1-list1-check1" checked>
+              <label for="article1-list1-check1">
+                <figure>
+                  <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+                </figure>
+                <span class="align-middle"></span>
+              </label>
+            </div>
+            <div class="list-premium">
+              <p>월 <span>{{medicalProduct.price | number}}</span>원 (최저가)</p>
+              <span class="align-middle"></span>
+            </div>
+            <div class="product-why">
+              <ul>
+                <li>{{medicalProduct.name}}</li>
+                <li>자기부담금 : 선택형 II<br>(본인부담금 10% + 비급여 20%)</li>
+              </ul>
+              <a href="{{medicalProduct.url}}" target="_blank"><button class="btn-join">온라인 바로가입</button></a>
+            </div>
+          </li>
+          <li class="view-type2" ng-repeat="medicalProduct in medicalProductList" ng-show="$index > 1 && $index < 5">
+            <div class="suggest-table">
+              <table>
+                <colgroup>
+                  <col width="5.7692308%">
+                  <col width="16%">
+                  <col>
+                  <col width="12.019231%">
+                  <col width="13.942308%">
+                  <col width="22.955128%">
+                </colgroup>
+                <tbody>
+                <tr class="tr-1st">
+                  <td rowspan="2">
+                    <input type="checkbox" id="article1-list2-check1">
+                    <label for="article1-list2-check1"></label>
+                  </td>
+                  <td class="td-inslogo" rowspan="2">
+                    <figure>
+                      <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+                    </figure>
+                  </td>
+                  <td>상품명</td>
+                  <td>가입연령</td>
+                  <td>월보험료</td>
+                  <td rowspan="2">
+                    <button class="btn-join">온라인 바로가입</button>
+                  </td>
+                </tr>
+                <tr class="tr-2nd">
+                  <td class="ellipsis">{{medicalProduct.name}}</td>
+                  <td>{{medicalProduct.age}}</td>
+                  <td><span>{{medicalProduct.price}}</span>원</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

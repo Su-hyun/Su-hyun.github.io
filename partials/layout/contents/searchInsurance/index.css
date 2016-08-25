@@ -89,6 +89,7 @@
   color:#fff;
   line-height:2.5;
   background-color:#548ed0;
+  overflow:hidden
 }
 .visual-btn-area .arrow{
   display:inline-block;
@@ -216,8 +217,8 @@
 .reason-txt h3::before{
   content:"";
   display:block;
-  width:2vw;
-  height:2vw;
+  width:24px;
+  height:24px;
   position:absolute;
   top:-0.4vw;
   left:-3vw;
@@ -231,14 +232,19 @@
 .reason-txt p~p{
   margin-top:0;
 }
+.reason-txt p::before{
+  content:"-";
+  display:inline-block;
+  margin-right:5px;
+}
 .reason li:nth-child(1){
   border-top:0 none;
 }
 .reason-img{
   display:block;
   position:absolute;
-  top:35px;
-  right:-255px;
+  top:18px;
+  right:0;
   text-align:center;
 }
 .reason-img img{

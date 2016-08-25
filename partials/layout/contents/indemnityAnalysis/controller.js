@@ -34,9 +34,9 @@ define(['projectSugar'], function () {
         return nowAge
       };
 
-      $scope.inJob = "직업군";
+      $scope.inJobs = "직업군";
       $scope.outJob = function () {
-        return $scope.inJob
+        return $scope.inJobs
       };
 
       $scope.inMarry = "결혼여부";

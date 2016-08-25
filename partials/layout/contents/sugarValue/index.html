@@ -1,6 +1,19 @@
 <section class="wrapper container" ng-controller="sugarValueController">
   <h2>Value</h2>
-  <div ui-view="filters"></div>
-  <div ui-view="tabledata"></div>
-  <div ui-view="graph"></div>
+  <p><i>Best viewed in pop-out mode to see location changes. Click blue button on the right.</i></p>
+
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Abstract State Example</a>
+      <ul class="nav">
+        <li><a href="#/contacts/list">Go Back to List</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12">
+      <div class="well" ui-view></div>
+    </div>
+  </div>
 </section>

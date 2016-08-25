@@ -1,19 +1,5 @@
 @charset "utf-8";
 
-.form-horizontal, .form-group{
-  margin:0;
-}
-.form-horizontal .form-group{
-  margin:0;
-}
-.col-sm-6{
-  padding-bottom: 30px;
-}
-.form-horizontal .control-label{
-  text-align:left;
-  font-weight:bold;
-}
-
 .forms{
   min-height:790px;
   padding:45px 26px 50px 47px;
@@ -31,6 +17,7 @@
   border-bottom:0 none;
 }
 .nav-tabs li{
+  width:50%;
   padding:0;
   text-align:center;
   border:1px solid #e5e5e5;
@@ -91,7 +78,21 @@
 .btn-tab03.on i{
   background-position:-310px -35px;
 }
-
+.form-horizontal, .form-group{
+  margin:0;
+}
+.form-horizontal .form-group{
+  margin:0;
+}
+.col-sm-6{
+  padding-bottom: 30px;
+}
+.form-horizontal .control-label{
+  text-align:left;
+}
+.form-horizontal .control-label.type2{
+  padding-top:3px
+}
 .form-area{
   display:none;
   margin-top:32px;
@@ -111,10 +112,8 @@
   text-align:center;
 }
 .form-group .control-label{
+  padding-top:13px;
   word-break: keep-all;
-}
-.form-group p.control-label{
-  padding-top:15px;
 }
 .col-sm-10 .radio-inline{
   padding:0;
@@ -221,6 +220,11 @@
   width:130px;
   margin-left:0;
 }
+.add-area .childDel{
+  width: 30px;
+  margin-left:0;
+}
+
 .addBox{
   float:right;
   position:relative;
@@ -285,15 +289,17 @@
 
 }
 .form-group p.notice{
-  padding-top:5px;
+  padding:5px;
+}
+.form-group.type-height{
+  min-height:373px;
 }
 .notice small{
   display:block;
   font-size:0.6rem;
   font-weight:300;
   color:#a7a7a7;
-  letter-spacing: 0;
-  white-space: nowrap;
+  word-break: keep-all;
 }
 .add-area.infamily{
   margin-bottom:5px;
@@ -323,12 +329,12 @@ p.notice.type2{
 .jobs,
 .uploadInfo{
   margin-top:20px;
-  padding:10px 20px;
+  padding:10px;
   background-color:#f7f6f4;
   overflow:hidden;
 }
 .jobs .col-sm-6{
-  padding:15px;
+  padding:10px;
   position: relative;
 }
 .jobs .radio{

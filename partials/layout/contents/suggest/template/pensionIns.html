@@ -1,0 +1,254 @@
+<section class="suggest-contents">
+  <div class="suggest-con-top">
+    <div class="suggest-form suggest-top-form">
+      <input type="checkbox" id="article3-checked-01" checked>
+      <label for="article3-checked-01"><span class="arIdx"></span></label>
+    </div>
+    <div class="suggest-notice">
+      <h4>
+        연금보험<small>월 <span>{{annuityPrice}}</span>원</small>
+      </h4>
+      <p>
+        <strong>연금보험은 다양한 노후준비 방법 중 죽을때까지 일정금액이 지급</strong> 되는 장점이 있어 고려해볼만한 상품으로 추천합니다.
+      </p>
+    </div>
+    <span class="align-middle"></span>
+    <div class="suggest-info-img">
+      <img src="./partials/layout/contents/suggest/img/title-img.png" alt="기본부터 갖추기~">
+    </div>
+  </div>
+  <div class="suggest-con-bottom">
+    <div class="suggest-bottom-left">
+      <article class="suggest-explain">
+        <div class="suggest-why">
+          <h4>이렇게 가입해라!</h4>
+          <ul class="why-list why-list-type1">
+            <li>연금저축보험 / 개인연금보험 중 선택 가입</li>
+            <li>종신형(20년보증) / 65세 연금개지 / 20년납</li>
+            <li>월 보험료 {{annuityPrice}}원</li>
+          </ul>
+        </div>
+        <div class="suggest-why">
+          <h4>슈가 목표 연금액 <small>(은퇴 후 매월 소득의 55%)</small></h4>
+          <ul class="pension-graph">
+            <li class="pension-list1">
+              <span>{{annuity[0].per}}%</span>
+              <span>{{annuity[0].money}}만원</span>
+            </li>
+            <li class="pension-list2">
+              <span>{{annuity[1].per}}%</span>
+              <span>{{annuity[1].money}}만원</span>
+            </li>
+            <li class="pension-list3">
+              <span>{{annuity[2].per}}%</span>
+              <span>{{annuity[2].money}}만원</span>
+            </li>
+          </ul>
+        </div>
+        <div class="suggest-why suggest-why-type2">
+          <h4>왜?</h4>
+          <ul class="why-list why-list-type2">
+            <li>
+              <p class="why-list-tit">연금저축 / 개인연금 왜?!</p>
+              <ul class="why-sub">
+                <li>세액공제가 필요한 경우 연금저축보험 가입을 비과세 혜택이 필요한 경우 개인연금보험 가입을 추천합니다.</li>
+              </ul>
+            </li>
+            <li>
+              <p class="why-list-tit">종신형, 65세 연금개시 왜?!</p>
+              <ul class="why-sub">
+                <li>평균 수명이 늘어남에 따라 장수위험에 대비하여 종신형 가입을 추천합니다.</li>
+                <li>국민연금 수령시기와 동일하게 설정하여 <span>소득대체</span>를 준비하는 것을 추천합니다.</li>
+              </ul>
+            </li>
+            <li>
+              <p class="why-list-tit">월 {{needMonthMoney | number}}만원 왜?!</p>
+              <ul class="why-sub">
+                <li>슈가는 은퇴 후 매월 소득의 55%를 연금으로 수령 할 수 있도록 준비하는 것을 추천합니다.</li>
+                <li>
+                  소득대체율 55%를 달성하기 우한 필요 연금월액 {{needMonthMoney | number}}만원 달성하기 위하여
+                  국민연금 {{annuity[0].money}}만원과 퇴직연금 {{annuity[1].money}}만원을 제외한 {{annuity[2].money}}만원의 연금월액을 받기 위한 보험료입니다.
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button class="more-info">자세히 알아보기</button>
+        </div>
+      </article>
+    </div>
+    <div class="suggest-bottom-right">
+      <div class="suggest-product">
+        <p class="suggest-customer">연금저축보험</p>
+        <ul class="product-list">
+          <li class="view-type3" ng-repeat="saving in savingList" ng-show="$index < 2">
+            <div class="suggest-form product-form">
+              <input type="checkbox" id="saving1-list1-check{{$index}}" checked>
+              <label for="saving-list1-check{{$index}}">
+                <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+                <span class="align-middle"></span>
+              </label>
+            </div>
+            <div class="list-info">
+              <ul>
+                <li>
+                  <p>{{saving.name}}</p>
+                  <span class="align-middle"></span>
+                </li>
+                <li>
+                  <p>
+                    월 보험료
+                    <span>월 {{saving.price_kor}}만원</span>
+                  </p>
+                  <span class="align-middle"></span>
+                </li>
+                <li>
+                  <p>
+                    공시이율
+                    <span>{{saving.refund_per}}%</span>
+                  </p>
+                  <span class="align-middle"></span>
+                </li>
+                <li>
+                  <p>
+                    해지환급금
+                    <span>{{saving.public_refund}}만원</span>
+                  </p>
+                  <span class="align-middle"></span>
+                </li>
+                <li>
+                  <p>
+                    연금액
+                    <span>월 {{saving.amount}}만원</span>
+                  </p>
+                  <span class="align-middle"></span>
+                </li>
+              </ul>
+              <a href="{{saving.url}}" target="_blank"><button class="btn-join">온라인 바로가입</button></a>
+            </div>
+          </li>
+          <li class="view-type2" ng-repeat="saving in savingList" ng-show="$index > 1">
+            <div class="suggest-table">
+              <table>
+                <colgroup>
+                  <col width="5.7692308%">
+                  <col width="22.435897%">
+                  <col width="23.878205%">
+                  <col width="12.019231%">
+                  <col width="13.942308%">
+                  <col width="22.955128%">
+                </colgroup>
+                <tbody>
+                <tr class="tr-1st">
+                  <td rowspan="2">
+                    <input type="checkbox" id="saving1-list2-check{{$index}}">
+                    <label for="saving1-list2-check{{$index}}"></label>
+                  </td>
+                  <td rowspan="2"><img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고"></td>
+                  <td>상품명</td>
+                  <td>공시이율</td>
+                  <td>해지환급금</td>
+                  <td rowspan="2">
+                    <a href="{{saving.url}}" target="_blank"><button class="btn-join">온라인 바로가입</button></a>
+                  </td>
+                </tr>
+                <tr class="tr-2nd">
+                  <td class="ellipsis">{{saving.name}}</td>
+                  <td>{{saving.refund_per}}%</td>
+                  <td><span>{{saving.public_refund}}</span>만원</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+        </ul>
+        <p>★ 매월 변동되는 공시이율을 기준을 산출된 결과입니다.</p>
+      </div>
+      <div class="suggest-product type2">
+        <p class="suggest-customer">개인연금보험</p>
+        <ul class="product-list">
+          <li class="view-type1" ng-repeat="saving in univerList" ng-show="$index < 2">
+            <div class="suggest-form product-form">
+              <input type="checkbox" id="saving2-list1-check{{$index}}" checked>
+              <label for="saving2-list1-check{{$index}}">
+                <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+                <span class="align-middle"></span>
+              </label>
+            </div>
+            <div class="list-info">
+              <ul>
+                <li>
+                  <p>{{saving.name}}</p>
+                  <span class="align-middle"></span>
+                </li>
+                <li>
+                  <p>
+                    월 보험료
+                    <span>월 {{saving.price_kor}}만원</span>
+                  </p>
+                  <span class="align-middle"></span>
+                </li>
+                <li>
+                  <p>
+                    공시이율
+                    <span>{{saving.refund_per}}%</span>
+                  </p>
+                  <span class="align-middle"></span>
+                </li>
+                <li>
+                  <p>
+                    해지환급금
+                    <span>{{saving.public_refund}}만원</span>
+                  </p>
+                  <span class="align-middle"></span>
+                </li>
+                <li>
+                  <p>
+                    연금액
+                    <span>월 {{saving.amount}}만원</span>
+                  </p>
+                  <span class="align-middle"></span>
+                </li>
+              </ul>
+              <a href="{{saving.url}}" target="_blank"><button class="btn-join">온라인 바로가입</button></a>
+            </div>
+          </li>
+          <li class="view-type2" ng-repeat="saving in univerList" ng-show="$index > 1">
+            <div class="suggest-table">
+              <table>
+                <colgroup>
+                  <col width="5.7692308%">
+                  <col width="22.435897%">
+                  <col width="23.878205%">
+                  <col width="12.019231%">
+                  <col width="13.942308%">
+                  <col width="22.955128%">
+                </colgroup>
+                <tbody>
+                <tr class="tr-1st">
+                  <td rowspan="2">
+                    <input type="checkbox" id="saving-list1-check{{$index}}">
+                    <label for="saving-list1-check{{$index}}"></label>
+                  </td>
+                  <td rowspan="2"><img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고"></td>
+                  <td>상품명</td>
+                  <td>공시이율</td>
+                  <td>해지환급금</td>
+                  <td rowspan="2">
+                    <a href="{{saving.url}}" target="_blank"><button class="btn-join">온라인 바로가입</button></a>
+                  </td>
+                </tr>
+                <tr class="tr-2nd">
+                  <td class="ellipsis">{{saving.name}}</td>
+                  <td>{{saving.refund_per}}%</td>
+                  <td><span>{{saving.public_refund}}</span>만원</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+        </ul>
+        <p>★ 매월 변동되는 공시이율을 기준을 산출된 결과입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>

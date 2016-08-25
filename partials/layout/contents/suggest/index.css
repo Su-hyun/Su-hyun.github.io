@@ -17,6 +17,7 @@
   -moz-border-radius: 3px;
   border-radius: 3px;;
 }
+.suggest input[type="radio"],
 .suggest input[type="checkbox"]{
   position:absolute;
   top:0;
@@ -52,7 +53,7 @@
 }
 
 .suggest-txt-area{
-  width:665px;
+  width:620px;
   margin-top:28px;
   overflow:hidden;
 }
@@ -77,9 +78,6 @@
   text-align:center;
   color:#373c44;
   background:url(./img/suggest-txt-area-a-bg.png) no-repeat 0 0;
-}
-.suggest-txt-area a:hover{
-  text-decoration: underline;
 }
 .suggest-txt-area p{
   float:right;
@@ -152,14 +150,22 @@
 .suggest-contents{
   overflow:hidden;
 }
-.suggest > article{
+#suggestMain > article{
   display:none;
   margin-bottom:30px;
 }
-.suggest > article:nth-child(3){
+#suggestMain > article:nth-child(3){
   margin-top:30px;
 }
-.suggest > article.on{
+#suggestMain > article.on{
+  display:block;
+}
+.mustHave-on,
+.mightBe-on{
+  display:none;
+}
+.mustHave-on.on,
+.mightBe-on.on{
   display:block;
 }
 .suggest-con-top{
@@ -167,6 +173,9 @@
   position:relative;
   background:url(./img/top-bg.png) repeat-x 0 0;
   border-bottom:5px solid #444;
+}
+.suggest-con-top:hover{
+  background-color:#f7f7f7
 }
 .suggest-form{
   position:relative;
@@ -189,6 +198,7 @@
 }
 .suggest-notice{
   display:inline-block;
+  margin-left:10px;
   vertical-align: middle;
 }
 .suggest-notice h4{
@@ -212,73 +222,14 @@
   right:0;
   bottom:0;
 }
-
-.suggest-contents.might{
-  height:56px;
-  border:1px solid #dadada
-}
-.suggest-contents.might:nth-child(3){
-  margin-top:27px;
-}
-.suggest-contents.might.on{
-  height:auto;
-  border:1px dashed #c4c9cd;
-  border-top:3px solid #2d2d2d
-}
-.suggest-con-top.might{
-  height:56px;
-  position:relative;
-  background:none;
-  border-bottom:1px dashed #c4c9cd;
-}
-.suggest-top-form.might{
-  width:auto;
-  padding-bottom:0px;
-}
-.suggest-top-form.might label::before{
-  margin-left:24px;
-  position:static;
-}
-.suggest-notice.might{
-  margin-left:17px;
-}
-.suggest-notice.might h4{
-  font-size:0.9rem;
-}
-.suggest-notice.might small{
-  margin-left:200px;
-}
-.suggest-con-top.might .btn-toggle{
-  float:right;
-  display:block;
-  width:132px;
-  height:100%;
-  font-size:0;
-}
-.btn-toggle span{
-  display: block;
-  width: 0;
-  height: 0;
-  margin:0 auto;
-  background: transparent;
-  border: 17px solid transparent;
-  border-top: 17px solid #9b9da1;
-  border-bottom: 0 solid transparent;
-  transition: all 0ms, border-width 250ms, height 150ms;
-}
-.btn-toggle.on span {
-  border: 17px solid transparent;
-  border-top: 0 solid transparent;
-  border-bottom: 17px solid #9b9da1;
-}
-
 .suggest-con-bottom{
   border:1px solid #f4f4f4;
   border-top:0 none;
   overflow:hidden;
 }
-.suggest-con-bottom.might{
-  border:0 none
+.suggest-bottom-left,
+.suggest-bottom-right{
+  min-height:500px
 }
 .suggest-bottom-left{
   float:left;
@@ -299,6 +250,9 @@
 .suggest-why{
   margin-top:37px;
   position:relative;
+}
+.suggest-why-type2{
+  margin-bottom:37px;
 }
 .suggest-why h4{
   height:77px;
@@ -321,7 +275,7 @@
   font-size:0.7rem;
 }
 .suggest-why .why-list{
-  padding:20px;
+  padding:30px 20px;
   border:1px dashed #373737;
 }
 .suggest-why .why-list > li{
@@ -342,7 +296,7 @@
   background:url(./img/list-item1.png) no-repeat 0 0;
 }
 .suggest-why .why-list-type2{
-  padding:20px 18px;
+  padding:30px 18px;
 }
 .why-list-type2 > li{
   margin-top:25px;
@@ -358,7 +312,18 @@
 }
 .why-list-type2 .why-list-tit.type2{
   padding-left:22px;
+  position:relative;
   border-bottom:0 none;
+}
+.why-list-type2 .why-list-tit.type2::before{
+  content:"";
+  display:block;
+  width:17px;
+  height:17px;
+  position:absolute;
+  top:2px;
+  left:0;
+  background:url(./img/list-item1.png) no-repeat 0 0;
 }
 .why-list-type2 .why-sub{
   margin-top:7px;
@@ -381,6 +346,7 @@
   padding:21px;
 }
 .why-sub-table{
+  min-height:92px;
   padding:4px;
 }
 .pension-graph{
@@ -402,6 +368,7 @@
 .why-sub-table table{
   border:1px solid #dadada;
   border-top: 2px solid #465159;
+  /*border-bottom: 0 none;*/
 }
 .why-sub-table thead{
   font-size:0.65rem;
@@ -420,6 +387,9 @@
 .why-sub-table tbody tr:first-child{
   border-top:0 none;
 }
+.why-sub-table tbody tr:last-child{
+  border-bottom:1px solid #dadada;
+}
 .why-sub-table th,
 .why-sub-table td{
   border-left:1px solid #f4f4f4;
@@ -428,6 +398,10 @@
 .why-sub-table td:first-child{
   border-left:0 none;
 }
+.why-sub-table tbody .td-bg{
+  background:url(./img/td-bg.jpg) 0 0;
+}
+
 
 .suggest-why .more-info{
   width:115px;
@@ -440,10 +414,9 @@
   letter-spacing: 0;
   background:url(./img/icon-more.png) no-repeat right top;
 }
-.more-info.might{ width: 168px; }
 .suggest-bottom-right{
-  float:right;
   width:682px;
+  margin-left:516px;
   padding:30px;
   background-color:#f7f7f7;
 }
@@ -453,11 +426,11 @@
 .suggest-product{
   padding-top:4px;
 }
+.suggest-product figure{
+  display:inline-block;
+}
 .suggest-product.type2{
   margin-top:66px;
-}
-.lower-price{
-  height:328px;
 }
 .lowest{
   position:relative;
@@ -501,18 +474,14 @@
 .product-list > li:nth-child(2){ float:right; margin-bottom:35px; }
 .product-list > li:nth-child(3){ clear:both; }
 
-.product-list li.view-type1,
-.product-list li.view-type3{
+.product-list li.view-type1{
   width:308px;
   -webkit-border-radius:3px;
   -moz-border-radius:3px;
   border-radius:3px;
 }
 
-.list-info{}
-
-.view-type1 .product-form,
-.view-type3 .product-form{
+.view-type1 .product-form{
   height:80px;
   text-align:center;
   border-bottom:1px solid #f4f4f4
@@ -530,7 +499,9 @@
   top:26px;
   left:19px;
 }
+
 .product-form img{
+  width:100%;
   vertical-align: middle;
 }
 
@@ -579,36 +550,7 @@
   background:url(./img/list-item2.png) no-repeat 0 0;
 }
 
-.view-type3 .list-info{
-  text-align:center
-}
-.list-info li{
-  height:70px;
-  padding-left:40px;
-  border-top:1px solid #f4f4f4;
-}
-.list-info li:first-child{
-  height:69px;
-  border-top:0 none;
-}
-.list-info li:first-child ~ li{
-  float:left;
-  width:50%;
-}
-.list-info li p{
-  display:inline-block;
-  vertical-align: middle;
-  text-align:left;
-}
-.list-info li span{
-  display:block;
-}
-.list-info li .align-middle{
-  display:inline-block;
-}
-
-.product-why .btn-join,
-.list-info .btn-join{
+.product-why .btn-join{
   width:267px;
   height:42px;
   font-size:0.75rem;
@@ -617,9 +559,6 @@
   -webkit-border-radius:3px;
   -moz-border-radius:3px;
   border-radius:3px;
-}
-.list-info .btn-join{
-  margin:18px 0
 }
 
 .product-list .view-type2{
@@ -651,6 +590,15 @@
   width:20px;
   height:20px;
   position:static;
+}
+.suggest-table .td-inslogo{
+  padding:0 7px;
+}
+.td-inslogo figure{
+  width:100%;
+}
+.td-inslogo img{
+  width:100%
 }
 .suggest-table .ellipsis{
   padding:0 7px;

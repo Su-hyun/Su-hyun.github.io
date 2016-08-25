@@ -143,7 +143,9 @@ body,h1,h2,h3,h4,input,button,
 { font-size:0.8rem }
 
 
-.list-info span
+.list-info span,
+.form-horizontal .control-label,
+.form-horizontal .radio
 { font-size:0.85rem }
 
 
@@ -179,12 +181,15 @@ body,h1,h2,h3,h4,input,button,
 
 body,h1,h2,h3,h4,input,button,
 .sub-lnb > li > a,
-.list-info span
+.list-info span,
+.form-horizontal .control-label,
+.form-horizontal .radio
 { font-weight:normal }
 
 
 
 h1,h2,h3,h4,h5,h6,
+.suggest-notice small span,
 .fontWB
 { font-weight:bold }
 

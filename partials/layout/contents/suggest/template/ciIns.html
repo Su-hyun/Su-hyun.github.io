@@ -1,0 +1,135 @@
+<section class="suggest-contents">
+  <div class="suggest-con-top">
+    <div class="suggest-form suggest-top-form">
+      <input type="checkbox" id="article3-checked-01" checked>
+      <label for="article3-checked-01"><span class="arIdx"></span></label>
+    </div>
+    <div class="suggest-notice">
+      <h4>
+        중대질병보험<small>월 <span>{{diagnosePrice}}</span>원</small>
+      </h4>
+      <p>
+        중대질병보험은 암, 뇌졸중, 심근경색증 진단 시 보험금(일시금)을 지급하는 보험으로
+        <strong>치료기간 중 실직이나 휴직에 따른 소득 상실에 대한 준비가 필요하기 때문에 "고려해야할 보험"으로 추천합니다.</strong>
+      </p>
+    </div>
+    <span class="align-middle"></span>
+    <div class="suggest-info-img">
+      <img src="./partials/layout/contents/suggest/img/title-img.png" alt="기본부터 갖추기~">
+    </div>
+  </div>
+  <div class="suggest-con-bottom">
+    <div class="suggest-bottom-left">
+      <article class="suggest-explain">
+        <div class="suggest-why">
+          <h4>이렇게 가입해라!</h4>
+          <ul class="why-list why-list-type1">
+            <li>암 뇌졸중 심근경색 보장 상품 가입</li>
+            <li>진단금 각 3,000만원 가입 (암은 일반암 기준)</li>
+            <li>보험기간 80세년 / 20년납</li>
+          </ul>
+          <button class="more-info">자세히 알아보기</button>
+        </div>
+        <div class="suggest-why suggest-why-type2">
+          <h4>왜?</h4>
+          <ul class="why-list why-list-type2">
+            <li>
+              <p class="why-list-tit">중대질병(암, 뇌졸중, 심근경색) 왜?!</p>
+              <ul class="why-sub">
+                <li>유병율과 사망 위험이 가장 높은 암, 심근경색, 뇌졸중 3가지 항목의 보험을 준비하길 추천합니다.</li>
+              </ul>
+            </li>
+            <li>
+              <p class="why-list-tit">진단금 3,000만원 왜?!</p>
+              <ul class="why-sub">
+                <li>질병치료비는 실손의료버함으로 대부분 대비할 수 있지만 실직이나 휴직에 대비하기 위해 급여의 6개월치 정도를 준비하길 추천합니다.</li>
+              </ul>
+            </li>
+            <li>
+              <p class="why-list-tit">보험기간 80세 왜?!</p>
+              <ul class="why-sub">
+                <li>실직이나 휴직에 따른 소득 상실에 대비하기 위해 소득발생 기간인 60-65세까지 보장받기를 추천하나, 실제 판매하는 보험상품의 보장기간을 고려하여 80세 만기 상품을 추천합니다.</li>
+              </ul>
+            </li>
+          </ul>
+          <button class="more-info">자세히 알아보기</button>
+        </div>
+      </article>
+    </div>
+    <div class="suggest-bottom-right">
+      <div class="suggest-product">
+        <p class="suggest-customer folder">두개 상품 가입하기</p>
+        <ul class="product-list might" ng-repeat="diagnose in diagnose21List">
+          <li class="view-type1 double">
+            <div class="suggest-form product-form">
+              <input type="checkbox" id="article3-list1-check1" checked>
+              <label for="article3-list1-check1">
+                <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+                <span class="align-middle"></span>
+              </label>
+            </div>
+            <div class="list-premium">
+              <p>월 <span>{{diagnose21List[$index].price}}</span>원 (최저가)</p>
+              <span class="align-middle"></span>
+            </div>
+            <div class="product-why">
+              <ul>
+                <li>{{diagnose21List[$index].name}}</li>
+                <li>
+                  {{diagnose21List[$index].guaranteeName}}
+                </li>
+              </ul>
+              <button class="btn-join">온라인 바로가입</button>
+            </div>
+          </li>
+          <li class="view-type1 double">
+            <div class="suggest-form product-form">
+              <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+              <span class="align-middle"></span>
+            </div>
+            <div class="list-premium">
+              <p>월 <span>{{diagnose22List[$index].price}}</span>원</p>
+              <span class="align-middle"></span>
+            </div>
+            <div class="product-why">
+              <ul>
+                <li>{{diagnose22List[$index].name}}</li>
+                <li>
+                  {{diagnose22List[$index].guaranteeName}}
+                </li>
+              </ul>
+              <button class="btn-join">온라인 바로가입</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="suggest-product type2">
+        <p class="suggest-customer folder">한개 상품 가입하기</p>
+        <ul class="product-list">
+          <li class="view-type1"  ng-repeat="diagnose in diagnose1List">
+            <div class="suggest-form product-form">
+              <input type="checkbox" id="article3-list2-check1" checked>
+              <label for="article3-list2-check1">
+                <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+                <span class="align-middle"></span>
+              </label>
+            </div>
+            <div class="list-premium">
+              <p>월 <span>{{diagnose.price}}</span>원 (최저가)</p>
+              <span class="align-middle"></span>
+            </div>
+            <div class="product-why">
+              <ul>
+                <li>{{diagnose.name}}</li>
+                <li>
+                  {{diagnose.guaranteeName}}
+                </li>
+              </ul>
+              <button class="btn-join">온라인 바로가입</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
