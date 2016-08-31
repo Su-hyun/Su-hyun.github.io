@@ -7,8 +7,6 @@ define(['projectSugar'], function () {
 
   routeModule.config(['$routeProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
     function($routeProvider, $stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
-
-      $urlRouterProvider.otherwise("/");
       $locationProvider.hashPrefix("InsuranceGuide#");
 
       // You can also load via resolve
@@ -34,6 +32,10 @@ define(['projectSugar'], function () {
             }]
           }
         });
+
+      $urlRouterProvider.otherwise("/");
+      //$locationProvider.html5Mode(true);
+
 
         /* test 추가시 사용
         .state('test', {

@@ -22,6 +22,9 @@
   text-align:center;
   border:1px solid #e5e5e5;
 }
+.nav-tabs.type2 li{
+  width:33.333333%
+}
 .btn-tab01.shadow{
   background:url(./img/tabs-1-off.png) no-repeat right 0;
   border-right:0 none;
@@ -296,8 +299,6 @@
 }
 .notice small{
   display:block;
-  font-size:0.6rem;
-  font-weight:300;
   color:#a7a7a7;
   word-break: keep-all;
 }
@@ -313,7 +314,6 @@
   position:absolute;
   top:9px;
   left:90px;
-  font-size:0.9rem;
 }
 p.notice.type2{
   padding-top:0;
@@ -382,14 +382,6 @@ p.notice.type2{
   min-height:535px;
   margin-bottom:15px;
 }
-.input-area .form-control{
-  height:42px;
-  position:relative;
-  -webkit-border-radius:0;
-  -moz-border-radius:0;
-  border-radius:0;
-  cursor:pointer;
-}
 .form-area .form-group.type2{
   margin-bottom:0;
 }
@@ -418,6 +410,28 @@ p.notice.type2{
   color:#fff;
   background-color:#548ed0;
 }
+.step-3 .col-sm-10{
+  text-align:left
+}
+.input-area textarea{
+  min-height:208px;
+  margin-bottom:7px;
+  padding:12px;
+  background-color:#f7f7f7;
+}
+.step-3 .placeholder{
+  text-align:right
+}
+.placeholder span{
+  position:static;
+}
+/*.placeholder ::-webkit-input-placeholder,*/
+/*.placeholder ::-moz-placeholder,*/
+/*.placeholder :-moz-placeholder,*/
+/*.placeholder :-ms-input-placeholder{*/
+  /*word-break: keep-all;*/
+/*}*/
+
 .upload-list{
   min-height:75px;
   margin-top:17px;
@@ -463,7 +477,7 @@ p.control-label.is-padding{
 }
 
 .output{
-  background:url(./img/sprite.png) no-repeat 0 -170px
+  background:url(./img/sprite.png) no-repeat 0 -170px/cover
 }
 .myContainer{
   position:absolute;

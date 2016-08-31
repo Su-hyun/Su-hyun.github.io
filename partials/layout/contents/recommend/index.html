@@ -1,5 +1,5 @@
 <article class="container" ng-controller="recommendController">
-  <section class="wrapper row">
+  <section id="recommend" class="wrapper row">
     <div class="col-sm-6 forms">
       <ul class="nav nav-tabs">
         <li class="btn-tab01 on"><a href="#"><i></i>STEP</a></li>
@@ -131,7 +131,7 @@
             </div>
           </div>
           <div class="form-group type-height">
-            <p class="control-label is-pl">직업군<sup>★</sup></p>
+            <p class="control-label is-pl">직업군</p>
             <ul class="jobs">
               <li class="col-sm-6" ng-click="searchDisableRemove()">
                 <label for="salarymen" class="radio type4 salarymen">근로소득자</label>
@@ -161,7 +161,7 @@
     </div>
     <div class="col-sm-6 forms output">
       <form role="form">
-        <p class="myContainer"><a ng-click="infoGet()">내 보관함</a></p>
+        <p class="myContainer"><a href="#" ng-click="infoGet()">내 보관함</a></p>
         <div class="form-txt-board">
           <p class="txt-board">
             <span class="info-txt">{{outName()}}</span> 님은<br>

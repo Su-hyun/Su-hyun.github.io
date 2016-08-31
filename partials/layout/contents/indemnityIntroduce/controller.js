@@ -9,20 +9,19 @@ define(['projectSugar'], function () {
       $scope.choiceList = [
         {
           tit: "We are helpers",
-          txt: "100% 무료 입니다.",
-          imageUrl: "choice-01.png"
+          txt: "내가 가입되어 있는 보험상품의 보장 내용, 보장 기간, 지출될 보험료  등의 핵심 정보를 한 눈에 볼 수 있습니다",
+          imageUrl: "why-img01.png"
         }, {
           tit: "Free & rightful advice!",
-          txt: "무엇이 필요하고, 필요없는지 알려드립니다.",
+          txt: "가입한 보험은 많아도 꼭 필요한 보장은 없을 수도 있습니다. 중복 보장은 없는지, 보장이 한쪽으로만 몰렸는지 보험료 절약 가능성은 없는지를 확인해드립니다.",
           txt2: "이런거 본 적 없죠?",
-          imageUrl: "choice-01.png"
+          imageUrl: "why-img02.png"
         }, {
           tit: "Friendly support",
-          txt: "진짜 전문가들이 답변해드립니다.",
-          imageUrl: "choice-01.png"
+          txt: "보험상품들의 보장내용, 특장점들에 대한 전문 지식을 바탕으로 전문가가 작성한 슈가 리포트를 무료로 받아볼 수 있습니다. ",
+          imageUrl: "why-img03.png"
         }
       ];
-
       // 슈가추천을 받아야 하는 3가지 이유
       $scope.reasonList = [
         {

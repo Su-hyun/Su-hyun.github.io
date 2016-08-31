@@ -1,0 +1,225 @@
+@charset "UTF-8";
+
+.myHeader4{
+  height:498px;
+  background:url(./img/back_005.png) left top repeat-x;
+  overflow:hidden;
+}
+.myHeader4 .myHeader-img{
+  padding:0 50px;
+  background:url(./img/back_004.png) 50px top no-repeat;
+}
+.myHeader4 .oneAnd-tit{
+  width:520px;
+  margin-top:74px;
+  margin-left:25px;
+}
+.myHeader4 .oneAnd-tit h2{
+  margin-bottom:45px;
+  line-height:45px;
+}
+.oneAnd-tit p.title_01{
+  margin-bottom:15px;
+  ine-height:22px;
+}
+.oneAnd-tit p.title_01 span{
+  display:block;
+}
+.btn_bojang{
+  display:block;
+  margin-top:26px;
+  margin-left:20px;
+}
+.btn_bojang p {
+  margin-top:12px;
+  margin-left:5px;
+}
+.btn008{
+  width:320px;
+  height:48px;
+  background:#548ed0;
+}
+.btn_bojang .btn008 span{
+  display:inline-block;
+  width:28px;
+  height:16px;
+  margin-top:2px;
+  margin-left:15px;
+  vertical-align:top;
+  background:url(./img/btn_01.png) left top no-repeat;
+}
+.bojang .title{
+  margin-bottom:22px;
+}
+
+.indemnityIntro .choice-list{
+  width:auto;
+  margin:0;
+  padding-top:83px;
+  text-align:left;
+  overflow:hidden;
+}
+.indemnityIntro .wrap_li{
+  width:1010px;
+  height:174px;
+  margin:0 auto;
+  position:relative;
+}
+.indemnityIntro .choice-list li{
+  display:block;
+  width:auto;
+  margin:0 0 83px 0;
+}
+.indemnityIntro .choice-list li::before{
+  display:none;
+}
+.indemnityIntro .choice-txt{
+  width:535px;
+  height:100%;
+}
+.indemnityIntro .choice-list li:nth-child(2) .choice-txt{
+  float:right;
+  width:491px;
+}
+.indemnityIntro .check-icon{
+  display:inline-block;
+  width:calc(100% - 5px);
+  padding-left:40px;
+  vertical-align: middle;
+  word-break: keep-all;
+}
+.indemnityIntro .check-icon::before{
+  left:3px;
+}
+.indemnityIntro .choice-list li:nth-child(odd){background:#f7f7f7;}
+.indemnityIntro .choice-list li:nth-child(even){background:#e2e7ea;}
+.indemnityIntro .choice-list li:nth-child(odd) .choice-img{
+  position:absolute;
+  right:0;
+  bottom:0;
+}
+
+.indemnityIntro .choice-list li:nth-child(even) .choice-img{
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+.review-list-area{
+  max-width:1200px;
+  margin:90px auto;
+  padding:0 1em;
+  font-size:0.75rem;
+}
+.review-list{
+  width:calc(103% - 5px);
+  text-align:center;
+}
+.review-list li{
+  float:none;
+  display:inline-block;
+  width:366px;
+  min-height:214px;
+  margin-right:9px;
+  position:relative;
+  border:1px solid #dcdcdc;
+  -webkit-box-shadow: 0 2px 1px 2px #f4f4f4;
+  -moz-box-shadow: 0 2px 1px 2px #f4f4f4;
+  box-shadow: 0 2px 1px 2px #f4f4f4;
+}
+
+.review-txt-area::before{
+  content:"";
+  display:block;
+  width:47px;
+  height:41px;
+  position:absolute;
+  top:-20px;
+  left:20px;
+  background:url(./img/double-quotes-off.png) no-repeat 0 0;
+}
+.review-list li:hover .review-txt-area::before{
+  background:url(./img/double-quotes-on.png) no-repeat 0 0;
+}
+.review-txt-area{
+  padding:38px 35px;
+}
+.review-txt-area::before{
+  content:"";
+  display:block;
+  width:47px;
+  height:41px;
+  position:absolute;
+  top:-20px;
+  left:20px;
+  background:url(./img/double-quotes-off.png) no-repeat 0 0;
+}
+.review-txt-area h3{
+  position:relative;
+  font-size:0.6rem;
+  font-weight:bold;
+  color:#333333;
+  text-align:center;
+}
+.counter{
+  display:block;
+  height:10px;
+  padding-left:18px;
+  position:absolute;
+  top:0;
+  right:0;
+  background:url(./img/counterIcon.png) no-repeat 0 0;
+}
+.review-txt{
+  margin-top:30px;
+  font-size:0.65rem;
+  color:#333333;
+  text-align:left;
+  letter-spacing:0.5px;
+}
+.review-img{
+  width:65px;
+  height:65px;
+  padding-top:0;
+  position:absolute;
+  left:calc(50% - 32px);
+  bottom:-32px;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  border-radius:50%;
+  background-color:#FFF;
+  -webkit-box-shadow: 0 0 5px 3px #e7e7e7;
+  -moz-box-shadow: 0 0 5px 3px #e7e7e7;
+  box-shadow: 0 0 5px 3px #e7e7e7;
+  overflow:hidden;
+}
+.review-img img{
+  width:100%;
+  height:100%;
+  border:0 none;
+}
+
+.indemnityIntro footer.btn-block{
+  margin-bottom:54px;
+  padding:25px 0;
+  text-align:center;
+  border-top:1px solid #dddddd;
+  border-bottom:1px solid #dddddd;
+  background-color:#f4f4f6;
+}
+.indemnityIntro footer p,
+.indemnityIntro footer .btn{
+  display:inline-block;
+  vertical-align: middle;
+  font-size:0.8rem;
+}
+.indemnityIntro footer p{
+  text-align:left;
+}
+.indemnityIntro footer .btn{
+  width:320px;
+  height:48px;
+  margin-left:200px;
+  color:#fff;
+  line-height:2.5;
+  background-color:#548ed0;
+}

@@ -153,6 +153,7 @@
 #suggestMain > article{
   display:none;
   margin-bottom:30px;
+  background:url(./img/suggest-article-bg.png) repeat-y right top;
 }
 #suggestMain > article:nth-child(3){
   margin-top:30px;

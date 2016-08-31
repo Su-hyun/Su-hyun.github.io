@@ -68,9 +68,8 @@ define(['projectSugar'], function () {
       ];
 
       $scope.count = 0;
-      $scope.newCount = function () {
-        return $scope.count;
-      };
+
+      console.log($scope.count)
 
       $ocLazyLoad
         .load([

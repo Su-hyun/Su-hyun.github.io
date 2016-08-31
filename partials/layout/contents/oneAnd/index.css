@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+.myHeader1{overflow:hidden; background:#edeff2; height:298px;}
+.myHeader-img{background:url(./img/back_001.png) 640px top no-repeat; padding:0 103px;}
+.oneAnd-tit{margin-top:74px; width:520px;}
+.oneAnd-tit h2{color:#000; font-weight:bold; font-size:1.5rem; margin-bottom:20px; line-height:1;}
+.oneAnd-tit p.title_01{font-size:1rem; color:#000; margin-bottom:15px; line-height:1;}
+.oneAnd-tit p.title_02{color:#666666; font-size:0.75rem;}
+.oneAnd-tit p.title_02 span{display:block;}
+.container{position:relative;}
+.oneAnd-tab{display:block; position:absolute; top:-55px; left:110px; width:980px; height:55px;}
+.oneAnd-tab ul{overflow:hidden; background:#f7f7f7;}
+.oneAnd-tab ul li{line-height:55px; font-size:0.8rem; cursor:pointer; float:left; width:50%; height:55px; border:1px solid #dddddd;
+-webkit-box-sizing: border-box; box-sizing: border-box; color:#666666; text-align:center; border-bottom:1px solid #aaaaaa;}
+.oneAnd-tab ul li:first-child{border-right:0;}
+.oneAnd-tab ul li:last-child{border-left:0;}
+.oneAnd-tab ul li.on{border-top:3px solid #1f242d; background:#fff; border-bottom:none; font-size:0.85rem; font-weight:bold; color:#000; border-left:1px solid #aaaaaa; border-right:1px solid #aaaaaa;}
+.oneAnd-con{width:980px; clear:both; padding-top:55px; margin:0 110px; display:block;}
+.oneAnd-con table.table_01{border-bottom:1px solid #ddd;}
+.oneAnd-con table.table_01 tr th{padding-left:35px; text-align:left; font-size:0.85rem; font-weight:normal; color:#000000; line-height:16px;}
+.oneAnd-con table.table_01 tr td input[type="text"]{width:100%; border:1px solid #ddd; height:36px; -webkit-box-sizing: border-box; box-sizing: border-box; font-size:0.85rem; text-indent:10px;}
+.oneAnd-con table.table_01 tr td textarea{width:100%; max-width:100%; display:block; padding:10px; border:1px solid #ddd; -webkit-box-sizing: border-box; box-sizing: border-box; height:273px; max-height:273px; font-size:0.85rem;}
+.oneAnd-con table.table_01 tr td .count_text{float:right; font-size:0.65rem; display:inline-block; padding:14px 0 4px 0; color:#000;}
+.oneAnd-con table.table_01 tr td .count_text .count_color{color:#548ed0;}
+.infor_01{margin-top:44px; margin-bottom:22px; color:#000; font-size:0.9rem; font-weight:bold; line-height:1; padding-left:15px;}
+.oneAnd-con .table_wrap{border:1px solid #eaeaea; background:#f4f4f4; padding:35px 0;}
+.oneAnd-con table.table_02 tr th{padding:0; padding-left:35px; text-align:left; font-size:0.85rem; font-weight:normal; color:#000000; line-height:16px;}
+.oneAnd-con table.table_02 tr td{padding:0; text-align:left; font-size:0.75rem; color:#333333;}
+.oneAnd-con table.table_02 tr td input[type="text"]{border:1px solid #ddd; height:36px; -webkit-box-sizing: border-box; box-sizing: border-box; font-size:0.85rem; text-indent:10px;}
+.oneAnd-con table.table_02 tr td select{border:1px solid #ddd; height:36px; -webkit-box-sizing: border-box; box-sizing: border-box; font-size:0.85rem;}
+.chk_block{display:block; margin-bottom:10px; margin-top:20px;}
+input[type=checkbox]{display: none;}
+input[type=checkbox] + label{display: inline-block; cursor: pointer;  position: relative; font-size: 0.75rem; 
+height:32px; line-height:32px; vertical-align:top; margin:0; font-weight:normal; padding-left:42px;}
+input[type=checkbox]+ label:before {border:1px solid #c4c9cc; position:absolute; left:0; top:0; content: "";  display: inline-block;  width: 31px;  height: 31px; background-color: #fff;  border-radius: 3px; }
+input[type=checkbox]:checked + label:before {position:absolute; left:0; top:0;color: #fff;  background:url(./img/chk.gif) left top no-repeat;text-align: center;  display: inline-block;  width: 32px;  height: 32px; border:0;} 
+
+.oneAnd-con table.table_02 tr td .name{width:392px; margin-bottom:20px;}
+.oneAnd-con table.table_02 tr td .mail_sub{width:165px;}
+.oneAnd-con table.table_02 tr td .mail{width:119px;}
+.oneAnd-con table.table_02 tr td .num{width:93px;}
+
+.infor_02{margin-top:44px; margin-bottom:22px; color:#000; font-size:0.9rem; font-weight:bold; line-height:1; padding-left:15px;}
+
+.agree_box{position:relative;}
+.checks{position: absolute; top:0; right:0;}
+.checks .agr{margin-right:30px;}
+.checks input[type="radio"] {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip:rect(0,0,0,0);border: 0;}
+.checks input[type="radio"] + label {color:#333333; font-size:0.65rem; display: inline-block;position: relative;padding-left: 25px;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;}
+.checks input[type="radio"] + label:before {content: '';position: absolute;left: 0;top: 0px;width: 18px;height: 18px;text-align: center;background: #fff;border: 1px solid #528fcc;border-radius: 100%;}
+.checks input[type="radio"]:checked + label:before {background: #fff;border-color: #528fcc;}
+.checks input[type="radio"]:checked + label:after {content: '';position: absolute;top: 4px;left: 4px;width: 10px;height: 10px;background: #528fcc;border-radius: 100%;}
+.agree_text{padding:35px; border:1px solid #eaeaea; background:#f4f4f4;}
+pre{font-family:'Nanum Barun Gothic'; font-style: normal; padding:0; margin:0; border:0; color:#5f5f5f; font-size:0.7rem; line-height:1.5; border-radius:0; height:auto;}
+.btn_area{width:100%; clear:both; text-align:right; margin-top:20px;}
+.btn_area02{float:right; margin-right:48px; margin-top:11px;}
+.btn_area03{float:right;}
+.btn_001{background:#373c44; border:1px solid #373c44; color:#fff; font-weight:bold; font-size:0.75rem; padding:5px 35px;}
+.btn_002{background:#548ed0; border:1px solid #548ed0; color:#fff; font-weight:bold; font-size:0.75rem; padding:5px 35px;}
+.btn_003{background:#fff; border:1px solid #a4a4a4; color:#6d6d6d; font-weight:bold; font-size:0.75rem; padding:0; display:block; width:98px; height:45px; line-height:45px;}
+.btn_003:first-child{margin-bottom:9px;}
+
+/*list*/
+.twoAnd-con{width:980px; clear:both; padding-top:55px; margin:0 110px; display:none;}
+.twoAnd-con .list{min-height:500px; border-bottom:1px solid #f4f4f4; margin-bottom:75px;}
+.twoAnd-con .list table{border-top:1px solid #465159;}
+.twoAnd-con .list table thead tr th:last-child{border-right:0;}
+.twoAnd-con .list table thead tr th{border-bottom:1px solid #d4d4d4; border-right:1px solid #f4f4f4; color:#000000; font-size:0.7rem; padding:11px;}
+
+.twoAnd-con .list table tbody tr td:last-child{border-right:0;}
+.twoAnd-con .list table tbody tr td{border-bottom:1px solid #f4f4f4; border-right:1px solid #f4f4f4; color:#000000; font-size:0.65rem; padding:6px;}
+
+.b_text{text-align:left;}
+.b_text a{width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal; display:block;}
+.board_chk{margin:0;}
+
+
+/*view*/
+.threeAnd-con{width:980px; clear:both; padding-top:55px; margin:0 110px; display:none;}
+.threeAnd-con.view{position:relative; background:url(./img/shape.gif) left 55px no-repeat;}
+.threeAnd-con.view h3{padding-left:125px; color:#333333; font-size:0.9rem; margin:16px 0;}
+.threeAnd-con.view .view_box{margin-left:51px; border:1px solid #d7d7d7; background:#fff;}
+.threeAnd-con.view .view_box .box_text{padding:71px 58px; min-height:435px; color:#646464; font-size:0.75rem;}
+.threeAnd-con.view .view_box .box_ans{padding:0 50px; margin-bottom:113px;}
+.threeAnd-con.view .view_box .box_ans dl dt{margin-bottom:5px; height:55px; line-height:55px; background:url(./img/ans.gif) 24px top no-repeat; padding-left:93px; color:#333333; font-size:0.9rem;}
+.threeAnd-con.view .view_box .box_ans dl dd{padding:40px 38px; border:1px solid #d7d7d7; background:#f7f7f7; color:#333333; font-size:0.75rem;}
+.threeAnd-con.view .view_box .box_qna{overflow:hidden; border-top:1px solid #d7d7d7; background:#f7f7f7; padding:22px 0;}
+.threeAnd-con.view .view_box .box_qna p{background:url(./img/qna.png) left top no-repeat; margin-left:47px; height:55px; padding-left:68px; color:#333333; font-size:0.8rem; padding-top:6px; float:left;}
+
+.text_submit_box{padding:25px; background:#f5f5f5; border-top:1px solid #6d6d6d; margin-left:51px; margin-top:20px; overflow:hidden;}
+.text_submit_box .text_submit_textarea{float:left; width:774px;}
+.text_submit_box textarea {width:100%; max-width:100%; display:block; padding:10px; height:100px; max-height:100px; font-size:0.85rem; border:0;}
+
+
+
+
+
+
+
+
+
+
+
+
+

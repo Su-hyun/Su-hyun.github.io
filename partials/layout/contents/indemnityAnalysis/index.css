@@ -382,14 +382,6 @@ p.notice.type2{
   min-height:535px;
   margin-bottom:15px;
 }
-.input-area .form-control{
-  height:42px;
-  position:relative;
-  -webkit-border-radius:0;
-  -moz-border-radius:0;
-  border-radius:0;
-  cursor:pointer;
-}
 .form-area .form-group.type2{
   margin-bottom:0;
 }

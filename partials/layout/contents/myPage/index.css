@@ -104,17 +104,7 @@
 .myPage-form > div.on{ display:block; width:100%; }
 .myPage-form > div > p:nth-child(2){ color:#666; }
 #myPass > p:nth-child(2){ width:300px; letter-spacing: 0 }
-.myPage-form form{
-  margin-top:73px;
-  text-align:right;
-}
 .passConfirm span{
   display:block;
 }
-.myPage-form form > input{
-  width:100px;
-  height:34px;
-  color:#fff;
-  background-color: #373c44;
-  border:0 none;
-}
+

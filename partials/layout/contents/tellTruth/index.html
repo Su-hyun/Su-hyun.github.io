@@ -1,147 +1,77 @@
 <section class="wrapper" ng-controller="tellTruthController">
-  <div class="myHeader">
-    <div class="container myHeader-img"><span class="ir">자물쇠 그림</span></div>
+  <div class="myHeader3">
+    <div class="container myHeader-img"></div>
   </div>
-  <div class="container">
-    <div>
-      <ul>
-        <li ng-repeat="">
+  <div class="container tell-truth">
+    <section class="on">
+			<ul class="section-top tell_box">
+				<li ng-repeat="headline in newsList">
+					<dl>
+						<dt>
+							<small>{{headline.title}}</small>
+							{{headline.titleSub}}
+						</dt>
+						<dd>웬만해선 손해 안 보는 보험회사, 차라리 적극 드세요</dd>
+					</dl>
+					<span class="dot"><img src="./partials/layout/contents/tellTruth/img/dot002.gif" alt="화살표" /></span>
+				</li>
+			</ul>
+    	<div class="tell_con">
+	       <ul class="con_box">
+	         <li ng-repeat="newsText in newsList">
+	             <h4>[{{newsText.title}}] {{newsText.titleSub}}</h4>
+	             <p>
+	               {{newsText.conText1}}<br>
+	               {{newsText.conText2}}
+	             </p>
+	             <p>
+	               {{newsText.conText3}}
+	             </p>
+	             <input type="button" class="btn_002" value="더보기">
+	         </li>
+	       </ul>
+	   </div>
+     <div class="tell_board">
+      <ul class="boardListArea">
+        <li ng-repeat="qlist in questionsList">
           <dl>
             <dt>
-              <small>Tell Truth</small>
-              치과보험, 그 허와 실
+              <img src="" alt="">
             </dt>
-            <dd>웬만해선 손해 안 보는 보험회사, 차라리 적극 드세요</dd>
+            <dd class="ellipsis">
+              {{qlist.title}}
+            </dd>
+            <dd class="text">
+              {{qlist.context}}
+            </dd>
+            <dd class="down_infor">
+              <ul>
+                <li class="infor_date">{{qlist.date}}</li>
+                <li class="infor_count">{{qlist.count}}</li>
+                <li class="infor_shere">
+                  <a href="#" title="facebook"><img src="./partials/layout/contents/tellTruth/img/facebook_icon.gif" alt="페이스북" /></a>
+                  <a href="#" title="twitter"><img src="./partials/layout/contents/tellTruth/img/twit_icon.gif" alt="트위터" /></a>
+                </li>
+              </ul>
+            </dd>
           </dl>
+          <button onclick="poptest();" class="down_read"><span><img src="./partials/layout/contents/tellTruth/img/icon03.gif" alt="READ MORE" /></span></button>
         </li>
       </ul>
-      <div>
-        <ul>
-          <li ng-repeat="">
-            <div>
-              <h4>[치과보험, 그 허와 실] 웬만해선 손해 안 보는 보험 회사, 차라리 적금 드세요</h4>
-            </div>
-            <div>
-              <img src="" alt="">
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <li ng-repeat="">
-            <dl>
-              <dt>32세 연구원(사무직) 보험료가 적정한지 궁금</dt>
-              <dd>
-                <img src="" alt="">
-              </dd>
-              <dd>
-                교보 큰사랑 CI보험과 메리츠실비보험 가입중인데요 요새 CI보험이 문제가 많아 계속유지할지 고민됩니다. 지금 7년압입중이구요 분석부탁드립니다.
-              </dd>
-              <dd>
-                <ul>
-                  <li>2016-07-07</li>
-                  <li>10</li>
-                  <li>
-                    <a href="#" title="facebook">페이스북</a>
-                    <a href="#" title="twitter">트위터</a>
-                  </li>
-                </ul>
-              </dd>
-            </dl>
-            <button>READ MORE <span>오른쪽 화살표</span></button>
-          </li>
-        </ul>
-        <div>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <button class="next">다음페이지</button>
-          <button class="prev">이전페이지</button>
-        </div>
+      <div class="btn-page">
+        <button class="prev ir">이전페이지</button>
+        <span class="page-location">
+          <a href="" class="on">1</a>
+          <a href="">2</a>
+          <a href="">3</a>
+          <a href="">4</a>
+          <a href="">5</a>
+        </span>
+        <button class="next ir">&gt다음페이지</button>
       </div>
     </div>
-    <div>
-      <h2>
-        <small>보험회사가</small>
-        당신에게 <strong>알려주지 않는 진실</strong>
-      </h2>
-      <div>
-        <div>
-          <h2></h2>
-          <ul>
-            <li>2016-07-07</li>
-            <li>10</li>
-            <li>
-              <a href="">좋아요</a>
-              <a href="">공유하기</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <div>
-            <p>
-              꼭 가입해야 하는 보험과<br>
-              고려해 볼만한 보험으로 나누어 추천합니다.
-            </p>
-            <span class="align-middle"></span>
-          </div>
-          <div>
-            <img src="" alt="">
-          </div>
-        </div>
-        <div>
-          <button>이전</button>
-          <button>다음</button>
-          <button>목록</button>
-        </div>
-        <div>
-          <textarea cols="30" rows="10"></textarea>
-          <input type="submit" value="등록하기">
-        </div>
-        <div>
-          <h4>댓글 <span>2</span>개</h4>
-          <div>
-            <ul>
-              <li>
-                박 * 하
-              </li>
-              <li>
-                (2016-07-07)
-              </li>
-              <li>
-                새로고침
-              </li>
-              <li>
-                댓글
-              </li>
-              <li>
-                삭제
-              </li>
-              <li>
-                감사합니다. 많은 도움이 되었네요.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li>
-                박 * 하
-              </li>
-              <li>
-                (2016-07-07)
-              </li>
-              <li>
-                감사합니다. 많은 도움이 되었네요.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
+    <section list-view class="view"></section>
+    <div class="box_margin"></div>
   </div>
 </section>

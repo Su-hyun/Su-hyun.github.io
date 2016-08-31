@@ -1,8 +1,8 @@
 'use strict';
 
 define(['projectSugar'], function () {
-  var ServiceModule = angular.module('ServiceModule', []);
-  ServiceModule.factory('Service', ['$rootScope',
+  var tellTruthServiceModule = angular.module('tellTruthServiceModule', []);
+  tellTruthServiceModule.factory('tellTruthService', ['$rootScope',
     function($rootScope) {
       return {
         fire: function() {

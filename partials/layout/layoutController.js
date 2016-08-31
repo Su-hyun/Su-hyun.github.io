@@ -4,8 +4,8 @@ define(
   ['projectSugar'],
   function() {
     var layoutIndexModule = angular.module('projectSugar', ['ui.router', 'oc.lazyLoad', 'layoutService']);
-    layoutIndexModule.controller('layoutController', ['$scope', '$ocLazyLoad','layoutService',
-      function($scope, $ocLazyLoad, layoutService) {
+    layoutIndexModule.controller('layoutController', ['$scope','$state', '$ocLazyLoad','layoutService',
+      function($scope,$state, $ocLazyLoad, layoutService) {
 
       $scope.mainHeader = 'partials/layout/header/';
       $scope.contentWrapper = 'partials/layout/contents/';
@@ -32,42 +32,23 @@ define(
         $scope.$broadcast('goToHome');
       };
 
-      ////main
-      //$scope.main = function() {
-      //  $ocLazyLoad
-      //    .load([{
-      //        name : 'mainService',
-      //        files : [ 'partials/layout/contents/main/service.js' ]
-      //      },{
-      //        name : 'mainController',
-      //        files : [ 'partials/layout/contents/main/controller.js' ]
-      //      }, 'partials/layout/contents/main/index.css'
-      //    ])
-      //    .then(function() {
-      //        $scope.contentWrapper = "partials/layout/contents/main/";
-      //      }, function(e) {
-      //        console.log(e);
-      //      }
-      //    );
-      //};
-
       //보험바로 알기
       $scope.knowExactly = function(id) {
         var $this = $($(id.target));
         if($this.parent().is('.active')) {
           $ocLazyLoad
             .load ([{
-                name: 'knowExactlyService',
-                files: ['partials/layout/contents/knowExactly/service.js']
-              }, {
-                name: 'knowExactlyController',
-                files: ['partials/layout/contents/knowExactly/controller.js']
-              }, 'partials/layout/contents/knowExactly/index.css'])
+              name: 'properInsService',
+              files: ['partials/layout/contents/properInsurance/service.js']
+            }, {
+              name: 'properInsController',
+              files: ['partials/layout/contents/properInsurance/controller.js']
+            }, 'partials/layout/contents/properInsurance/index.css'])
             .then (function () {
-                $scope.contentWrapper = "partials/layout/contents/knowExactly/";
-              }, function (e) {
-                console.log (e);
-              }
+                  $scope.contentWrapper = "partials/layout/contents/properInsurance/";
+                }, function (e) {
+                  console.log (e);
+                }
             );
         }
       };
@@ -178,12 +159,85 @@ define(
               files : [ 'partials/layout/contents/productGuide/controller.js' ]
             }, 'partials/layout/contents/productGuide/index.css'])
             .then(function() {
-                $scope.contentWrapper = "partials/layout/contents/productGuide/";
+              //  $scope.contentWrapper = "partials/layout/contents/productGuide/expenses/";
+                $scope.contentWrapper = "partials/layout/contents/productGuide/pension/";
               }, function(e) {
                 console.log(e);
               }
             );
         }
+      };
+
+      // 실손의료비 가이드
+      $scope.expensesGuide = function() {
+        $ocLazyLoad
+          .load([{
+            name : 'productGuideService',
+            files : [ 'partials/layout/contents/productGuide/service.js' ]
+          },{
+            name : 'productGuideController',
+            files : [ 'partials/layout/contents/productGuide/controller.js' ]
+          }, 'partials/layout/contents/productGuide/index.css'])
+          .then(function() {
+                $scope.contentWrapper = "partials/layout/contents/productGuide/expenses/";
+              }, function(e) {
+                console.log(e);
+              }
+          );
+      };
+
+      // 정기보험 가이드
+      $scope.termGuide = function() {
+        $ocLazyLoad
+          .load([{
+            name : 'productGuideService',
+            files : [ 'partials/layout/contents/productGuide/service.js' ]
+          },{
+            name : 'productGuideController',
+            files : [ 'partials/layout/contents/productGuide/controller.js' ]
+          }, 'partials/layout/contents/productGuide/index.css'])
+          .then(function() {
+                $scope.contentWrapper = "partials/layout/contents/productGuide/term/";
+              }, function(e) {
+                console.log(e);
+              }
+          );
+      };
+
+      // 진단비 가이드
+      $scope.diagnosisGuide = function() {
+        $ocLazyLoad
+          .load([{
+            name : 'productGuideService',
+            files : [ 'partials/layout/contents/productGuide/service.js' ]
+          },{
+            name : 'productGuideController',
+            files : [ 'partials/layout/contents/productGuide/controller.js' ]
+          }, 'partials/layout/contents/productGuide/index.css'])
+          .then(function() {
+                $scope.contentWrapper = "partials/layout/contents/productGuide/diagnosis/";
+              }, function(e) {
+                console.log(e);
+              }
+          );
+      };
+
+      // 연금 가이드
+      $scope.pensionGuide = function() {
+        $ocLazyLoad
+          .load([{
+            name : 'productGuideService',
+            files : [ 'partials/layout/contents/productGuide/service.js' ]
+          },{
+            name : 'productGuideController',
+            files : [ 'partials/layout/contents/productGuide/controller.js' ]
+          }, 'partials/layout/contents/productGuide/index.css'])
+          .then(function() {
+                $scope.contentWrapper = "partials/layout/contents/productGuide/pension/";
+              }, function(e) {
+                console.log(e);
+              }
+          );
       };
 
       // 보장분석 소개
@@ -207,25 +261,62 @@ define(
         }
       };
 
-      // 내 보장분석
-      $scope.indemnityAnalysis = function() {
+      // 핵심보장분석 소개
+      $scope.indemnityIntroduceSub = function() {
         $ocLazyLoad
           .load ([{
-            name: 'indemnityAnalysisService',
-            files: ['partials/layout/contents/indemnityAnalysis/service.js']
+            name: 'indemnityIntroduceService',
+            files: ['partials/layout/contents/indemnityIntroduce/service.js']
           }, {
-            name: 'indemnityAnalysisController',
-            files: ['partials/layout/contents/indemnityAnalysis/controller.js']
-          }, 'partials/layout/contents/indemnityAnalysis/index.css'])
+            name: 'indemnityIntroduceController',
+            files: ['partials/layout/contents/indemnityIntroduce/controller.js']
+          }, 'partials/layout/contents/indemnityIntroduce/index.css'])
           .then (function () {
-              $scope.contentWrapper = "partials/layout/contents/indemnityAnalysis/";
-            }, function (e) {
-              console.log (e);
-            }
+                $scope.contentWrapper = "partials/layout/contents/indemnityIntroduce/";
+              }, function (e) {
+                console.log (e);
+              }
           );
       };
 
       // 내 보장분석
+      $scope.indemnityAnalysis = function() {
+        $ocLazyLoad
+          .load([{
+            name : 'recommendService',
+            files : [ 'partials/layout/contents/recommend/service.js' ]
+          },{
+            name : 'recommendController',
+            files : [ 'partials/layout/contents/recommend/controller.js' ]
+          }, 'partials/layout/contents/recommend/index.css'
+          ])
+          .then(function() {
+                $scope.contentWrapper = "partials/layout/contents/recommend/indemnityAnalysis/";
+              }, function(e) {
+                console.log(e);
+              }
+          );
+      };
+
+      //// 내 보장분석
+      //$scope.indemnityAnalysis = function() {
+      //  $ocLazyLoad
+      //    .load ([{
+      //      name: 'indemnityAnalysisService',
+      //      files: ['partials/layout/contents/indemnityAnalysis/service.js']
+      //    }, {
+      //      name: 'indemnityAnalysisController',
+      //      files: ['partials/layout/contents/indemnityAnalysis/controller.js']
+      //    }, 'partials/layout/contents/indemnityAnalysis/index.css'])
+      //    .then (function () {
+      //        $scope.contentWrapper = "partials/layout/contents/indemnityAnalysis/";
+      //      }, function (e) {
+      //        console.log (e);
+      //      }
+      //    );
+      //};
+
+      // 보장분석 게시판
       $scope.indemnityBoard = function() {
         $ocLazyLoad
           .load ([{
@@ -243,23 +334,26 @@ define(
           );
       };
 
-      // 1:1게시판
-      $scope.oneAndOne = function() {
-        $ocLazyLoad
-          .load([{
-            name : 'oneAndOneService',
-            files : [ 'partials/layout/contents/oneAndOne/service.js' ]
-          },{
-            name : 'oneAndOneController',
-            files : [ 'partials/layout/contents/oneAndOne/controller.js' ]
-          }, 'partials/layout/contents/oneAndOne/index.css'
-          ])
-          .then(function() {
-             $scope.contentWrapper = "partials/layout/contents/oneAndOne/";
-             }, function(e) {
-                console.log(e);
-              }
-          );
+      // help
+      $scope.help = function(id) {
+        var $this = $($(id.target));
+        if($this.parent().is('.active')) {
+          $ocLazyLoad
+            .load ([{
+              name: 'helpService',
+              files: ['partials/layout/contents/help/service.js']
+            }, {
+              name: 'helpController',
+              files: ['partials/layout/contents/help/controller.js']
+            }, 'partials/layout/contents/help/index.css'
+            ])
+            .then (function () {
+                  $scope.contentWrapper = "partials/layout/contents/help/";
+                }, function (e) {
+                  console.log (e);
+                }
+            );
+        }
       };
 
       // 마이페이지
@@ -275,6 +369,25 @@ define(
           ])
           .then(function() {
                 $scope.contentWrapper = "partials/layout/contents/myPage/";
+              }, function(e) {
+                console.log(e);
+              }
+          );
+      };
+
+        // 1:1 게시판
+      $scope.oneAnd = function() {
+        $ocLazyLoad
+          .load([{
+            name : 'oneAndService',
+            files : [ 'partials/layout/contents/oneAnd/service.js' ]
+          },{
+            name : 'oneAndController',
+            files : [ 'partials/layout/contents/oneAnd/controller.js' ]
+          }, 'partials/layout/contents/oneAnd/index.css'
+          ])
+          .then(function() {
+                $scope.contentWrapper = "partials/layout/contents/oneAnd/";
               }, function(e) {
                 console.log(e);
               }
@@ -303,7 +416,6 @@ define(
       // 로그인
       $scope.showSingIn = false;
       $scope.signIn = function() {
-        console.log("로그인");
         $scope.showSingIn = !$scope.showSingIn;
       };
 
@@ -389,18 +501,12 @@ define(
         .load('./partials/common/js/jquery.cookie.js')
         .then(function () {
           //layoutService.fire();
+
         });
     }]); // layoutIndexModule.controller
 
     layoutIndexModule.controller('headerController', ['$scope', '$ocLazyLoad', 'layoutService',
       function($scope, $ocLazyLoad, layoutService) {
-        //// 로그인
-        //$scope.showSingIn = false;
-        //$scope.signIn = function() {
-        //  console.log("로그인");
-        //  $scope.showSingIn = !$scope.showSingIn;
-        //};
-
         $ocLazyLoad
           .load([
             './partials/common/js/jquery.cookie.js'
@@ -415,25 +521,34 @@ define(
               $subUlBg.css('height',0);
               console.log("ccccc")
             });
-            $('.lnb > li').on('click', function() {
+            $lnbUl.on('click', '> li', function() {
               var $this = $ (this);
               $this.addClass('on').siblings().removeClass('on');
               if (!$this.is ('.active')) {
-                $this.addClass ('active');
-                $this.siblings ().removeClass ('active');
-                if($this.children().is('.sub-lnb')){
-                  $subUlBg.css('height',160);
-                  $subUl.css('height',160)
-                }else if(!$this.children().is('.sub-lnb')){
+                $this.addClass ('active').siblings().removeClass ('active');
+                $subUlBg.css('height',160);
+                $subUl.css('height',160);
+                if(!$this.children().is('.sub-lnb')){
+                  $this.removeClass('active');
                   $subUlBg.css('height',0);
                   $subUl.css('height',0)
                 }
-              } else if ($this.is ('.active')) {
+              }else if($this.is ('.active')) {
                 $this.removeClass ('active');
                 $subUl.css('height',0);
                 $subUlBg.css('height',0);
               }
             });
+
+            //$subUl.on('click', '> li', function () {
+            //  console.log('sub')
+            //  var $this = $(this)
+            //  if($this.parents().is('.active')){
+            //    console.log("acacac")
+            //    $this.parents().removeClass('active')
+            //  }
+            //})
+
           })
       }]);
 
@@ -587,16 +702,16 @@ define(
     // directive
     layoutIndexModule.directive('viewDetail', function () {
       return {
-        restrict : "E",
+        restrict : "A",
         replace:true,
         transclude:true,
-        templateUrl:'./partials/layout/contents/main/template/viewDetail.html'
+        templateUrl:'./partials/layout/contents/template/viewDetail.html'
       }
     });
 
     layoutIndexModule.directive('signInModal', function () {
       return {
-        restrict : "E",
+        restrict : "A",
         replace:true,
         transclude:true,
         templateUrl:'./partials/layout/contents/template/signIn.html',
@@ -619,6 +734,24 @@ define(
             });
           });
         }
+      }
+    });
+
+    layoutIndexModule.directive('inputTable', function () {
+      return {
+        restrict : "A",
+        replace:true,
+        transclude:true,
+        templateUrl:'./partials/layout/contents/template/inputInfo.html'
+      }
+    });
+
+    layoutIndexModule.directive('recommendTable', function () {
+      return {
+        restrict : "A",
+        replace:true,
+        transclude:true,
+        templateUrl:'./partials/layout/contents/template/recommendTable.html'
       }
     });
 

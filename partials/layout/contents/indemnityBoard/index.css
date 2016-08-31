@@ -1,1 +1,18 @@
 @charset "UTF-8";
+
+.bg-col-01{ background-color:#fad381 }
+.bg-col-02{ background-color:#ecf0f6 }
+.bg-col-03{ background-color:#548ed0 }
+.bg-col-04{ background-color:#ecf0f6 }
+.bg-col-05{ background-color:#fbfbfb }
+
+.thumbnail{
+  position:relative;
+}
+.thumbnail-box li{
+  width:350px;
+  margin-right:25px;
+  margin-bottom:10px;
+  position:absolute;
+  border:1px solid #e5e5e5
+}

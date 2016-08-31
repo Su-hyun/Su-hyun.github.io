@@ -120,105 +120,166 @@
 }
 
 /* -- font-size -- */
-.list-info p
-{ font-size:0.6rem }
+html{ font-size:20px; }
 
+.myHeader4 .oneAnd-tit h2,
+.product-visual h2
+{ font-size:2.25rem }
 
-.fontS13{ font-size:0.65rem }
+.view-top h2
+{ font-size:1.5rem; }
 
-
-body,h1,h2,h3,h4,input,button,
-.sub-lnb > li > a,
-.fontS14
-{ font-size:0.7rem }
-
-
-.my-form-table,
-.fontS15
-{ font-size:0.75rem }
-
-
-.lnb > li > a,
-.fontS16
-{ font-size:0.8rem }
-
-
-.list-info span,
-.form-horizontal .control-label,
-.form-horizontal .radio
-{ font-size:0.85rem }
-
-
-.fontS18
-{ font-size:0.9rem }
-
-
-.fontS19
-{ font-size:0.95rem }
-
-
-.fontS20
-{ font-size:1rem }
+#signIn .btn,
+.productGuide-con h3,
+.fontS22
+{ font-size:1.1rem }
 
 
 .fontS21
 { font-size:1.05rem }
 
 
-#signIn .btn,
-.fontS22
-{ font-size:1.1rem }
+.modal-header > p,
+.view-top small,
+.sugarThink h4,
+.fontS20
+{ font-size:1rem }
 
 
-.modal-header > p
-{ font-size:1.2rem }
+.fontS19
+{ font-size:0.95rem }
+
+
+.location_area .cont h3,
+.input-area span,
+.product-visual,
+.fontS18
+{ font-size:0.9rem }
+
+
+.list-info span,
+.form-horizontal .control-label,
+.form-horizontal .radio,
+.oneAnd-tit p.title_01,
+.btn008,
+.indemnityIntro .choice-txt
+{ font-size:0.85rem }
+
+
+
+.lnb,
+.sugarThink,
+.fontS16
+{ font-size:0.8rem }
+
+
+.gnb,
+.modal-body,
+.my-form-table,
+.btn_bojang p,
+.location li,
+.location_area label,
+.fontS15
+{ font-size:0.75rem }
+
+
+body,h1,h2,h3,h4,input,button,
+.sub-lnb,
+.fontS14
+{ font-size:0.7rem }
+
+
+.fontS13{ font-size:0.65rem }
+
+
+.foot-lnb a,
+.list-info p,
+.notice small,
+.fontS12
+{ font-size:0.6rem }
+
+
+.placeholder span,
+.fontS11
+{ font-size: 0.55rem }
 
 
 /* -- font-weight -- */
-.fontWL
-{ font-weight:300 }
-
-
 body,h1,h2,h3,h4,input,button,
 .sub-lnb > li > a,
 .list-info span,
 .form-horizontal .control-label,
-.form-horizontal .radio
+.form-horizontal .radio,
+.myHeader4 .oneAnd-tit h2,
+.view-top small,
+.sugarThink h4
 { font-weight:normal }
 
 
-
 h1,h2,h3,h4,h5,h6,
+nav > ul,
+nav li,
 .suggest-notice small span,
+.btn008,
+.indemnityIntro .choice-txt,
 .fontWB
 { font-weight:bold }
 
+.notice small,
+.fontWL
+{ font-weight:300 }
 
 
 /* -- color -- */
 .lnb > li > a,
 .gnb a,
+.myHeader4 .oneAnd-tit h2,
+.oneAnd-tit p.title_01,
+.indemnityIntro .choice-txt,
+.view-top,
 .color{ color:#000 }
 
 
-.sub-lnb > li > a,
-.modal-body .btn,
-.sns-sign .sign-face
-{ color:#fff }
-
-
-.color{ color:#f4f4f4 }
-
-
-.color{ color:#dadada }
-
-
-.modal-header p
-{ color : #8c8c8c }
-
-
 .sign-btn-group .forgot
-{ color : #04a9f4 }
+{ color:#04a9f4 }
+
+
+.view-top small
+{ color:#232324 }
+
+
+.foot-lnb li:hover a
+{ color:#31aae2; }
+
+
+.location_area label
+{ color:#333 }
+
+
+.btn:hover,
+.btn:focus
+{ color: #337ab7; }
+
+
+.sns-sign .sign-kakao
+{ color:#340706 }
+
+
+.btn_bojang p
+{ color:#373c44;}
+
+
+.location_area .cont h3 span,
+.upload-list-area > p
+{color:#548ed0;}
+
+
+.address li
+{ color:#5b5b5b; }
+
+.reason-txt
+{ color:#666 }
+
 
 .modal-body,
 .modal-footer p,
@@ -226,13 +287,39 @@ h1,h2,h3,h4,h5,h6,
 { color:#727272 }
 
 
-.sns-sign .sign-or
-{ color:#d4d9dd}
-
-
-.sns-sign .sign-kakao
-{ color:#340706 }
+.input-area textarea
+{ color:#858585 }
 
 
 .sign-checkbox
 { color:#8b8b8b}
+
+
+.modal-header p
+{ color : #8c8c8c }
+
+.notice small {
+  display: block;
+}
+
+
+.sns-sign .sign-or
+{ color:#d4d9dd}
+
+
+.color{ color:#dadada }
+
+
+.color{ color:#f4f4f4 }
+
+
+.sub-lnb > li > a,
+.foot-lnb li a,
+.my-form-table .selectStyle.email input[type="button"],
+.myPage-form form > input,
+.modal-body .btn,
+.sns-sign .sign-face,
+.btn008,
+.location li,
+.product-visual
+{ color:#fff }

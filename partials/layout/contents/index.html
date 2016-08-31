@@ -26,6 +26,8 @@
       <div class="container">
         <ul class="move-menu">
           <li>
+            <a href="#" ng-click="searchInsurance()"></a>
+            <figure><img src="./partials/layout/contents/main/img/move01.png" alt="서"></figure>
             <h3>
               <span class="num-list">01</span>
               내게 맞는 보험 찾기
@@ -34,9 +36,11 @@
               어떤 상품을, 얼마만큼의 보장금액으로, 얼마의 보험료에, 어떤 방법으로 가입해야 하는가?
               <span class="is-block">고객을 위한 맞춤 제안</span>
             </p>
-            <a href="#" ng-click="searchInsurance()">바로가기</a>
+            <span class="lnb-move">바로가기</span>
           </li>
           <li>
+            <a href="#" ng-click="knowExactly()"></a>
+            <figure><img src="./partials/layout/contents/main/img/move02.png" alt="책자"></figure>
             <h3>
               <span class="num-list">02</span>
               보험 바로 알기
@@ -45,7 +49,7 @@
             <p class="move-txt02">
               보험에 대해 최대한 쉽게 설명하고, 보험을 최대한 활용할 수 있도록 합리적인 기준과 방법을 제시
             </p>
-            <a href="#" ng-click="knowExactly()">바로가기</a>
+            <span class="lnb-move">바로가기</span>
           </li>
         </ul>
       </div>
@@ -53,7 +57,7 @@
   </article>
 
   <article class="article2 recommend">
-    <div class="container">
+    <div class="container type2">
       <div class="title">
         <h2>슈가의 보험 추천이 <strong>일리있는</strong> 이유</h2>
         <span class="align-middle"></span>
@@ -62,7 +66,7 @@
         <li ng-repeat="recommend in recommendList" >
           <div class="recommend-img"><img ng-src="./partials/layout/contents/main/img/{{recommend.imageUrl}}" alt=""></div>
           <div class="recommend-txt">
-            <h3>{{recommend.tit}}</h3>
+            <h3 class="check-icon">{{recommend.tit}}</h3>
             <p>{{recommend.txt}}</p>
           </div>
         </li>
@@ -82,7 +86,7 @@
               <div class="truth-img">
                 <img ng-src="./partials/layout/contents/main/img/{{truth.imageUrl}}" alt="">
               </div>
-              <view-detail></view-detail>
+              <div view-detail></div>
             </div>
             <div class="truth-txt-area">
               <h3>{{truth.tit}}</h3>

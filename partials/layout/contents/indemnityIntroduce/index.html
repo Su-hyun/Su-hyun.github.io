@@ -1,52 +1,51 @@
-<section class="wrapper searchInsurance" ng-controller="indemnityIntroduceController">
-  <header>
-    <div class="searchInsurance-visual">
-      <div class="container">
-        <div class="searchInsurance-visual-con">
-          <h2>
-            당신은 <strong>꼭</strong><br>
-            <strong>필요한 보험</strong>을<br>
-            가지고 있나요?
-          </h2>
-          <p>
-            슈가는 핵심보장인
-            <span>실손의료비, 사망, 3대질병 진단비를 체크해드립니다.</span>
-          </p>
-          <div class="searchInsurance-visual-img">
-
-          </div>
-        </div>
-      </div>
+<section class="wrapper indemnityIntro" ng-controller="indemnityIntroduceController">
+  <div class="myHeader4">
+    <div class="container myHeader-img">
+    	<div class="oneAnd-tit">
+	      <h2>
+		      당신은 <strong>꼭</strong><br>
+	            <strong>필요한 보험</strong>을<br>
+	            가지고 있나요?
+	      </h2>
+	      <p class="title_01">슈가는 핵심보장인<span>실손의료비, 사망, 3대질병 진단비를 체크해드립니다.</span></p>
+	    </div>
+    	<span class="ir">1:1 게시판 배경 그림</span>
     </div>
-    <div class="visual-btn-area btn-block">
-      <button class="btn" ng-click="indemnityAnalysis()">보장분석 시작하기<i class="arrow ir">오른쪽 화살표</i></button>
-      개인정보를 요구하거나 전화로 귀찮게 하지 않습니다.
-    </div>
-  </header>
+  </div>
   <article class="article1">
-    <div class="container">
-      <div class="title">
+    <div class="container bojang">
+      <div class="btn_bojang">
+        <button class="btn008" ng-click="indemnityAnalysis()">보장분석 시작하기<span></span></button>
+        <p>개인정보를 요구하거나 전화로 귀찮게 하지 않습니다.</p>
+      </div>
+      <div class="title type2">
         <h2>
           <strong>왜</strong> 핵심보장 체크를 해봐야 하나요?
-           <small>진짜 필요한 보장은 따로 있습니다.</small>
+          <small>진짜 필요한 보장은 따로 있습니다.</small>
         </h2>
         <span class="align-middle"></span>
       </div>
-      <ul class="choice-list">
-        <li ng-repeat="choice in choiceList" >
-          <div class="choice-img"><img ng-src="./partials/layout/contents/searchInsurance/img/{{choice.imageUrl}}" alt=""></div>
-          <div class="choice-txt">
-            <p>{{choice.txt}}</p>
-          </div>
-        </li>
-      </ul>
     </div>
   </article>
   <article class="article2">
+    <ul class="choice-list">
+      <li ng-repeat="choice in choiceList" >
+        <div class="wrap_li">
+          <div class="choice-img"><img ng-src="./partials/layout/contents/indemnityIntroduce/img/{{choice.imageUrl}}" alt=""></div>
+          <div class="choice-txt">
+            <p class="check-icon">{{choice.txt}}</p>
+            <span class="align-middle"></span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </article>
+  <article class="article3">
     <div class="container">
       <div class="review-list-area">
         <ul class="review-list">
           <li ng-repeat="review in reviewList">
+          	<span class="qutation"></span>
             <a href="#" ng-mousedown="count = count + 1">
               <div class="review-txt-area">
                 <h3>{{review.name}} / {{review.userAge}}세 / {{review.date}} <span class="counter">{{count}}</span></h3>

@@ -46,13 +46,4 @@ define(['projectSugar'], function () {
         });
     }]);//myPageController.controller
 
-  // directive
-  myPageModule.directive('inputTable', function () {
-    return {
-      restrict : "E",
-      replace:true,
-      transclude:true,
-      templateUrl:'./partials/layout/contents/template/inputInfo.html'
-    }
-  });
 });

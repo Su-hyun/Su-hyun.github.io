@@ -3,7 +3,6 @@
 
 /* --- default reset --- */
 html,body{width:100%; height:100%; overflow:auto; -webkit-overflow-scrolling:touch;}
-html{font-size:20px}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{margin:0;padding:0}
 body,h1,h2,h3,h4,input,button{
   font-family:'Nanum Barun Gothic';
@@ -40,14 +39,49 @@ button{
   -moz-border-radius:0;
   border-radius:0;
 }
+pre{
+  background-color:#fff;
+  overflow-y:scroll;
+}
+textarea{
+  resize:none;
+}
 *:focus{
-  outline:none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+  outline:none !important;
+  border-color:#ccc !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/* --- loading --- */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  /* change if the mask should have another color then white */
+  z-index: 99;
+  /* makes sure it stays on top */
+}
+#status {
+  width: 200px;
+  height: 200px;
+  margin: -100px 0 0 -100px;
+  /* is width and height divided by two */
+  position: absolute;
+  left: 50%;
+  /* centers the loading animation horizontally one the screen */
+  top: 50%;
+  /* centers the loading animation vertically one the screen */
+  background: url(../img/loading.gif) no-repeat center;
+  /* path to your loading animation */
 }
 
 /* --- common --- */
+td, th{ padding:8px }
 .ir{display:block;text-indent:100%;white-space:nowrap;overflow:hidden}
 .ellipsis{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis}
 .clearfix::after{content:"";display:block;clear:both}
@@ -60,21 +94,63 @@ button{
 }
 .btn:hover,
 .btn:focus{
-  color: #337ab7;
   outline:0 none;
+  color:#fff;
   -webkit-box-shadow: 0;
   -moz-box-shadow: 0;
   box-shadow: 0;
+  background-color:#548ed0
+}
+.btn[disabled]{
+  opacity:1;
 }
 .ellipsis{
   overflow:hidden; white-space: nowrap; text-overflow: ellipsis;
 }
+.input-area .form-control{
+  height:42px;
+  position:relative;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+  cursor:pointer;
+}
+.check-icon{
+  position:relative;
+}
+.check-icon::before{
+  content:"";
+  display:block;
+  width:24px;
+  height:24px;
+  position:absolute;
+  top:-3px;
+  left:-35px;
+  background:url(../img/check.png) no-repeat center/contain;
+}
+.sugarThink{
+  padding:20px 20px 20px 60px;
+  background-color:#f1f1f1
+}
+.sugarThink h4{
+  position:relative;
+}
+.sugarThink h4::before{
+  content:"";
+  display:block;
+  width:32px;
+  height:33px;
+  position:absolute;
+  top:-8px;
+  left:-42px;
+  background:url(../img/sugar-think.png) no-repeat 0 0;
+}
 
 /* --- Layout --- */
-
 #wrapper,
 .wrapper{
   width:100%; height:100%;
+  position:relative;
 }
 .wrapper.row{
   margin:0;
@@ -102,13 +178,23 @@ button{
 }
 
 .container{
-  width:100%;
-  max-width:1200px;
+  width:1200px;
   height:100%;
   margin:0 auto;
   padding:0;
-  /*background-color:#ccc;*/
 }
+.container.type2{
+  width:100%;
+}
+.is-Block{ display: block }
+.is-inlineBlock{ display:inline-block }
+.is-Inline{ display:inline }
+.is-Left{ float:left }
+.is-Right{ float:right }
+.is-Static{ position:static }
+.is-Absolute{ position:absolute }
+.is-Fixed{ position:fixed }
+
 
 /* header */
 .logo-header{
@@ -125,17 +211,15 @@ button{
 nav{
   float:right;
   margin-top:20px;
-  margin-right:25px;
 }
 
 nav > ul,
 nav li{
   float:left;
   text-align:center;
-  font-weight:bold;
 }
 .lnb > li{
-  margin:0 25px;
+  margin:0 15px;
   padding:4px;
 }
 .lnb > li:first-child{
@@ -145,16 +229,12 @@ nav li{
   margin:0 3px;
   position:relative;
 }
-.lnb > li.on::after{
-  content:"";
-  display:block;
-  margin-top:3px;
-  border-bottom:2px solid #31aae2;
-}
-.lnb > li:hover > a{
+
+
+.lnb > li.active > a{
   position:relative;
 }
-.lnb > li:hover > a::after{
+.lnb > li.active > a::after{
   content:"";
   display:block;
   width:0;
@@ -166,20 +246,22 @@ nav li{
   border-right:14px solid transparent;
   border-bottom:14px solid #373c44;
 }
-.gnb.help { margin-left:95px; }
-.gnb.signin { margin-left: 18px; }
+.gnb.help {
+  margin-left:95px;
+}
+.gnb.signin {
+  margin-right:5px;
+}
 .gnb a{
   margin:0 3px;
-  padding-top:4px;
-  padding-left:30px;
-  font-size:0.75rem;
+  padding-left:27px;
   background:url(../../common/img/sprite.png) no-repeat;
 }
 .help a{
-  background-position: 3px -185px;
+  background-position: 5px -189px;
 }
 .signin a{
-  background-position: 0 -238px;
+  background-position: 0 -242px;
 }
 
 .sub-lnb{
@@ -252,7 +334,6 @@ main contents
   width:107px;
   height:24px;
   margin-left:1px;
-  font-size:0.6rem;
   line-height:24px;
   text-align:center;
   background-color:#6b6b6b;
@@ -260,44 +341,30 @@ main contents
 .foot-lnb li:first-child{
   margin-left:0;
 }
-.foot-lnb li a{
-  color:#fff;
-}
-.foot-lnb li:hover a{
-  color:#31aae2;
-}
-
 .address{
- float:right;
+  float:right;
   margin-bottom:15px;
 }
-
 .address li{
   float:left;
   margin-right:17px;
-  color:#5b5b5b;
 }
-
 .address li:first-child{
   margin-left:0;
 }
-
 .sugar-sns{
   margin-right:15px;
 }
-
 .sugar-sns li{
   width:18px;
   height:20px;
   background-image:url(../../common/img/sprite.png);
   background-repeat:no-repeat;
 }
-
 .facebook{
   margin-left:0;
   background-position:-48px -90px;
 }
-
 .twitter{
   background-position:-68px -90px;
 }
@@ -306,8 +373,11 @@ main contents
 로그인
 -- */
 #signIn{
-  width:384px;
+  width:400px;
   margin-top:100px;
+}
+#signIn .modal-content{
+  padding:0 8px;
 }
 #signIn .modal-header{
   padding-top:40px;
@@ -363,6 +433,9 @@ main contents
   background-color:#0896d7;
   border:0 none;
 }
+.modal-body .btn:hover{
+  color:#35353f
+}
 #signIn .modal-footer{
   padding-bottom:40px;
   border-top:0 none;
@@ -414,6 +487,10 @@ main contents
 /* --
 입력폼 디렉티브
 -- */
+.myPage-form form{
+  margin-top:73px;
+  text-align:right;
+}
 .my-form-table{
   margin-bottom:28px;
   border-top:1px solid #465159;
@@ -519,7 +596,6 @@ main contents
 .my-form-table .selectStyle.email input[type="text"]{ width:165px; }
 .my-form-table .selectStyle.email input[type="button"]{
   width:140px;
-  color:#fff;
   background-color: #548ed0;
   border:0 none;
 }
@@ -530,7 +606,44 @@ main contents
 .my-form-table .selectStyle.mobile::before{
   left: 85px;
 }
+.myPage-form form > input{
+  width:100px;
+  height:34px;
+  background-color: #373c44;
+  border:0 none;
+}
 /* -- 입력폼 디렉티브 끝 -- */
+
+/*페이징*/
+.btn-page{
+  font-size:0;
+  text-align:center;
+}
+.btn-page .page-location{
+  display:inline-block;
+}
+.btn-page button,
+.btn-page a{
+  display:inline-block;
+  width:40px;
+  height:40px;
+  margin:0 5px;
+  line-height:40px;
+  vertical-align: top;
+  background:#ecf0f1;
+  font-weight:bold;
+  color:#fff; font-size:0.9rem;
+}
+.btn-page .next{margin-left:10px; background:#ecf0f1 url(../img/pageing-next.png) no-repeat 0 0;}
+.btn-page .prev{margin-right:10px; background:#ecf0f1 url(../img/pageing-prev.png) no-repeat 0 0;}
+.btn-page button:hover{ background-color:#6d6d6d;}
+.btn-page a:hover{background:#548ed0; color:#fff;}
+.btn-page a.on{background:#548ed0; color:#fff;}
+
+/*하단여백공통*/
+.box_margin{width:100%; clear:both; height:200px; display:block;}
+
+
 
 @media all and (max-width:1199px){
   .foot-con{
@@ -541,23 +654,11 @@ main contents
 
 @media all and (max-width:930px){
 
-  body{
-    background-color:lightgreen;
-  }
-  #header{
-    background-color:skyblue;
-  }
-
   /* -- header -- */
 
-  .lnb li{
-    padding:4px 0.5vw;
-  }
-
-  .gnb li {
-    margin-left: 0.5vw;
-  }
 
   /* -- footer -- */
 
 }
+
+
