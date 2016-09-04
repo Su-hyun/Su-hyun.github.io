@@ -142,7 +142,7 @@ define(['projectSugar'], function () {
   //    restrict : "E",
   //    replace:true,
   //    transclude:true,
-  //    templateUrl:'./partials/layout/contents/properInsurance/template/insCon03-01.html'
+  //    templateUrl:'./partials/layout/contents/properInsurance/template/index.html'
   //  }
   //})
 });

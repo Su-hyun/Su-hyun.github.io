@@ -133,7 +133,8 @@ html{ font-size:20px; }
 .view-top h2
 { font-size:1.5rem; }
 
-.figureTxt h5
+.figureTxt h5,
+.aboutFincl h2
 { font-size:1.2rem }
 
 #signIn .btn,
@@ -151,6 +152,8 @@ html{ font-size:20px; }
 .sugarThink-area h4,
 .guideTips span,
 .txtBold,
+.aboutFincl strong,
+.aboutFincl h3,
 .fontS20
 { font-size:1rem }
 
@@ -162,6 +165,7 @@ html{ font-size:20px; }
 .location_area .cont h3,
 .input-area span,
 .product-visual,
+.aboutFincl h4,
 .fontS18
 { font-size:0.9rem }
 
@@ -200,6 +204,7 @@ html{ font-size:20px; }
 .guideCaption,
 .comparisonSub,
 .figure.termType1,
+.aboutFincl p,
 .fontS15
 { font-size:0.75rem }
 
@@ -266,6 +271,7 @@ nav li,
 .indemnityIntro .choice-txt,
 .view-top,
 .guideCaption,
+.aboutFincl strong,
 .color{ color:#000 }
 
 
@@ -308,6 +314,9 @@ nav li,
 
 .address li
 { color:#5b5b5b; }
+
+.aboutFincl p
+{ color:#636467}
 
 .reason-txt
 { color:#666 }

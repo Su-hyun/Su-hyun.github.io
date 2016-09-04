@@ -43,6 +43,14 @@ background:#ffd15d; font-weight:bold; color:#000; font-size:1rem;margin-right:15
 #properInsCon .tb_area_02 table tr th{border:1px solid #c4c8d4; padding:12px 0; font-size:0.8rem;}
 #properInsCon .tb_area_02 table tr td{border:1px solid #c4c8d4; text-align:left; padding:12px 20px; line-height:25px; letter-spacing:-1px;}
 #properInsCon .tb_area_02 table tr td.center{text-align:center;}
+
+#properInsCon .tb_area_03{width:700px; margin:30px 0; margin-left:60px; margin-top:0; border-top:1px solid #465159; position:relative;}
+#properInsCon .tb_area_03 table tr th{border:1px solid #c4c8d4; padding:12px 0; font-size:0.8rem;}
+#properInsCon .tb_area_03 table tr td{border:1px solid #c4c8d4; text-align:left; padding:12px 20px; line-height:25px; letter-spacing:-1px;}
+#properInsCon .tb_area_03 table tr td.center{text-align:center;}
+#properInsCon .tb_area_03 .clear_box{width:711px; height:auto; border:3px solid #5087c2; -webkit-box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.24);
+  -moz-box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.24); box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.24); background:#fff; padding:20px 36px; position:absolute; left:-5px;}
+
 .bg_001{background:#d2e3ec;}
 .bg_002{background:#eaeaea;}
 .bg_003{background:#f5f9fb;}
@@ -86,7 +94,61 @@ display:inline-block; text-align:center; margin-left:10px; font-size:12px; color
 #properInsCon .section01_text p{padding-left:0; margin-bottom:25px;}
 #properInsCon .section01_text ul li{width:298px; height:35px; line-height:35px; text-align:center; margin-bottom:5px; color:#000; border:1px solid #3b424b; border-bottom:2px solid #3b424b;}
 
+.properInsurance_con .right_con  .list_002{padding-left:49px; overflow:hidden;}
+.properInsurance_con .right_con  .list_002 figure{width:420px; float:left; margin-right:42px;}
+.properInsurance_con .right_con  .list_002 ul{width:270px; overflow:hidden; float:left; padding-top:75px;}
+.properInsurance_con .right_con  .list_002 ul li{width:100%; margin-bottom:46px;}
+.properInsurance_con .right_con  .list_002 ul li p{letter-spacing:-1px; font-size:0.75rem;}
 
+.properInsurance_con .right_con  .list_003{padding-left:62px; overflow:hidden; margin-top:10px;}
+.properInsurance_con .right_con  .list_003 .tb_area_02{padding-left:0; float:left; width:496px; margin:0; margin-right:9px;}
+.properInsurance_con .right_con  .list_003 .l_box{width:207px; background:url(./img/icon_04.gif) left top repeat-y; float:left; padding:22px; height:273px;}
+.properInsurance_con .right_con  .list_003 .l_box p{padding-left:0;}
+.properInsurance_con .right_con  .list_003 .l_box p.sma{margin-top:23px; font-size:0.75rem;}
+.properInsurance_con .right_con  .list_003 .l_box a.sma_btn{width:100%; height:37px; line-height:37px; text-align:center;
+  color:#fff; font-weight:bold; background:#35353f; display:block; margin-top:85px;}
+
+.properInsurance_con .right_con  .list_004{padding-left:62px; overflow:hidden;}
+.properInsurance_con .right_con  .list_004 li{float:left; width:50%; margin-bottom:70px;}
+.properInsurance_con .right_con  .list_004 li .list_004_img{width:100%; text-align:left; margin-bottom:15px;}
+.properInsurance_con .right_con  .list_004 li p{padding-left:0;}
+.properInsurance_con .right_con  .list_004 li p.bold{margin-bottom:20px;}
+.properInsurance_con .right_con  .list_004 li p.right{padding-left:60px;}
+
+.properInsurance_con .right_con  .list_005{padding-left:62px; overflow:hidden;}
+.properInsurance_con .right_con  .list_005 li{float:left; width:33.3%; margin-bottom:70px; text-align:center;}
+.properInsurance_con .right_con  .list_005 li .list_004_img{width:100%; text-align:center; margin-bottom:15px;}
+.properInsurance_con .right_con  .list_005 li p{padding-left:0;}
+.properInsurance_con .right_con  .list_005 li p.bold{margin-bottom:20px;}
+.properInsurance_con .right_con  .list_005 li p.right{text-align:left; padding-left:75px;}
+
+.properInsurance_con .right_con  .list_006{padding-left:55px; overflow:hidden; margin-top:30px;}
+.properInsurance_con .right_con  .list_006 li{width:100%; overflow:hidden; margin-bottom:30px;}
+.properInsurance_con .right_con  .list_006 figure{width:246px; float:left; margin-right:30px;}
+.properInsurance_con .right_con  .list_006 .list_006_box{width:451px; overflow:hidden; float:left; padding-top:30px;}
+.properInsurance_con .right_con  .list_006 .list_006_box p{padding-left:0;}
+
+.properInsurance_con .right_con  .list_007{padding-left:65px; overflow:hidden;}
+.properInsurance_con .right_con  .list_007>li{width:100%; overflow:hidden; margin:30px 0; margin-bottom:60px;}
+.properInsurance_con .right_con  .list_007 .l_list{padding-left:30px; background: url(./img/icon_03.gif) 0px 0px no-repeat;}
+.properInsurance_con .right_con  .list_007 figure{width:362px; float:left; margin-right:14px;}
+.properInsurance_con .right_con  .list_007 .list_007_box{width:340px; overflow:hidden; float:left; padding-top:60px;}
+.properInsurance_con .right_con  .list_007 .list_007_box p{padding-left:0;}
+
+.properInsurance_con .right_con  .list_007 .list_007_box .section01_text{margin-top:30px;}
+.properInsurance_con .right_con  .list_007 .list_007_box .section01_text ul li{margin-bottom:10px;}
+
+.properInsurance_con .right_con  .list_008{padding-left:65px; overflow:hidden;}
+.properInsurance_con .right_con  .list_008 figure{width:321px; float:left; margin-right:33px;}
+.properInsurance_con .right_con  .list_008 .list_008_box{width:361px; overflow:hidden; float:left; padding-top:30px;}
+.properInsurance_con .right_con  .list_008 .list_008_box p.list_008_big{font-size:1.1rem;}
+.properInsurance_con .right_con  .list_008 .list_008_box p.list_008_small{font-size:0.7rem; font-weight:normal; margin-bottom:20px;}
+.properInsurance_con .right_con  .list_008 .list_008_box p{padding-left:0;}
+
+.properInsurance_con .right_con  .list_009{padding-left:60px; overflow:hidden;}
+.properInsurance_con .right_con  .list_009 figure{width:314px; float:left; margin-left:40px;}
+.properInsurance_con .right_con  .list_009 .list_009_box{width:358px; overflow:hidden; float:left; padding-top:50px;}
+.properInsurance_con .right_con  .list_009 .list_009_box p{padding-left:0;}
 
 
 
