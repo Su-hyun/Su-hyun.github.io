@@ -1,1 +1,53 @@
 @charset "UTF-8";
+
+.help_pop{width:500px; height:auto; overflow:hidden; position:relative; margin:0 auto;}
+.help_pop_close{height:50px; border-radius:5px 5px 0 0; background:#363439; overflow:hidden; display:block;}
+.help_pop_close button{float:right; margin-top:15px; margin-right:25px; display:block;}
+
+.help_pop_con_01{border:1px solid #dbdfe1; overflow:hidden;}
+.help_pop_con_01 p{height:40px; line-height:40px; border-bottom:1px solid #dbdfe1; padding-left:20px; color:#222222; font-weight:bold; font-size:0.7rem; position:relative;}
+.help_pop_con_01 p:before {content: " ";position: absolute;z-index: 5;width:54px;left: 18px;bottom: 0;border-bottom: 2px solid #548ed0;}
+.help_pop_con_01 ul{overflow:hidden; padding:23px 19px;}
+.help_pop_con_01 ul li{float:left; width:228px; height:121px; float:left; margin-right:4px; border:2px solid #e4e4e4; 
+background:#f5f5f5; border-radius:5px; text-align:left; position:relative;}
+.help_pop_con_01 ul li span.help_chk{display:none; position:absolute; width:9px; height:9px; right:12px; top:12px; background:url(./img/icon04.gif) 0 0 no-repeat;}
+.help_pop_con_01 ul li:last-child{margin-right:0;}
+.help_pop_con_01 ul li a{width:100%; height:117px; display:inline-block; color:#bababa; font-weight:bold; font-size:0.75rem; text-align:center; padding-top:80px;}
+.help_pop_con_01 ul li:nth-child(1) a{background:url(./img/icon01_off.png) center 20px no-repeat;}
+.help_pop_con_01 ul li:nth-child(2) a{background:url(./img/icon02_off.png) center 20px no-repeat;}
+.help_pop_con_01 ul li.on{border:2px solid #4da5d6; background:#fff;}
+.help_pop_con_01 ul li.on a{color:#000;}
+.help_pop_con_01 ul li.on span.help_chk{display:block;}
+.help_pop_con_01 ul li:nth-child(1).on a{background:url(./img/icon01_on.png) center 20px no-repeat;}
+.help_pop_con_01 ul li:nth-child(2).on a{background:url(./img/icon02_on.png) center 20px no-repeat;}
+
+.help_pop_con_02{border:1px solid #dbdfe1; overflow:hidden;} 
+.help_pop_con_02 p{height:40px; line-height:40px; border-bottom:1px solid #dbdfe1; padding-left:20px; color:#222222; font-weight:bold; 
+margin-bottom:32px; font-size:0.7rem; position:relative;}
+.help_pop_con_02 p:before {content: " ";position: absolute;z-index: 5;width:54px;left: 18px;bottom: 0;border-bottom: 2px solid #548ed0;}
+fieldset legend {display:none;}
+
+.help_pop_con_02 .help_pop_form{margin:0 25px;}
+.help_pop_con_02 .help_pop_form input[type="text"]{border:1px solid #c4c9cd; height:36px; text-indent:10px;}
+.help_pop_con_02 .help_pop_form input[type="text"].w_165{width:165px;}
+.help_pop_con_02 .help_pop_form select{border:1px solid #c4c9cd; height:36px;}
+.help_pop_con_02 .help_pop_form select.w_121{width:121px;}
+.help_pop_con_02 .help_pop_form .w_86{width:86px;}
+.help_pop_con_02 .help_pop_form input[type="submit"]{background:#548ed0; width:150px; height:36px; line-height:36px; 
+text-align:center; font-size:0.6rem; font-weight:bold; color:#fff; border:0;}
+.help_pop_con_02 .help_pop_form .pop_form_01{overflow:hidden; margin-bottom:8px;}
+.help_pop_con_02 .help_pop_form .pop_form_02{overflow:hidden; margin-bottom:14px;}
+.help_pop_con_02 .help_pop_form .pop_form_03{overflow:hidden; margin:18px 0; text-align:right;}
+.help_pop_con_02 .help_pop_form pre{border:1px solid #c4c9cd; background:#fff; font-size:0.6rem; border-radius:0;}
+
+
+.help_pop_con_02 .help_pop_form .pop_form_03 .agr{margin-right:30px;}
+.help_pop_con_02 .help_pop_form .pop_form_03 input[type="radio"] {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip:rect(0,0,0,0);border: 0;}
+.help_pop_con_02 .help_pop_form .pop_form_03 input[type="radio"] + label {color:#333333; font-size:0.65rem; display: inline-block;position: relative;padding-left: 25px;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;}
+.help_pop_con_02 .help_pop_form .pop_form_03 input[type="radio"] + label:before {content: '';position: absolute;left: 0;top: 0px;width: 18px;height: 18px;text-align: center;background: #fff;border: 1px solid #528fcc;border-radius: 100%;}
+.help_pop_con_02 .help_pop_form .pop_form_03 input[type="radio"]:checked + label:before {background: #fff;border-color: #528fcc;}
+.help_pop_con_02 .help_pop_form .pop_form_03 input[type="radio"]:checked + label:after {content: '';position: absolute;top: 4px;left: 4px;width: 10px;height: 10px;background: #528fcc;border-radius: 100%;}
+
+
+
+

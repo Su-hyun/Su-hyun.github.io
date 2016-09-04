@@ -35,6 +35,7 @@ require.config({
     'ngResource': './lib/angular-resource/angular-resource.min',
     'ngSanitize': './lib/angular-sanitize/angular-sanitize.min',
     'ngTouch': './lib/angular-touch/angular-touch.min',
+    'ngFileUpload': './lib/ng-file-upload/ng-file-upload.min',
 
     'ui.router': './lib/angular-ui-router/release/angular-ui-router',
 
@@ -59,8 +60,9 @@ require.config({
     'ngResource': ['ngCookies'],
     'ngSanitize': ['ngResource'],
     'ngTouch': ['ngSanitize'],
+    'ngFileUpload' : ['ngTouch'],
 
-    'ui.router': ['ngTouch'],
+    'ui.router': ['ngFileUpload'],
 
     'oc.lazyLoad': ['ui.router'],
 

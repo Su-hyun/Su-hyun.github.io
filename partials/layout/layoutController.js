@@ -1,11 +1,20 @@
 'use strict';
 
+
+//api 서버 주소
+//var apiServer = 'http://localhost:3000';
+var apiServer = 'http://192.168.100.35:3000';
+
+var yopServer = 'https://yellopass-staging.yellofg.com/noco-itgr-auth/v1';
+//var yopServer = 'https://yellopass.yellofg.com//noco-itgr-auth/v1';
+
+
 define(
   ['projectSugar'],
   function() {
     var layoutIndexModule = angular.module('projectSugar', ['ui.router', 'oc.lazyLoad', 'layoutService']);
-    layoutIndexModule.controller('layoutController', ['$scope','$state', '$ocLazyLoad','layoutService',
-      function($scope,$state, $ocLazyLoad, layoutService) {
+    layoutIndexModule.controller('layoutController', ['$scope','$http', '$ocLazyLoad','layoutService', '$rootScope','$stateParams',
+      function($scope,$http, $ocLazyLoad, layoutService,$rootScope, $stateParams) {
 
       $scope.mainHeader = 'partials/layout/header/';
       $scope.contentWrapper = 'partials/layout/contents/';
@@ -22,12 +31,38 @@ define(
         }
       });
 
+      // --* URL 지정 *--
+      // 내 보장분석 URL
+      $scope.$on('indemnityAnalysis', function() {
+        $ocLazyLoad
+          .load([
+            {
+              name : 'recommendService',
+              files : [ 'partials/layout/contents/recommend/service.js' ]
+            },
+            {
+              name : 'recommendController',
+              files : [ 'partials/layout/contents/recommend/controller.js' ]
+            },
+              'partials/layout/contents/recommend/index.css'])
+          .then(
+            function() {
+              $scope.contentWrapper = "partials/layout/contents/recommend/indemnityAnalysis/";
+            },
+            function(e) {
+              console.log(e);
+            });
+      });
+      // --* URL 종료 *--
+
+
+      // --* Lnb 이동 *--
+      //메인페이지
       $scope.$on('goToHome', function() {
         $scope.contentWrapper = 'partials/layout/contents/';
         $ocLazyLoad.load('partials/layout/contents/index.css');
         console.log("goToHome");
       });
-
       $scope.broadcastGoToHome = function() {
         $scope.$broadcast('goToHome');
       };
@@ -159,8 +194,7 @@ define(
               files : [ 'partials/layout/contents/productGuide/controller.js' ]
             }, 'partials/layout/contents/productGuide/index.css'])
             .then(function() {
-              //  $scope.contentWrapper = "partials/layout/contents/productGuide/expenses/";
-                $scope.contentWrapper = "partials/layout/contents/productGuide/pension/";
+                $scope.contentWrapper = "partials/layout/contents/productGuide/expenses/";
               }, function(e) {
                 console.log(e);
               }
@@ -503,6 +537,62 @@ define(
           //layoutService.fire();
 
         });
+
+
+
+          //로그인 처리
+          $scope.doLogin = function() {
+
+              //널값 체크
+              if($("#email").val() == undefined || $("#email").val() == "") {
+                  alert("E-mail을 입력해 주십시오");
+                  return;
+              }
+              if($("#password").val() == undefined || $("#password").val() == "") {
+                  alert("Password를 입력해 주십시오");
+                  return;
+              }
+
+              var loginData = {
+                  email : $("#email").val(),
+                  password : $("#password").val()
+              };
+
+
+              $http.post(yopServer+'/users/login', loginData)
+                  .success(function(data) {
+                      if(data.resultInfo.code == "200") {
+                          //로그인 잘 되면 아이디 , 값 쿠키 굽고 로그인 창 닫기
+                          var token = data.result.accessToken;
+                          var reData = {
+                              fields : 'email,nickName,mobileNum,marriedYn,birthData,gender'
+                          };
+
+                          $http.get(yopServer+'/users/'+token, {params:reData})
+                              .success(function(data) {
+                                  $.cookie("loginToken",token);
+                                  $.cookie("loginemail",data.result.email);
+                                  $.cookie("loginwriter",data.result.nickName);
+
+                                  $scope.logintoken = token;
+
+                                  $scope.broadcastGoToHome();
+
+                                  alert("로그인 되었습니다");
+
+                                  $("#loginView").modal('hide');
+
+                              });
+
+                      } else {
+                          alert(data.resultInfo.message);
+                      }
+
+
+                  });
+
+          };
+
     }]); // layoutIndexModule.controller
 
     layoutIndexModule.controller('headerController', ['$scope', '$ocLazyLoad', 'layoutService',
@@ -553,8 +643,18 @@ define(
       }]);
 
     // * main page *
-    layoutIndexModule.controller('contentsController', ['$scope', '$ocLazyLoad', 'layoutService',
-      function($scope, $ocLazyLoad, layoutService) {
+    layoutIndexModule.controller('contentsController', ['$scope', '$ocLazyLoad', '$stateParams', 'layoutService',
+      function($scope, $ocLazyLoad, $stateParams, layoutService) {
+        console.log("----" + $stateParams.subModule + "----");
+
+        // URL 감지
+        angular.element(document).ready(function() {
+          if($stateParams.subUrl){
+            $scope.$emit('indemnityAnalysis');
+          }
+        });
+
+
         $scope.eventList = [
           {
             titIr : "알면보험 모르면 모험",
@@ -568,8 +668,8 @@ define(
             "십분 활용할 수 있도록 도움을 주고자 만들어졌습니다."
           },{
             titIr : "알면보험 모르면 모험",
-            titBg : "slide-txt-tit01.png",
-            titAlt : "슈가 is...",
+            //titBg : "slide-txt-tit01.png",
+            //titAlt : "슈가 is...",
             txt1 : "인슈어런스(Insurance) + 가이드(Guide)란 단어가 결합된 말로 " +
             "국내 유일의 온라인 기반 보험 자문 / 상품비교 서비스",
             txt2 : "정보의 비대칭으로 인해 소비자는 본인이 비싼 보험에 가입했는지, " +

@@ -1,49 +1,17 @@
-<section class="wrapper">
-  <header>
+<section id="properInsurance" class="wrapper" ng-controller="properInsController">
+  <header class="properInsurance_header">
     <div class="container">
-      <div>
-        <h2>
-          슈가,
-          <span>
-          보험 가입의<br>
-          기준을 말하다.
-          </span>
-        </h2>
-        <p>
-          합리적 보험소비를 위한 올바를 보험 가이드
-        </p>
-        <p>
-          적은 비용으로 큰 위험에 대비하는 것이 보험의 핵심 가치입니다.
-        </p>
-      </div>
+        <div class="tit">
+	        <h2>슈가,<br>
+	          <span>보험 가입의<br>기준을 말하다.</span>
+	        </h2>
+	        <p class="tit_01">합리적 보험소비를 위한 <br>올바를 보험 가이드</p>
+	        <p class="tit_02">적은 비용으로 큰 위험에 대비하는 것이 <br>보험의 핵심 가치입니다.</p>
+        </div>
     </div>
   </header>
-  <section class="container">
-    <aside>
-      <ins-aside></ins-aside>
-    </aside>
-    <section class="con">
-      <div>
-        <ins-tit01-con01></ins-tit01-con01>
-      </div>
-      <div>
-        <ins-tit01-con02></ins-tit01-con02>
-      </div>
-      <div>
-        <ins-tit01-con03></ins-tit01-con03>
-      </div>
-      <div>
-        <ins-tit02-con01></ins-tit02-con01>
-      </div>
-      <div>
-        <ins-tit02-con02></ins-tit02-con02>
-      </div>
-      <div>
-        <ins-tit02-con03></ins-tit02-con03>
-      </div>
-      <div>
-        <ins-tit03-con01></ins-tit03-con01>
-      </div>
-    </section>
-  </section>
+  <div class="container properInsurance_con">
+    <aside id="properInsAside" class="left_bar" ng-include="properInsAsideArea"></aside>
+    <section id="properInsCon" ng-include="properInsConArea"></section>
+  </div>
 </section>

@@ -1,53 +1,65 @@
 <section>
-  <div>
-    <div>
-      <button>닫기</button>
+  <div class="help_pop">
+    <div class="help_pop_close">
+      <button><img src="./partials/layout/contents/help/img/icon03.png" alt="닫기"/></button>
     </div>
-    <div>
-      <p>
-        전문가 무료상담 신청
-      </p>
-      <ul>
-        <li><a href="">E-mail 상담신청</a></li>
-        <li><a href="">휴대폰 상담신청</a></li>
+    <div class="help_pop_con_01">
+      <p>전문가 무료상담 신청</p>
+      <ul id="connect">
+        <li class="on"><a href="">E-mail 상담신청</a><span class="help_chk"></span></li>
+        <li><a href="">휴대폰 상담신청</a><span class="help_chk"></span></li>
       </ul>
     </div>
-    <div>
+    <div class="help_pop_con_02">
       <p>비회원 상담 신청</p>
-      <form action="">
-        <fieldset>
-          <legend>메일상담 신청</legend>
-          <input type="text">
-          <select>
-            <option value=""></option>
-            <option value="네이버">naver.com</option>
-          </select>
-          <input type="submit" value="비회원으로 메일상담신청">
-        </fieldset>
-        <fieldset>
-          <legend>
-            전화상담신청
-          </legend>
-          <select>
-            <option value="">010</option>
-          </select>
-          - <input type="text">
-          - <input type="text">
-          <input type="submit" value="비회원으로 전화상담신청">
-        </fieldset>
-        <div>
-          <pre>
-            □ 개인정보 수집/이용동의 안내
-              본인은 귀사에서 취득한 개인정보 수집 및 활용에 있어 다음의 명시된 내용에
-              동의합니다.
-              - 수집하는 정보 : 이메일 또는 휴대폰번호
-              - 이용목적 : 상담신청 및 상담
-              - 이용기간 : 이용 동의로 부터 3개월간 보관 후 파기
-          </pre>
-        </div>
-        <label><input name="iAgree" type="radio">동의합니다.</label>
-        <label><input name="iAgree" type="radio">동의하지 않습니.</label>
-      </form>
+      <div class="help_pop_form">
+	      <form action="">
+	        <div class="pop_form_01">
+		        <fieldset>
+		          <legend>메일상담 신청</legend>
+		          <input class="w_165" type="text">
+		          <select class="w_121">
+		            <option value=""></option>
+		            <option value="네이버">naver.com</option>
+		          </select>
+		          <input type="submit" value="비회원으로 메일상담신청">
+		        </fieldset>
+	        </div>
+	        <div class="pop_form_02">
+		        <fieldset>
+		          <legend>
+		            전화상담신청
+		          </legend>
+		          <select class="w_86">
+		            <option value="">010</option>
+		          </select>
+		          - <input class="w_86" type="text">
+		          - <input class="w_86" type="text">
+		          <input type="submit" value="비회원으로 전화상담신청">
+		        </fieldset>
+		     </div>
+	          <pre>
+□ 개인정보 수집/이용동의 안내
+  본인은 귀사에서 취득한 개인정보 수집 및 활용에 있어 다음의 명시된 내용에
+  동의합니다.
+  - 수집하는 정보 : 이메일 또는 휴대폰번호
+  - 이용목적 : 상담신청 및 상담
+  - 이용기간 : 이용 동의로 부터 3개월간 보관 후 파기
+	          </pre>
+	        <div class="pop_form_03"> 
+	        	<input type="radio" id="iAgree" name="Agree" checked /><label class="agr" for="iAgree">동의합니다.</label>
+              <input type="radio" id="iDisAgree" name="Agree" /><label for="iDisAgree">동의하지 않습니다.</label>
+	        </div>
+	      </form>
+		</div>
     </div>
   </div>
 </section>
+<script type="text/javascript">
+$("#connect > li > a").click(function(){
+	$("#connect > li > a").each(function(){
+		$(this).parent("li").removeClass("on");
+	});
+	$(this).parent("li").addClass("on");
+});
+</script>

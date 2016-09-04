@@ -1,19 +1,39 @@
 @charset "UTF-8";
 
 #productGuide header{
-  height:498px;
-  background-color:#4e80bb
+  height:334px;
+  background-color:#848484;
+  overflow:visible;
+}
+#productGuide header.expenses{
+  height:368px;
 }
 .product-visual .container{
-  padding:114px 0 0 120px;
+  padding:90px 0 0 120px;
+}
+.productGuide-visual-bg{
+  min-height:420px;
+  background:no-repeat 0 0;
+}
+.productGuide-visual-bg.expenses{
+  background-image:url(./img/expensesImg00.png)
+}
+.productGuide-visual-bg.term{
+  background-image:url(./img/termImg00.png)
+}
+.productGuide-visual-bg.diagnosis{
+  background-image:url(./img/diagnosisImg00.png)
+}
+.productGuide-visual-bg.pension{
+  background-image:url(./img/pensionImg00.png)
 }
 .product-visual h2{
   margin-top:20px;
-
+  letter-spacing: 0;
 }
 .productGuide-con{
-  padding:55px 97px 40px;
-  border:1px red solid;
+  margin-top:140px;
+  padding:0 97px 40px;
 }
 .productGuide-con h3{
 
@@ -35,4 +55,323 @@
 }
 .thinkSub{
   padding:40px 45px;
+  letter-spacing: 0;
+}
+.thinkSub p strong{
+  display:block;
+  margin-top:15px;
+}
+.thinkSub figcaption{
+  text-align:left;
+}
+.thinkSub > div > *{
+  padding:0 20px;
+  word-break: keep-all;
+}
+.thinkSub .padDefault{
+  padding:0;
+}
+.thinkSub .sugarThink > *{
+  padding:0;
+}
+.thinkSub h4{
+  margin-bottom:20px;
+}
+.thinkSub .subDiv-area{
+  margin:50px 0 120px;
+  overflow:hidden
+}
+.subDiv-area dl{
+  width:340px;
+  margin-left:48px;
+}
+.subDiv-area dd{
+  margin-top:3px;
+}
+.subDiv-area .subDt{
+  margin-top:38px;
+}
+.thinkSub .subUl-area{
+  font-size:0;
+  text-align:center;
+  overflow:hidden;
+}
+.thinkSub .subUl-area.type2{
+  padding-left:30px;
+}
+.subUl-area li{
+  text-align:left;
+}
+.subUl-area.li3 li{
+  display:inline-block;
+  min-height:260px;
+  margin-left:172px;
+  position:relative;
+  vertical-align: top;
+}
+.subUl-area.li3 li:first-child{
+  margin-left:0;
+}
+.subUl-area.li3 dl{
+  width:110%;
+  margin-left:-35px;
+  padding:7px 0 0 13px;
+  position:absolute;
+  left:50%;
+}
+.subUl-area.li3 dd::before{
+  content:"-";
+  display:block;
+  position:absolute;
+  left:0;
+}
+.subUl-area.li2 li{
+  width:390px;
+  word-break: keep-all;
+
+}
+.subUl-area.li2 figure{
+  margin-top:50px;
+}
+.subUl-area.type2 li{
+  padding-left:12px;
+  position:relative;
+}
+.subUl-area.type2 li::before{
+  content:"-";
+  display:block;
+  position:absolute;
+  left:0px;
+}
+.guideTable{
+  margin-bottom:50px;
+}
+.guideTable.type2,
+.guideTable.type3{
+  min-height:275px;
+  margin-bottom:5px;
+}
+.guideTable table{
+  border:1px solid #c7ceda;
+  border-top:2px solid #465159
+}
+.guideTable col,
+.guideTable tbody tr{
+  border-left:1px solid #c7ceda;
+}
+.guideTable tbody tr{
+  border-top:1px solid #c7ceda;
+}
+.guideTable col:first-child,
+.guideTable tbody tr:first-child{
+  border-left:0 none;
+}
+.guideTable td{
+  padding:20px;
+  text-align:left;
+}
+.guideTable th,
+.guideTable.type2 td
+.guideTable.type4 td{
+  height:47px;
+}
+.guideTable.type2 col:first-child,
+.guideTable thead tr,
+.guideTable tbody th{
+  background-color:#f5f9fb
+}
+.guideTable .tableSup{
+  padding-left:20px;
+}
+.guideCaption{
+  width:auto;
+  height:auto;
+  padding-left:10px;
+  opacity:1
+}
+.guideTable.type2 th,
+.guideTable.type2 td,
+.guideTable.type3 th
+.guideTable.type4 td{
+  padding:7px
+}
+.guideTable.type3 td{
+  padding:2px;
+  text-align:center;
+}
+.thinkSub .figure{
+  margin-bottom:30px;
+  padding:30px 8px;
+  position:relative;
+  text-align:center;
+  border:1px solid #cecece
+}
+.figure.type1{
+  width:100.6%
+}
+.figure.type2{
+  min-height:340px;
+  padding:35px;
+}
+.figure .figBorder{
+  border-color:#cecece
+}
+.figure span{
+  margin-bottom:10px;
+  padding-left:20px;
+}
+.figure.type2 p{
+  text-align:left
+}
+.figure.type2 figure{
+  margin:10px 0;
+}
+.figure.type2 p:nth-child(3){
+  margin-left:-250px;
+}
+.figure.type3 li{
+  padding-left:15px;
+  position:relative;
+  text-align:left;
+}
+.figure.type3 li::before{
+  content:"-";
+  display:block;
+  position:absolute;
+  left:0;
+}
+.figNotice li{
+  margin-top:30px;
+}
+.figNotice li:first-child{
+  margin-top:0
+}
+.thinkSub .guideTips{
+  padding-left:40px;
+  position:relative;
+  word-break: keep-all;
+}
+.guideTips span{
+  margin-bottom:5px;
+}
+.guideTips span:nth-child(1)::before{
+  content:"";
+  display:block;
+  width:23px;
+  height:22px;
+  position:absolute;
+  left:6px;
+  background:url(./img/iconStar.png) no-repeat 0;
+}
+.guideTips .noti{
+  margin:10px 0;
+  padding:15px 20px;
+  border:2px solid #3c649a
+}
+.popUpCon a{
+  display:inline;
+}
+.popUpCon a::after{
+  content:"";
+  display:inline-block;
+  width:19px;
+  height:19px;
+  vertical-align: top;
+  background:url(./img/iconCercleQ.png) no-repeat 0;
+}
+.imgAlign img{
+  margin:0 7px;
+  vertical-align: middle;
+}
+.elAlign ul{
+  margin-left:78px;
+}
+.sugarThink strong{
+  display:block;
+  margin-top:20px;
+}
+.comparison{
+  overflow:hidden
+}
+.comparison > li{
+  width:50%;
+  padding:20px;
+}
+.comparison > li:nth-child(2){
+  border-left:1px solid #c4c8d4
+}
+.comparisonSub{
+  padding:0 20px;
+}
+.comparisonSub h5{
+  margin-bottom:5px;
+}
+.comparisonSub ul{
+  min-height:95px;
+}
+.comparisonSub li{
+  padding-left:12px;
+  position:relative;
+  word-break: keep-all;
+}
+.comparisonSub li::before{
+  content: "-";
+  display:block;
+  position:absolute;
+  left:0;
+}
+.tableSup.type2{
+  padding:0 20px;
+}
+.tableSup.type2 li{
+  padding-left:12px;
+  position:relative;
+}
+.tableSup.type2 li::before{
+  content: "-";
+  display:block;
+  position:absolute;
+  left:0;
+}
+.needsPension p:first-child::before{
+  content:"";
+  display:inline-block;
+  width:22px;
+  height:22px;
+  margin-right:7px;
+  vertical-align: middle;
+  background:url(./img/iconPlus.png) no-repeat center;
+}
+.figure .figureTxt{
+  width:380px;
+  margin-right:50px;
+  text-align:left;
+  word-break: keep-all;
+}
+.figureTxt small{
+  display:block;
+}
+.figure.termType1{
+  min-height:610px;
+  padding:50px;
+}
+.figure.termType1 ol{
+  position:absolute;
+  top:75%;
+  left:40%;
+  text-align:left;
+  line-height: 1.5;
+}
+.figureOverSize{
+  width:105%;
+  margin-left:-2.5%;
+}
+.padFigCaption{
+  padding-left:45px;
+}
+#productGuide .btn-detail{
+  padding:6px 15px;
+  vertical-align: middle;
+  background-color:#eaeaea;
+  border:1px solid #cecece;
 }

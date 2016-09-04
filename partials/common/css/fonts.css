@@ -43,6 +43,7 @@
 /*
  * Nanum Gothic (Korean) http://www.google.com/fonts/earlyaccess
  */
+/*
 @font-face {
   font-family: 'Nanum Gothic';
   font-style: normal;
@@ -75,11 +76,13 @@
        url(../fonts/NanumGothic-ExtraBold.woff) format('woff'),
        url(../fonts/NanumGothic-ExtraBold.ttf) format('truetype');
 }
+*/
 
 
 /*
  * Noto Sans https://www.google.com/get/noto/
  */
+/*
 @font-face {
   font-family: 'Noto Sans';
   font-weight: normal;
@@ -118,6 +121,7 @@
        url(../fonts/NotoSans-BoldItalic.woff) format('woff'),
        url(../fonts/NotoSans-BoldItalic.ttf) format('truetype');
 }
+*/
 
 /* -- font-size -- */
 html{ font-size:20px; }
@@ -128,6 +132,9 @@ html{ font-size:20px; }
 
 .view-top h2
 { font-size:1.5rem; }
+
+.figureTxt h5
+{ font-size:1.2rem }
 
 #signIn .btn,
 .productGuide-con h3,
@@ -141,7 +148,9 @@ html{ font-size:20px; }
 
 .modal-header > p,
 .view-top small,
-.sugarThink h4,
+.sugarThink-area h4,
+.guideTips span,
+.txtBold,
 .fontS20
 { font-size:1rem }
 
@@ -162,13 +171,18 @@ html{ font-size:20px; }
 .form-horizontal .radio,
 .oneAnd-tit p.title_01,
 .btn008,
+.subUl-area dt,
+.comparison h5,
 .indemnityIntro .choice-txt
 { font-size:0.85rem }
 
 
 
 .lnb,
-.sugarThink,
+.sugarThink-area,
+.thinkSub .subUl-area.type2,
+.subUl-area dd,
+.guideTips .noti,
 .fontS16
 { font-size:0.8rem }
 
@@ -179,12 +193,21 @@ html{ font-size:20px; }
 .btn_bojang p,
 .location li,
 .location_area label,
+.guideTable td,
+.pensionDl dd,
+.tableSup,
+.comparison,
+.guideCaption,
+.comparisonSub,
+.figure.termType1,
 .fontS15
 { font-size:0.75rem }
 
 
 body,h1,h2,h3,h4,input,button,
 .sub-lnb,
+.guideTable.type2 th,
+.guideTable.type2 td,
 .fontS14
 { font-size:0.7rem }
 
@@ -195,6 +218,7 @@ body,h1,h2,h3,h4,input,button,
 .foot-lnb a,
 .list-info p,
 .notice small,
+.tableSup.type2,
 .fontS12
 { font-size:0.6rem }
 
@@ -212,7 +236,9 @@ body,h1,h2,h3,h4,input,button,
 .form-horizontal .radio,
 .myHeader4 .oneAnd-tit h2,
 .view-top small,
-.sugarThink h4
+.sugarThink-area h4,
+.guideTips .noti,
+.txtNoneBold
 { font-weight:normal }
 
 
@@ -226,6 +252,8 @@ nav li,
 { font-weight:bold }
 
 .notice small,
+.product-visual h2,
+.product-visual p,
 .fontWL
 { font-weight:300 }
 
@@ -237,6 +265,7 @@ nav li,
 .oneAnd-tit p.title_01,
 .indemnityIntro .choice-txt,
 .view-top,
+.guideCaption,
 .color{ color:#000 }
 
 
@@ -267,6 +296,9 @@ nav li,
 
 .btn_bojang p
 { color:#373c44;}
+
+.needsPension p:first-child
+{  color:#457fc1 }
 
 
 .location_area .cont h3 span,

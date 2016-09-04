@@ -1,1 +1,39 @@
 @charset "UTF-8";
+.myHeader7{width:100%; background:url(./img/myHeader7_back.png) left top repeat;}
+.myHeader7 .container7{height:364px; width:1100px; margin:0 auto; background:url(./img/myHeader7_back02.png) left top no-repeat; position:relative;}
+.myHeader7 .container7 h2{width:480px; padding-bottom:25px; color:#000000; font-size:1.5rem; margin-left:150px; padding-left:30px; 
+padding-top:71px; line-height:1; background:url(./img/dot001.png) left bottom repeat-x; margin-bottom:48px;}
+.myHeader7 .container7 h2 small{color:#000000;font-size:1rem; display:block; margin-bottom:14px; line-height:1;}
+.myHeader7 .container7 h2 strong{font-size:2.35rem;}
+.myHeader7 .container7 .top_btn{position:absolute; overflow:hidden; right:0; top:30px;}
+.myHeader7 .container7 .top_btn li{float:left; width:130px; height:31px; padding-left:38px; vertical-align:top; line-height:1; display:block; padding-top:13px;}
+.myHeader7 .container7 .top_btn li a{font-size:0.8rem; color:#000; font-weight:bold;}
+.myHeader7 .container7 .top_btn li:nth-child(1){background:url(./img/icon_001.png) left top no-repeat; margin-right:21px;}
+.myHeader7 .container7 .top_btn li:nth-child(2){background:url(./img/icon_002.png) left top no-repeat;}
+
+.myHeader7 .container7 ul.count_box{overflow:hidden; margin-left:174px;}
+.myHeader7 .container7 ul.count_box li{float:left; width:200px; padding:0 20px; background:#fff; margin-right:2px; height:102px;}
+.myHeader7 .container7 ul.count_box li:nth-child(3){background:#dbdbdb;}
+.myHeader7 .container7 ul.count_box li:nth-child(4){background:#548ed0;}
+.count_box_name{color:#515151; font-weight:bold; font-size:0.65rem; margin-top:15px; margin-bottom:38px; line-height:1;}
+.count_box_num{color:#000000; font-size:0.65rem; font-weight:bold; line-height:1; text-align:right;}
+.count_box_num strong{font-size:1.4rem;}
+.myHeader7 .container7 ul.count_box li:nth-child(3) .count_box_name{color:#000000;}
+.myHeader7 .container7 ul.count_box li:nth-child(3) .count_box_num{font-weight:bold;}
+.myHeader7 .container7 ul.count_box li:nth-child(4) .count_box_name{color:#fff;}
+.myHeader7 .container7 ul.count_box li:nth-child(4) .count_box_num{font-weight:bold; color:#fff;}
+
+.mycontainer7{width:100%; background:url(./img/myHeader7_back.png) left top repeat-x;}
+.mycontainer7 .mycontainer7_box{width:1100px; margin:0 auto; overflow:hidden;}
+.mycontainer7 .mycontainer7_box .mycontainer7_table{margin-bottom:18px;}
+.mycontainer7 .mycontainer7_box .mycontainer7_table .recommend_bottom table{border-top:2px solid #2d2d2d !important;}
+.mycontainer7 .mycontainer7_box .mycontainer7_table .recommend_bottom .bg-col-01{background:#fad381;}
+.mycontainer7 .mycontainer7_box .mycontainer7_table .recommend_bottom .bg-col-02{background:#ecf0f6;}
+.mycontainer7 .mycontainer7_box .mycontainer7_table .recommend_bottom .bg-col-03{background:#2d2d2d; color:#fff; font-weight:bold;}
+.mycontainer7 .mycontainer7_box .mycontainer7_table .recommend_bottom .bg-col-04{background:#ecf0f6;}
+.mycontainer7 .mycontainer7_box .mycontainer7_table .recommend_bottom .bg-col-05{background:#fbfbfb;}
+.mycontainer7 .mycontainer7_box .mycontainer7_infor{min-height:168px; border:1px solid #adb6c2; background:#f8f8f8; overflow:hidden; border-bottom:2px solid #2d2d2d;}
+.mycontainer7 .mycontainer7_box .mycontainer7_infor h3{margin-left:54px; margin-top:28px; height:31px; line-height:31px; color:#000; font-weight:bold; 
+font-size:0.9rem; background:url(./img/icon_003.png) left top no-repeat; padding-left:36px; margin-bottom:22px;}
+.mycontainer7 .mycontainer7_box .mycontainer7_infor p{margin-left:54px; color:#333333; font-size:0.75rem;}
+

@@ -6,7 +6,10 @@ define(['projectSugar'], function () {
     function($rootScope) {
       return {
         fire: function() {
-          console.log('check')
+          console.log('check');
+          
+        
+          
         }//fire end
       };//return end
     }]);//.define function end

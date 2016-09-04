@@ -62,38 +62,45 @@ define(['projectSugar'], function () {
 
       $ocLazyLoad
           .load([
-            './partials/common/js/jquery.cookie.js'
+            './partials/common/js/jquery.cookie.js',
+            './partials/common/js/freewall.js'
           ])
           .then(function() {
             indemnityBoardService.fire();
             layoutService.fire();
-
-            var $thumbnail = $('.thumbnail'),
-                $thumbList = $thumbnail.find('li'),
-                thumWidArray = [],
-                thumHeiArray = [],
-                thumbLeft = 0,
-                thumbTop = 0;
-
-            $thumbList.each(function () {
-              var $this = $(this),
-                  thumbWID = $this.outerWidth() + 25,
-                  thumbHEI = $this.outerHeight() + 10;
-              thumbLeft = thumbLeft + thumbWID;
-              thumbTop = thumbTop + thumbHEI;
-              thumWidArray.push(thumbLeft);
-              thumHeiArray.push(thumbTop);
-            });
-
-            for(var i = 0; i < thumWidArray.length; i++){
-              thumbLeft = -thumWidArray[0];
-              thumbLeft = thumbLeft + thumWidArray[i];
-              $thumbList.eq(i).css('left', thumbLeft)
-            }
-            //for(var i = 0; i < thumHeiArray.length; i++){
-            //  var heiNum = thumHeiArray[i];
-            //  hei = hei + heiNum;
-            //  console.log(hei)
+            
+            var wall = new Freewall("#freewall");
+        	wall.reset({
+        		selector: '.brick',
+        		animate: false,
+        		cellW: 350,
+        		cellH: 'auto',
+        		onResize: function() {
+        			wall.fitWidth();
+        		}
+        	});
+        	wall.fitWidth();
+            //var $thumbnail = $('.thumbnail'),
+            //    $thumbList = $thumbnail.find('li'),
+            //    thumWidArray = [],
+            //    thumHeiArray = [],
+            //    thumbLeft = 0,
+            //    thumbTop = 0;
+            //
+            //$thumbList.each(function () {
+            //  var $this = $(this),
+            //      thumbWID = $this.outerWidth() + 25,
+            //      thumbHEI = $this.outerHeight() + 10;
+            //  thumbLeft = thumbLeft + thumbWID;
+            //  thumbTop = thumbTop + thumbHEI;
+            //  thumWidArray.push(thumbLeft);
+            //  thumHeiArray.push(thumbTop);c
+            //});
+            //
+            //for(var i = 0; i < thumWidArray.length; i++){
+            //  thumbLeft = -thumWidArray[0];
+            //  thumbLeft = thumbLeft + thumWidArray[i];
+            //  $thumbList.eq(i).css('left', thumbLeft)
             //}
 
 

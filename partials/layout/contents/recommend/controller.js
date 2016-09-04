@@ -1,9 +1,9 @@
 'use strict';
 
 define(['projectSugar'], function () {
-  var recommendModule = angular.module('projectSugar', ['ui.router', 'oc.lazyLoad', 'recommendService', 'layoutService']);
-  recommendModule.controller('recommendController', ['$scope', '$http', '$ocLazyLoad', 'recommendService', 'layoutService',
-    function($scope, $http, $ocLazyLoad, recommendService, layoutService) {
+  var recommendModule = angular.module('projectSugar', ['ui.router', 'oc.lazyLoad','ngFileUpload', 'recommendService', 'layoutService']);
+  recommendModule.controller('recommendController', ['$scope', '$http','Upload', '$ocLazyLoad', 'recommendService', 'layoutService',
+    function($scope, $http, Upload, $ocLazyLoad, recommendService, layoutService) {
 
       //api 서버 주소
       // var apiServer = 'http://localhost:3000';
@@ -457,15 +457,15 @@ define(['projectSugar'], function () {
 
               $scope.infoGet();  //저장 쿠키값 체크 하기
 
-              var $recommendDiv = $('#recommend').children('div'),
+              var $recommend = $('#recommend'),
                   idx = 0;
 
               // #Page height
-              $(document).on('load', function () {
-                var myHEI = $(window).height() - 65 - 81;
-                $recommendDiv.css('min-height', myHEI);
-              });
-              $(document).trigger('load');
+              //$(document).on('load', function () {
+              //  var myHEI = $(window).height() - 58 - 81;
+              //  $recommend.css('min-height', myHEI);
+              //});
+              //$(document).trigger('load');
 
               $('label.radio').on('click',function () {
                 $(this).addClass('on').parent('li').siblings().find('.on').removeClass('on');

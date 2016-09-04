@@ -3,11 +3,11 @@
 
 /* --- default reset --- */
 html,body{width:100%; height:100%; overflow:auto; -webkit-overflow-scrolling:touch;}
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{margin:0;padding:0}
-body,h1,h2,h3,h4,input,button{
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,p,button{margin:0;padding:0}
+body,h1,h2,h3,h4,h5,h6,p,input,button{
   font-family:'Nanum Barun Gothic';
   font-style: normal;
-  letter-spacing:0.5px
+  letter-spacing:0.5px;
 }
 body{*word-break:break-all;-ms-word-break:break-all}
 img,fieldset,iframe,button{border:0 none}
@@ -45,6 +45,9 @@ pre{
 }
 textarea{
   resize:none;
+}
+figure{
+  text-align:center
 }
 *:focus{
   outline:none !important;
@@ -129,8 +132,12 @@ td, th{ padding:8px }
   background:url(../img/check.png) no-repeat center/contain;
 }
 .sugarThink{
-  padding:20px 20px 20px 60px;
+  margin-top:70px;
+  padding:30px 60px;
   background-color:#f1f1f1
+}
+.sugarThink.middlePosition{
+  margin-bottom:55px;
 }
 .sugarThink h4{
   position:relative;
@@ -145,6 +152,9 @@ td, th{ padding:8px }
   left:-42px;
   background:url(../img/sugar-think.png) no-repeat 0 0;
 }
+.figBorder{
+  border:1px solid
+}
 
 /* --- Layout --- */
 #wrapper,
@@ -158,7 +168,7 @@ td, th{ padding:8px }
 
 #header{
   width:100%;
-  height:65px;
+  height:58px;
   position:fixed;
   z-index: 999;
   background-color:#fff;
@@ -168,9 +178,10 @@ td, th{ padding:8px }
 }
 
 #section{
-  width:100%; height:auto;
-  padding-top:65px;
-  overflow:hidden;
+  width:100%;
+  height:auto;
+  min-height:calc(100% - 76px);
+  padding-top:58px;
 }
 
 #footer{
@@ -187,13 +198,18 @@ td, th{ padding:8px }
   width:100%;
 }
 .is-Block{ display: block }
-.is-inlineBlock{ display:inline-block }
+.is-inlineBlock{ display:inline-block; vertical-align: middle; }
 .is-Inline{ display:inline }
 .is-Left{ float:left }
 .is-Right{ float:right }
 .is-Static{ position:static }
 .is-Absolute{ position:absolute }
 .is-Fixed{ position:fixed }
+
+.magBottom15{ margin-bottom:15px; }
+.magBottom30{ margin-bottom:30px; }
+.magBottom40{ margin-bottom:40px; }
+.magBottom50{ margin-bottom:50px; }
 
 
 /* header */
@@ -210,7 +226,7 @@ td, th{ padding:8px }
 
 nav{
   float:right;
-  margin-top:20px;
+  margin-top:15px;
 }
 
 nav > ul,
@@ -240,7 +256,7 @@ nav li{
   width:0;
   height:0;
   position:absolute;
-  top:calc(100% + 5px);
+  top:calc(100% + 6px);
   left:calc(50% - 14px);
   border-left:14px solid transparent;;
   border-right:14px solid transparent;
@@ -316,34 +332,16 @@ main contents
   float:left;
   width:137px;
   height:38px;
-  margin-top:26px;
+  margin-top:20px;
   margin-left:28px;
   background:url(../../common/img/sprite.png) no-repeat 0 0;
 }
 .foot-con{
   float:right;
-}
-.foot-con > ul{
-  margin-top:11px;
-}
-.foot-lnb{
-  font-size:1px;
-}
-.foot-lnb li{
-  float:left;
-  width:107px;
-  height:24px;
-  margin-left:1px;
-  line-height:24px;
-  text-align:center;
-  background-color:#6b6b6b;
-}
-.foot-lnb li:first-child{
-  margin-left:0;
+  margin:28px 0;
 }
 .address{
   float:right;
-  margin-bottom:15px;
 }
 .address li{
   float:left;
@@ -366,7 +364,7 @@ main contents
   background-position:-48px -90px;
 }
 .twitter{
-  background-position:-68px -90px;
+  background-position:-68px -88px;
 }
 
 /* --
@@ -642,6 +640,38 @@ main contents
 
 /*하단여백공통*/
 .box_margin{width:100%; clear:both; height:200px; display:block;}
+
+/*테이블공통*/
+#recommendTable{width:100%; overflow:hidden;}
+#recommendTable .recommend_top{overflow:hidden; display:block; margin-bottom:28px; background:#fff;}
+#recommendTable .recommend_main{float:left; display:inline-block; width:27%; padding:18px 2%; border:1px solid #d4d4d4; border-top:4px solid #2d2d2d;
+  -webkit-box-shadow: 3px 5px 7px 0px rgba(212,212,212,0.85);-moz-box-shadow: 3px 5px 7px 0px rgba(212,212,212,0.85);box-shadow: 3px 5px 7px 0px rgba(212,212,212,0.85);}
+#recommendTable .recommend_main ul{overflow:hidden;}
+#recommendTable .recommend_main ul li{width:100%; height:42px; line-height:42px; border-bottom:1px solid #f5f6f8; padding-left:35px; color:#000000; font-size:0.75rem;}
+#recommendTable .recommend_main ul li:nth-child(1){background:url(../img/suger_table_icon01.png) 6px 12px no-repeat;}
+#recommendTable .recommend_main ul li:nth-child(2){background:url(../img/suger_table_icon02.png) 6px 12px no-repeat;}
+#recommendTable .recommend_main ul li:nth-child(3){background:url(../img/suger_table_icon03.png) 6px 12px no-repeat;}
+#recommendTable .recommend_main ul li:nth-child(4){background:url(../img/suger_table_icon04.png) 6px 12px no-repeat;}
+#recommendTable .recommend_main ul li:nth-child(5){background:url(../img/suger_table_icon05.png) 6px 12px no-repeat;}
+#recommendTable .recommend_main ul li:nth-child(6){background:url(../img/suger_table_icon06.png) 6px 12px no-repeat;}
+#recommendTable .recommend_main ul li:nth-child(7){background:url(../img/suger_table_icon07.png) 6px 12px no-repeat;}
+#recommendTable .recommend_main ul li:nth-child(8){background:url(../img/suger_table_icon08.png) 6px 12px no-repeat;}
+
+#recommendTable .recommend_sub{float:left; display:inline-block; width:73%; overflow:hidden; border:1px solid #d4d4d4; border-top:2px solid #747474;}
+#recommendTable .recommend_sub .recommend_sub_con{width:33.3%; float:left; border-right:1px solid #d4d4d4; padding:0 2.5% 18px 2.5%;}
+#recommendTable .recommend_sub .recommend_sub_con:last-child{border-right:0;}
+#recommendTable .recommend_sub .recommend_sub_con p{height:63px; padding-left:19px; color:#000; font-weight:bold; font-size:0.75rem; line-height:80px;}
+#recommendTable .recommend_sub .recommend_sub_con ul li{width:100%; height:42px; line-height:42px; border-bottom:1px solid #f5f6f8;  background:url(../img/suger_table_icon09.gif) 6px 14px no-repeat;
+  padding-left:35px; color:#000000; font-size:0.75rem; padding-left:20px; color:#000000; font-size:0.7rem;}
+#recommendTable .recommend_sub .recommend_sub_con ul li span{color:#999999;}
+
+#recommendTable .recommend_bottom{overflow:hidden; display:block; background:#fff;}
+#recommendTable .recommend_bottom table{border:0;}
+#recommendTable .recommend_bottom table tr th{border:1px solid #d6dbe2;}
+#recommendTable .recommend_bottom table tr td{border:1px solid #d6dbe2;}
+#recommendTable .recommend_bottom table .bg-col-03_01 i{background:url(../img/suger_table_icon10.png) center top no-repeat; width:100%; height:26px; display:block; margin-bottom:15px;}
+#recommendTable .recommend_bottom table .bg-col-03_02 i{background:url(../img/suger_table_icon11.png) center top no-repeat; width:100%; height:26px; display:block; margin-bottom:15px;}
+
 
 
 

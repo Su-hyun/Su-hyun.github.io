@@ -72,8 +72,8 @@
 }
 .visual-btn-area{
   width:1200px;
-  margin:45px auto 0;
-  padding:27px 0 40px 185px;
+  margin:0 auto;
+  padding:26px 0 40px 185px;
   text-align:left;
 }
 .visual-btn-area .btn{
@@ -232,7 +232,7 @@
 .reason-img{
   display:block;
   position:absolute;
-  top:18px;
+  top:55px;
   right:0;
   text-align:center;
 }

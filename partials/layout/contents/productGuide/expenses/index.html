@@ -1,7 +1,7 @@
 <section id="productGuide" class="wrapper" ng-controller="productGuideController">
-  <header class="product-visual">
-    <div class="container">
-      <h2>
+  <header class="product-visual expenses">
+    <div class="container productGuide-visual-bg expenses">
+      <h2 class="magBottom30">
         큰 병, 작은 병<br>
         <strong>다 가입</strong>했다구요?
       </h2>
@@ -12,7 +12,7 @@
   </header>
   <article>
     <div class="container productGuide-con">
-      <section class="sugarThink01">
+      <section class="sugarThink-area">
         <h3>
           <i class="num01">01.</i>실손의료보험은 누가 왜 가입해야 할까요?
         </h3>
@@ -26,7 +26,7 @@
               특히 나이가 들 수록 병원에 갈 일이 많아지기 때문에 가능하다면 100세까지 가지고 가야할 필수보험입니다.
             </p>
             <figure>
-              <img src="" alt="">
+              <img src="./partials/layout/contents/productGuide/img/expensesImg01.png" alt="실손보험이미지">
             </figure>
           </div>
           <div>
@@ -37,30 +37,35 @@
               병원비 약값 등 실제로 지출한 의료비를 보상해 주는 보험으로 일상 생활 중 발생하는 병원비 지출에 대한 부담을 줄일 수 있습니다.<br>
               실손의료보험은 병원비 중 국민건강보험에서 지원받지 못하는 부분을 보상해 줍니다.
             </p>
-            <div>
-              <figure><img src="" alt=""></figure>
-              <dl>
+            <div class="subDiv-area clearfix">
+              <figure class="is-inlineBlock">
+                <img src="./partials/layout/contents/productGuide/img/expensesImg02.png" alt="실손보험이미지">
+              </figure>
+              <dl class="is-inlineBlock">
                 <dt>실제 병원비 보장</dt>
                 <dd>
                   병원에서 치료를 위해 실제로 쓴 비용을 보장합니다.
                   <span>(표준형 또는 선택형 II 중 선택)</span>
                 </dd>
-                <dt>폭넓은 보장</dt>
+                <dt class="subDt">폭넓은 보장</dt>
                 <dd>가벼운 질병은 중증 질환까지 보장</dd>
               </dl>
+              <span class="align-middle"></span>
             </div>
           </div>
           <div>
             <h4>
               실손의료보험은 무엇을 보장할까요?
             </h4>
-            <p>
+            <p class="magBottom40">
               실손의료보험은 병원에 갔을 때 발생한 입원비, 통원비, 조제비를 돌려주는 실손보장 보험입니다.<br>
               국민건강보험에서 보장하지 않는 본인 부담금까지 보장합니다.
             </p>
-            <ul>
+            <ul class="subUl-area li3">
               <li>
-                <figure><img src="" alt=""></figure>
+                <figure>
+                  <img src="./partials/layout/contents/productGuide/img/expensesImg03-1.png" alt="실손보험이미지">
+                </figure>
                 <dl>
                   <dt>입원비</dt>
                   <dd>상급병실료 차액</dd>
@@ -69,7 +74,9 @@
                 </dl>
               </li>
               <li>
-                <figure><img src="" alt=""></figure>
+                <figure>
+                  <img src="./partials/layout/contents/productGuide/img/expensesImg03-2.png" alt="실손보험이미지">
+                </figure>
                 <dl>
                   <dt>통원비</dt>
                   <dd>치료목적의 CT, MRI비용</dd>
@@ -78,7 +85,9 @@
                 </dl>
               </li>
               <li>
-                <figure><img src="" alt=""></figure>
+                <figure>
+                  <img src="./partials/layout/contents/productGuide/img/expensesImg03-3.png" alt="실손보험이미지">
+                </figure>
                 <dl>
                   <dt>조제비</dt>
                   <dd>약 값</dd>
@@ -102,8 +111,8 @@
         </section>
         <section class="thinkSub">
           <div>
-            <ul>
-              <li>
+            <ul class="subUl-area li2 clearfix">
+              <li class="is-Left">
                 <h4>
                   상해보험
                 </h4>
@@ -111,9 +120,11 @@
                   <dt>[상해입원,상해보험,상해처방조제] 3개 항목은</dt>
                   <dd>[화상,낙상,교통사고,골절]등 우연한 사고로 인해 다쳐서 발생한 병원비를 보장합니다.</dd>
                 </dl>
-                <figure><img src="" alt=""></figure>
+                <figure>
+                  <img src="./partials/layout/contents/productGuide/img/expensesImg04-1.png" alt="실손보험이미지">
+                </figure>
               </li>
-              <li>
+              <li class="is-Right">
                 <h4>
                   질병보험
                 </h4>
@@ -121,7 +132,9 @@
                   <dt>[질병입원,질병통원,질병처방조제] 3개 항목은</dt>
                   <dd>[감기,암,뇌출혈,급성심근경색,장염]등 질병으로 인해 발생한 병원비에 대해 보장합니다.</dd>
                 </dl>
-                <figure><img src="" alt=""></figure>
+                <figure>
+                  <img src="./partials/layout/contents/productGuide/img/expensesImg04-2.png" alt="실손보험이미지">
+                </figure>
               </li>
             </ul>
           </div>
@@ -133,15 +146,18 @@
           </div>
         </section>
         <section class="thinkSub">
-          <div>
+          <div class="">
             <h4>
               실손의료보험으로 얼마나 보상 받을 수 있을까요?
             </h4>
-            <div>
+            <p class="magBottom40">
+               실손의료보험 선택 유형에 따라 보상금액이 조금 달라집니다.
+            </p>
+            <div class="guideTable padDefault">
               <table>
                 <caption></caption>
                 <colgroup>
-                  <col>
+                  <col width="18.818381%">
                   <col span="3">
                 </colgroup>
                 <thead>
@@ -169,12 +185,11 @@
                   <th>선택형</th>
                   <td>
                     내가 낸 의료비 중<br>
-                    급여 90% + 비급여 80% 보상
+                    급여 90%+비급여 80% 보상
                   </td>
                   <td>
                     내가 낸 의료비 중<br>
-                    급여 10% + 비급여 20% 1~2만원 중<br>
-                    큰 금액 공제 후 보상
+                    급여 10%+비급여 20% 1~2만원 중 큰 금액 공제 후 보상
                   </td>
                   <td>
                     내가 낸 의료비 중<br>
@@ -184,30 +199,33 @@
                 </tbody>
               </table>
             </div>
-            <p>
+            <p class="magBottom40">
               그럼 얼마나 보상받을 수 있는지 예를들어 알아보겠습니다.<br>
               우리가 내는 병원비는 국민건강보험에서 지원하는 급여 부분과 지원하지 않는 비급여 부분이 합산된 금액입니다.<br>
               병원비를 계산할 때 받는 진료비 내역서를 보면 한눈에 알 수 있는데요
             </p>
-            <figure>
-              <figcaption>
-                예)입원비 보장
-              </figcaption>
-              <img src="" alt="">
-            </figure>
-            <ul>
+            <p>예) 입원비 보장</p>
+            <div class="figure type1">
+              <figure class="is-inlineBlock">
+                <img src="./partials/layout/contents/productGuide/img/expensesImg05-1.png" alt="실손보험이미지">
+              </figure>
+              <figure class="is-inlineBlock">
+                <img src="./partials/layout/contents/productGuide/img/expensesImg05-2.png" alt="실손보험이미지">
+              </figure>
+            </div>
+            <ul class="figNotice">
               <li>선택형 가입시 : 급여 본인부담금 130만원 x 90% + 비급여 전역 70만원 x 80% = 173만원</li>
               <li>표준형 가입시 : 급여 본인부담금 130만원 x 80% + 비급여 전액 70만원 x 80% = 160만원</li>
             </ul>
           </div>
-          <div class="sugarThink">
+          <div class="sugarThink middlePosition">
             <h4>슈가 생각</h4>
             <p>
               표준형, 선택형2 중에서 보험료는 큰 차이가 없는 반면 공제금액이 더 낮은 선택형으로 가입하길 추천합니다.
             </p>
           </div>
-          <div>
-            <p>
+          <div style="display:none">
+            <p class="magBottom30">
               여기서 잠깐!!!<br>
               그럼 신손의료보험은 병원비가 아무리 많이 나와서 자기부담금만 공제하고 무조건 보상해줄까요?
             </p>
@@ -221,23 +239,32 @@
             <h4>
               실손의료보험으로 언제까지 보장받을 수 있을까요?
             </h4>
-            <p>
+            <p class="magBottom40">
               실손의료보험은 [1년마다 갱신]되고 [15년마다 재가입]을 통해 최대 [100세까지 보장]됩니다.
             </p>
-            <figure>
-              <img src="" alt="">
-            </figure>
+            <div class="figure type2 padDefault">
+              <p class="is-inlineBlock">
+                15년 마다 재가입을 해야 합니다. 보장 내용이 변할 수 있습니다.<br>
+                단, 보험사는 가입자가 병이 있다고 재가입을 거절할 수 없습니다.
+              </p>
+              <figure class="is-inlineBlock">
+                <img src="./partials/layout/contents/productGuide/img/expensesImg06.png" alt="실손보험이미지">
+              </figure>
+              <p class="is-inlineBlock ">
+                1년마다 자동 갱신되어 보험료가 오르거나 내릴 수 있습니다.
+              </p>
+            </div>
           </div>
           <div>
             <h4>
               실손의료보험 어떻게 가입할까요?
             </h4>
-            <p>
+            <p class="magBottom40">
               실손의료보험은 상해보험이나 질병보험에 특약의 형태로 추가해 가입하거나, 다른 보장 없이 실손의료보험 단독으로 가입하는
               2가지 방법이 있습니다.
             </p>
             <figure>
-              <img src="" alt="">
+              <img src="./partials/layout/contents/productGuide/img/expensesImg07.png" alt="실손보험이미지">
             </figure>
           </div>
           <div class="sugarThink">
