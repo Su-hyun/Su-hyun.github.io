@@ -2,13 +2,13 @@
 
 #aboutFinc .topImgArea{
   height:334px;
-  background:url(./img/topImgBg.png) no-repeat center bottom/cover;
+  background:url(./img/topImgBg.png) no-repeat center bottom;
 }
 .aboutFincl{
   padding:60px 95px 60px;
 }
-#aboutFinc .bgType{
-  margin:30px 0;
+.aboutFincl.bgType{
+  margin:30px auto;
   background-color:#EFEFEF
 }
 .aboutFincl h2{
@@ -52,6 +52,9 @@
   bottom:-90px;
   left:-84px;
   background:url(./img/pencil.png) no-repeat 0;
+}
+.txtBox2Sub{
+  margin-top:60px;
 }
 .aboutFincl.lastWrap{
   margin-bottom:30px;

@@ -21,6 +21,10 @@
   padding:0;
   text-align:center;
   border:1px solid #e5e5e5;
+  border-left:0 none;
+}
+.nav-tabs li:first-child{
+  border-left:1px solid #e5e5e5;
 }
 .nav-tabs.type2 li{
   width:33.333333%
@@ -81,9 +85,8 @@
 .btn-tab03.on i{
   background-position:-310px -35px;
 }
-.form-horizontal, .form-group{
-  margin:0;
-}
+.form-horizontal,
+.form-group,
 .form-horizontal .form-group{
   margin:0;
 }
@@ -472,9 +475,9 @@ p.control-label.is-padding{
 }
 .btn{
   width:49.629%;
-  height:53px;
+  height:48px;
   font-size:0.85rem;
-  line-height:2.6;
+  line-height:1.6;
   color:#FFF;
   background-color:#373c44;
 }
@@ -527,9 +530,7 @@ p.control-label.is-padding{
   min-width:90px;
 }
 .btn-output .btn{
-  width:35%;
-  height:42px;
-  line-height:1.9;
+  width:38%;
 }
 .save{
   background-color:#fff;

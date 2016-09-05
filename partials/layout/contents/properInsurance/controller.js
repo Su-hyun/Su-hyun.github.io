@@ -35,8 +35,26 @@ define(['projectSugar'], function () {
       $scope.$on('insCon2Sub3', function() {
         $scope.properInsConArea = "./partials/layout/contents/properInsurance/insCon2Sub3/";
       });
+      $scope.$on('insCon2Sub4', function() {
+        $scope.properInsConArea = "./partials/layout/contents/properInsurance/insCon2Sub4/";
+      });
+      $scope.$on('insCon2Sub5', function() {
+        $scope.properInsConArea = "./partials/layout/contents/properInsurance/insCon2Sub5/";
+      });
       $scope.$on('insCon3Sub1', function() {
         $scope.properInsConArea = "./partials/layout/contents/properInsurance/insCon3Sub1/";
+      });
+      $scope.$on('insCon3Sub2', function() {
+        $scope.properInsConArea = "./partials/layout/contents/properInsurance/insCon3Sub2/";
+      });
+      $scope.$on('insCon3Sub3', function() {
+        $scope.properInsConArea = "./partials/layout/contents/properInsurance/insCon3Sub3/";
+      });
+      $scope.$on('insCon4Sub1', function() {
+        $scope.properInsConArea = "./partials/layout/contents/properInsurance/insCon4Sub1/";
+      });
+      $scope.$on('insCon5Sub1', function() {
+        $scope.properInsConArea = "./partials/layout/contents/properInsurance/insCon5Sub1/";
       });
 
       $scope.broadcastInsCon1Sub1 = function() {
@@ -57,8 +75,26 @@ define(['projectSugar'], function () {
       $scope.broadcastInsCon2Sub3 = function() {
         $scope.$broadcast('insCon2Sub3');
       };
+      $scope.broadcastInsCon2Sub4 = function() {
+        $scope.$broadcast('insCon2Sub4');
+      };
+      $scope.broadcastInsCon2Sub5 = function() {
+        $scope.$broadcast('insCon2Sub5');
+      };
       $scope.broadcastInsCon3Sub1 = function() {
         $scope.$broadcast('insCon3Sub1');
+      };
+      $scope.broadcastInsCon3Sub1 = function() {
+        $scope.$broadcast('insCon3Sub2');
+      };
+      $scope.broadcastInsCon3Sub1 = function() {
+        $scope.$broadcast('insCon3Sub3');
+      };
+      $scope.broadcastInsCon4Sub1 = function() {
+        $scope.$broadcast('insCon4Sub1');
+      };
+      $scope.broadcastInsCon5Sub1 = function() {
+        $scope.$broadcast('insCon5Sub1');
       };
 
       // aside 클릭 종료

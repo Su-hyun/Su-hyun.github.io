@@ -12,7 +12,7 @@
 .myHeader4 .oneAnd-tit{
   width:520px;
   margin-top:74px;
-  margin-left:25px;
+  margin-left:70px;
 }
 .myHeader4 .oneAnd-tit h2{
   margin-bottom:45px;
@@ -27,8 +27,8 @@
 }
 .btn_bojang{
   display:block;
-  margin-top:26px;
-  margin-left:20px;
+  margin-top:90px;
+  margin-left:70px;
 }
 .btn_bojang p {
   margin-top:12px;
@@ -76,6 +76,7 @@
 .indemnityIntro .choice-txt{
   width:535px;
   height:100%;
+  margin-top:0;
 }
 .indemnityIntro .choice-list li:nth-child(2) .choice-txt{
   float:right;

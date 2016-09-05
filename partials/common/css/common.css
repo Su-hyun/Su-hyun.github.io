@@ -4,7 +4,7 @@
 /* --- default reset --- */
 html,body{width:100%; height:100%; overflow:auto; -webkit-overflow-scrolling:touch;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,p,button{margin:0;padding:0}
-body,h1,h2,h3,h4,h5,h6,p,input,button{
+body,h1,h2,h3,h4,h5,h6,p,input,button,pre{
   font-family:'Nanum Barun Gothic';
   font-style: normal;
   letter-spacing:0.5px;
@@ -349,6 +349,7 @@ main contents
 }
 .address li:first-child{
   margin-left:0;
+  color:#fff;
 }
 .sugar-sns{
   margin-right:15px;
@@ -424,6 +425,9 @@ main contents
 }
 .sign-btn-group .forgot{
   float:right;
+}
+.modal-body .form-group{
+  margin-bottom:15px;
 }
 .modal-body .btn{
   width:100%;

@@ -8,13 +8,19 @@
             <div class="event-con">
               <div class="event-txt-area">
                 <h2 class="event-tit-ir">{{event.titIr}}</h2>
-                <p class="event-tit"><img ng-src="./partials/layout/contents/main/img/{{event.titBg}}" alt="{{event.titAlt}}"></p>
+                <!--<p class="event-tit"><img ng-src="./partials/layout/contents/main/img/{{event.titBg}}" alt="{{event.titAlt}}"></p>-->
+                <h3 class="event-txt type0">
+                  {{event.txt0}}
+                </h3>
+                <p class="event-txt type1">
+                  {{event.txt21}}
+                </p>
                 <p class="event-txt type2">
-                  {{event.txt1}}
+                  {{event.txt11}}
                 </p>
                 <p class="event-txt">
-                  {{event.txt2}}<br>
-                  {{event.txt3}}
+                  {{event.txt12}}<br>
+                  {{event.txt13}}
                 </p>
               </div>
             </div>
@@ -27,29 +33,35 @@
         <ul class="move-menu">
           <li>
             <a href="#" ng-click="searchInsurance()"></a>
-            <figure><img src="./partials/layout/contents/main/img/move01.png" alt="서"></figure>
-            <h3>
-              <span class="num-list">01</span>
-              내게 맞는 보험 찾기
-            </h3>
-            <p class="move-txt01">
-              어떤 상품을, 얼마만큼의 보장금액으로, 얼마의 보험료에, 어떤 방법으로 가입해야 하는가?
-              <span class="is-block">고객을 위한 맞춤 제안</span>
-            </p>
-            <span class="lnb-move">바로가기</span>
+            <div class="is-inlineBlock">
+              <h3>
+                <span class="num-list">01</span>
+                내게 맞는 보험 찾기
+              </h3>
+              <p class="move-txt01">
+                어떤 상품을, 얼마만큼의 보장금액으로, 얼마의 보험료에, 어떤 방법으로 가입해야 하는가?
+                <span class="is-block">고객을 위한 맞춤 제안</span>
+              </p>
+            </div>
+            <figure class="is-inlineBlock"><img src="./partials/layout/contents/main/img/move01.png" alt="서"></figure>
+            <span class="align-middle"></span>
+            <!--<span class="lnb-move">바로가기</span>-->
           </li>
           <li>
             <a href="#" ng-click="knowExactly()"></a>
-            <figure><img src="./partials/layout/contents/main/img/move02.png" alt="책자"></figure>
-            <h3>
-              <span class="num-list">02</span>
-              보험 바로 알기
-              <span class="small">(올바른 보험 활용법)</span>
-            </h3>
-            <p class="move-txt02">
-              보험에 대해 최대한 쉽게 설명하고, 보험을 최대한 활용할 수 있도록 합리적인 기준과 방법을 제시
-            </p>
-            <span class="lnb-move">바로가기</span>
+            <div class="is-inlineBlock">
+              <h3>
+                <span class="num-list">02</span>
+                보험 바로 알기
+                <span class="small">(올바른 보험 활용법)</span>
+              </h3>
+              <p class="move-txt02">
+                보험에 대해 최대한 쉽게 설명하고, 보험을 최대한 활용할 수 있도록 합리적인 기준과 방법을 제시
+              </p>
+            </div>
+            <figure class="is-inlineBlock"><img src="./partials/layout/contents/main/img/move02.png" alt="책자"></figure>
+            <span class="align-middle"></span>
+            <!--<span class="lnb-move">바로가기</span>-->
           </li>
         </ul>
       </div>

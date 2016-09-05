@@ -153,7 +153,6 @@
 #suggestMain > article{
   display:none;
   margin-bottom:30px;
-  background:url(./img/suggest-article-bg.png) repeat-y right top;
 }
 #suggestMain > article:nth-child(3){
   margin-top:30px;
@@ -174,6 +173,7 @@
   position:relative;
   background:url(./img/top-bg.png) repeat-x 0 0;
   border-bottom:5px solid #444;
+  cursor: pointer;
 }
 .suggest-con-top:hover{
   background-color:#f7f7f7
@@ -224,9 +224,13 @@
   bottom:0;
 }
 .suggest-con-bottom{
+  background:url(./img/suggest-article-bg.png) repeat-y right top;
   border:1px solid #f4f4f4;
   border-top:0 none;
   overflow:hidden;
+}
+.suggest-con-bottom.changeHeight{
+  display:none
 }
 .suggest-bottom-left,
 .suggest-bottom-right{
