@@ -29,8 +29,14 @@ Browser Support
 
 Change log
 ----------
+**v1.0.3:**
+Web & Server code refactor
+
+**v1.0.2:**
+Server code - end
+
 **v1.0.1:**
-Architecture build complete
+Web code - end
 
 **v1.0.0:**
 Struct build
