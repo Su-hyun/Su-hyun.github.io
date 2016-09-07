@@ -44,12 +44,22 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+</head>
+<body >
+	<!-- loading -->
+  <div id="loading">
+    <div id="status">&nbsp;</div>
+  </div>
+  
+  <!-- angular UI-route -->
+  <ui-view id="subBG"></ui-view>
 
+ <!-- ANALYTICS START -->
   <!-- https://www.google.com/analytics/settings/home?scid=18527803 web log Analyzer  -->
   <!--<script type="text/javascript">-->
     <!--//<![CDATA[-->
     <!--var _gaq = _gaq || [];-->
-    <!--_gaq.push(['_setAccount', 'UA-18527803-1']);-->
+    <!--_gaq.push(['_setAccount', 'UA-********-*']);-->
     <!--_gaq.push(['_trackPageview']);-->
     <!--_gaq.push(['_trackPageLoadTime']);-->
     <!--(function() {-->
@@ -60,32 +70,8 @@
     <!--//]]>-->
   <!--</script>-->
   <!-- ANALYTICS END -->
-</head>
-<body >
-  <!-- loading -->
-  <div id="loading">
-    <div id="status">&nbsp;</div>
-  </div>
-
-  <!-- angular UI-route -->
-  <ui-view></ui-view>
-
-  <!-- ANALYTICS START -->
-  <!-- https://www.google.com/analytics/settings/home?scid=18527803 web log Analyzer  -->
-  <script type="text/javascript">
-    //<![CDATA[
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-83364927-1']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_trackPageLoadTime']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    //]]>
-  </script>
-  <!-- ANALYTICS END -->
+  
+  <!-- 리콰이어JS : 라이브러리 관리 -->
   <script type="text/javascript" data-main="partials/layout/requireConfig" src="lib/requirejs/require.js"></script>
 </body>
 </html>
