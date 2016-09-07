@@ -6,7 +6,7 @@
     </div>
     <div class="suggest-notice">
       <h4>
-        정기보험<small>월 <span>{{insurInfoList[0].monthPay + insurInfoList[1].monthPay + insurInfoList[2].monthPay | number}}</span>원</small>
+        정기보험<small><span>{{userAge}}세 {{userSex}}</span> 월 <span>{{insurInfoList[0].monthPay + insurInfoList[1].monthPay + insurInfoList[2].monthPay | number}}</span>원</small>
       </h4>
       <p>
         부양가족이 있는 당신이 예상치 못하게 죽으면 가족들에게 경제적 어려움이 발생하기 때문에 이를 대비하기 위하여 추천합니다.
@@ -14,7 +14,7 @@
     </div>
     <span class="align-middle"></span>
     <div class="suggest-info-img">
-      <img src="./partials/layout/contents/suggest/img/title-img.png" alt="기본부터 갖추기~">
+      <img src="./partials/layout/contents/suggest/img/title-img2.png" alt="기본부터 갖추기~">
     </div>
   </div>
   <div class="suggest-con-bottom">
@@ -108,11 +108,11 @@
     <div class="suggest-bottom-right type2">
       <div class="suggest-product lower-price">
         <div class="lowest">
-          <input type="checkbox" id="article2-list1-check1" checked>
-          <label for="article2-list1-check1">최저가</label>
+          <input type="radio" name="term_ins" id="article2-list1-check1" checked>
+          <label for="article2-list1-check1" ng-click="termMoneyView(1)">최저가</label>
         </div>
         <ul class="product-list-type2 graph-type">
-          <li class="view-type2" ng-repeat="lowerPrice in insurInfoList">
+          <li class="view-type2" ng-repeat="lowerPrice in lowerPriceList">
             <div class="suggest-table type2">
               <table>
                 <colgroup>
@@ -126,7 +126,7 @@
                 <tr class="tr-1st">
                   <td rowspan="2">
                     <figure>
-                      <img ng-src="./partials/layout/contents/suggest/img/{{lowerPrice.logoImg}}" alt="로고">
+                      <img ng-src="./partials/layout/contents/suggest/img/ci/{{lowerPrice.logoImg}}" alt="로고">
                     </figure>
                   </td>
                   <td>월보험료</td>
@@ -149,45 +149,45 @@
       </div>
       <div class="suggest-graph-area">
         <ul class="graph-list-box">
-          <li class="suggest-graph graph-list1" ng-class="insurInfoList.length == 1?'on':''">
+          <li class="suggest-graph graph-list1" ng-class="lowerPriceList.length == 1?'on':''">
             <p class="suggest-graph-premium">
-              <span>(월 {{insurInfoList[0].monthPay}}원)</span>
+              <span>(월 {{lowerPriceList[0].monthPay}}원)</span>
             </p>
             <p class="suggest-coverage">
-              <span>{{insurInfoList[0].insurableKor}}</span>
+              <span>{{lowerPriceList[0].insurableKor}}</span>
             </p>
           </li>
-          <li class="suggest-graph graph-list2" ng-class="insurInfoList.length == 2?'on':''">
+          <li class="suggest-graph graph-list2" ng-class="lowerPriceList.length == 2?'on':''">
             <p class="suggest-graph-premium">
-              <span>(월 {{insurInfoList[0].monthPay}}원)</span>
-              <span>(월 {{insurInfoList[1].monthPay}}원)</span>
+              <span>(월 {{lowerPriceList[0].monthPay}}원)</span>
+              <span>(월 {{lowerPriceList[1].monthPay}}원)</span>
             </p>
             <p class="suggest-coverage">
-              <span>{{insurInfoList[0].insurableKor}}</span>
-              <span>{{insurInfoList[1].insurableKor}}</span>
+              <span>{{lowerPriceList[0].insurableKor}}</span>
+              <span>{{lowerPriceList[1].insurableKor}}</span>
             </p>
           </li>
-          <li class="suggest-graph graph-list3" ng-class="insurInfoList.length == 3?'on':''">
+          <li class="suggest-graph graph-list3" ng-class="lowerPriceList.length == 3?'on':''">
             <p class="suggest-graph-premium">
-              <span>(월 {{insurInfoList[0].monthPay}}원)</span>
-              <span>(월 {{insurInfoList[1].monthPay}}원)</span>
-              <span>(월 {{insurInfoList[2].monthPay}}원)</span>
+              <span>(월 {{lowerPriceList[0].monthPay}}원)</span>
+              <span>(월 {{lowerPriceList[1].monthPay}}원)</span>
+              <span>(월 {{lowerPriceList[2].monthPay}}원)</span>
             </p>
             <p class="suggest-coverage">
-              <span>{{insurInfoList[0].insurableKor}}</span>
-              <span>{{insurInfoList[1].insurableKor}}</span>
-              <span>{{insurInfoList[2].insurableKor}}</span>
+              <span>{{lowerPriceList[0].insurableKor}}</span>
+              <span>{{lowerPriceList[1].insurableKor}}</span>
+              <span>{{lowerPriceList[2].insurableKor}}</span>
             </p>
           </li>
         </ul>
       </div>
-      <div class="suggest-product">
+      <div class="suggest-product" ng-repeat="lowerPriceLST in lowerPriceList2">
         <div class="lowest">
-          <input type="checkbox" id="article2-list1-check2">
-          <label for="article2-list1-check2">다음 최저가</label>
+          <input type="radio" name="term_ins" id="article2-list1-check2">
+          <label for="article2-list1-check2" ng-click="termMoneyView(2)">다음 최저가</label>
         </div>
         <ul class="product-list-type2">
-          <li class="view-type2" ng-repeat="lowerPrice in lowerPriceList2">
+          <li class="view-type2" ng-repeat="lowerPrice in lowerPriceLST">
             <div class="suggest-table type2">
               <table>
                 <colgroup>
@@ -199,7 +199,7 @@
                 </colgroup>
                 <tbody>
                 <tr class="tr-1st">
-                  <td rowspan="2"><img ng-src="./partials/layout/contents/suggest/img/{{lowerPrice.logoImg}}" alt="로고"></td>
+                  <td rowspan="2"><img ng-src="./partials/layout/contents/suggest/img/ci/{{lowerPrice.logoImg}}" alt="로고"></td>
                   <td>월보험료</td>
                   <td>가입금액</td>
                   <td>보장기간</td>
@@ -217,6 +217,10 @@
             </div>
           </li>
         </ul>
+
+      </div>
+      <div class="termBtnMore">
+      	<button class="btn" ng-click="getNextInsurResult()" >다음 최저가 보기</button>
       </div>
     </div>
   </div>

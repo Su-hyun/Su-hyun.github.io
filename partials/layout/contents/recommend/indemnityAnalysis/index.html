@@ -30,7 +30,7 @@
           <div class="form-group">
             <label class="control-label col-sm-2" for="birth-d">생년월일</label>
             <div class="col-sm-10 input-area">
-              <input type="text" class="form-control" id="birth-d" ng-model="inAge" maxlength="8" placeholder="예) 1990212" ng-blur="ageCheck()">
+              <input type="text" class="form-control onlyNumber" id="birth-d" ng-model="inAge" maxlength="8" placeholder="예) 1990212" ng-blur="ageCheck()" >
               <p class="notice is-pl">
                 <small>
                   주민등록상의 생년월일을 입력하세요<br>
@@ -57,18 +57,19 @@
               <p class="control-label col-sm-2">자녀유무</p>
               <ul class="col-sm-10">
                 <li class="radio-inline">
-                  <label for="child-has" class="radio type3 addOn" ng-click="disableAttr()">유</label>
-                  <input type="radio" id="child-has" name="child" ng-model="inChild" value="유">
+                  <label for="child-has" class="radio type3 addOn" ng-click="disableAttr()" ng-class="{on:inChild=='유'}">유</label>
+                  <input type="radio" id="child-has" name="child" ng-model="inChild" value="유" ng-checked="inChild=='유'">
                 </li>
                 <li class="radio-inline">
-                  <label for="child-none" class="radio type3 addNot" ng-click="disableRemove()">무</label>
-                  <input type="radio" id="child-none" name="child" ng-model="inChild" value="무">
+                  <label for="child-none" class="radio type3 addNot" ng-click="disableRemove(this)" ng-class="{on:inChild=='무'}">무</label>
+                  <input type="radio" id="child-none" name="child" ng-model="inChild" value="무" ng-checked="inChild=='무'">
                 </li>
               </ul>
             </div>
-            <div class="add-area">
+            <div class="add-area" ng-show="inChild=='유'">
               <ul class="childInfo">
                 <li ng-repeat="child in childList">
+                  <p class="childDel" ng-click="delChild($index)">X</p>
                   <p class="childSex">{{child.sex}}</p>
                   <p>{{child.childAge}}</p>
                 </li>
@@ -79,7 +80,7 @@
                   <option value="남아">남아</option>
                   <option value="여아">여아</option>
                 </select>
-                <input type="text" placeholder="예) 1990212" maxlength="8" ng-model="newAge">
+                <input type="text" placeholder="예) 1990212" maxlength="8" ng-model="newAge" class="onlyNumber">
                 <button ng-click="addChild(selectSex, newAge)">자녀추가</button>
               </div>
             </div>
@@ -101,7 +102,7 @@
             <div class="add-area infamily">
               <label class="control-label col-sm-5" for="fam-use">부양가족을 위한 생활비로 얼마를 지출하십니까?</label>
               <div class="col-sm-7 input-area">
-                <input type="text" class="form-control" id="fam-use" ng-model="inExpense" ng-change="disableRemove()" placeholder="예) 120" maxlength="4" >
+                <input type="text" class="form-control onlyNumber" id="fam-use" ng-model="inExpense" ng-change="disableRemove()" placeholder="예) 120" maxlength="4"  >
                 <span>만원</span>
               </div>
             </div>
@@ -109,7 +110,7 @@
           </div>
         </form>
         <div class="btn-block btn-input">
-          <button class="btn btn-next next" disabled>다음 단계</button>
+          <button class="btn btn-next next" disabled ng-disabled="next1Checek()">다음 단계</button>
         </div>
       </div>
       <div class="form-area step-2">
@@ -117,7 +118,7 @@
           <div class="form-group">
             <label class="control-label col-sm-4" for="salary">월소득</label>
             <div class="col-sm-8 input-area">
-              <input type="text" class="form-control" id="salary" ng-model="inSalary" maxlength="4" placeholder="예) 220">
+              <input type="text" class="form-control onlyNumber" id="salary" ng-model="inSalary" maxlength="4" placeholder="예) 220" >
               <span>만원</span>
               <p class="notice"><small>세금을 제외한 통장에 들어오는 금액을 만원 단위로 입력해 주세요.</small></p>
             </div>
@@ -135,19 +136,19 @@
             <ul class="jobs">
               <li class="col-sm-6" ng-click="searchDisableRemove()">
                 <label for="salarymen" class="radio type4 salarymen">근로소득자</label>
-                <input type="radio" id="salarymen" name="joblist" ng-model="inJobs" value="근로소득자">
+                <input type="radio" id="salarymen" name="joblist" ng-model="inJob" value="근로소득자">
               </li>
               <li class="col-sm-6" ng-click="searchDisableRemove()">
                 <label for="business" class="radio type4 business notice">개인사업자<br><small>(국민연금 지역가입자)</small></label>
-                <input type="radio" id="business" name="joblist" ng-model="inJobs" value="개인사업자">
+                <input type="radio" id="business" name="joblist" ng-model="inJob" value="개인사업자">
               </li>
               <li class="col-sm-6" ng-click="searchDisableRemove()">
                 <label for="housewife" class="radio type4 housewife">전업주부</label>
-                <input type="radio" id="housewife" name="joblist" ng-model="inJobs" value="전업주부">
+                <input type="radio" id="housewife" name="joblist" ng-model="inJob" value="전업주부">
               </li>
               <li class="col-sm-6" ng-click="searchDisableRemove()">
                 <label for="otherjobs" class="radio type4 otherjobs notice">공무원,교사,군인<small>(특수직업연금 가입자)</small></label>
-                <input type="radio" id="otherjobs" name="joblist" ng-model="inJobs" value="특수직업">
+                <input type="radio" id="otherjobs" name="joblist" ng-model="inJob" value="공무원">
               </li>
             </ul>
             <p class="notice"><small>보험상품, 보장금액, 기간산정을 위하여 필요한 정보입니다.</small></p>
@@ -155,39 +156,39 @@
         </form>
         <div class="btn-block btn-input">
           <button class="btn btn-prev">이전 단계</button>
-          <button class="btn btn-next next2" disabled>다음 단계</button>
+          <button class="btn btn-next next2" disabled ng-disabled="next2Checek()">다음 단계</button>
         </div>
       </div>
       <div class="form-area step-3">
         <div class="form-type2">
-          <form class="form-horizontal" role="form" enctype="multipart/form-data">
+          <form class="form-horizontal" role="form" method="post">
             <div class="form-group">
               <label class="control-label col-sm-2" for="qTitle">제목</label>
               <div class="col-sm-10 input-area">
-                <input type="text" class="form-control" id="qTitle" maxlength="12" ng-maxlength="12" >
+                <input type="text" class="form-control" id="qTitle" ng-model="qTitle" maxlength="12" ng-maxlength="12" >
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-sm-2" for="qTxt">문의사항</label>
               <div class="col-sm-10 input-area placeholder">
-                <textarea type="text" class="form-control" id="qTxt" maxlength="500" ng-maxlength="500" placeholder="보장비교 분석 요청 시 궁금하신 사항에 대해 남기시면 친절히 답변해 드립니다." ></textarea>
+                <textarea type="text" class="form-control" id="qTxt" ng-model="qTxt" maxlength="500" ng-maxlength="500" placeholder="보장비교 분석 요청 시 궁금하신 사항에 대해 남기시면 친절히 답변해 드립니다." ></textarea>
                 <span class="is-Static fontS11">500자 이내</span>
               </div>
             </div>
             <div class="form-group type2">
-              <label class="control-label col-sm-2" for="upLoad">증권업로드</label>
+              <label class="control-label col-sm-2" >증권업로드</label>
               <div class="col-sm-10 input-area">
                 <div class="form-control">
-                  <input type="file" name="filename" id="upLoad">
-                  <span class="btn-search">찾기</span>
+                  <span class="btn-search" ngf-select="uploadFiles($files, $invalidFiles)" multiple
+                        accept="image/*" ngf-max-height="1000" ngf-max-size="5MB">찾기</span>
                 </div>
                 <div class="upload-list-area">
                   <ul class="upload-list">
-                    <li><i></i>images.jpg<button class="del ir">delete</button></li>
-                    <li><i></i>images.jpg<button class="del ir">delete</button></li>
+                    <li ng-repeat="file in files"><i></i>{{file.file_name}}<input type="hidden" name="files_path" class="files_path" value="{{file.file_path}}" /><input type="hidden" name="files_name" class="files_name" value="{{file.file_name}}" /><button class="del ir" ng-click="fileDelete($index)">delete</button></li>
+
                   </ul>
                   <p>
-                    * 이미지는 JPG, GIF, PDF 파일로 올려주세요
+                    * 이미지는 JPG, GIF, PNG , PDF 파일로 올려주세요
                   </p>
                 </div>
               </div>
@@ -196,13 +197,13 @@
         </div>
         <div class="btn-block btn-input">
           <button class="btn btn-prev">이전 단계</button>
-          <button class="btn btn-search" ng-click="suggest()">내게 맞는 보험 찾기</button>
+          <button class="btn btn-search" ng-click="checkUpload()" ng-disabled="checkUploadVal()">보장 분석 신청</button>
         </div>
       </div>
     </div>
     <div class="col-sm-6 forms output">
       <form role="form">
-        <p class="myContainer"><a href="#" ng-click="infoGet()">내 보관함</a></p>
+        <p class="myContainer"><a href="#" ng-click="infoGet()" ng-hide="1">내 보관함</a></p>
         <div class="form-txt-board">
           <p class="txt-board">
             <span class="info-txt typeName">{{outName()}}</span> 님은<br>
@@ -210,8 +211,8 @@
             <span class="info-txt">{{outJob()}}</span> 이며, <span class="info-txt">{{outMarry()}}</span> 입니다.
           </p>
           <div class="btn-block btn-output">
-            <input type="submit" class="btn save" value="저장하기">
-            <button class="btn btn-search" ng-click="suggest()" disabled>내게 맞는 보험 찾기</button>
+            <input type="submit" class="btn save" value="저장하기" ng-hide="1">
+            <button class="btn btn-search" ng-click="checkUpload()" disabled ng-disabled="checkUploadVal()">보장 분석 신청</button>
           </div>
         </div>
       </form>

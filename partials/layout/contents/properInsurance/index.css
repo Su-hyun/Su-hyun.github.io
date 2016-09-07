@@ -2,11 +2,11 @@
 
 .properInsurance_header{background:#35353f;}
 .properInsurance_header .container{background:url(./img/properInsurance_back.png) no-repeat left -40px; height:334px;}
-.properInsurance_header .container .tit{margin-left:83px; margin-top:48px;}
-.properInsurance_header .container h2{font-weight:bold; font-size:2.25rem; margin-bottom:54px; line-height:50px; color:#fff;}
-.properInsurance_header .container h2 span{line-height:50px; color:#ffbf41;}
-.properInsurance_header .container p.tit_01{font-size:1.1rem; color:#fff; font-weight:bold; margin-bottom:15px;}
-.properInsurance_header .container p.tit_02{color:#ffffff; font-size:0.75rem;}
+.properInsurance_header .tit{margin-left:83px; margin-top:110px;}
+.properInsurance_header h2{font-weight:300; font-size:2.25rem; margin-bottom:25px; line-height:50px; color:#fff;}
+.properInsurance_header .is-color{color:#ffd15d;}
+.properInsurance_header p.tit_01{font-size:0.9rem; color:#fff; margin-bottom:15px;font-weight:300;}
+.properInsurance_header p.tit_02{color:#ffffff; font-size:0.75rem;}
 
 .properInsurance_con{overflow:hidden; position:relative; padding-top:34px;}
 #properInsAside{width:285px; float:left; padding-top:30px; padding-left:30px; padding-right:47px;
@@ -17,12 +17,13 @@ background:#fff;}
 #properInsAside .tabTitle.on p{color:#457fc1;}
 #properInsAside .tabTitle ol>li{color:#202020; font-size:0.75rem; letter-spacing:-1px; margin-bottom:15px; line-height:1;}
 #properInsAside .last_dab{margin-top:15px;}
-#properInsAside .last_dab li{padding-left:20px; color:#39334d; line-height:1.5}
+#properInsAside .last_dab li{padding-left:20px; color:#39334d; line-height:1.7}
+#properInsAside .dab_btn.on{color:#457fc1; font-weight:bold;}
 #properInsAside .dab_btn.on a{color:#457fc1; font-weight:bold;}
 
 
-#properInsCon{width:915px; float:left; border-left:1px solid #cecece; padding:23px 78px 0 54px;}
-#properInsCon h2{height:47px; line-height:47px; font-weight:bold; color:#000; font-size:1rem; margin-bottom:50px;}
+#properInsCon{width:915px; float:left; padding:23px 54px 50px; border-left:1px solid #cecece;}
+#properInsCon h2{height:47px; line-height:47px; font-weight:bold; color:#000; margin-bottom:50px;}
 #properInsCon h2 span{width:47px; height:47px; border-radius:100%; display:inline-block; text-align:center; letter-spacing:-1px;
 background:#ffd15d; font-weight:bold; color:#000; font-size:1rem;margin-right:15px;}
 
@@ -122,10 +123,10 @@ display:inline-block; text-align:center; margin-left:10px; font-size:12px; color
 #properInsCon .list_005 li p.bold{margin-bottom:20px;}
 #properInsCon .list_005 li p.right{text-align:left; padding-left:75px;}
 
-#properInsCon .list_006{padding-left:55px; overflow:hidden; margin-top:30px;}
+#properInsCon .list_006{padding-left:55px; overflow:hidden; margin-top:50px;}
 #properInsCon .list_006 li{width:100%; overflow:hidden; margin-bottom:30px;}
-#properInsCon .list_006 figure{width:246px; float:left; margin-right:30px;}
-#properInsCon .list_006 .list_006_box{width:451px; overflow:hidden; float:left; padding-top:30px;}
+#properInsCon .list_006 figure{width:246px; margin-right:26px;}
+#properInsCon .list_006 .list_006_box{width:451px; overflow:hidden;}
 #properInsCon .list_006 .list_006_box p{padding-left:0;}
 
 #properInsCon .list_007{padding-left:65px; overflow:hidden;}

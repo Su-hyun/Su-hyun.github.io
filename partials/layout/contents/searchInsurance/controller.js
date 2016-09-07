@@ -16,11 +16,11 @@ define(['projectSugar'], function () {
           tit: "Free & rightful advice!",
           txt: "무엇이 필요하고, 필요없는지 알려드립니다.",
           txt2: "이런거 본 적 없죠?",
-          imageUrl: "choice-01.png"
+          imageUrl: "choice-02.png"
         }, {
           tit: "Friendly support",
           txt: "진짜 전문가들이 답변해드립니다.",
-          imageUrl: "choice-01.png"
+          imageUrl: "choice-03.png"
         }
       ];
 

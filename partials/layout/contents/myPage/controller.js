@@ -23,7 +23,7 @@ define(['projectSugar'], function () {
 
           // #myPage height
           $(document).on('load', function () {
-            var myHEI = $(window).height() - 58 - 81;
+            var myHEI = $(window).height() - 65 - 81;
             $myPage.css('min-height', myHEI);
 
             var $selectListWID = $selectList.outerWidth();

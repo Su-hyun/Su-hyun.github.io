@@ -1,0 +1,172 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
+    <title>통합인증 web</title>
+    <!-- 부트스트랩 -->
+    <link href="/css/web/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/web/sy_style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <link href="/css/web/sy_style_ie8.css" rel="stylesheet">
+    <![endif]-->
+    <!-- dropdown -->
+    <script src="/js/web/jquery.min.js"></script>
+    <script src="/js/web/jquery.easydropdown.js"></script>
+    <script src="/js/web/jquery.easydropdown_scroll.js"></script>
+    <script src="/js/web/noco.comm.js"></script>
+
+    <script type="text/javascript">
+
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (decodeURIComponent(pair[0]) == variable) {
+                    return decodeURIComponent(pair[1]);
+                }
+            }
+            console.log('Query variable %s not found', variable);
+        }
+
+        var authCode = getQueryVariable("authCode");
+        var email = getQueryVariable("email");
+
+
+        //휴대폰 번호 존재 할 경우 인증번호 발송 및 인증번호 입력 창 활성화
+        //휴대폰 번호 없을 경우 알림 메시지 출력
+
+        $(document).ready(function() {
+
+            //인증번호 전송 버튼 휴대폰 번호 입력 되면 활성화
+            $("#mobile_num").on("change",function() {
+                if($(this).val() != "") {
+                    $("#reSend").removeClass("disabled");
+                } else {
+                    $("#reSend").addClass("disabled");
+                }
+            });
+
+            $("#reSend").on("click",function () {
+                if($("#mobile_num").val() == "") {
+                    $("#reSend").addClass("disabled");
+                } else {
+
+                    $.ajax({
+                        url:"https://yellopass-staging.yellofg.com/noco-itgr-auth/v1/phone/request",
+                        method: "POST",
+                        dataType: "json",
+                        data: { cpn: $("#mobile_num").val(), msg:"[Sugar] 인증번호 [ Pa$SW0Rd ]을 입력해 주세요" , expSec:180}
+                    }). done(function(data) {
+                        if(data.resultInfo != undefined) {
+                            if(data.resultInfo.code == "100") {
+                               authCode = data.resultInfo.code;
+
+                                $("#hiddenElement").show();
+
+
+                            } else {
+                                alert("정보를 확인을 할 수 없습니다. "+data.resultInfo.message);
+                            }
+                        } else {
+                            alert("가입된 정보가 없습니다");
+                        }
+                    });
+
+                }
+            });
+
+            $("#next_page").on("click",function() {
+                //인증번호를 검사
+
+                var cert = $("val_num").val();
+                $.ajax({
+                    url:"https://yellopass-staging.yellofg.com/noco-itgr-auth/v1/phone/Verify",
+                    method: "POST",
+                    dataType: "json",
+                    data: { cpn: $("#mobile_num").val(), auth_code:authCode , cert:cert}
+                }). done(function(data) {
+                    if(data.resultInfo != undefined) {
+                        if(data.resultInfo.code == "100") {
+                            authCode = data.resultInfo.code;
+
+                            alert("인증 되었습니다");
+                           location.href="password_reset_input.html?authCode="+authCode+"&email="+email;
+
+
+                        } else {
+                            alert("입력하신 인증코드가 잘못 되었습니다. "+data.resultInfo.message);
+                        }
+                    } else {
+                        alert("입력된 인증코드 오류");
+                    }
+                });
+
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+<div class="nav_top">
+    <div class="top">
+        <div class="left"></div>
+        <!-- <div class="right"></div> -->
+    </div>
+    <div class="nav_line"></div>
+</div>
+<!-- /header -->
+<div class="container">
+    <h4 class="notokr-regular">휴대폰 번호 인증</h4>
+    <div class="text_center mgb_30" id="info_desc">
+        회원정보에 등록된 휴대폰 번호를 입력해주세요.
+    </div>
+    <form name="form1" id="form1" method="get" class="form-signin">
+        <div class="normal_form" style="height:50px;">
+            <div class="num_s" id="mobile_get">
+                <input id="mobile_num" type="text" pattern="[0-9]*" dataType="N" maxlength="11" inputmode="numeric" id="" class="form-control" placeholder="휴대폰 번호" required  onfocus="if (this.placeholder == '휴대폰 번호') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = '휴대폰 번호';}" >
+            </div>
+            <a id="reSend" class="btn btn-lg white btn-block mgt_30 disabled service_color fontNotoSans">인증번호 전송</a>
+        </div>
+        <div id="hiddenElement" hidden>
+            <div class="form_line" style="margin: 115px 0px 28px 0px;"></div>
+            <div class="normal_form">
+                <div class="num_s" id="val_num_get">
+                    <input type="text" id="val_num" dataType="N" maxlength="6" class="form-control" maxlength="6" placeholder="인증번호 ( 3분 이내 입력 )" required  onfocus="if (this.placeholder == '인증번호 ( 3분 이내 입력 )') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = '인증번호 ( 3분 이내 입력 )';}">
+                    <div class="second"><span id ="show-time">03:00</span></div>
+                </div>
+            </div>
+            <a id="next_page" class="btn btn-lg btn-block service_color disabled mgt_20"><span>확 인</span></a>
+            <ul class="blt_list pdt_info">
+                <li><span>인증번호를 받지 못하신 경우, 입력하신 휴대폰 번호가 올바른지 다시 확인해 주세요. 회원정보와 동일한 휴대폰 번호여야 합니다.</span></li>
+            </ul>
+        </div>
+    </form>
+</div>
+<div class="copy">Copyright ⓒ <strong>Yello financial Group.</strong> All Rights Reserved.</div>
+<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+<script src="https://yellopass.yellofg.com/js/web/bootstrap.min.js"></script>
+<script src="https://yellopass.yellofg.com/js/web/jquery.placeholder.js"></script>
+<script>
+    $(function() {
+        // Invoke the plugin
+        $('input, textarea').placeholder({customClass:'my-placeholder'});
+        // That’s it, really.
+    });
+</script>
+</body>
+</html>

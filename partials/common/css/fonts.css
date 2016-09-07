@@ -151,6 +151,9 @@ html{ font-size:20px; }
 .modal-header > p,
 .view-top small,
 .sugarThink-area h4,
+#sugarThink h4,
+#properInsCon h2,
+#properInsCon h3,
 .guideTips span,
 .txtBold,
 .aboutFincl strong,
@@ -188,6 +191,7 @@ html{ font-size:20px; }
 .thinkSub .subUl-area.type2,
 .subUl-area dd,
 .guideTips .noti,
+#infoTable caption,
 .fontS16
 { font-size:0.8rem }
 
@@ -214,6 +218,8 @@ body,h1,h2,h3,h4,input,button,
 .sub-lnb,
 .guideTable.type2 th,
 .guideTable.type2 td,
+.guideTable.type3 td,
+#infoTable,
 .fontS14
 { font-size:0.7rem }
 
@@ -273,6 +279,7 @@ nav li,
 .view-top,
 .guideCaption,
 .aboutFincl strong,
+#infoTable caption,
 .color{ color:#000 }
 
 

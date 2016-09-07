@@ -32,7 +32,7 @@
       <div class="container">
         <ul class="move-menu">
           <li>
-            <a href="#" ng-click="searchInsurance()"></a>
+            <a href="#" ng-click="recommend()"></a>
             <div class="is-inlineBlock">
               <h3>
                 <span class="num-list">01</span>
@@ -48,7 +48,7 @@
             <!--<span class="lnb-move">바로가기</span>-->
           </li>
           <li>
-            <a href="#" ng-click="knowExactly()"></a>
+            <a href="#" ng-click="properInsurance()"></a>
             <div class="is-inlineBlock">
               <h3>
                 <span class="num-list">02</span>
@@ -93,22 +93,22 @@
       </div>
       <div class="truth-list-area">
         <ul class="truth-list">
-          <li ng-repeat="truth in truthList">
+          <li ng-repeat="truth in truthList" ng-click="truthView(truthList[$index].sbidx)">
             <div class="truth-img-area">
               <div class="truth-img">
-                <img ng-src="./partials/layout/contents/main/img/{{truth.imageUrl}}" alt="">
+                <img ng-src="{{truth.apiServer}}{{truth.imageUrl}}" alt="">
               </div>
               <div view-detail></div>
             </div>
             <div class="truth-txt-area">
               <h3>{{truth.tit}}</h3>
-              <p class="truth-date">{{truth.date}}</p>
-              <p class="truth-txt">{{truth.txt}}</p>
+              <p class="truth-date">{{truth.date | date:'yyyy-MM-dd'}}</p>
+              <p class="truth-txt"><div ng-bind-html="truth.txt"></div></p>
             </div>
           </li>
         </ul>
         <div class="truth-btn-area">
-          <button class="truth-more">more</button> <!-- 기능 적용 안됨 -->
+          <button class="truth-more" ng-click="tellTruth()">more</button> <!-- 기능 적용 안됨 -->
         </div>
       </div>
     </div>

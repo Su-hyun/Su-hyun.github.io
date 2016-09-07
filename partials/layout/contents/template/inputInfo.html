@@ -8,50 +8,53 @@
   <tr>
     <th>이메일</th>
     <td class="selectStyle email">
-      <input type="text" placeholder="Email@yifa.co.kr">
-      <select>
-        <option></option>
-        <option>naver.com</option>
+      <input type="text" name="email" placeholder="Email@yifa.co.kr" ng-model="join_email">
+      <select ng-change="emailChange(selectedOptions[$index])" ng-model="selectedOptions[$index]">
+        <option value="">직접입력</option>
+        <option value="naver.com">naver.com</option>
+        <option value="gmail.com">gmail.com</option>
+        <option value="hanmail.net">hanmail.net</option>
+        <option value="nate.com">nate.com</option>
+        <option value="yifa.co.kr">yifa.co.kr</option>
       </select>
-      <input type="button" value="이메일 중복확인">
+      <input type="button" value="이메일 중복확인" ng-click="checkEmail()">
     </td>
   </tr>
   <tr>
     <th>비밀번호</th>
-    <td><input type="password"></td>
+    <td><input type="password" ng-model="join_password"></td>
   </tr>
   <tr>
     <th>비밀번호 확인</th>
-    <td><input type="password"></td>
+    <td><input type="password" ng-model="join_password2"></td>
   </tr>
   <tr>
     <th>이름</th>
-    <td><input type="text"></td>
+    <td><input type="text" ng-model="join_name"></td>
   </tr>
   <tr>
-    <th>성별</th>
+    <th>결혼여부</th>
     <td class="gender">
       <span>
-        <input type="radio" id="male" name="gender" value="남자">
-        <label for="male">남자</label>
+        <input type="radio" id="male" name="married" ng-model="join_merried" value="Y">
+        <label for="male">기혼</label>
       </span>
       <span>
-        <input type="radio" id="female" name="gender" value="여자">
-        <label for="female">여자</label>
+        <input type="radio" id="female" name="married" ng-model="join_merried" value="N">
+        <label for="female">미혼</label>
       </span>
     </td>
   </tr>
   <tr>
-    <th>생년월일</th>
-    <td><input type="text" placeholder="yy/mm/dd" ng-maxlength="6"></td>
-  </tr>
-  <tr>
     <th>휴대폰</th>
     <td class="selectStyle mobile">
-      <select>
-        <option>010</option>
+      <select ng-model="join_mobile_1">
+        <option value="010">010</option>
+        <option value="011">011</option>
+        <option value="016">016</option>
+        <option value="019">019</option>
       </select>
-      - <input type="text"> - <input type="text">
+      - <input type="text" ng-model="join_mobile_2"> - <input type="text" ng-model="join_mobile_3">
     </td>
   </tr>
   </tbody>

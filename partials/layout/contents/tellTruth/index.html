@@ -3,7 +3,7 @@
     <div class="container myHeader-img"></div>
   </div>
   <div class="container tell-truth">
-    <section class="on">
+    <section id="tellTruthList" class="on" >
 			<ul class="section-top tell_box">
 				<li ng-repeat="headline in newsList">
 					<dl>
@@ -13,7 +13,7 @@
 						</dt>
 						<dd>웬만해선 손해 안 보는 보험회사, 차라리 적극 드세요</dd>
 					</dl>
-					<span class="dot"><img src="./partials/layout/contents/tellTruth/img/dot002.gif" alt="화살표" /></span>
+					<span class="dot"><img src="./partials/layout/contents/tellTruth/img/dot002.png" alt="화살표" /></span>
 				</li>
 			</ul>
     	<div class="tell_con">
@@ -27,26 +27,24 @@
 	             <p>
 	               {{newsText.conText3}}
 	             </p>
-	             <input type="button" class="btn_002" value="더보기">
+	             <input type="button" class="btn_002 viewOpen" value="더보기">
 	         </li>
 	       </ul>
 	   </div>
      <div class="tell_board">
       <ul class="boardListArea">
-        <li ng-repeat="qlist in questionsList">
+        <li class="viewOpen" ng-repeat="qlist in questionsList" ng-click="viewContent(questionsList[$index].sbidx)" style="cursor: pointer;">
           <dl>
             <dt>
-              <img src="" alt="">
+              <img src="{{qlist.apiServer}}{{qlist.file_path}}" alt="">
             </dt>
             <dd class="ellipsis">
               {{qlist.title}}
             </dd>
-            <dd class="text">
-              {{qlist.context}}
-            </dd>
+            <dd class="text"><div ng-bind-html="qlist.context"></div></dd>
             <dd class="down_infor">
               <ul>
-                <li class="infor_date">{{qlist.date}}</li>
+                <li class="infor_date">{{qlist.date | date:'yyyy-MM-dd'}}</li>
                 <li class="infor_count">{{qlist.count}}</li>
                 <li class="infor_shere">
                   <a href="#" title="facebook"><img src="./partials/layout/contents/tellTruth/img/facebook_icon.gif" alt="페이스북" /></a>
@@ -58,20 +56,16 @@
           <button onclick="poptest();" class="down_read"><span><img src="./partials/layout/contents/tellTruth/img/icon03.gif" alt="READ MORE" /></span></button>
         </li>
       </ul>
-      <div class="btn-page">
-        <button class="prev ir">이전페이지</button>
-        <span class="page-location">
-          <a href="" class="on">1</a>
-          <a href="">2</a>
-          <a href="">3</a>
-          <a href="">4</a>
-          <a href="">5</a>
+         <div class="btn-page">
+             <button class="prev ir" ng-click="goBackPage()">이전페이지</button>
+             <span class="page-location">
+          <a href="javascript:void(0)" ng-class="{on: p==page}" ng-repeat="p in pageList" ng-click="goPage(p)">{{p}}</a>
         </span>
-        <button class="next ir">&gt다음페이지</button>
-      </div>
+             <button class="next ir" ng-click="goNextPage()">&gt다음페이지</button>
+         </div>
     </div>
     </section>
-    <section list-view class="view"></section>
+    <section list-view class="view" id="viewContent"></section>
     <div class="box_margin"></div>
   </div>
 </section>

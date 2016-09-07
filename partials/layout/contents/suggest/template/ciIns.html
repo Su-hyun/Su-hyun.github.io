@@ -15,7 +15,7 @@
     </div>
     <span class="align-middle"></span>
     <div class="suggest-info-img">
-      <img src="./partials/layout/contents/suggest/img/title-img.png" alt="기본부터 갖추기~">
+      <img src="./partials/layout/contents/suggest/img/title-img4.png" alt="기본부터 갖추기~">
     </div>
   </div>
   <div class="suggest-con-bottom">
@@ -59,12 +59,15 @@
     <div class="suggest-bottom-right">
       <div class="suggest-product">
         <p class="suggest-customer folder">두개 상품 가입하기</p>
+
         <ul class="product-list might" ng-repeat="diagnose in diagnose21List">
           <li class="view-type1 double">
             <div class="suggest-form product-form">
-              <input type="checkbox" id="article3-list1-check1" checked>
-              <label for="article3-list1-check1">
-                <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+              <input type="checkbox" id="article3-list1-check{{$index}}" checked>
+              <label for="article3-list1-check{{$index}}">
+                <figure>
+                  <img src="./partials/layout/contents/suggest/img/ci/{{diagnose21List[$index].company_id}}.png" alt="로고">
+                </figure>
                 <span class="align-middle"></span>
               </label>
             </div>
@@ -82,9 +85,11 @@
               <button class="btn-join">온라인 바로가입</button>
             </div>
           </li>
-          <li class="view-type1 double">
+          <li class="view-type1 double" ng-show="diagnose22List[$index]">
             <div class="suggest-form product-form">
-              <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+              <figure>
+                <img src="./partials/layout/contents/suggest/img/ci/{{diagnose22List[$index].company_id}}.png" alt="로고">
+              </figure>
               <span class="align-middle"></span>
             </div>
             <div class="list-premium">
@@ -102,16 +107,20 @@
             </div>
           </li>
         </ul>
+
       </div>
       <div class="suggest-product type2">
         <p class="suggest-customer folder">한개 상품 가입하기</p>
         <ul class="product-list">
           <li class="view-type1"  ng-repeat="diagnose in diagnose1List">
             <div class="suggest-form product-form">
-              <input type="checkbox" id="article3-list2-check1" checked>
-              <label for="article3-list2-check1">
-                <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+              <input type="checkbox" id="article3-list3-check{{$index}}" checked>
+              <label for="article3-list3-check{{$index}}">
+                <figure>
+                  <img src="./partials/layout/contents/suggest/img/ci/{{diagnose.company_id}}.png" alt="로고">
+                </figure>
                 <span class="align-middle"></span>
+
               </label>
             </div>
             <div class="list-premium">

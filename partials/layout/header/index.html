@@ -14,7 +14,7 @@
         <ul class="sub-lnb">
           <li><a href="#" ng-click="properInsurance()">올바른 보험</a></li>
           <li><a href="#" ng-click="tellTruth()">보험의 진실</a></li>
-          <li><a href="#" ng-click="suggest()">테스트링크 : 결과</a></li>
+          <!--<li><a href="#" ng-click="suggest()">테스트링크 : 결과</a></li>-->
         </ul>
       </li>
       <li>
@@ -42,12 +42,13 @@
       <li class="gnb help">
         <a href="#" ng-click="help($event)">Help</a>
         <ul class="sub-lnb">
-          <li><a href="#" ng-click="myPage()">마이페이지</a></li>
           <li><a href="#" ng-click="oneAnd()">1:1 게시판</a></li>
           <li><a href="#" ng-click="faQuestions()">FAQ</a></li>
+          <li ng-show="logintoken"><a href="#" ng-click="myPage()">마이페이지</a></li>
         </ul>
       </li>
-      <li class="gnb signin"><a href="#" ng-click="signIn()">Login</a>
+      <li class="gnb signin" ng-hide="logintoken"><a href="#" ng-click="signIn()">Login</a>
+      <li class="gnb signin" ng-show="logintoken"><a href="#" ng-click="logout()">Logout</a>
       </li>
     </ul>
   </nav>

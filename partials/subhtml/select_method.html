@@ -1,0 +1,113 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
+    <title>통합인증 web</title>
+    <!-- 부트스트랩 -->
+    <link href="https://yellopass.yellofg.com/css/web/bootstrap.min.css" rel="stylesheet">
+    <link href="https://yellopass.yellofg.com/css/web/sy_style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <link href="https://yellopass.yellofg.com/css/web/sy_style_ie8.css" rel="stylesheet">
+    <![endif]-->
+    <!-- dropdown -->
+    <script src="https://yellopass.yellofg.com/js/web/jquery.min.js"></script>
+    <script src="https://yellopass.yellofg.com/js/web/jquery.easydropdown.js"></script>
+    <script src="https://yellopass.yellofg.com/js/web/jquery.easydropdown_scroll.js"></script>
+
+
+    <script type="text/javascript">
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (decodeURIComponent(pair[0]) == variable) {
+                    return decodeURIComponent(pair[1]);
+                }
+            }
+            console.log('Query variable %s not found', variable);
+        }
+
+        var authCode = getQueryVariable("authCode");
+        var email = getQueryVariable("email");
+
+
+        function select_email() {
+
+            location.href="email.html?authCode="+authCode+"&email="+email;
+        }
+
+        function select_sms() {
+
+            location.href="sms.html?authCode="+authCode+"&email="+email;
+        }
+
+        $(document).ready(function () {
+
+
+
+
+        });
+
+    </script>
+</head>
+<body>
+<div class="nav_top">
+    <div class="top">
+        <div class="left"></div>
+        <!-- <div class="right"></div> -->
+    </div>
+    <div class="nav_line"></div>
+</div>
+<!-- /header -->
+<div class="container">
+    <h4 class="notokr-regular">본인인증 방법 선택</h4>
+    <div class="text_center mgb_25">
+        본인인증 방법을 선택해주세요.<br/>
+        인증이 완료되면 다음으로 이동합니다.
+    </div>
+    <div style="overflow:hidden;">
+        <div class="certification_out mgr_6">
+            <a href="javascript:select_sms();" >
+                <div class="certification_box phone">
+                    <h4 class="text_center">휴대폰 번호 인증</h4>
+                    <span>회원정보에 등록된 휴대폰 번호로 인증합니다.</span>
+                </div>
+            </a>
+        </div>
+        <div class="certification_out">
+            <a href="javascript:select_email();" >
+                <div class="certification_box mail">
+                    <h4 class="text_center">이메일 인증</h4>
+                    <span >회원정보에 등록된 이메일(아이디)로 인증합니다.</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="copy">Copyright ⓒ <strong>Yello financial Group.</strong> All Rights Reserved.</div>
+</div> <!-- /container -->
+<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+<script src="https://yellopass.yellofg.com/js/web/bootstrap.min.js"></script>
+<script src="https://yellopass.yellofg.com/js/web/jquery.placeholder.js"></script>
+<script>
+    $(function() {
+        // Invoke the plugin
+        $('input, textarea').placeholder({customClass:'my-placeholder'});
+        // That’s it, really.
+    });
+</script>
+</body>
+</html>

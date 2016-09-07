@@ -15,8 +15,8 @@
   <div class="container">
   	<div class="oneAnd-tab">
       <ul>
-        <li class="on" downpage="oneAnd-con">1:1 문의 하기</li>
-        <li downpage="twoAnd-con">1:1 답변확인</li>
+        <li class="on" downpage="oneAnd-con" ng-click="viewInput()">1:1 문의 하기</li>
+        <li downpage="twoAnd-con" ng-click="viewList()">1:1 답변확인</li>
       </ul>
     </div>
     <div class="oneAnd-con">
@@ -35,7 +35,7 @@
               <tr>
                 <th>문의 제목</th>
                 <td>
-                  <input type="text">
+                  <input type="text" ng-model="subject">
                 </td>
               </tr>
               <tr>
@@ -63,33 +63,37 @@
 	              <tbody>
 	              <tr>
 	                <th>이름</th>
-	                <td colspan="2"><input type="text" class="name"></td>
+	                <td colspan="2"><input type="text" class="name" ng-model="etc5"></td>
 	              </tr>
 	              <tr>
 	                <th>답변받기</th>
 	                <td>
 	                  <span class="chk_block">
-	                    <input type="checkbox" id="forEmail" checked="checked"/>
-	                    <label for="forEmail">메일로 받기</label>
+	                    <input type="checkbox" id="forEmail" checked="checked" ng-model="etc1" value="Y"/>
+	                    <label for="forEmail" class="on">메일로 받기</label>
 	                  </span>
-	                  <input type="text" class="mail_sub" placeholder="chicy@nate.com">
-	                  <select class="mail">
-	                    <option value=""></option>
-	                    <option value="네이버">naver.com</option>
+	                  <input type="text" class="mail_sub" placeholder="chicy@nate.com" ng-model="etc2">
+	                  <select class="mail" >
+	                    <option value="">직접입력</option>
+	                    <option value="naver.com">naver.com</option>
+                          <option value="gmail.com">gmail.com</option>
+                          <option value="daum.net">daum.net</option>
+                          <option value="nate.com">nate.com</option>
 	                  </select>
 	                </td>
 	                <td>
 	                  <span class="chk_block">
-	                    <input type="checkbox" id="forCall"/>
+	                    <input type="checkbox" id="forCall" ng-model="etc3" value="Y"/>
 	                    <label for="forCall">상담원 전화통화 연결</label>
 	                  </span>
-	                  <select class="num">
+	                  <select class="num" ng-model="etc41">
 	                    <option value="010">010</option>
-	                    <option value="010">010</option>
-	                    <option value="010">010</option>
+	                    <option value="011">011</option>
+	                    <option value="016">016</option>
+                          <option value="019">019</option>
 	                  </select>
-	                  - <input class="num" type="text">
-	                  - <input class="num" type="text">
+	                  - <input class="num" type="text" ng-model="etc42">
+	                  - <input class="num" type="text" ng-model="etc43">
 	                </td>
 	              </tr>
 	              </tbody>
@@ -101,8 +105,8 @@
               	개인정보 수집 및 이용 안내
             </p>
             <div class="checks">
-              <input type="radio" id="iAgree" name="Agree" checked /><label class="agr" for="iAgree">동의합니다.</label>
-              <input type="radio" id="iDisAgree" name="Agree" /><label for="iDisAgree">동의하지 않습니다.</label>
+              <input type="radio" id="iAgree" name="Agree" checked ng-model="iAgree" value="iAgree" /><label class="agr" for="iAgree">동의합니다.</label>
+              <input type="radio" id="iDisAgree" name="Agree" ng-model="iAgree" value="iDisAgree" /><label for="iDisAgree">동의하지 않습니다.</label>
             </div>
             <div class="agree_text">
               <pre>
@@ -115,8 +119,8 @@
             </div>
           </div>
           <div class="btn_area">
-          	<input type="submit" class="btn_001" value="수정">
-          	<input type="button" class="btn_001"value="취소">
+          	<input type="submit" class="btn btn_001" value="등록" ng-click="contentInsert()" disabled ng-disabled="iAgree!='iAgree'">
+          	<input type="button" class="btn btn_001"value="취소" ng-click="cancleInsert()">
           </div>
         </form>
       </div>
@@ -143,35 +147,33 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
+
+            <tr ng-repeat="data in boardList">
               <td>
                 <span class="chk_block board_chk">
-                  <input type="checkbox" id="test" checked="checked"/>
-                  <label for="test"></label>
+                  <input type="checkbox" id="check{{data.sbidx}}" ng-hide="data.reply" value="{{data.sbidx}}" class="delCheck" />
+                  <label for="check{{data.sbidx}}"></label>
                 </span>
               </td>
               <td class="b_text">
-              	<a href="#_none">test 텍스트 길이 입니다.test 텍스트 길이 입니다.test 텍스트 길이 입니다.test 텍스트 길이 입니다.test 텍스트 길이 입니다.test 텍스트 길이 입니다.</a>
+              	<a href="#_none" sbidx="{{data.sbidx}}" ng-click="viewContent(data.sbidx)">{{data.title}}</a>
               </td>
-              <td>완료</td>
-              <td>2016-08-27</td>
+              <td>{{data.reply_text}}</td>
+              <td>{{data.date | date:'yyyy-MM-dd'}}</td>
             </tr>
+
             </tbody>
           </table>
 			<div class="btn_area">
-				<input type="submit" class="btn_001" value="삭제">
+				<input type="button" class="btn_001" value="삭제" ng-click="checkboxCheck()">
 			</div>
         </div>
-        <div class="pageing">
-        	<button class="prev">&lt;</button>
-	          <ul>
-	            <li>1</li>
-	            <li class="on">2</li>
-	            <li>3</li>
-	            <li>4</li>
-	            <li>5</li>
-	          </ul>
-          	<button class="next">&gt;</button>
+        <div class="btn-page">
+            <button class="prev ir" ng-click="goBackPage()">이전페이지</button>
+            <span class="page-location">
+          <a href="javascript:void(0)" ng-class="{on: p==page}" ng-repeat="p in pageList" ng-click="goPage(p)">{{p}}</a>
+        </span>
+            <button class="next ir" ng-click="goNextPage()">&gt다음페이지</button>
         </div>
       </div>
       <div class="threeAnd-con" board-view></div>

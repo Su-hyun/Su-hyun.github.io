@@ -6,11 +6,13 @@
 	      <p class="title_01">고객님이 자주 찾는 질문을 간단하게 찾아볼 수 있습니다.</p>
 	      <fieldset>
 	          <legend>검색</legend>
-	          <select>
+	          <select ng-model="search_type">
 	            <option value="all">전체</option>
+				  <option value="subject">질문</option>
+				  <option value="content">답변</option>
 	          </select>
-	          <input type="text">
-	          <input type="button" value="검색">
+	          <input type="text" ng-model="search_keyword">
+	          <input type="button" value="검색" ng-click="faqsearch()">
           </fieldset>
 	    </div>
 		<ul class="top_btn">
@@ -21,90 +23,57 @@
   </div>
   <div class="container faq-content">
     <ul class="tab">
-      <li>
+      <li nc-class="{on:mainTab1=='Y'}">
       	<a href="">
-      		<img src="./partials/layout/contents/faQuestions/img/faq_icon01_off.png" alt="상품관련"/>
+      		<img src="./partials/layout/contents/faQuestions/img/faq_icon01_off.png" alt="상품관련" ng-click="mainTab(1)"/>
       		<span>상품관련</span>
       	</a>
       </li>
-      <li>
+      <li nc-class="{on:mainTab2=='Y'}">
       	<a href="">
-      		<img src="./partials/layout/contents/faQuestions/img/faq_icon02_off.png" alt="가입(청약)"/>
+      		<img src="./partials/layout/contents/faQuestions/img/faq_icon02_off.png" alt="가입(청약)" ng-click="mainTab(2)"/>
       		<span>가입(청약)</span>
       	</a>
       </li>
-      <li class="on">
+      <li  nc-class="{on:mainTab3=='Y'}">
       	<a href="">
-      		<img src="./partials/layout/contents/faQuestions/img/faq_icon03_off.png" alt="청구 / 유지"/>
+      		<img src="./partials/layout/contents/faQuestions/img/faq_icon03_off.png" alt="청구 / 유지" ng-click="mainTab(3)"/>
       		<span>청구 / 유지</span>
       	</a>
       </li>
-      <li>
+      <li nc-class="{on:mainTab4=='Y'}">
       	<a href="">
-      		<img src="./partials/layout/contents/faQuestions/img/faq_icon04_off.png" alt="사이트 이용"/>
+      		<img src="./partials/layout/contents/faQuestions/img/faq_icon04_off.png" alt="사이트 이용" ng-click="mainTab(4)"/>
       		<span>사이트 이용</span>
       	</a>
       </li>
     </ul>
     <div class="full_area">
-      <ul class="tab_area">
-        <li class="on">상품공통</li>
-        <li>실손의료비보험</li>
-        <li>연금보험</li>
-        <li>연금저축</li>
+      <ul class="tab_area" ng-show="mainTabNum==1">
+        <li class="on" ng-click="subTab('상품공통')" >상품공통</li>
+        <li ng-click="subTab('실손의료비보험')">실손의료비보험</li>
+        <li ng-click="subTab('연금보험')">연금보험</li>
+        <li ng-click="subTab('연금저축')">연금저축</li>
       </ul>
       <div class="con_area">
-        <h3>Keyword <span>(1)</span></h3>
+        <h3>Keyword <span>({{keyword}})</span></h3>
         <div class="drop_box">
           <dl>
-            <dt><span class="circle">Q</span>보험의 가입금액을 변경할 수 있나요?<span class="arrow"></span></dt>
-            <dd><span class="circle">A</span>
-            	<p>
-            	순수 보장형 상품은 만기 시 돌려받는 금액이 없지만 보장에 충실한 상품이기 때문에 보험료가 저렴하고, 만기환급형 상품은 보험가입 시 선택하신 환급율에 따라
-            	만기환급금을 추가로 지급해 드리기 때문에 순수보장형에 비해서는 보험료가 좀 더 비싼 차이점이 있습니다.
-            	</p>
-            </dd>
-            <dt><span class="circle">Q</span>보험의 가입금액을 변경할 수 있나요?<span class="arrow"></span></dt>
-            <dd><span class="circle">A</span>
-            	<p>
-            	순수 보장형 상품은 만기 시 돌려받는 금액이 없지만 보장에 충실한 상품이기 때문에 보험료가 저렴하고, 만기환급형 상품은 보험가입 시 선택하신 환급율에 따라
-            	만기환급금을 추가로 지급해 드리기 때문에 순수보장형에 비해서는 보험료가 좀 더 비싼 차이점이 있습니다.
-            	</p>
-            </dd>
-            <dt><span class="circle">Q</span>보험의 가입금액을 변경할 수 있나요?<span class="arrow"></span></dt>
-            <dd><span class="circle">A</span>
-            	<p>
-            	순수 보장형 상품은 만기 시 돌려받는 금액이 없지만 보장에 충실한 상품이기 때문에 보험료가 저렴하고, 만기환급형 상품은 보험가입 시 선택하신 환급율에 따라
-            	만기환급금을 추가로 지급해 드리기 때문에 순수보장형에 비해서는 보험료가 좀 더 비싼 차이점이 있습니다.
-            	</p>
-            </dd>
-            <dt><span class="circle">Q</span>보험의 가입금액을 변경할 수 있나요?<span class="arrow"></span></dt>
-            <dd><span class="circle">A</span>
-            	<p>
-            	순수 보장형 상품은 만기 시 돌려받는 금액이 없지만 보장에 충실한 상품이기 때문에 보험료가 저렴하고, 만기환급형 상품은 보험가입 시 선택하신 환급율에 따라
-            	만기환급금을 추가로 지급해 드리기 때문에 순수보장형에 비해서는 보험료가 좀 더 비싼 차이점이 있습니다.
-            	</p>
-            </dd>
-            <dt><span class="circle">Q</span>보험의 가입금액을 변경할 수 있나요?<span class="arrow"></span></dt>
-            <dd><span class="circle">A</span>
-            	<p>
-            	순수 보장형 상품은 만기 시 돌려받는 금액이 없지만 보장에 충실한 상품이기 때문에 보험료가 저렴하고, 만기환급형 상품은 보험가입 시 선택하신 환급율에 따라
-            	만기환급금을 추가로 지급해 드리기 때문에 순수보장형에 비해서는 보험료가 좀 더 비싼 차이점이 있습니다.
-            	</p>
-            </dd>
+
+			  <dt ng-repeat-start="faq in boardList"><span class="circle">Q</span>{{faq.title}}<span class="arrow"></span></dt>
+			  <dd ng-repeat-end=""><span class="circle">A</span>
+            	<p><div ng-bind-html="faq.context"></div></p>
+			  </dd>
+
           </dl>
         </div>
-        <div class="pageing">
-        	<button class="prev">&lt;</button>
-	          <ul>
-	            <li>1</li>
-	            <li class="on">2</li>
-	            <li>3</li>
-	            <li>4</li>
-	            <li>5</li>
-	          </ul>
-          	<button class="next">&gt;</button>
-        </div>
+		  <div class="btn-page">
+			  <button class="prev ir" ng-click="goBackPage()">이전페이지</button>
+			  <span class="page-location">
+          <a href="javascript:void(0)" ng-class="{on: p==page}" ng-repeat="p in pageList" ng-click="goPage(p)">{{p}}</a>
+        </span>
+			  <button class="next ir" ng-click="goNextPage()">&gt다음페이지</button>
+		  </div>
         <div class="box_margin"></div>
       </div>
     </div>

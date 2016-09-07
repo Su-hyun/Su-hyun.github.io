@@ -14,7 +14,7 @@
     </div>
     <span class="align-middle"></span>
     <div class="suggest-info-img">
-      <img src="./partials/layout/contents/suggest/img/title-img.png" alt="기본부터 갖추기~">
+      <img src="./partials/layout/contents/suggest/img/title-img1.png" alt="기본부터 갖추기~">
     </div>
   </div>
   <div class="suggest-con-bottom">
@@ -114,7 +114,7 @@
                 <tr class="tr-2nd">
                   <td class="ellipsis">{{medicalProduct.name}}</td>
                   <td>{{medicalProduct.age}}</td>
-                  <td><span>{{medicalProduct.price}}</span>원</td>
+                  <td><span>{{medicalProduct.price | number}}</span>원</td>
                 </tr>
                 </tbody>
               </table>
@@ -122,16 +122,16 @@
           </li>
         </ul>
       </div>
-      <div class="suggest-product type2" ng-show="userChild=='유'">
-        <p class="suggest-customer">{{userName}}님의 자녀</p>
-        <ul class="product-list">
+      <div class="suggest-product type2" ng-show="userChild=='유' && medicalChildProductList.length > 0" ng-repeat="medicalChildProductListData in medicalChildProductList">
+        <p class="suggest-customer">{{userName}}님의 자녀 [ {{medicalChildInfoList[$index].age}}세 {{medicalChildInfoList[$index].sex}} ]</p>
+        <ul class="product-list" >
 
-          <li class="view-type1" ng-repeat="medicalProduct in medicalProductList" ng-show="$index < 2">
+          <li class="view-type1" ng-repeat="medicalProduct in medicalChildProductListData" ng-show="$index < 2">
             <div class="suggest-form product-form">
               <input type="checkbox" id="article1-list1-check1" checked>
               <label for="article1-list1-check1">
                 <figure>
-                  <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+                  <img src="./partials/layout/contents/suggest/img/ci/{{medicalProduct.company_id}}.png" alt="로고">
                 </figure>
                 <span class="align-middle"></span>
               </label>
@@ -148,7 +148,9 @@
               <a href="{{medicalProduct.url}}" target="_blank"><button class="btn-join">온라인 바로가입</button></a>
             </div>
           </li>
-          <li class="view-type2" ng-repeat="medicalProduct in medicalProductList" ng-show="$index > 1 && $index < 5">
+        </ul>
+        <ul class="product-list">
+          <li class="view-type2" ng-repeat="medicalProduct in medicalChildProductListData" ng-show="$index > 1 && $index < 5">
             <div class="suggest-table">
               <table>
                 <colgroup>
@@ -180,7 +182,7 @@
                 <tr class="tr-2nd">
                   <td class="ellipsis">{{medicalProduct.name}}</td>
                   <td>{{medicalProduct.age}}</td>
-                  <td><span>{{medicalProduct.price}}</span>원</td>
+                  <td><span>{{medicalProduct.price | number}}</span>원</td>
                 </tr>
                 </tbody>
               </table>

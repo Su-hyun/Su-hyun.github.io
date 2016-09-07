@@ -32,24 +32,6 @@
   margin-top:140px;
   padding:0 97px 40px;
 }
-.productGuide-con h3{
-
-}
-.productGuide-con .num01{
-  display:inline-block;
-  width:46px;
-  height:46px;
-  margin-right:19px;
-  padding-left:5px;
-  line-height: 49px;
-  vertical-align: middle;
-  text-align:center;
-  letter-spacing: -1px;
-  background-color:#ffd15d;
-  -webkit-border-radius:50%;
-  -moz-border-radius:50%;
-  border-radius:50%;
-}
 .thinkSub{
   padding:40px 45px;
   letter-spacing: 0;
@@ -168,9 +150,12 @@
   text-align:left;
 }
 .guideTable th,
-.guideTable.type2 td
+.guideTable.type2 td,
 .guideTable.type4 td{
   height:47px;
+}
+.guideTable.type2 td{
+  height:50px;
 }
 .guideTable.type2 col:first-child,
 .guideTable thead tr,
@@ -188,7 +173,7 @@
 }
 .guideTable.type2 th,
 .guideTable.type2 td,
-.guideTable.type3 th
+.guideTable.type3 th,
 .guideTable.type4 td{
   padding:7px
 }
@@ -265,10 +250,13 @@
   padding:15px 20px;
   border:2px solid #3c649a
 }
-.popUpCon a{
+.popUpCon .tooltip1,
+.popUpCon .tooltip2{
   display:inline;
+  position:relative;
+  cursor:pointer;
 }
-.popUpCon a::after{
+.popUpCon strong::after{
   content:"";
   display:inline-block;
   width:19px;
@@ -298,6 +286,7 @@
   border-left:1px solid #c4c8d4
 }
 .comparisonSub{
+	min-height:345px;
   padding:0 20px;
 }
 .comparisonSub h5{

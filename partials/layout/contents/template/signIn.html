@@ -1,4 +1,4 @@
-<div class="modal fade">
+<div class="modal fade" id="loginView">
   <div id="signIn" class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -21,9 +21,9 @@
               <input type="checkbox" id="remember" placeholder="Password" />
               <label for="remember">Remember me</label>
             </span>
-            <button class="forgot">Forgot</button>
+            <button class="forgot" ng-click="resetPasswd()">Forgot</button>
           </div>
-          <button type="submit" class="btn btn-default" data-dismiss="modal">Login</button>
+          <button type="submit" class="btn btn-default" ng-click="doLogin()">Login</button>
         </form>
       </div>
       <div class="modal-footer">

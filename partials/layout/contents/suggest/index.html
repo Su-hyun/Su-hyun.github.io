@@ -1,15 +1,15 @@
-<section class="container suggest" ng-controller="suggestController">
+<section id="main_container" class="container suggest" ng-controller="suggestController">
   <header>
     <div class="suggest-util">
       <ul>
         <li><a href="#">E-mail</a></li>
-        <li><a href="#">Print</a></li>
+        <li><a href="#" ng-click="viewCanvas()">Print</a></li>
       </ul>
     </div>
     <div class="suggest-txt-area">
       <h2>
         <strong>슈가 <span class="suggest-highlight">추천</span> 보험</strong>은?
-        <a href="#">올바른 보험 활용방법 자세히 보기</a>
+        <a href="#" ng-click="properInsurance()">올바른 보험 활용방법 자세히 보기</a>
       </h2>
       <p>
         꼭 가입해야 하는 보험과<br>
@@ -17,8 +17,8 @@
       </p>
     </div>
     <ul class="suggest-premium">
-      <li>위험보장 Total<span>{{total_save_money | number}}</span>원</li>
-      <li>노후대비 Total<span>{{total_annuity_money | number}}</span>원</li>
+      <li>위험보장 Total<span>{{medical_money + diagnosePrice + term_ins_price  | number}}</span>원</li>
+      <li>노후대비 Total<span>{{annuityPrice | number}}</span>원</li>
     </ul>
   </header>
   <section id="suggestMain">
@@ -26,20 +26,20 @@
       <h3><span class="suggest-needs ir">꼭</span> 필요한 보험(Must Have)</h3>
       <span class="align-middle"></span>
     </div>
-    <article class="mustHave on">
+    <article class="mustHave" ng-class="{'on': medicalProductList.length > 0}">
       <actual-expense></actual-expense>
     </article>
-    <article class="mustHave on" ng-hide="userMarride=='미혼' && userSubfamily == '무'" >
+    <article class="mustHave" ng-class="{'on': insurInfoList.length > 0}"  ng-hide="userMarride=='미혼' && userSubfamily == '무'"  >
       <term-ins></term-ins>
     </article>
     <div class="suggest-title mightBe-on">
       <h3><span class="suggest-think ir">고려</span>해야할 보험(Might be useful)</h3>
       <span class="align-middle"></span>
     </div>
-    <article class="mightBe on">
+    <article class="mightBe" ng-class="{'on': diagnose1List.length > 0 || diagnose21List.length > 0 || diagnose22List.length > 0}">
       <ci-ins></ci-ins>
     </article>
-    <article class="mightBe on">
+    <article class="mightBe" ng-class="{'on': savingList.length > 0 || univerList.length > 0}">
       <pension-ins></pension-ins>
     </article>
   </section>
@@ -48,3 +48,4 @@
     <a href="#" class="btn btn-type2" ng-click="signIn()">슈가 회원가입으로 보험 고수되기</a>
   </footer>
 </section>
+<iframe id="printhtml" name="printhtml" src="print_iframe.html" width="1260" style="position: absolute; left:-10000px; z-index: 9999;" ></iframe>

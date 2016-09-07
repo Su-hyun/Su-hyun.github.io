@@ -6,7 +6,7 @@
     </div>
     <div class="suggest-notice">
       <h4>
-        연금보험<small>월 <span>{{annuityPrice}}</span>원</small>
+        연금보험<small>월 <span>{{annuityPrice | number}}</span>원</small>
       </h4>
       <p>
         <strong>연금보험은 다양한 노후준비 방법 중 죽을때까지 일정금액이 지급</strong> 되는 장점이 있어 고려해볼만한 상품으로 추천합니다.
@@ -14,7 +14,7 @@
     </div>
     <span class="align-middle"></span>
     <div class="suggest-info-img">
-      <img src="./partials/layout/contents/suggest/img/title-img.png" alt="기본부터 갖추기~">
+      <img src="./partials/layout/contents/suggest/img/title-img3.png" alt="기본부터 갖추기~">
     </div>
   </div>
   <div class="suggest-con-bottom">
@@ -25,7 +25,7 @@
           <ul class="why-list why-list-type1">
             <li>연금저축보험 / 개인연금보험 중 선택 가입</li>
             <li>종신형(20년보증) / 65세 연금개지 / 20년납</li>
-            <li>월 보험료 {{annuityPrice}}원</li>
+            <li>월 보험료 {{annuityPrice | number}}원</li>
           </ul>
         </div>
         <div class="suggest-why">
@@ -33,15 +33,15 @@
           <ul class="pension-graph">
             <li class="pension-list1">
               <span>{{annuity[0].per}}%</span>
-              <span>{{annuity[0].money}}만원</span>
+              <span>{{annuity[0].money | number}}만원</span>
             </li>
             <li class="pension-list2">
               <span>{{annuity[1].per}}%</span>
-              <span>{{annuity[1].money}}만원</span>
+              <span>{{annuity[1].money | number}}만원</span>
             </li>
             <li class="pension-list3">
               <span>{{annuity[2].per}}%</span>
-              <span>{{annuity[2].money}}만원</span>
+              <span>{{annuity[2].money | number}}만원</span>
             </li>
           </ul>
         </div>
@@ -80,15 +80,17 @@
       <div class="suggest-product">
         <p class="suggest-customer">연금저축보험</p>
         <ul class="product-list">
-          <li class="view-type3" ng-repeat="saving in savingList" ng-show="$index < 2">
+          <li class="view-type1" ng-repeat="saving in savingList" ng-show="$index < 2">
             <div class="suggest-form product-form">
-              <input type="checkbox" id="saving1-list1-check{{$index}}" checked>
-              <label for="saving-list1-check{{$index}}">
-                <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+              <input type="radio" name="saving_list" id="saving1-list1-check{{$index}}" ng-checked="$index == 0">
+              <label for="saving1-list1-check{{$index}}" ng-click="annuityMoneyView(saving.price)">
+                <figure>
+                  <img src="./partials/layout/contents/suggest/img/ci/{{saving.company_id}}.png" alt="로고">
+                </figure>
                 <span class="align-middle"></span>
               </label>
             </div>
-            <div class="list-info">
+            <div class="pension-ins-why">
               <ul>
                 <li>
                   <p>{{saving.name}}</p>
@@ -111,28 +113,31 @@
                 <li>
                   <p>
                     해지환급금
-                    <span>{{saving.public_refund}}만원</span>
+                    <span>{{saving.public_refund | number}}만원</span>
                   </p>
                   <span class="align-middle"></span>
                 </li>
                 <li>
                   <p>
                     연금액
-                    <span>월 {{saving.amount}}만원</span>
+                    <span>월 {{saving.amount | number}}만원</span>
                   </p>
                   <span class="align-middle"></span>
                 </li>
               </ul>
               <a href="{{saving.url}}" target="_blank"><button class="btn-join">온라인 바로가입</button></a>
             </div>
+
           </li>
+        </ul>
+        <ul class="product-list">
           <li class="view-type2" ng-repeat="saving in savingList" ng-show="$index > 1">
             <div class="suggest-table">
               <table>
                 <colgroup>
                   <col width="5.7692308%">
-                  <col width="22.435897%">
-                  <col width="23.878205%">
+                  <col width="16%">
+                  <col>
                   <col width="12.019231%">
                   <col width="13.942308%">
                   <col width="22.955128%">
@@ -140,10 +145,14 @@
                 <tbody>
                 <tr class="tr-1st">
                   <td rowspan="2">
-                    <input type="checkbox" id="saving1-list2-check{{$index}}">
-                    <label for="saving1-list2-check{{$index}}"></label>
+                    <input type="radio" name="saving_list"  id="saving1-list2-check{{$index}}">
+                    <label for="saving1-list2-check{{$index}}" ng-click="annuityMoneyView(saving.price)"></label>
                   </td>
-                  <td rowspan="2"><img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고"></td>
+                  <td class="td-inslogo" rowspan="2">
+                    <figure>
+                      <img src="./partials/layout/contents/suggest/img/ci/{{saving.company_id}}.png" alt="로고">
+                    </figure>
+                  </td>
                   <td>상품명</td>
                   <td>공시이율</td>
                   <td>해지환급금</td>
@@ -154,7 +163,7 @@
                 <tr class="tr-2nd">
                   <td class="ellipsis">{{saving.name}}</td>
                   <td>{{saving.refund_per}}%</td>
-                  <td><span>{{saving.public_refund}}</span>만원</td>
+                  <td><span>{{saving.public_refund | number}}</span>만원</td>
                 </tr>
                 </tbody>
               </table>
@@ -168,13 +177,15 @@
         <ul class="product-list">
           <li class="view-type1" ng-repeat="saving in univerList" ng-show="$index < 2">
             <div class="suggest-form product-form">
-              <input type="checkbox" id="saving2-list1-check{{$index}}" checked>
-              <label for="saving2-list1-check{{$index}}">
-                <img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고">
+              <input type="radio" name="saving_list" id="saving2-list1-check{{$index}}" >
+              <label for="saving2-list1-check{{$index}}" ng-click="annuityMoneyView(saving.price)">
+                <figure>
+                  <img src="./partials/layout/contents/suggest/img/ci/{{saving.company_id}}.png" alt="로고">
+                </figure>
                 <span class="align-middle"></span>
               </label>
             </div>
-            <div class="list-info">
+            <div class="pension-ins-why">
               <ul>
                 <li>
                   <p>{{saving.name}}</p>
@@ -197,14 +208,14 @@
                 <li>
                   <p>
                     해지환급금
-                    <span>{{saving.public_refund}}만원</span>
+                    <span>{{saving.public_refund | number}}만원</span>
                   </p>
                   <span class="align-middle"></span>
                 </li>
                 <li>
                   <p>
                     연금액
-                    <span>월 {{saving.amount}}만원</span>
+                    <span>월 {{saving.amount | number}}만원</span>
                   </p>
                   <span class="align-middle"></span>
                 </li>
@@ -212,13 +223,15 @@
               <a href="{{saving.url}}" target="_blank"><button class="btn-join">온라인 바로가입</button></a>
             </div>
           </li>
+        </ul>
+        <ul class="product-list">
           <li class="view-type2" ng-repeat="saving in univerList" ng-show="$index > 1">
             <div class="suggest-table">
               <table>
                 <colgroup>
                   <col width="5.7692308%">
-                  <col width="22.435897%">
-                  <col width="23.878205%">
+                  <col width="16%">
+                  <col>
                   <col width="12.019231%">
                   <col width="13.942308%">
                   <col width="22.955128%">
@@ -226,10 +239,14 @@
                 <tbody>
                 <tr class="tr-1st">
                   <td rowspan="2">
-                    <input type="checkbox" id="saving-list1-check{{$index}}">
-                    <label for="saving-list1-check{{$index}}"></label>
+                    <input type="radio" name="saving_list" id="saving2-list2-check{{$index}}">
+                    <label for="saving2-list2-check{{$index}}" ng-click="annuityMoneyView(saving.price)"></label>
                   </td>
-                  <td rowspan="2"><img src="./partials/layout/contents/suggest/img/lifeplanet.png" alt="로고"></td>
+                  <td class="td-inslogo" rowspan="2">
+                    <figure>
+                      <img src="./partials/layout/contents/suggest/img/ci/{{saving.company_id}}.png" alt="로고">
+                    </figure>
+                  </td>
                   <td>상품명</td>
                   <td>공시이율</td>
                   <td>해지환급금</td>
@@ -240,7 +257,7 @@
                 <tr class="tr-2nd">
                   <td class="ellipsis">{{saving.name}}</td>
                   <td>{{saving.refund_per}}%</td>
-                  <td><span>{{saving.public_refund}}</span>만원</td>
+                  <td><span>{{saving.public_refund | number}}</span>만원</td>
                 </tr>
                 </tbody>
               </table>

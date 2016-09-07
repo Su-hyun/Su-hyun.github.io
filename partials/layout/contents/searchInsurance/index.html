@@ -67,7 +67,7 @@
           <li ng-repeat="review in reviewList">
             <a href="#" ng-mousedown="count = count + 1">
               <div class="review-txt-area">
-                <h3>{{review.name}} / {{review.userAge}}세 / {{review.date}} <span class="counter">{{count}}</span></h3>
+                <h3>{{review.name}} / {{review.userAge}}세 / {{review.date}} <span class="counter" style="display:none">{{count}}</span></h3>
                 <p class="review-txt">{{review.txt}}</p>
               </div>
               <div class="review-img">

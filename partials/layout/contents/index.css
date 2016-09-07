@@ -33,12 +33,26 @@
 }
 
 /* -- 비쥬얼 이벤트 처리 -- */
+@-webkit-keyframes fade {
+  0%   {opacity:0}
+  10%  {opacity:1}
+  60%  {opacity:1}
+  70%  {opacity:0}
+  100% {opacity:0}
+}
+@-moz-keyframes fade {
+  0%   {opacity:0}
+  10%  {opacity:1}
+  60%  {opacity:1}
+  70%  {opacity:0}
+  100% {opacity:0}
+}
 @keyframes fade {
-  0%   { opacity: 0; }
-  11.11%   { opacity: 1; }
-  33.33%  { opacity: 1; }
-  44.44%  { opacity: 1; }
-  100% { opacity: 0; }
+  0%   {opacity:0}
+  10%  {opacity:1}
+  60%  {opacity:1}
+  70%  {opacity:0}
+  100% {opacity:0}
 }
 .event-area{
   /*display:none;*/
@@ -46,10 +60,10 @@
   height:100%;
   position:absolute;
   top:0; left:0;
-  opacity:0; animation-name: fade; animation-duration: 8s; animation-iteration-count: infinite;
+  opacity:0; animation-name: fade; animation-duration: 10s; animation-iteration-count: infinite;
 }
 .visual-event li:nth-child(1) .event-area { background-color:#548ed0; animation-delay: 0s;  }
-.visual-event li:nth-child(2) .event-area { background-color:#848484; animation-delay: 4s;  }
+.visual-event li:nth-child(2) .event-area { background-color:#848484; animation-delay: 5s;  }
 /*.visual-event li:nth-child(3) .event-area { background-color:#18b3af; animation-delay: 8s;  }*/
 
 .visual-event li:nth-child(1) .event-con { background-image:url(./main/img/slide-01.jpg); }
@@ -72,12 +86,11 @@
 }
 .event-txt-area{
   width:35.584%;
-  margin-top:40px;
   margin-left:5%;
   padding-top:15.667%;
   position:relative;
   text-align:left;
-  background: no-repeat 0 0/100% auto;
+  background: no-repeat 0 0
 }
 .event-tit-ir{
   position:absolute;
@@ -97,7 +110,9 @@
   margin-right:9%;
   padding-left:9%;
 }
-
+.event-txt.type0{
+	margin-top:50px;
+}
 
 /* -- 보험 바로 알기 -- */
 .exactly-area{

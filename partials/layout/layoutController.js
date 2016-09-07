@@ -13,14 +13,17 @@ define(
   ['projectSugar'],
   function() {
     var layoutIndexModule = angular.module('projectSugar', ['ui.router', 'oc.lazyLoad', 'layoutService']);
-    layoutIndexModule.controller('layoutController', ['$scope','$http', '$ocLazyLoad','layoutService', '$rootScope','$stateParams',
-      function($scope,$http, $ocLazyLoad, layoutService,$rootScope, $stateParams) {
+    layoutIndexModule.controller('layoutController', ['$scope','$http', '$ocLazyLoad','layoutService', '$rootScope','$stateParams','$anchorScroll','$location',
+      function($scope,$http, $ocLazyLoad, layoutService,$rootScope, $stateParams,$anchorScroll,$location) {
 
       $scope.mainHeader = 'partials/layout/header/';
       $scope.contentWrapper = 'partials/layout/contents/';
       $scope.mainFooter = 'partials/layout/footer/';
 
+      $anchorScroll.yOffset = 0;
+
       $scope.$on('$includeContentLoaded',function(event, file) {
+
         if (file === 'partials/layout/header/'){
           console.log(file)
         }else if (file === 'partials/layout/contents/'){
@@ -44,95 +47,11 @@ define(
               name : 'recommendController',
               files : [ 'partials/layout/contents/recommend/controller.js' ]
             },
-            'partials/layout/contents/recommend/index.css'])
+              'partials/layout/contents/recommend/index.css'])
           .then(
             function() {
               $scope.contentWrapper = "partials/layout/contents/recommend/indemnityAnalysis/";
-            },
-            function(e) {
-              console.log(e);
-            });
-      });
-
-      // 실손의료비 URL
-      $scope.$on('expensesGuide', function() {
-        $ocLazyLoad
-          .load([
-            {
-              name : 'productGuideService',
-              files : [ 'partials/layout/contents/productGuide/service.js' ]
-            },
-            {
-              name : 'productGuideController',
-              files : [ 'partials/layout/contents/productGuide/controller.js' ]
-            },
-            'partials/layout/contents/productGuide/index.css'])
-          .then(
-            function() {
-              $scope.contentWrapper = "partials/layout/contents/productGuide/expenses/";
-            },
-            function(e) {
-              console.log(e);
-            });
-      });
-      // 정기보험 URL
-      $scope.$on('termGuide', function() {
-        $ocLazyLoad
-          .load([
-            {
-              name : 'productGuideService',
-              files : [ 'partials/layout/contents/productGuide/service.js' ]
-            },
-            {
-              name : 'productGuideController',
-              files : [ 'partials/layout/contents/productGuide/controller.js' ]
-            },
-            'partials/layout/contents/productGuide/index.css'])
-          .then(
-            function() {
-              $scope.contentWrapper = "partials/layout/contents/productGuide/term/";
-            },
-            function(e) {
-              console.log(e);
-            });
-      });
-      // 진단비 URL
-      $scope.$on('diagnosisGuide', function() {
-        $ocLazyLoad
-          .load([
-            {
-              name : 'productGuideService',
-              files : [ 'partials/layout/contents/productGuide/service.js' ]
-            },
-            {
-              name : 'productGuideController',
-              files : [ 'partials/layout/contents/productGuide/controller.js' ]
-            },
-            'partials/layout/contents/productGuide/index.css'])
-          .then(
-            function() {
-              $scope.contentWrapper = "partials/layout/contents/productGuide/diagnosis/";
-            },
-            function(e) {
-              console.log(e);
-            });
-      });
-      // 연금 URL
-      $scope.$on('pensionGuide', function() {
-        $ocLazyLoad
-          .load([
-            {
-              name : 'productGuideService',
-              files : [ 'partials/layout/contents/productGuide/service.js' ]
-            },
-            {
-              name : 'productGuideController',
-              files : [ 'partials/layout/contents/productGuide/controller.js' ]
-            },
-            'partials/layout/contents/productGuide/index.css'])
-          .then(
-            function() {
-              $scope.contentWrapper = "partials/layout/contents/productGuide/pension/";
+                window.moveTo(0,0);
             },
             function(e) {
               console.log(e);
@@ -147,6 +66,7 @@ define(
         $scope.contentWrapper = 'partials/layout/contents/';
         $ocLazyLoad.load('partials/layout/contents/index.css');
         console.log("goToHome");
+          window.moveTo(0,0);
       });
       $scope.broadcastGoToHome = function() {
         $scope.$broadcast('goToHome');
@@ -155,6 +75,10 @@ define(
       //보험바로 알기
       $scope.knowExactly = function(id) {
         var $this = $($(id.target));
+
+          $location.hash('subBG');
+          $anchorScroll();
+
         if($this.parent().is('.active')) {
           $ocLazyLoad
             .load ([{
@@ -166,6 +90,7 @@ define(
             }, 'partials/layout/contents/properInsurance/index.css'])
             .then (function () {
                   $scope.contentWrapper = "partials/layout/contents/properInsurance/";
+
                 }, function (e) {
                   console.log (e);
                 }
@@ -175,6 +100,10 @@ define(
 
       //올바른 보험
       $scope.properInsurance = function() {
+
+          $location.hash('subBG');
+          $anchorScroll();
+
         $ocLazyLoad
           .load ([{
               name: 'properInsService',
@@ -193,7 +122,12 @@ define(
 
       //보험의 진실
       $scope.tellTruth = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+
+          $ocLazyLoad
           .load ([{
             name: 'tellTruthService',
             files: ['partials/layout/contents/tellTruth/service.js']
@@ -203,6 +137,7 @@ define(
           }, 'partials/layout/contents/tellTruth/index.css'])
           .then (function () {
               $scope.contentWrapper = "partials/layout/contents/tellTruth/";
+              window.moveTo(0,0);
             }, function (e) {
               console.log (e);
             }
@@ -211,7 +146,11 @@ define(
 
       // 내게 맞는 보험 찾기
       $scope.searchInsurance = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load([{
               name : 'searchInsuranceService',
               files : [ 'partials/layout/contents/searchInsurance/service.js' ]
@@ -230,7 +169,11 @@ define(
 
       //보험추천받기
       $scope.recommend = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load([{
               name : 'recommendService',
               files : [ 'partials/layout/contents/recommend/service.js' ]
@@ -249,7 +192,11 @@ define(
 
       //보험상품 추천
       $scope.suggest = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load ([{
             name: 'suggestService',
             files: ['partials/layout/contents/suggest/service.js']
@@ -268,7 +215,11 @@ define(
 
       // 상품 가이드
       $scope.productGuide = function(id) {
-        var $this = $($(id.target));
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          var $this = $($(id.target));
         if($this.parent().is('.active')){
           $ocLazyLoad
             .load([{
@@ -289,7 +240,11 @@ define(
 
       // 실손의료비 가이드
       $scope.expensesGuide = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load([{
             name : 'productGuideService',
             files : [ 'partials/layout/contents/productGuide/service.js' ]
@@ -307,7 +262,11 @@ define(
 
       // 정기보험 가이드
       $scope.termGuide = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load([{
             name : 'productGuideService',
             files : [ 'partials/layout/contents/productGuide/service.js' ]
@@ -325,7 +284,11 @@ define(
 
       // 진단비 가이드
       $scope.diagnosisGuide = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load([{
             name : 'productGuideService',
             files : [ 'partials/layout/contents/productGuide/service.js' ]
@@ -343,7 +306,11 @@ define(
 
       // 연금 가이드
       $scope.pensionGuide = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load([{
             name : 'productGuideService',
             files : [ 'partials/layout/contents/productGuide/service.js' ]
@@ -361,7 +328,11 @@ define(
 
       // 보장분석 소개
       $scope.indemnityIntroduce = function(id) {
-        var $this = $($(id.target));
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          var $this = $($(id.target));
         if($this.parent().is('.active')) {
           $ocLazyLoad
             .load ([{
@@ -382,7 +353,11 @@ define(
 
       // 핵심보장분석 소개
       $scope.indemnityIntroduceSub = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load ([{
             name: 'indemnityIntroduceService',
             files: ['partials/layout/contents/indemnityIntroduce/service.js']
@@ -400,7 +375,11 @@ define(
 
       // 내 보장분석
       $scope.indemnityAnalysis = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load([{
             name : 'recommendService',
             files : [ 'partials/layout/contents/recommend/service.js' ]
@@ -417,9 +396,31 @@ define(
           );
       };
 
+      //// 내 보장분석
+      //$scope.indemnityAnalysis = function() {
+      //  $ocLazyLoad
+      //    .load ([{
+      //      name: 'indemnityAnalysisService',
+      //      files: ['partials/layout/contents/indemnityAnalysis/service.js']
+      //    }, {
+      //      name: 'indemnityAnalysisController',
+      //      files: ['partials/layout/contents/indemnityAnalysis/controller.js']
+      //    }, 'partials/layout/contents/indemnityAnalysis/index.css'])
+      //    .then (function () {
+      //        $scope.contentWrapper = "partials/layout/contents/indemnityAnalysis/";
+      //      }, function (e) {
+      //        console.log (e);
+      //      }
+      //    );
+      //};
+
       // 보장분석 게시판
       $scope.indemnityBoard = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load ([{
             name: 'indemnityBoardService',
             files: ['partials/layout/contents/indemnityBoard/service.js']
@@ -437,7 +438,11 @@ define(
 
       // help
       $scope.help = function(id) {
-        var $this = $($(id.target));
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          var $this = $($(id.target));
         if($this.parent().is('.active')) {
           $ocLazyLoad
             .load ([{
@@ -459,7 +464,11 @@ define(
 
       // 마이페이지
       $scope.myPage = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load([{
             name : 'myPageService',
             files : [ 'partials/layout/contents/myPage/service.js' ]
@@ -478,7 +487,12 @@ define(
 
         // 1:1 게시판
       $scope.oneAnd = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+
+          $ocLazyLoad
           .load([{
             name : 'oneAndService',
             files : [ 'partials/layout/contents/oneAnd/service.js' ]
@@ -489,6 +503,7 @@ define(
           ])
           .then(function() {
                 $scope.contentWrapper = "partials/layout/contents/oneAnd/";
+
               }, function(e) {
                 console.log(e);
               }
@@ -497,7 +512,11 @@ define(
 
       // FAQ
       $scope.faQuestions = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load([{
             name : 'faQuestionsService',
             files : [ 'partials/layout/contents/faQuestions/service.js' ]
@@ -523,7 +542,11 @@ define(
 
       // 회사소개
       $scope.aboutFincl = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load([{
             name : 'aboutFinclService',
             files : [ 'partials/layout/contents/aboutFincl/service.js' ]
@@ -541,7 +564,11 @@ define(
 
       // Value
       $scope.sugarValue = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load([{
             name : 'sugarValueService',
             files : [ 'partials/layout/contents/sugarValue/service.js' ]
@@ -560,7 +587,11 @@ define(
 
       // 이용약관
       $scope.userAgreement = function() {
-        $ocLazyLoad
+
+          $location.hash('subBG');
+          $anchorScroll();
+
+          $ocLazyLoad
           .load([{
             name : 'userAgreementService',
             files : [ 'partials/layout/contents/userAgreement/service.js' ]
@@ -577,12 +608,41 @@ define(
           );
       };
 
-      $ocLazyLoad
+      // view 추가
+      /*
+      $scope.폴더명 = function() {
+        $ocLazyLoad
+          .load([{
+            name : '폴더명Service',
+            files : [ 'partials/layout/contents/폴더명/service.js' ]
+          },{
+            name : '폴더명Controller',
+            files : [ 'partials/layout/contents/폴더명/controller.js' ]
+          }, 'partials/layout/contents/폴더명/index.css'
+          ])
+          .then(function() {
+              $scope.contentWrapper = "partials/layout/contents/폴더명/";
+            }, function(e) {
+              console.log(e);
+            }
+          );
+      };
+      */
+
+
+          $scope.resetPasswd = function() {
+              window.open("partials/subhtml/password_reset.html","resetPassword","width=500,height=700");
+          };
+
+
+          $ocLazyLoad
         .load('./partials/common/js/jquery.cookie.js')
         .then(function () {
           //layoutService.fire();
 
         });
+
+
 
           //로그인 처리
           $scope.doLogin = function() {
@@ -606,38 +666,40 @@ define(
               $http.post(yopServer+'/users/login', loginData)
                   .success(function(data) {
 
-                      console.log(data);
-
-                      if(data.resultInfo.code == "200") {
-                          //로그인 잘 되면 아이디 , 값 쿠키 굽고 로그인 창 닫기
-                          var token = data.result.accessToken;
-                          var reData = {
-                              fields : 'email,nickName,mobileNum,marriedYn,birthData,gender'
-                          };
-
-                          $http.get(yopServer+'/users/'+token, {params:reData})
-                              .success(function(data) {
-                                  $.cookie("loginToken",token);
-                                  $.cookie("loginemail",data.result.email);
-                                  $.cookie("loginwriter",data.result.nickName);
-
-                                  $scope.logintoken = token;
-
-                                  $scope.broadcastGoToHome();
-
-                                  alert("로그인 되었습니다");
-
-                                  $("#loginView").modal('hide');
-
-                              });
-
+                      if(data == "" || data == undefined) {
+                          alert("등록된 이메일이 없습니다");
                       } else {
-                          alert(data.resultInfo.message);
+                          if(data.resultInfo.code == "200") {
+                              //로그인 잘 되면 아이디 , 값 쿠키 굽고 로그인 창 닫기
+                              var token = data.result.accessToken;
+                              var reData = {
+                                  fields : 'email,nickName,mobileNum,marriedYn,birthData,gender'
+                              };
+
+                              $http.get(yopServer+'/users/'+token, {params:reData})
+                                  .success(function(data) {
+                                      $.cookie("loginToken",token);
+                                      $.cookie("loginemail",data.result.email);
+                                      $.cookie("loginwriter",data.result.nickName);
+
+                                      $scope.logintoken = token;
+
+                                      $scope.broadcastGoToHome();
+
+                                      alert("로그인 되었습니다");
+
+                                      $("#loginView").modal('hide');
+
+                                  });
+
+                          } else {
+                              alert(data.resultInfo.message);
+                          }
                       }
 
+                  }).error(function(error, status) {
+                      console.log(error);
 
-                  }).error(function(data) {
-                      console.log(data);
               });
 
 
@@ -651,8 +713,11 @@ define(
                 $scope.logintoken = "";
             };
 
-          //로그인 여부 체크
-          $scope.logintoken = "";
+            $scope.truthView = function(sbidx) {
+                $scope.truthSbidx = sbidx;
+                $scope.tellTruth();
+            }
+
 
     }]); // layoutIndexModule.controller
 
@@ -663,6 +728,7 @@ define(
             './partials/common/js/jquery.cookie.js'
           ])
           .then(function() {
+
             var $lnbUl = $('.lnb'),
                 $subUl = $('.sub-lnb'),
                 $subUlBg = $('.sub-bg');
@@ -704,14 +770,14 @@ define(
       }]);
 
     // * main page *
-    layoutIndexModule.controller('contentsController', ['$scope', '$ocLazyLoad', '$stateParams', 'layoutService',
-      function($scope, $ocLazyLoad, $stateParams, layoutService) {
-        console.log("----" + $stateParams.subUrl + "----");
+    layoutIndexModule.controller('contentsController', ['$scope','$http', '$ocLazyLoad', '$stateParams', 'layoutService',
+      function($scope,$http, $ocLazyLoad, $stateParams, layoutService) {
+        console.log("----" + $stateParams.subModule + "----");
 
         // URL 감지
         angular.element(document).ready(function() {
           if($stateParams.subUrl){
-            $scope.$emit('diagnosisGuide');
+            $scope.$emit('indemnityAnalysis');
           }
         });
 
@@ -719,34 +785,16 @@ define(
         $scope.eventList = [
           {
             titIr : "알면보험 모르면 모험",
-            titBg : "slide-txt-tit01.png",
-            titAlt : "슈가 is...",
-            txt1 : "인슈어런스(Insurance) + 가이드(Guide)란 단어가 결합된 말로 " +
+            txt11 : "인슈어런스(Insurance) + 가이드(Guide)란 단어가 결합된 말로 " +
             "국내 유일의 온라인 기반 보험 자문 / 상품비교 서비스",
-            txt2 : "정보의 비대칭으로 인해 소비자는 본인이 비싼 보험에 가입했는지, " +
+            txt12 : "정보의 비대칭으로 인해 소비자는 본인이 비싼 보험에 가입했는지, " +
             "합리적인 보험료를 납입하는지 쉽게 파악할 수 없는게 현실이다.",
-            txt3 : "슈가는 고객들이 보험에 제대로 가입하도록, 그리고 이미 가입한 보험을 " +
+            txt13 : "슈가는 고객들이 보험에 제대로 가입하도록, 그리고 이미 가입한 보험을 " +
             "십분 활용할 수 있도록 도움을 주고자 만들어졌습니다."
           },{
             titIr : "알면보험 모르면 모험",
-            //titBg : "slide-txt-tit01.png",
-            //titAlt : "슈가 is...",
-            txt1 : "인슈어런스(Insurance) + 가이드(Guide)란 단어가 결합된 말로 " +
-            "국내 유일의 온라인 기반 보험 자문 / 상품비교 서비스",
-            txt2 : "정보의 비대칭으로 인해 소비자는 본인이 비싼 보험에 가입했는지, " +
-            "합리적인 보험료를 납입하는지 쉽게 파악할 수 없는게 현실이다.",
-            txt3 : "슈가는 고객들이 보험에 제대로 가입하도록, 그리고 이미 가입한 보험을 " +
-            "십분 활용할 수 있도록 도움을 주고자 만들어졌습니다."
-          },{
-            titIr : "알면보험 모르면 모험",
-            titBg : "slide-txt-tit01.png",
-            titAlt : "슈가 is...",
-            txt1 : "인슈어런스(Insurance) + 가이드(Guide)란 단어가 결합된 말로 " +
-            "국내 유일의 온라인 기반 보험 자문 / 상품비교 서비스",
-            txt2 : "정보의 비대칭으로 인해 소비자는 본인이 비싼 보험에 가입했는지, " +
-            "합리적인 보험료를 납입하는지 쉽게 파악할 수 없는게 현실이다.",
-            txt3 : "슈가는 고객들이 보험에 제대로 가입하도록, 그리고 이미 가입한 보험을 " +
-            "십분 활용할 수 있도록 도움을 주고자 만들어졌습니다."
+            txt0 : "알고하면, 더 큰 혜택",
+            txt21 : "국내모든보험사 상품 정보를 수집하여 슈가만의 상품분석 알고리즘을 통해 최적의 상품군과 가장 저렴한 보험상품을 추천 해 드립니다.",
           }
         ];
 
@@ -795,6 +843,31 @@ define(
           }
         ];
 
+        //메인페이지 보험의 진실 내용 가져오기
+          getMainBoardList("true", 3, 1,'', $http, $scope, function(data) {
+              $scope.truthList = [];
+
+              for(var i in data.list) {
+
+
+                  var redate = data.list[i].reg_datetime;
+                  var list = {
+                      tit : data.list[i].subject,
+                      txt : data.list[i].content.substr(0,10),
+                      date : redate,
+                      count : data.list[i].count,
+                      sbidx : data.list[i].sbidx,
+                      imageUrl: data.list[i].file_path,
+                      apiServer: apiServer
+                  };
+
+                  $scope.truthList .push(list);
+              }
+
+
+          });
+
+
         $ocLazyLoad
           .load([
             './partials/common/js/jquery.cookie.js'
@@ -811,7 +884,7 @@ define(
               addOnFn ($eventList, idx);
               //fadeFn ($eventList, idx, 1000);
               //  slideFn ($eventList, idx, "100%", 0, 1000);
-            },4000);
+            },5000);
 
             //$eventArea.on({
             //  mouseenter : function () {
@@ -915,4 +988,41 @@ define(
         templateUrl:'./partials/layout/contents/template/recommendTable.html'
       }
     });
+    
+    layoutIndexModule.directive('infoTable', function () {
+      return {
+        restrict : "A",
+        replace:true,
+        transclude:true,
+        templateUrl:'./partials/layout/contents/template/infoTable.html'
+      }
+    });
+
 });
+
+
+function getMainBoardList(boardCode, listCount, page,where, $http, $scope, callback) {
+
+    $http.get(apiServer+'/board/totalcnt/'+boardCode,{params:{listCount:listCount, where:where}})
+        .success(function(data, status, headers, config) {
+            $scope.questionsList = [];
+
+            $scope.page = page;
+            $scope.totalPage = data.boardPage;
+
+            if(data.boardCnt > 0) {
+
+                $http.get(apiServer+'/board/list/'+boardCode+'/'+page,{params:{listCount:listCount, where:where}})
+                    .success(function(data, status, headers, config) {
+
+                        callback(data);
+
+                    });
+
+            } else {
+                alert("게시물이 없습니다");
+            }
+
+
+        });
+}

@@ -299,7 +299,7 @@
   white-space: nowrap;
 }
 .form-group.type-height{
-  min-height:373px;
+  min-height:391px;
 }
 .notice small{
   display:block;
@@ -429,17 +429,11 @@ p.notice.type2{
 .placeholder span{
   position:static;
 }
-/*.placeholder ::-webkit-input-placeholder,*/
-/*.placeholder ::-moz-placeholder,*/
-/*.placeholder :-moz-placeholder,*/
-/*.placeholder :-ms-input-placeholder{*/
-  /*word-break: keep-all;*/
-/*}*/
-
 .upload-list{
-  min-height:75px;
+  padding-bottom:13px;
+}
+.upload-list li:first-child{
   margin-top:17px;
-  padding-bottom:15px;
 }
 .upload-list i{
   display:inline-block;

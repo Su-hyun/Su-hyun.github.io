@@ -1,67 +1,78 @@
-<section class="wrapper" ng-controller="indemnityBoardController">
-	 <div class="myHeader6_list">
-	  <div class="container6_list">
-			<div class="list_search">
-				<form>
-					<select>
-						<option value="보험종류">보험종류</option>
-						<option value="보험종류">보험종류</option>
-					</select>
-					<input type="text" placeholder="검색"/>
-					<button type="submit"><img src="./partials/layout/contents/indemnityBoard/img/icon_003.gif"/></button>
-					<label>
-						<input type="checkbox" />
-						이름
-					</label>
-					<label>
-						<input type="checkbox" />
-						제목 + 내용
-					</label>
-					<button type="button">전체보기</button>
-				</form>
-			</div>
-		  <ul class="top_btn">
-		   <li><a href="#">증권 업로드</a></li>
-		   <li><a href="#">내 보관함</a></li>
-		 </ul>
-	  </div>
-	</div>
-	<div class="container6_wrap">
-	 <div class="container">
-	     <section class="container6_tumb" id="freewall">
-	       <ul>
-	         <li ng-repeat="recommendThumb in recommendThumbList" class="brick">
-	           <dl>
-	             <dt>{{recommendThumb.title}}</dt>
-	             <dd class="list_infor">
-	               <span class="infor_001">{{recommendThumb.name}} / {{recommendThumb.age}}세</span>
-	               <span class="infor_002">{{recommendThumb.date}}</span>
-	               <span class="infor_003">{{recommendThumb.count}}</span>
-	             </dd>
-	             <dd class="list_img">
-	               <figure>
-	                 <img ng-src="{{recommendThumb.imgUrl}}" alt="">
-	               </figure>
-	             </dd>
-	             <dd class="tumb_text">{{recommendThumb.context}}</dd>
-	             <dd class="go_view"><a href="#_none"><img src="./partials/layout/contents/indemnityBoard/img/icon08.gif" alt="readmore" /></a></dd>
-	           </dl>
-	         </li>
-	       </ul>
-	     </section>
-		 <div class="btn-page">
-			 <button class="prev ir">이전페이지</button>
-			 <span class="page-location">
-          <a href="" class="on">1</a>
-          <a href="">2</a>
-          <a href="">3</a>
-          <a href="">4</a>
-          <a href="">5</a>
+<section id="indemnityBoardList" class="wrapper" ng-controller="indemnityBoardController">
+  <div class="myHeader6">
+    <div class="container6">
+      <h2>
+        <small>핵심보장분석</small>
+        내가 가입한 보험 분석받기
+      </h2>
+      <ul class="top_btn">
+        <li><a href="#" ng-click="indemnityAnalysis()">증권 업로드</a></li>
+        <li><a href="#">내 보관함</a></li>
+      </ul>
+    </div>
+  </div>
+  <section class="on" id="listContent">
+    <div class="myHeader6_list">
+      <div class="container6_list">
+        <div class="list_search">
+          <form>
+            <select ng-model="search_insur_type">
+              <option value="">-------</option>
+              <option value="실비보험">실비보험</option>
+              <option value="정기보험">정기보험</option>
+              <option value="진단보험">진단보험</option>
+              <option value="연금">연금</option>
+            </select>
+            <div class="btn-searchList is-inlineBlock clearfix">
+              <input type="text" name="search_txt" ng-model="search_txt" placeholder="검색"/>
+              <button type="submit" ng-click="searchDefaultList()"><img src="./partials/layout/contents/indemnityBoard/img/icon_003.gif"/></button>
+            </div>
+            <label>
+              <input type="checkbox" name="search_name" value="Y" ng-model="search_name"/>
+              이름
+            </label>
+            <label>
+              <input type="checkbox" name="search_subject_content" value="Y" ng-model="search_subject_content"/>
+              제목 + 내용
+            </label>
+            <button type="button"  ng-click="reDefaultList()">전체보기</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container6_wrap">
+      <div class="container">
+        <section class="container6_tumb" id="freewall">
+          <ul>
+            <li class="brick hiddenOpen" ng-repeat="recommendThumb in recommendThumbList" ng-click="viewContent(recommendThumbList[$index].sbidx)">
+              <dl>
+                <dt>{{recommendThumb.title}}</dt>
+                <dd class="list_infor">
+                  <span class="infor_001">{{recommendThumb.name}} / {{recommendThumb.age}}세</span>
+                  <span class="infor_002">{{recommendThumb.date | date:'yyyy-MM-dd'}}</span>
+                  <span class="infor_003">{{recommendThumb.count}}</span>
+                </dd>
+                <dd class="list_img">
+                  <figure>
+                    <img ng-src="{{recommendThumb.imgUrl}}" alt="">
+                  </figure>
+                </dd>
+                <dd class="tumb_text">{{recommendThumb.context}}</dd>
+                <dd class="go_view"><a href="#_none"><img src="./partials/layout/contents/indemnityBoard/img/icon08.gif" alt="readmore" /></a></dd>
+              </dl>
+            </li>
+          </ul>
+        </section>
+        <div class="btn-page">
+          <button class="prev ir" ng-click="goBackPage()">이전페이지</button>
+          <span class="page-location">
+          <a href="javascript:void(0)" ng-class="{on: p==page}" ng-repeat="p in pageList" ng-click="goPage(p)">{{p}}</a>
         </span>
-			 <button class="next ir">&gt다음페이지</button>
-		 </div>
-	     <div class="box_margin"></div>
-	 </div>
-	</div>
-	<section board-view style="display:none;"></section>
+          <button class="next ir" ng-click="goNextPage()">&gt다음페이지</button>
+        </div>
+        <div class="box_margin"></div>
+      </div>
+    </div>
+  </section>
+	<section board-view id="viewContent"></section>
 </section>

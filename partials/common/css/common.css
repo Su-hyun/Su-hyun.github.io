@@ -131,18 +131,37 @@ td, th{ padding:8px }
   left:-35px;
   background:url(../img/check.png) no-repeat center/contain;
 }
-.sugarThink{
+#num01{
+  display:inline-block;
+  width:46px;
+  height:46px;
+  margin-right:19px;
+  padding-left:5px;
+  line-height: 49px;
+  vertical-align: middle;
+  text-align:center;
+  letter-spacing: -1px;
+  background-color:#ffd15d;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  border-radius:50%;
+}
+#sugarThink{
   margin-top:70px;
   padding:30px 60px;
   background-color:#f1f1f1
 }
-.sugarThink.middlePosition{
+#sugarThink.middlePosition{
   margin-bottom:55px;
 }
-.sugarThink h4{
-  position:relative;
+#sugarThink > *{
+	padding:0 !important;
 }
-.sugarThink h4::before{
+#sugarThink h4{
+  position:relative;
+  margin-bottom:20px;
+}
+#sugarThink h4::before{
   content:"";
   display:block;
   width:32px;
@@ -647,7 +666,10 @@ main contents
 
 /*테이블공통*/
 #recommendTable{width:100%; overflow:hidden;}
+
 #recommendTable .recommend_top{overflow:hidden; display:block; margin-bottom:28px; background:#fff;}
+
+
 #recommendTable .recommend_main{float:left; display:inline-block; width:27%; padding:18px 2%; border:1px solid #d4d4d4; border-top:4px solid #2d2d2d;
   -webkit-box-shadow: 3px 5px 7px 0px rgba(212,212,212,0.85);-moz-box-shadow: 3px 5px 7px 0px rgba(212,212,212,0.85);box-shadow: 3px 5px 7px 0px rgba(212,212,212,0.85);}
 #recommendTable .recommend_main ul{overflow:hidden;}
@@ -677,7 +699,61 @@ main contents
 #recommendTable .recommend_bottom table .bg-col-03_02 i{background:url(../img/suger_table_icon11.png) center top no-repeat; width:100%; height:26px; display:block; margin-bottom:15px;}
 
 
-
+/* -- infoTable 디렉티브 -- */
+#infoTable{
+  margin-bottom:70px;
+  position:relative;
+}
+#infoTable .tableArea{
+  padding:0 10px;
+}
+#infoTable caption{
+  width:auto;
+  height:auto;
+  margin-bottom:10px;
+  padding-left:10px;
+  opacity:1
+}
+#infoTable table{
+  border:1px solid #c4c8d4;
+  border-top:2px solid #465159
+}
+#infoTable col{
+  border-left:1px solid #c4c8d4;
+}
+#infoTable col:first-child{
+  border-left:0 none;
+}
+#infoTable tr{
+  border-top:1px solid #c4c8d4;
+}
+#infoTable th{
+  background-color:#f5f9fb;
+}
+#infoTable th{
+  padding:5px;
+}
+#infoTable td{
+  height:43px;
+  padding:1px 5px;
+}
+#infoTable .blankTr td{
+  height:120px;
+}
+#infoTable .blankTr.type2 td{
+  height:65px;
+}
+#infoTable .textGroup p{
+  width:100%;
+  padding:20px 35px;
+  position:absolute;
+  letter-spacing: 0;
+  background-color:#fff;
+  border:3px solid #5087c2
+}
+#infoTable .tg1{ top:430px; }
+#infoTable .tg2{ top:641px; }
+#infoTable .tg3{ top:922px; }
 
 @media all and (max-width:1199px){
   .foot-con{
