@@ -29,6 +29,8 @@ Browser Support
 
 Change log
 ----------
+** 2016-09-09 부터 내부망에 업로드**
+
 **v1.0.3:**
 Web & Server code refactor
 
