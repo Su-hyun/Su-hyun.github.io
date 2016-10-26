@@ -21,10 +21,11 @@ npm install
 Browser Support
 ---------------
 - IE 9+
-- Firefox (latest)
-- Chrome (latest)
-- Safari (latest)
-- Opera (latest)
+- Firefox
+- Chrome
+- Safari
+- Opera
+- Mobile
 
 
 Change log
